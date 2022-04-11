@@ -1,0 +1,37 @@
+{
+  "files": {
+    "main.css": "/Spartakus-NFT/static/css/main.644352f6.css",
+    "main.js": "/Spartakus-NFT/static/js/main.a97cacff.js",
+    "static/media/Helmet.png": "/Spartakus-NFT/static/media/Helmet.0795587518a93f73c391.png",
+    "static/media/helmet.png": "/Spartakus-NFT/static/media/helmet.7f249b6d272b2eb0528c.png",
+    "static/media/shoulder-1.png": "/Spartakus-NFT/static/media/shoulder-1.f47d5749fa904be6917a.png",
+    "static/media/previewImg.png": "/Spartakus-NFT/static/media/previewImg.a0d12cafbb836cc50f9d.png",
+    "static/media/shoulder1.png": "/Spartakus-NFT/static/media/shoulder1.d58fe4f85bceef50bf30.png",
+    "static/media/token.png": "/Spartakus-NFT/static/media/token.fbbd3ee30fafe0a13b10.png",
+    "static/media/10.svg": "/Spartakus-NFT/static/media/10.a1ea247d24bde18e6292e73db3e774fa.svg",
+    "static/media/11.svg": "/Spartakus-NFT/static/media/11.1ebfb9cdc8102f62e3038218daf96931.svg",
+    "static/media/12.svg": "/Spartakus-NFT/static/media/12.b54ec71a642c04414fc9af6902c0da0e.svg",
+    "static/media/13.svg": "/Spartakus-NFT/static/media/13.6835f85d65e492df33ed50a4be41c988.svg",
+    "static/media/4.svg": "/Spartakus-NFT/static/media/4.2a8bb7d3316422c5f2cd1072112153b6.svg",
+    "static/media/5.svg": "/Spartakus-NFT/static/media/5.e7432cc53da886279596f1b7ddbeeaa2.svg",
+    "static/media/6.svg": "/Spartakus-NFT/static/media/6.aaa46704ed8186633ed30bfcf839ffd0.svg",
+    "static/media/7.svg": "/Spartakus-NFT/static/media/7.5506d8c84c5a0a1b2d23d28ad904c71c.svg",
+    "static/media/8.svg": "/Spartakus-NFT/static/media/8.c93f4162ad2f0e3d756a4b7e308dc801.svg",
+    "static/media/9.svg": "/Spartakus-NFT/static/media/9.8115e66d906bbc1aac2ba0c331ad4a4d.svg",
+    "static/media/0.svg": "/Spartakus-NFT/static/media/0.c9dc1cc2bd0cf5ae740e1c5c6bb2ad95.svg",
+    "static/media/1.svg": "/Spartakus-NFT/static/media/1.c28bc91c98287ca8e94643d87dca39b2.svg",
+    "static/media/14.svg": "/Spartakus-NFT/static/media/14.06d15f85aca54a47174b3b9fec303676.svg",
+    "static/media/2.svg": "/Spartakus-NFT/static/media/2.f28375756d7730c256c2abaaa9920dc7.svg",
+    "static/media/3.svg": "/Spartakus-NFT/static/media/3.12cd92c1e014fc82e9a3b8bf7f62a557.svg",
+    "static/media/discord.png": "/Spartakus-NFT/static/media/discord.6589a7968eacbed910e5.png",
+    "static/media/Avatar-1.png": "/Spartakus-NFT/static/media/Avatar-1.19f79b3032bb82898840.png",
+    "static/media/logo.png": "/Spartakus-NFT/static/media/logo.a1eb3a38e35d4e19fc79.png",
+    "index.html": "/Spartakus-NFT/index.html",
+    "main.644352f6.css.map": "/Spartakus-NFT/static/css/main.644352f6.css.map",
+    "main.a97cacff.js.map": "/Spartakus-NFT/static/js/main.a97cacff.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.644352f6.css",
+    "static/js/main.a97cacff.js"
+  ]
+}
