@@ -1,11 +1,14 @@
 {
   "files": {
-    "main.css": "/Spartakus-NFT/static/css/main.644352f6.css",
+    "main.css": "/Spartakus-NFT/static/css/main.692a0f98.css",
     "main.js": "/Spartakus-NFT/static/js/main.f080a7f4.js",
     "static/media/Helmet.png": "/Spartakus-NFT/static/media/Helmet.0795587518a93f73c391.png",
     "static/media/helmet.png": "/Spartakus-NFT/static/media/helmet.7f249b6d272b2eb0528c.png",
     "static/media/shoulder-1.png": "/Spartakus-NFT/static/media/shoulder-1.f47d5749fa904be6917a.png",
     "static/media/previewImg.png": "/Spartakus-NFT/static/media/previewImg.a0d12cafbb836cc50f9d.png",
+    "static/media/Cera-Pro-Black.otf": "/Spartakus-NFT/static/media/Cera-Pro-Black.614576adc349f1a332f3.otf",
+    "static/media/CeraProMedium.otf": "/Spartakus-NFT/static/media/CeraProMedium.2bc02ae84a1e73c231d6.otf",
+    "static/media/Cera-Pro-Light.otf": "/Spartakus-NFT/static/media/Cera-Pro-Light.e46c8e0b3ab25af6d9eb.otf",
     "static/media/shoulder1.png": "/Spartakus-NFT/static/media/shoulder1.d58fe4f85bceef50bf30.png",
     "static/media/token.png": "/Spartakus-NFT/static/media/token.fbbd3ee30fafe0a13b10.png",
     "static/media/10.svg": "/Spartakus-NFT/static/media/10.a1ea247d24bde18e6292e73db3e774fa.svg",
@@ -23,15 +26,16 @@
     "static/media/14.svg": "/Spartakus-NFT/static/media/14.06d15f85aca54a47174b3b9fec303676.svg",
     "static/media/2.svg": "/Spartakus-NFT/static/media/2.f28375756d7730c256c2abaaa9920dc7.svg",
     "static/media/3.svg": "/Spartakus-NFT/static/media/3.12cd92c1e014fc82e9a3b8bf7f62a557.svg",
+    "static/media/Maghfirea.ttf": "/Spartakus-NFT/static/media/Maghfirea.0c950375138aa8af7f79.ttf",
     "static/media/discord.png": "/Spartakus-NFT/static/media/discord.6589a7968eacbed910e5.png",
     "static/media/Avatar-1.png": "/Spartakus-NFT/static/media/Avatar-1.19f79b3032bb82898840.png",
     "static/media/logo.png": "/Spartakus-NFT/static/media/logo.a1eb3a38e35d4e19fc79.png",
     "index.html": "/Spartakus-NFT/index.html",
-    "main.644352f6.css.map": "/Spartakus-NFT/static/css/main.644352f6.css.map",
+    "main.692a0f98.css.map": "/Spartakus-NFT/static/css/main.692a0f98.css.map",
     "main.f080a7f4.js.map": "/Spartakus-NFT/static/js/main.f080a7f4.js.map"
   },
   "entrypoints": [
-    "static/css/main.644352f6.css",
+    "static/css/main.692a0f98.css",
     "static/js/main.f080a7f4.js"
   ]
 }
