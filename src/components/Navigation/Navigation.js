@@ -1,14 +1,14 @@
-import React, { useRef, useLayoutEffect } from 'react';
+import React from 'react';
 
 import styled from 'styled-components';
 
 
 const NavigationBar = styled.nav`
-        position: fixed;
+        position: absolute;
         top: 0;
         left: 50vw;
         width: 50vw;
-        z-index: 9999;
+        z-index: 9000;
         display: grid;
         grid-template-columns: 12% repeat(5, 1fr);
         .homeBut {
@@ -16,7 +16,7 @@ const NavigationBar = styled.nav`
         }
 
         .homeBut, .loreBut, .roadmapBut, .faqBut {
-            background: #5F021F;
+            background: transparent;
             border: none;
             font-size: 1.2vw;
             border-top: 7px solid transparent;
@@ -85,36 +85,7 @@ const NavigationBar = styled.nav`
 
 const Navigation = ({ currentPage, onLinkClick }) => {
 
-    const onScroll = () => {
-        // console.log(Math.floor(window.scrollY / window.innerHeight));
-        if (Math.floor(window.scrollY / window.innerHeight) >= 0 && Math.floor(window.scrollY / window.innerHeight) !== 1) {
-          for (let i = 0; i < document.getElementsByClassName('spanTitle').length; i++) {
-
-          }
-          for (let i = 0; i < document.getElementsByClassName('spanCount').length; i++) {
-
-          }
-          for (let i = 0; i < document.getElementsByClassName('spanHeader').length; i++) {
-
-          }
-        }
-        if (Math.floor(window.scrollY / window.innerHeight) === 1 || Math.floor(window.scrollY / window.innerHeight) === 3 || Math.floor(window.scrollY / window.innerHeight) === 8) {
-            for (let i = 0; i < document.getElementsByClassName('spanTitle').length; i++) {
-            }
-            for (let i = 0; i < document.getElementsByClassName('spanCount').length; i++) {
-            }
-            for (let i = 0; i < document.getElementsByClassName('spanHeader').length; i++) {
-            }
-        }
-        else {
-        }
-      };
-    
-      useLayoutEffect(() => {
-        window.addEventListener('scroll', onScroll);
-        return () => {window.removeEventListener('scroll', onScroll)};
-      });
-
+    console.log(currentPage);
 
   return (
     <NavigationBar page={currentPage}>

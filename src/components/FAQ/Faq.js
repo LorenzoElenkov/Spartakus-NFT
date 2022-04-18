@@ -3,12 +3,11 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 
 const StyledContainer = styled.div`
-    position: relative;
+    position: absolute;
     top: 0;
-    left: 0;
+    left: ${props => props.page === 7 ? '0' : '-120vw'};
     width: 100vw;
     height: 100vh;
-    // background: white;
     transition: left 0.5s ease-in-out;
     display: grid;
     grid-template-rows: 20% 10% max-content;

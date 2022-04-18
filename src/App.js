@@ -55,35 +55,37 @@ const App = () => {
 
 
   useEffect(() => {
-    // window.addEventListener('wheel', (e) => {
-    //   scrollCount.current += 1;
-    //   if (scrollCount.current > 16 && e.deltaY > 40 && e.deltaY < 46) {
-    //     scrollCount.current = 0;
-    //     if (moveNext === true) {
-    //       setCurrentPage(prev => (prev + 1));
-    //       setMoveNext(false);
-    //       setTimeout(() => {
-    //         setMoveNext(true);
-    //       }, 2000);
-    //     }
-    //   } else if (scrollCount.current > 16 && e.deltaY < -40 && e.deltaY > -46) {
-    //     console.log(scrollCount.current + ' ' + e.deltaY);
-    //     scrollCount.current = 0;
-    //     if (moveNext === true) {
-    //       setCurrentPage(prev => (prev - 1));
-    //       setMoveNext(false);
-    //       setTimeout(() => {
-    //         setMoveNext(true);
-    //       }, 2000);
-    //     }
-    //   }
-    // });
+    window.addEventListener('wheel', (e) => {
+      scrollCount.current += 1;
+      if (scrollCount.current > 16 && e.deltaY > 40 && e.deltaY < 46) {
+        scrollCount.current = 0;
+        if (moveNext === true) {
+          setCurrentPage(prev => (prev + 1));
+          setMoveNext(false);
+          setTimeout(() => {
+            setMoveNext(true);
+          }, 2000);
+        }
+      } else if (scrollCount.current > 16 && e.deltaY < -40 && e.deltaY > -46) {
+        console.log(scrollCount.current + ' ' + e.deltaY);
+        scrollCount.current = 0;
+        if (moveNext === true) {
+          setCurrentPage(prev => (prev - 1));
+          setMoveNext(false);
+          setTimeout(() => {
+            setMoveNext(true);
+          }, 2000);
+        }
+      }
+    });
     
   },[]);
 
   const handleLinkClick = (link) => {
     setCurrentPage(link);
   };
+
+
   return (
     <StyledApp>
       <Countdown currentPage={currentPage}/>

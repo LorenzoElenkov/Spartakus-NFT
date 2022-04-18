@@ -1,9 +1,9 @@
-import React, { useEffect, useState, useRef, useLayoutEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import styled from 'styled-components';
 
 const StyledCountdownContainer = styled.div`
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 20vw;
     width: 24vw;
@@ -45,6 +45,7 @@ const StyledCountdownContainer = styled.div`
 
 const Countdown = ({ currentPage }) => {
 
+    //1654030801000
     const releaseDate = 1654030800000;
     let diff2 = releaseDate - Date.now();
     const [diff, setDiff] = useState(releaseDate - Date.now());
@@ -65,49 +66,8 @@ const Countdown = ({ currentPage }) => {
         }, 1000);
     },[diff]);
 
-    const oneRef = useRef(null);
-  const twoRef = useRef(null);
-  const threeRef = useRef(null);
-  const thisRef = useRef(null);
-  let topPos = 0;
-  let offset = 0;
-  const onScroll = () => {
-    // console.log(Math.floor(window.scrollY / window.innerHeight));
-    if (Math.floor(window.scrollY / window.innerHeight) >= 0 && Math.floor(window.scrollY / window.innerHeight) !== 1) {
-      for (let i = 0; i < document.getElementsByClassName('spanTitle').length; i++) {
-        document.getElementsByClassName('spanTitle')[i].style.color = '#0f1026';
-      }
-      for (let i = 0; i < document.getElementsByClassName('spanCount').length; i++) {
-        document.getElementsByClassName('spanCount')[i].style.color = '#0f1026';
-      }
-      for (let i = 0; i < document.getElementsByClassName('spanHeader').length; i++) {
-        document.getElementsByClassName('spanHeader')[i].style.color = 'white';
-        document.getElementsByClassName('spanHeader')[i].style.backgroundColor = '#0f1026';
-      }
-    }
-    if (Math.floor(window.scrollY / window.innerHeight) === 1 || Math.floor(window.scrollY / window.innerHeight) === 3 || Math.floor(window.scrollY / window.innerHeight) === 8) {
-        for (let i = 0; i < document.getElementsByClassName('spanTitle').length; i++) {
-            document.getElementsByClassName('spanTitle')[i].style.color = 'white';
-        }
-        for (let i = 0; i < document.getElementsByClassName('spanCount').length; i++) {
-        document.getElementsByClassName('spanCount')[i].style.color = 'white';
-        }
-        for (let i = 0; i < document.getElementsByClassName('spanHeader').length; i++) {
-            document.getElementsByClassName('spanHeader')[i].style.color = '#0f1026';
-            document.getElementsByClassName('spanHeader')[i].style.backgroundColor = 'white';
-          }
-    }
-    else {
-    }
-  };
-
-  useLayoutEffect(() => {
-    window.addEventListener('scroll', onScroll);
-    return () => {window.removeEventListener('scroll', onScroll)};
-  });
-
   return (
-    <StyledCountdownContainer page={currentPage} >
+    <StyledCountdownContainer page={currentPage}>
         <span className='spanHeader'>WHITELIST SALE IN</span>
         <span className='spanTitle'>DAYS</span>
         <span className='spanTitle'>HOURS</span>
