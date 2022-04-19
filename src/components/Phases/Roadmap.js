@@ -1,12 +1,12 @@
-import React from 'react';
+import React, {useRef, useLayoutEffect, useEffect, useState} from 'react';
 
 import styled from 'styled-components';
 
 import trident from '../../images/roadmpa/trident.png';
 import shoulder from '../../images/roadmpa/shoulder1.png';
 const StyledRoadmapContainer = styled.div`
-    position: absolute;
-    top: ${props => props.page === 4 ? '0' : '-100%'};
+    position: relative;
+    top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
@@ -19,16 +19,18 @@ const StyledCorousel = styled.div`
     width: 95vw;
     height: 100%;
     display: grid;
-    grid-template-columns: repeat(3, max-content);
-    grid-template-rows: 25% 55% 20%;
+    grid-template-columns: repeat(3, 60%);
+    grid-template-rows: 15% 65% 20%;
     column-gap: 7vw;
-    overflow: scroll;
+    overflow-x: scroll;
+    overflow-y: hidden;
     position: relative;
     img {
         position: absolute;
         top: 60%;
-        left: 150%;
+        left: 173%;
         width: 20%;
+        transform: rotate(15deg);
     }
     
 `;
@@ -39,14 +41,14 @@ const StyledPhase = styled.div`
     grid-template-rows: 30% repeat(6, 1fr);
     grid-row: 2/2;
 
-    // &:last-child {
-    //     padding-right: 30vw;
-    // }
+    &:nth-child(3) {
+        padding-right: 30vw;
+    }
 
     .number {
         font-size: 30vw;
         color: white;
-        text-shadow: 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff;
+        text-shadow: 0 0 3px yellow, 0 0 3px yellow, 0 0 3px yellow, 0 0 3px yellow, 0 0 3px yellow, 0 0 3px yellow, 0 0 3px yellow;
         grid-column: 1/1;
         grid-row: 1/5; 
         padding-right: 2vw;
@@ -85,7 +87,7 @@ const StyledPhase = styled.div`
     .unorderedList {
         color: white;
         display: grid;
-        font-size: 1.1vw;
+        font-size: 1.3vw;
         row-gap: 1vw;
     }
 
@@ -113,9 +115,39 @@ const StyledPhase = styled.div`
 `;
 
 const Roadmap = ({ currentPage }) => {
+
+    const oneRef = useRef(null);
+  const twoRef = useRef(null);
+  const threeRef = useRef(null);
+  const thisRef = useRef(null);
+  let topPos = 0;
+  let offset = 0;
+  const onScroll = () => {
+    topPos = thisRef.current.getBoundingClientRect().top;
+    offset = ((window.innerHeight - topPos) / window.innerHeight).toFixed(2);
+    if (topPos > 30) {
+      oneRef.current.style.opacity = offset * 2 - 1;
+    }
+    else if (topPos < -30) {
+      oneRef.current.style.opacity = -(offset - 1)*3 + 1;
+    }
+    else {
+      oneRef.current.style.opacity = 1;
+    }
+  };
+
+  useLayoutEffect(() => {
+    window.addEventListener('scroll', onScroll);
+    oneRef?.current.addEventListener('click', () => {
+        oneRef.current.scrollLeft += 33;
+    })
+    return () => {window.removeEventListener('scroll', onScroll)};
+  });
+
+
   return (
-    <StyledRoadmapContainer page={currentPage}>
-        <StyledCorousel>
+    <StyledRoadmapContainer page={currentPage} ref={thisRef}>
+        <StyledCorousel ref={oneRef}>
             <StyledPhase>
                 <span className='number'>1</span>
                 <span className='title'>Phase I</span>

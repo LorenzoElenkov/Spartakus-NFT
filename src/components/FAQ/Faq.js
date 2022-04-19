@@ -3,9 +3,9 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 
 const StyledContainer = styled.div`
-    position: absolute;
+    position: relative;
     top: 0;
-    left: ${props => props.page === 7 ? '0' : '-120vw'};
+    left: 0;
     width: 100vw;
     height: 100vh;
     transition: left 0.5s ease-in-out;

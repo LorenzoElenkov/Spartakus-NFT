@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useLayoutEffect } from "react";
 
 import styled from "styled-components";
 
@@ -18,16 +18,18 @@ import twelveth from "../../images/Our Story/12.svg";
 import thirtheenth from "../../images/Our Story/13.svg";
 import fortheenth from "../../images/Our Story/14.svg";
 
+import heph from '../../images/heph.png';
+
 const StyledMapContainer = styled.div`
   @font-face {
     font-family: "Magh";
     src: url("./fonts/Maghfirea.otf");
   }
-  position: absolute;
+  position: relative;
   top: 0;
-  left: ${(props) => (props.page === 3 ? "0" : "-100%")};
-  width: 100%;
-  height: 100%;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
   background: white;
   display: grid;
   grid-template-columns: 50% 50%;
@@ -35,6 +37,7 @@ const StyledMapContainer = styled.div`
 `;
 
 const StyledMap = styled.img`
+  position: relative;
   width: 165%;
   align-self: center;
   justify-self: start;
@@ -46,7 +49,7 @@ const StyledMapText = styled.span`
   align-self: center;
   justify-self: center;
   display: grid;
-  grid-template-rows: 5% 1fr 1fr 1fr;
+  grid-template-rows: 5% max-content max-content max-content;
   width: 55%;
   heigth: 60%;
   row-gap: 4vh;
@@ -68,6 +71,11 @@ const StyledMapText = styled.span`
     letter-spacing: 0.7px;
     text-align: center;
     grid-row: 3/3;
+
+    img {
+      width: 50%;
+      opacity: 0.6;
+    }
   }
 
   .areaHint {
@@ -324,8 +332,50 @@ const StyledMapPointers = styled.div`
 const Map = ({ currentPage }) => {
   const [clickedArea, setClickedArea] = useState(0);
 
+  const oneRef = useRef(null);
+  const twoRef = useRef(null);
+  const threeRef = useRef(null);
+  const thisRef = useRef(null);
+  let topPos = 0;
+  let offset = 0;
+  const onScroll = () => {
+    topPos = thisRef.current.getBoundingClientRect().top;
+    offset = ((window.innerHeight - topPos) / window.innerHeight).toFixed(2);
+    if (topPos > 30) {
+      oneRef.current.style.opacity = offset * 2 - 1;
+      oneRef.current.style.left = -100 + offset * 100 + 'vw';
+      threeRef.current.style.left = -100 + offset * 100 + 'vw';
+      twoRef.current.style.opacity = offset * 2 - 1;
+    }
+    else if (topPos < -30) {
+      oneRef.current.style.opacity = -(offset - 1)*3 + 1;
+      threeRef.current.style.left = (offset - 1) * 50 + 'vw';
+      oneRef.current.style.left = (offset - 1) * 50 + 'vw';
+      twoRef.current.style.opacity = -(offset - 1)*8 + 1;
+      if (oneRef.current.style.opacity <= 0) {
+        oneRef.current.style.display = 'none';
+        threeRef.current.style.display = 'none';
+      } else {
+        oneRef.current.style.display = 'block';
+        threeRef.current.style.display = 'block';
+      }
+    }
+    else {
+      oneRef.current.style.opacity = 1;
+      oneRef.current.style.left = '0vw';
+      threeRef.current.style.left = '0vw';
+      twoRef.current.style.opacity = 1;
+    }
+  };
+
+  useLayoutEffect(() => {
+    window.addEventListener('scroll', onScroll);
+
+    return () => {window.removeEventListener('scroll', onScroll)};
+  });
+
   return (
-    <StyledMapContainer page={currentPage}>
+    <StyledMapContainer page={currentPage} ref={thisRef}>
       <StyledMap
         src={
           clickedArea === 0
@@ -359,8 +409,9 @@ const Map = ({ currentPage }) => {
             : thirtheenth
         }
         clicked={clickedArea}
+        ref={oneRef}
       />
-      <StyledMapPointers>
+      <StyledMapPointers ref={threeRef}>
         <button className="fourteen" alt="" onClick={() => setClickedArea(14)}>
           14
         </button>
@@ -404,16 +455,16 @@ const Map = ({ currentPage }) => {
           1
         </button>
       </StyledMapPointers>
-      <StyledMapText clicked={clickedArea}>
+      <StyledMapText clicked={clickedArea} ref={twoRef}>
         <span className="areaTitle">
           {clickedArea === 0
             ? "The map of Ancient Greece"
-            : `Area ${clickedArea}`}
+            : `HEPHAESTUS`}
         </span>
         <span className="areaText">
           {clickedArea === 0
             ? "This is the zone of the warfare between the divine tribes. Almighty Chaos has divided the land equally among the 14 Gods and their corresponding tribes.\n\nThe main goal of each God is to capture all of the areas and become the ruler of Ancient Greece! This could be done only when he defeats each tribe separately."
-            : "Some text about this area!"}
+            : <img src={heph} alt=''/>}
         </span>
         <span className="areaHint">
           Click an area on the map to find out more!

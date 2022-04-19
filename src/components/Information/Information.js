@@ -1,16 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useLayoutEffect } from 'react';
 import styled from 'styled-components';
 
 import informationImage from '../../images/Information/information.png';
 import informationHelmet2 from '../../images/Information/Helmet.png';
 import discordLogo from '../../images/Information/discord.png';
 import logoShlem from '../../images/Information/prosto-shlem.png';
-import logo from '../../images/Information/logo.png'
+import logo from '../../images/Information/logo.png';
+
+const StyledInfoContainer = styled.div`
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+`;
 
 const StyledWhiteBG = styled.div`
     position: absolute;
     top: 0;
-    left: ${props => props.page === 1 ? '0' : "-120vw"};
+    left: ${props => props.page === 1 ? '0' : "-100%"};
     width: 50%;
     height: 100%;
     background-color: white;
@@ -21,9 +29,8 @@ const StyledWhiteBG = styled.div`
 `; 
 
 const StyledBlueBG = styled.div`
-
     position: absolute;
-    top: ${props => props.page === 1 ? "0" : "-120vh"};
+    top: 0;
     left: 50%;
     width: 50%;
     height: 100%;
@@ -39,13 +46,13 @@ const StyledInformation = styled.img`
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    left: ${props => props.page === 1 ? '3vw' : "-120vw"};
+    left: 3vw;
     transition: left 0.5s ease-in-out;
 `;
 
 const StyledHelmet = styled.img`
-    position: absolute;
-    top: ${props => props.page === 1 ? '50%' : '-120vh'};
+    position: relative;
+    top: 50%;
     left: 49%;
     transform-origin: 50% 50%;
     transform: translateX(-50%) translateY(-50%);
@@ -175,16 +182,46 @@ const StyledLogo = styled.div`
 `;
 
 const Information = ({ currentPage }) => {
+
+    const oneRef = useRef(null);
+  const twoRef = useRef(null);
+  const threeRef = useRef(null);
+  const fourRef = useRef(null);
+  const thisRef = useRef(null);
+  let topPos = 0;
+  let offset = 0;
+  const onScroll = () => {
+    topPos = thisRef.current.getBoundingClientRect().top;
+    offset = ((window.innerHeight - topPos) / window.innerHeight).toFixed(2);
+    console.log(offset);
+    if (topPos < -30) {
+        oneRef.current.style.opacity = 1 - (offset - 1)*2;
+        twoRef.current.style.opacity = 1 - (offset - 1)*2;
+        threeRef.current.style.opacity = 1 - (offset - 1);
+        fourRef.current.style.opacity = 1 - (offset - 1)*2;
+    } else {
+        oneRef.current.style.opacity = 1;
+        twoRef.current.style.opacity = 1;
+        threeRef.current.style.opacity = 1;
+        fourRef.current.style.opacity = 1;
+    }
+  };
+
+  useLayoutEffect(() => {
+    window.addEventListener('scroll', onScroll);
+
+    return () => {window.removeEventListener('scroll', onScroll)};
+  });
     
     
     const [inside, setInside] = useState(true);
   return (
-    <>
+    <StyledInfoContainer ref={thisRef}>
         <StyledLogo>
             <img src={logoShlem} alt='helmet' className='logoShlem'/>
             <img src={logo} alt='heroes of olympus' className='logo'/>
         </StyledLogo>
-        <StyledWhiteBG page={currentPage}>
+        <StyledWhiteBG page={currentPage} ref={oneRef}>
             <div>
                 <StyledCPTH>
                     <span className='titleCollection'>Collection</span>
@@ -204,9 +241,9 @@ const Information = ({ currentPage }) => {
                 </StyledCPTH>
             </div>
         </StyledWhiteBG>
-        <StyledInformation page={currentPage} src={informationImage} alt='information'/>
-        <StyledHelmet page={currentPage} src={informationHelmet2} alt='helmet'/>
-        <StyledBlueBG page={currentPage}>
+        <StyledInformation page={currentPage} src={informationImage} alt='information' ref={twoRef}/>
+        <StyledHelmet page={currentPage} src={informationHelmet2} alt='helmet' ref={threeRef}/>
+        <StyledBlueBG page={currentPage} ref={fourRef}>
             <StyledHOO>
                 <span className={'titleBlue'}>Heroes of Olympus</span>
                 <span className={'textBlue'}>Collection of 10,878 ultra-realistic 3D heroes,
@@ -223,7 +260,7 @@ const Information = ({ currentPage }) => {
                 </button>
             </StyledHOO>
         </StyledBlueBG>
-    </>
+    </StyledInfoContainer>
   )
 }
 

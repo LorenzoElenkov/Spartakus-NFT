@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useLayoutEffect, useRef, useState } from "react";
 
 import styled from "styled-components";
 
@@ -6,27 +6,35 @@ import theHeader from "../../images/Our Story/Our Story.png";
 import helmet from "../../images/Our Story/helmet.png";
 import lines from "../../images/Our Story/Lines.png";
 
+const StyledStoryContainer = styled.div`
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  opacity: 1;
+`;
 
 const StyledHelmet = styled.img`
   position: absolute;
   top: 50%;
-  left: ${props => props.page === 2 ? '50%' : '-100%'};;
+  left: 50%;
   transform-origin: 50% 50%;
   transform: translateX(-50%) translateY(-50%);
   width: 20%;
-  opacity: ${(props) => (props.page === 2 ? "1" : "0")};
+  opacity: 1;
   transition: left 0.4s ease-in-out;
   z-index: 1;
 `;
 
 const StyledWhiteBG = styled.div`
   position: absolute;
-  top: ${(props) => (props.page === 2 ? "0" : "-100%")};
+  top: 0;
   left: 50%;
-  width: 50%;
+  width: 50vw;
   height: 100%;
   background: white;
-  transition: 0.5s top ease-in-out;
+  // transition: 0.25s left ease-in-out;
   display: grid;
   grid-template-columns: 26% 74%;
   grid-template-rows: repeat(8, 1fr);
@@ -35,14 +43,15 @@ const StyledWhiteBG = styled.div`
 const StyledBlueBG = styled.div`
   position: absolute;
   top: 0;
-  left: ${(props) => (props.page === 2 ? "0" : "-100%")};
+  left: -100%;
   width: 50%;
   height: 100%;
   background: #0f1026;
-  transition: 0.5s left ease-in-out;
+  // transition: 0.25s left ease-in-out;
   display: grid;
   grid-template-columns: 7.5% 85% 7.5%;
   grid-template-rows: repeat(8, 1fr);
+  opacity: ${props => props.opac};
 `;
 
 const StyledHeader = styled.img`
@@ -60,7 +69,7 @@ const StyledHeaderText = styled.span`
   font-size: 1.1vw;
   width: 74%;
   font-family: "Medium";
-  font-weight: 700;
+  // font-weight: 700;
   letter-spacing: 1.44px;
   line-height: 130%;
 `;
@@ -78,7 +87,7 @@ const StyledWhiteSecondaryText = styled.span`
     font-size: 1.1vw;
     font-family: 'Medium';
     letter-spacing: 1.44px;
-    font-weight: 600;
+    // font-weight: 600;
     line-height: 130%;
     width: 78%;
     margin-top: -5vw;
@@ -100,9 +109,48 @@ const StyledMap = styled.img`
 
 
 const Lore = ({ currentPage }) => {
+  const oneRef = useRef(null);
+  const twoRef = useRef(null);
+  const threeRef = useRef(null);
+  const thisRef = useRef(null);
+  let topPos = 0;
+  let offset = 0;
+  const onScroll = () => {
+    topPos = thisRef.current.getBoundingClientRect().top;
+    offset = ((window.innerHeight - topPos) / window.innerHeight).toFixed(2);
+    if (topPos > 30) {
+      oneRef.current.style.opacity = offset;
+      oneRef.current.style.left = -(100 - (offset * 100)) + 'vw';
+      twoRef.current.style.opacity = offset - 0.5;
+      threeRef.current.style.opacity = offset - 0.5;
+      // threeRef.current.style.left = (100 - (offset * 50)) + 'vw';
+      threeRef.current.style.top = 100 - (offset * 100) + 'vh';
+    }
+    else if (topPos < -30) {
+      oneRef.current.style.opacity = -offset + 2;
+      oneRef.current.style.left = 100 - offset * 100 + 'vw';
+      twoRef.current.style.opacity = -offset + 2;
+      threeRef.current.style.opacity = -offset -0.5 + 2;
+      // threeRef.current.style.left = offset * 50 + 'vw';
+      threeRef.current.style.top = 100 - (offset * 100) + 'vh';
+    }
+    else {
+      oneRef.current.style.opacity = 1;
+      oneRef.current.style.left = '0vw';
+      twoRef.current.style.opacity = 1;
+      threeRef.current.style.opacity = 1;
+    }
+  };
+
+  useLayoutEffect(() => {
+    window.addEventListener('scroll', onScroll);
+
+    return () => {window.removeEventListener('scroll', onScroll)};
+  });
+
   return (
-    <>
-      <StyledBlueBG page={currentPage}>
+    <StyledStoryContainer ref={thisRef}>
+      <StyledBlueBG page={currentPage} ref={oneRef} offset={offset}>
         <StyledHeader src={theHeader} />
         <StyledHeaderText>
           In the beginning, only the eternal and omnipotent Chaos existed.
@@ -120,8 +168,8 @@ const Lore = ({ currentPage }) => {
           into his hands.
         </StyledHeaderText>
       </StyledBlueBG>
-      <StyledHelmet src={helmet} alt="" page={currentPage} />
-      <StyledWhiteBG page={currentPage}>
+      <StyledHelmet src={helmet} alt="" page={currentPage} ref={twoRef}/>
+      <StyledWhiteBG page={currentPage} ref={threeRef}>
         <StyledWhiteLines src={lines}/>
         <StyledWhiteSecondaryText>
             The king of the Earth had to be the worthiest among
@@ -139,7 +187,7 @@ const Lore = ({ currentPage }) => {
             battle over Earth.
         </StyledWhiteSecondaryText>
       </StyledWhiteBG>
-    </>
+    </StyledStoryContainer>
   );
 };
 

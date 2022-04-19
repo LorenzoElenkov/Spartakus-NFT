@@ -5,11 +5,11 @@ import styled from 'styled-components';
 import avatar from '../../images/team/Avatar-1.png';
 
 const StyledContainer = styled.div`
-    position: absolute;
-    top: ${props => props.page === 8 ? '0' : '-100%'};
+    position: relative;
+    top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     background: white;
     display: grid;
     grid-template-rows: 25% 1fr 20%;

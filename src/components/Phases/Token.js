@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useLayoutEffect } from "react";
 
 import styled from "styled-components";
 
@@ -6,11 +6,11 @@ import shoulder from "../../images/roadmpa/shoulder-1.png";
 import tokenImg from '../../images/roadmpa/token.png';
 
 const StyledContainer = styled.div`
-  position: absolute;
-  top: ${(props) => (props.page === 6 ? "0" : "-120vh")};
+  position: relative;
+  top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   background: white;
   display: grid;
   grid-template-columns: 15% 1fr 1fr;
@@ -19,8 +19,11 @@ const StyledContainer = styled.div`
   transition: top 0.5s ease-in-out;
 
   .shoulder {
-    transform: translateX(-5vw) translateY(60vh);
-    width: 130%;
+    position: absolute;
+    top: 60vh;
+    left: -5vw;
+    width: 20%;
+    transform: rotate(-15deg);
   }
 
   .title {
@@ -53,11 +56,50 @@ const StyledContainer = styled.div`
 `;
 
 const Token = ({ currentPage }) => {
+
+  const oneRef = useRef(null);
+  const twoRef = useRef(null);
+  const threeRef = useRef(null);
+  const fourRef = useRef(null);
+  const thisRef = useRef(null);
+  let topPos = 0;
+  let offset = 0;
+  const onScroll = () => {
+    topPos = thisRef.current.getBoundingClientRect().top;
+    offset = ((window.innerHeight - topPos) / window.innerHeight).toFixed(2);
+    console.log(offset);
+    if (topPos > 30) {
+        oneRef.current.style.opacity = offset - 0.5;
+        // oneRef.current.style.left = offset * -5 + 'vw';
+        twoRef.current.style.opacity = offset - 0.5;
+        threeRef.current.style.opacity = offset - 0.5;
+        fourRef.current.style.opacity = offset - 0.5;
+      }
+      else if (topPos < -30) {
+        oneRef.current.style.opacity = -offset - 0.5 + 2;
+        twoRef.current.style.opacity = -offset - 0.5 + 2;
+        threeRef.current.style.opacity = -offset -0.5 + 2;
+        fourRef.current.style.opacity = -offset -0.5 + 2;
+      }
+      else {
+        oneRef.current.style.opacity = 1;
+        twoRef.current.style.opacity = 1;
+        threeRef.current.style.opacity = 1;
+        fourRef.current.style.opacity = 1;
+      }
+  };
+
+  useLayoutEffect(() => {
+    window.addEventListener('scroll', onScroll);
+
+    return () => {window.removeEventListener('scroll', onScroll)};
+  });
+
   return (
-    <StyledContainer page={currentPage}>
-      <img src={shoulder} alt="" className="shoulder" />
-      <span className="title">$HROM</span>
-      <span className="text">
+    <StyledContainer page={currentPage} ref={thisRef}>
+      <img src={shoulder} alt="" className="shoulder" ref={oneRef}/>
+      <span className="title" ref={twoRef}>$HROM</span>
+      <span className="text" ref={threeRef}>
         Storing the token will be available in every Solana wallet, for example
         Phantom. Swapping will mostly be available on Raydium and Saber.<br /> $HROM
         will be equally distributed among all of the tribes in the strategic
@@ -65,7 +107,7 @@ const Token = ({ currentPage }) => {
         amount of $HROM received. The coin will play a major role in the game’s
         mechanics.
       </span>
-      <img src={tokenImg} alt='' className='previewImg' />
+      <img src={tokenImg} alt='' className='previewImg' ref={fourRef}/>
     </StyledContainer>
   );
 };
