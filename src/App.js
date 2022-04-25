@@ -55,6 +55,7 @@ const App = () => {
   let scrollCount = useRef(0);
 
   const trackScroll = (e) => {
+    e.preventDefault();
     if (moveNext === true) {
       let delta = Math.sign(e.deltaY);
       if (currentPage === 1 && delta < 0) {

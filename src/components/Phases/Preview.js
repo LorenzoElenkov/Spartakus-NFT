@@ -83,7 +83,7 @@ const Preview = ({ currentPage }) => {
             <img src={previewImg} alt=''/>
             <img src={previewImg} alt=''/>
         </StyledCorouselPreview> */}
-        <Slider slidesToShow='3' className='slider' centerMode={true} autoplay={true} autoplaySpeed='3000' page={currentPage}>
+        <Slider slidesToShow='3' className='slider' centerMode={true} autoplay={true} autoplaySpeed='3000' page={currentPage} pauseOnHover={false}>
             <div>
                 <img src={trident} alt=''/>
             </div>
