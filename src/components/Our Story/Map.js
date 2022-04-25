@@ -1,4 +1,4 @@
-import React, { useState, useRef, useLayoutEffect } from "react";
+import React, { useState } from "react";
 
 import styled from "styled-components";
 
@@ -18,16 +18,30 @@ import twelveth from "../../images/Our Story/12.svg";
 import thirtheenth from "../../images/Our Story/13.svg";
 import fortheenth from "../../images/Our Story/14.svg";
 
-import heph from '../../images/heph.png';
+
+import hera from '../../images/map/hera.png';
+import zeus from '../../images/map/lightning.png';
+import aphro from '../../images/map/aphrodite.png';
+import artemis from '../../images/map/artemis.png';
+import heph from '../../images/map/hephaestus.png';
+import ares from '../../images/map/ares.png';
+import apollon from '../../images/map/apollo.png';
+import hermes from '../../images/map/hermes.png';
+import deimos from '../../images/map/hades.png';
+import athena from '../../images/map/athena.png';
+import nyx from '../../images/map/persephone.png';
+import thanatos from '../../images/map/titan.png';
+import hades from '../../images/map/cerberus.png';
+import poseidon from '../../images/map/trident.png';
 
 const StyledMapContainer = styled.div`
   @font-face {
     font-family: "Magh";
     src: url("./fonts/Maghfirea.otf");
   }
-  position: relative;
+  position: absolute;
   top: 0;
-  left: 0;
+  left: ${(props) => (props.page === 3 ? "0" : "-110vw")};
   width: 100vw;
   height: 100vh;
   background: white;
@@ -37,7 +51,6 @@ const StyledMapContainer = styled.div`
 `;
 
 const StyledMap = styled.img`
-  position: relative;
   width: 165%;
   align-self: center;
   justify-self: start;
@@ -49,9 +62,9 @@ const StyledMapText = styled.span`
   align-self: center;
   justify-self: center;
   display: grid;
-  grid-template-rows: 5% max-content max-content max-content;
+  grid-template-rows: 5% 1fr 1fr 1fr;
   width: 55%;
-  heigth: 60%;
+  height: 60%;
   row-gap: 4vh;
 
   .areaTitle {
@@ -71,11 +84,6 @@ const StyledMapText = styled.span`
     letter-spacing: 0.7px;
     text-align: center;
     grid-row: 3/3;
-
-    img {
-      width: 50%;
-      opacity: 0.6;
-    }
   }
 
   .areaHint {
@@ -91,6 +99,10 @@ const StyledMapText = styled.span`
     align-self: end;
     grid-row: 4/4;
     animation: hintAnimate 3s infinite;
+  }
+
+  .areaIcon {
+    width: 30%;
   }
 
   @keyframes hintAnimate {
@@ -331,51 +343,11 @@ const StyledMapPointers = styled.div`
 `;
 const Map = ({ currentPage }) => {
   const [clickedArea, setClickedArea] = useState(0);
-
-  const oneRef = useRef(null);
-  const twoRef = useRef(null);
-  const threeRef = useRef(null);
-  const thisRef = useRef(null);
-  let topPos = 0;
-  let offset = 0;
-  const onScroll = () => {
-    topPos = thisRef.current.getBoundingClientRect().top;
-    offset = ((window.innerHeight - topPos) / window.innerHeight).toFixed(2);
-    if (topPos > 30) {
-      oneRef.current.style.opacity = offset * 2 - 1;
-      oneRef.current.style.left = -100 + offset * 100 + 'vw';
-      threeRef.current.style.left = -100 + offset * 100 + 'vw';
-      twoRef.current.style.opacity = offset * 2 - 1;
-    }
-    else if (topPos < -30) {
-      oneRef.current.style.opacity = -(offset - 1)*3 + 1;
-      threeRef.current.style.left = (offset - 1) * 50 + 'vw';
-      oneRef.current.style.left = (offset - 1) * 50 + 'vw';
-      twoRef.current.style.opacity = -(offset - 1)*8 + 1;
-      if (oneRef.current.style.opacity <= 0) {
-        oneRef.current.style.display = 'none';
-        threeRef.current.style.display = 'none';
-      } else {
-        oneRef.current.style.display = 'block';
-        threeRef.current.style.display = 'block';
-      }
-    }
-    else {
-      oneRef.current.style.opacity = 1;
-      oneRef.current.style.left = '0vw';
-      threeRef.current.style.left = '0vw';
-      twoRef.current.style.opacity = 1;
-    }
-  };
-
-  useLayoutEffect(() => {
-    window.addEventListener('scroll', onScroll);
-
-    return () => {window.removeEventListener('scroll', onScroll)};
-  });
-
+  if (currentPage !== 3 && clickedArea !== 0) {
+    setClickedArea(0);
+  }
   return (
-    <StyledMapContainer page={currentPage} ref={thisRef}>
+    <StyledMapContainer page={currentPage}>
       <StyledMap
         src={
           clickedArea === 0
@@ -409,9 +381,8 @@ const Map = ({ currentPage }) => {
             : thirtheenth
         }
         clicked={clickedArea}
-        ref={oneRef}
       />
-      <StyledMapPointers ref={threeRef}>
+      <StyledMapPointers>
         <button className="fourteen" alt="" onClick={() => setClickedArea(14)}>
           14
         </button>
@@ -455,16 +426,16 @@ const Map = ({ currentPage }) => {
           1
         </button>
       </StyledMapPointers>
-      <StyledMapText clicked={clickedArea} ref={twoRef}>
+      <StyledMapText clicked={clickedArea}>
         <span className="areaTitle">
           {clickedArea === 0
             ? "The map of Ancient Greece"
-            : `HEPHAESTUS`}
+            : `${areasNames[clickedArea].name}`}
         </span>
         <span className="areaText">
           {clickedArea === 0
             ? "This is the zone of the warfare between the divine tribes. Almighty Chaos has divided the land equally among the 14 Gods and their corresponding tribes.\n\nThe main goal of each God is to capture all of the areas and become the ruler of Ancient Greece! This could be done only when he defeats each tribe separately."
-            : <img src={heph} alt=''/>}
+            : <img src={areasNames[clickedArea].icon} alt='' className='areaIcon'/>}
         </span>
         <span className="areaHint">
           Click an area on the map to find out more!
@@ -475,3 +446,21 @@ const Map = ({ currentPage }) => {
 };
 
 export default Map;
+
+const areasNames = [
+  {name: ''},
+  {name: 'Hera', icon: hera},
+  {name: 'Zeus', icon: zeus},
+  {name: 'Aphrodite', icon: aphro},
+  {name: 'Artemis', icon: artemis},
+  {name: 'Hephaestus', icon: heph},
+  {name: 'Ares', icon: ares},
+  {name: 'Apollon', icon: apollon},
+  {name: 'Hermes', icon: hermes},
+  {name: 'Deimos', icon: deimos},
+  {name: 'Athena', icon: athena},
+  {name: 'Nyx', icon: nyx},
+  {name: 'Thanatos', icon: thanatos},
+  {name: 'Hades', icon: hades},
+  {name: 'Poseidon', icon: poseidon},
+];

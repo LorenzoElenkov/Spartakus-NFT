@@ -5,22 +5,11 @@ import styled from 'styled-components';
 import helmet from '../../images/Information/prosto-shlem.png';
 import logo from '../../images/Information/logo.png';
 import discordLogo from '../../images/Information/discord.png';
-import twitterLogo from '../../images/twitter.png';
-import instaLogo from '../../images/instagram.png';
-import instaLogo2 from '../../images/instagram2.svg';
-
-const StyledContainer = styled.div`
-    position: relative;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-`;
 
 const StyledLightBlue = styled.div`
     position: absolute;
     top: 0;
-    left: 0;
+    left: ${props => props.page === 9 ? '0' : '-110vw'};
     width: 50%;
     height: 100%;
     background: #161b54;
@@ -76,7 +65,7 @@ const StyledLightBlue = styled.div`
 
 const StyledDarkBlue = styled.div`
     position: absolute;
-    top: 0;
+    top: ${props => props.page === 9 ? '0' : '-110vh'};
     left: 50%;
     width: 50%;
     height: 100%;
@@ -87,24 +76,9 @@ const StyledDarkBlue = styled.div`
     transition: top 0.5s ease-in-out;
 `;
 
-const StyledFixedIcons = styled.div`
-    position: fixed;
-    top: calc(100vh - 80px);
-    left: 80vw;
-    width: 20vw;
-    height: max-content;
-    font-size: 2vw;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    column-gap: 30px;
-    .img1, .img2, .img3 {
-        width: 50%;
-    }
-`;
-
 const Footer = ({ currentPage }) => {
   return (
-    <StyledContainer>
+    <>
         <StyledLightBlue page={currentPage}>
             <img src={helmet} alt=''/>
             <img src={logo} alt=''/>
@@ -117,13 +91,14 @@ const Footer = ({ currentPage }) => {
             </ul>
         </StyledLightBlue>
         <StyledDarkBlue page={currentPage}>
+            {/* <button className='discordButton'>
+                <span className='discordText'>
+                    Join our Discord 
+                </span>
+                <img className='discordLogo' src={discordLogo} alt=''/>
+            </button> */}
         </StyledDarkBlue>
-        <StyledFixedIcons>
-            <img src={instaLogo2} alt='instagram' className='img1'/>
-            <img src={twitterLogo} alt='twitter' className='img2'/>
-            <img src={discordLogo} alt='discord' className='img3'/>
-        </StyledFixedIcons>
-    </StyledContainer>
+    </>
   )
 }
 

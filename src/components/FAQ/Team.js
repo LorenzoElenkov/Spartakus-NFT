@@ -2,11 +2,15 @@ import React from 'react';
 
 import styled from 'styled-components';
 
-import avatar from '../../images/team/Avatar-1.png';
+import black from '../../images/2 black.png';
+import red from '../../images/2 red.png';
+import blue from '../../images/2 blue.png';
+import purple from '../../images/2 purple.png';
+import green from '../../images/2 green.png';
 
 const StyledContainer = styled.div`
-    position: relative;
-    top: 0;
+    position: absolute;
+    top: ${props => props.page === 8 ? '0' : '-110vh'};
     left: 0;
     width: 100vw;
     height: 100vh;
@@ -28,7 +32,7 @@ const StyledContainer = styled.div`
     .teamContainer {
         background: #0f1026;
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(5, 1fr);
     }
 
     .teamContainer span {
@@ -37,15 +41,16 @@ const StyledContainer = styled.div`
         letter-spacing: 1px;
     }
 
-    .img1, .img2, .img3, .img4 {
+    .img1, .img2, .img3, .img4, .img5 {
         grid-row: 1/1;
         justify-self: center;
         align-self: end;
         background: white;
-        border-radius: 50vw;
+        /* border-radius: 50vw; */
+        width: 75%;
     }
 
-    .name1, .name2, .name3, .name4 {
+    .name1, .name2, .name3, .name4, .name5 {
         color: white;
         grid-row: 2/2;
         justify-self: center;
@@ -89,33 +94,40 @@ const Team = ({ currentPage }) => {
     <StyledContainer page={currentPage}>
         <span className='teamTitle'>Meet the Team</span>
         <div className='teamContainer'>
-            <img src={avatar} alt='' className='img1'/>
+            <img src={red} alt='' className='img1'/>
             <span className='name1'>
-                Kalin Danailov
+                Hades' Hoplite
             </span>
             <span className='ceo'>
-                CEO
+                Blockchain Developer
             </span>
-            <img src={avatar} alt='' className='img2'/>
+            <img src={blue} alt='' className='img2'/>
             <span className='name2'>
-                Martin Chaushev
+                Poseidon's Hoplite
             </span>
             <span className='ceo'>
-                CEO
+                3D Art Designer
             </span>
-            <img src={avatar} alt='' className='img3'/>
+            <img src={black} alt='' className='img3'/>
             <span className='name3'>
-                Anton G.
+                Thanatos' Hoplite
             </span>
             <span className='ceo'>
-                CEO
+                Marketing Manager
             </span>
-            <img src={avatar} alt='' className='img4'/>
+            <img src={green} alt='' className='img4'/>
             <span className='name4'>
-                Lips Umgq
+                Artemis' Hoplite
             </span>
             <span className='ceo'>
-                CEO
+                Discord Manager
+            </span>
+            <img src={purple} alt='' className='img5'/>
+            <span className='name5'>
+                Nyx's Hoplite
+            </span>
+            <span className='ceo'>
+                Founder
             </span>
         </div>
         <span className='dropEmail'>
@@ -124,7 +136,7 @@ const Team = ({ currentPage }) => {
             </span>
             <span className='subtextStill'>
                 Can't find the answer you're looking for? <br />
-                Shoot us an email at <span className='underline'>heroesofolympus@info.com</span>
+                Drop us a line in our dedicated Discord channel!
             </span>
         </span>
     </StyledContainer>

@@ -3,9 +3,9 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 
 const StyledContainer = styled.div`
-    position: relative;
+    position: absolute;
     top: 0;
-    left: 0;
+    left: ${props => props.page === 7 ? '0' : '-110vw'};
     width: 100vw;
     height: 100vh;
     transition: left 0.5s ease-in-out;
@@ -34,7 +34,7 @@ const StyledContainer = styled.div`
 const StyledAccordion = styled.div`
     display: grid;
     grid-template-rows: repeat(autofill, max-content);
-    row-gap: 60px;
+    row-gap: 25px;
     margin-top: 20px;
     div {
         justify-self: center;
@@ -90,6 +90,7 @@ const StyledAccordion = styled.div`
         font-size: 1.2vw;
         font-weight: 0;
         transition: all 0.5s;
+        width: 100%;
     }
 
     div span.active {
@@ -121,7 +122,7 @@ const Faq = ({ currentPage }) => {
                         }}}>
                     Q: What blockchain will you launch on?
                     <span className={question === 1 ? 'accordionAnswer1 active' : 'accordionAnswer1'} question={question}>
-                    A: "Heroes of Olympus" will launch on the Solana blockchain, because of its low fees and quick transactions. das dsad asd sadas das dsad asd asdas das das das dsadasdas
+                    A: "Heroes of Olympus" will launch on the Solana blockchain, because of its low fees and quick transactions.
                 </span>
                 </span>
             </div>
@@ -134,7 +135,7 @@ const Faq = ({ currentPage }) => {
                         }}}>
                     Q: How many Heroes will be available?
                     <span className={question === 2 ? 'accordionAnswer2 active' : 'accordionAnswer2'}>
-                    A: Some text answer das dsa dasd sadasdas dsa dsad sad asd asd as dasd as.
+                    A: The whole collection will be made of 10,878 Heroes. <br /> There will be 14 tribes, each one will contain 777 Heroes, with one GOD to lead them.
                 </span>
                 </span>
             </div>
@@ -145,9 +146,17 @@ const Faq = ({ currentPage }) => {
                         } else {
                             setQuestion(3);
                         }}}>
-                    Q: How can I get whitelisted? How many spots there will be?
+                    Q: Will there be different class rarities?
                     <span className={question === 3 ? 'accordionAnswer3 active' : 'accordionAnswer3'}>
-                    A: Some text answer.
+                    A: Yes. There will be 6 class rarities. <br /> Each tribe will contain: <br />
+                    <ul>
+                        <li>Warrior (366)</li>
+                        <li>Hoplite (222)</li>
+                        <li>Archer (111)</li>
+                        <li>Mage (55)</li>
+                        <li>Champion (22)</li>
+                        <li>GOD (1)</li>
+                    </ul>
                 </span>
                 </span>
             </div>
@@ -158,9 +167,9 @@ const Faq = ({ currentPage }) => {
                         } else {
                             setQuestion(4);
                         }}}>
-                    Q: What is the mint price?
+                    Q: How can I get whitelisted? How many spots there will be?
                     <span className={question === 4 ? 'accordionAnswer4 active' : 'accordionAnswer4'}>
-                    A: Some text answer.
+                    A: Whitelist spots will be given in both our Discord and Twitter for community contributors and giveaway winners. <br /> There will be 1,878 WL spots.
                 </span>
                 </span>
             </div>
@@ -171,9 +180,9 @@ const Faq = ({ currentPage }) => {
                         } else {
                             setQuestion(5);
                         }}}>
-                    Q: What will happen with the royalties?
+                    Q: What is the mint price?
                     <span className={question === 5 ? 'accordionAnswer1 active' : 'accordionAnswer1'}>
-                    A: Some text answer.
+                    A: The mint price is still to be declared.
                 </span>
                 </span>
             </div>
@@ -184,9 +193,48 @@ const Faq = ({ currentPage }) => {
                         } else {
                             setQuestion(6);
                         }}}>
-                    Q: Which marketplaces will our NFTs be available on?
+                    Q: When is the mint date?
                     <span className={question === 6 ? 'accordionAnswer6 active' : 'accordionAnswer6'}>
-                    A: Some text answer.
+                    A: The mint will be at the end of June with no exact date, for now.
+                </span>
+                </span>
+            </div>
+            <div>
+                <span className={question === 7 ? 'accordionOption6 active' : question === 0 ? 'accordionOption6' : 'accordionOption6 inactive'} onClick={() => {
+                    if (question === 7) {
+                        setQuestion(0);
+                        } else {
+                            setQuestion(7);
+                        }}}>
+                    Q: What will happen with the royalties?
+                    <span className={question === 7 ? 'accordionAnswer6 active' : 'accordionAnswer6'}>
+                    A: 30% of the royalties will be distributed amongst holders. The other 70% will be used to fill the $HROM liquidity pool, which will be our cryptocurrency.
+                </span>
+                </span>
+            </div>
+            <div>
+                <span className={question === 8 ? 'accordionOption6 active' : question === 0 ? 'accordionOption6' : 'accordionOption6 inactive'} onClick={() => {
+                    if (question === 8) {
+                        setQuestion(0);
+                        } else {
+                            setQuestion(8);
+                        }}}>
+                    Q: What is DAO?
+                    <span className={question === 8 ? 'accordionAnswer6 active' : 'accordionAnswer6'}>
+                    A: DAO is a decentralized autonomous organization, where HO holders make decisions for its development.
+                </span>
+                </span>
+            </div>
+            <div>
+                <span className={question === 9 ? 'accordionOption6 active' : question === 0 ? 'accordionOption6' : 'accordionOption6 inactive'} onClick={() => {
+                    if (question === 9) {
+                        setQuestion(0);
+                        } else {
+                            setQuestion(9);
+                        }}}>
+                    Q: On which marketplaces our NFTs will be available?
+                    <span className={question === 9 ? 'accordionAnswer6 active' : 'accordionAnswer6'}>
+                    A: You will be able to find us on Solanart, Magic Eden, and SolSea.
                 </span>
                 </span>
             </div>

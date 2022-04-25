@@ -48,42 +48,81 @@ const StyledApp = styled.div`
 
 
 const App = () => {
-  const [moveNext, setMoveNext] = useState(true);
+  // const [moveNext, setMoveNext] = useState(false);
+  let moveNext = false;
+
   const [currentPage, setCurrentPage] = useState(1);
   let scrollCount = useRef(0);
-  let windowScroll = 0;
 
+  const trackScroll = (e) => {
+    if (moveNext === true) {
+      let delta = Math.sign(e.deltaY);
+      if (currentPage === 1 && delta < 0) {
+        scrollCount.current = 0;
+      } else if (currentPage === 9 && delta > 0) {
+        scrollCount.current = 0;
+      } else {
+        scrollCount.current += delta;
+        console.log(scrollCount.current);
+      }
+    }
+
+      if (scrollCount.current > 20 && moveNext === true && currentPage < 9) {
+        moveNext = false;
+        setCurrentPage(prev => (prev + 1));
+        
+      } else if (scrollCount.current < -20 && moveNext === true && currentPage > 1) {
+        moveNext = false;
+        setCurrentPage(prev => (prev - 1));
+      }
+  };
 
   useEffect(() => {
+
+    // setTimeout(() => {
+    //   setMoveNext(true);
+    //   console.log(moveNext);
+    // }, 2000);
     // window.addEventListener('wheel', (e) => {
     //   scrollCount.current += 1;
     //   if (scrollCount.current > 16 && e.deltaY > 40 && e.deltaY < 46) {
     //     scrollCount.current = 0;
     //     if (moveNext === true) {
     //       setCurrentPage(prev => (prev + 1));
-    //       setMoveNext(false);
-    //       setTimeout(() => {
-    //         setMoveNext(true);
-    //       }, 2000);
     //     }
     //   } else if (scrollCount.current > 16 && e.deltaY < -40 && e.deltaY > -46) {
-    //     console.log(scrollCount.current + ' ' + e.deltaY);
     //     scrollCount.current = 0;
     //     if (moveNext === true) {
     //       setCurrentPage(prev => (prev - 1));
-    //       setMoveNext(false);
-    //       setTimeout(() => {
-    //         setMoveNext(true);
-    //       }, 2000);
     //     }
     //   }
     // });
-    
-  },[]);
 
+    
+    
+  },[currentPage]);
+
+  useEffect(() => {
+    scrollCount.current = 0;
+    const move = setTimeout(() => {
+      moveNext = true;
+      scrollCount.current = 0;
+      window.addEventListener('wheel', trackScroll);
+      console.log(`moveNext: ${moveNext}`);
+    }, 1500);
+    return () => {
+      window.removeEventListener('wheel', trackScroll);
+      scrollCount.current = 0;
+      clearTimeout(move);
+      console.log('asd');
+    }
+  },[currentPage])
+  
   const handleLinkClick = (link) => {
     setCurrentPage(link);
   };
+
+
   return (
     <StyledApp>
       <Countdown currentPage={currentPage}/>

@@ -1,26 +1,29 @@
-import React, { useRef, useLayoutEffect} from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
-import previewImg from '../../images/roadmpa/previewImg.png';
-import trident from '../../images/roadmpa/trident.png';
+import previewImg from '../../images/previewIcon.png';
+import trident from '../../images/trident.png';
+
+import Slider from 'infinite-react-carousel';
 
 const StyledContainer = styled.div`
-    position: relative;
+    position: absolute;
     top: 0;
-    left: 0;
+    left: ${props => props.page === 5 ? '0' : '-110vw'};
     width: 100vw;
     height: 100vh;
-    // background: white;
+    background: white;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 20% 5% 1fr;
+    grid-template-rows: 20% 5% 5% 5% 1fr;
     transition: left 0.5s ease-in-out;
 
 
     .tridentImg {
-        width: 2.8%;
+        width: 5%;
         justify-self: center;
         align-self: end;
+        grid-row: 2/2;
     }
 
     .previewText {
@@ -28,71 +31,75 @@ const StyledContainer = styled.div`
         font-size: 2.5vw;
         justify-self: center;
         height: max-content;
+        grid-row: 3/3;
+    }
+
+    .slider {
+        grid-row: 5/5;
+        display: ${props => props.page === 5 ? 'block' : 'none'};
+    }
+
+    .slider div {
+        height: 80%;
+    }
+
+    .slider img {
+        width: 80%;
+        box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.5);
     }
 `;
 
-const StyledCorouselPreview = styled.div`
-    width: 100vw;
-    height: 100%;
-    overflow-x: scroll;
-    overflow-y: hidden;
-    display: grid;
-    grid-template-columns: repeat(5, 25%);
-    column-gap: 3vw;
-    img {
-        // width: 100%;
-    }
-`;
+// const StyledCorouselPreview = styled.div`
+//     grid-row: 5/5;
+//     width: 100vw;
+//     height: 100%;
+//     overflow-x: scroll;
+//     display: grid;
+//     grid-template-columns: 1% repeat(5, 25%) 1%;
+//     column-gap: 3vw;
+//     /* background: red; */
+//     /* padding: 50px 50px; */
+//     img {
+//         width: 100%;
+//         box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.5);
+//     }
+
+//     img:nth-child(1) {
+//         grid-column: 2/2;
+//     }
+// `;
 
 
 
 const Preview = ({ currentPage }) => {
-
-
-    const oneRef = useRef(null);
-  const twoRef = useRef(null);
-  const threeRef = useRef(null);
-  const thisRef = useRef(null);
-  let topPos = 0;
-  let offset = 0;
-  const onScroll = () => {
-    topPos = thisRef.current.getBoundingClientRect().top;
-    offset = ((window.innerHeight - topPos) / window.innerHeight).toFixed(2);
-    console.log(offset);
-    if (topPos > 30) {
-        oneRef.current.style.opacity = offset - 0.5;
-        twoRef.current.style.opacity = offset - 0.5;
-        threeRef.current.style.opacity = offset - 0.5;
-      }
-      else if (topPos < -30) {
-        oneRef.current.style.opacity = -offset - 0.5 + 2;
-        twoRef.current.style.opacity = -offset - 0.5 + 2;
-        threeRef.current.style.opacity = -offset -0.5 + 2;
-      }
-      else {
-        oneRef.current.style.opacity = 1;
-        twoRef.current.style.opacity = 1;
-        threeRef.current.style.opacity = 1;
-      }
-  };
-
-  useLayoutEffect(() => {
-    window.addEventListener('scroll', onScroll);
-
-    return () => {window.removeEventListener('scroll', onScroll)};
-  });
-
   return (
-    <StyledContainer page={currentPage} ref={thisRef}>
-        <img src={trident} alt='' className='tridentImg' ref={oneRef}/>
-        <span className='previewText' ref={twoRef}>Preview our Collection</span>
-        <StyledCorouselPreview ref={threeRef}>
+    <StyledContainer page={currentPage}>
+        <img src={trident} alt='' className='tridentImg'/>
+        <span className='previewText'>Preview our Collection</span>
+        {/* <StyledCorouselPreview>
             <img src={previewImg} alt=''/>
             <img src={previewImg} alt=''/>
             <img src={previewImg} alt=''/>
             <img src={previewImg} alt=''/>
             <img src={previewImg} alt=''/>
-        </StyledCorouselPreview>
+        </StyledCorouselPreview> */}
+        <Slider slidesToShow='3' className='slider' centerMode={true} autoplay={true} autoplaySpeed='3000' page={currentPage}>
+            <div>
+                <img src={trident} alt=''/>
+            </div>
+            <div>
+                <img src={previewImg} alt=''/>
+            </div>
+            <div>
+                <img src={previewImg} alt=''/>
+            </div>
+            <div>
+                <img src={previewImg} alt=''/>
+            </div>
+            <div>
+                <img src={previewImg} alt=''/>
+            </div>
+        </Slider>
     </StyledContainer>
   )
 }
