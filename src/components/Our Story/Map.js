@@ -51,9 +51,10 @@ const StyledMapContainer = styled.div`
 `;
 
 const StyledMap = styled.img`
-  width: 165%;
+  margin-top: 8%;
+  width: 85%;
   align-self: center;
-  justify-self: start;
+  justify-self: end;
   grid-row: 1/1;
   grid-column: 1/1;
 `;
@@ -118,13 +119,14 @@ const StyledMapText = styled.span`
 
 const StyledMapPointers = styled.div`
   position: relative;
-  width: 75%;
-  height: 45vw;
+  width: 80%;
+  height: 50vw;
   grid-row: 1/1;
   grid-column: 1/1;
-  transform: translateX(47.5%) translateY(-2.5%);
+  transform: translateX(20%) translateY(1.5%);
   align-self: center;
   z-index: 9001;
+  /* background: green; */
   .one {
     position: absolute;
     top: 10%;

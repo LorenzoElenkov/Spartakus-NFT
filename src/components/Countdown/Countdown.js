@@ -16,7 +16,7 @@ const StyledCountdownContainer = styled.div`
         font-weight: 600;
         letter-spacing: 2px;
         justify-self: center;
-        color: ${props => props.page === 2 || props.page === 4 || props.page === 7 || props.page === 9 ? 'white' : '#0f1026'};
+        color: ${props => props.page === 2 || props.page === 4 || props.page === 9 ? 'white' : '#0f1026'};
         transition: color 0.5s ease-in-out;
     }
 
@@ -24,7 +24,7 @@ const StyledCountdownContainer = styled.div`
         font-size: 1vw;
         margin-top: 1vh;
         justify-self: center;
-        color: ${props => props.page === 2 || props.page === 4 || props.page === 7 || props.page === 9 ? 'white' : '#0f1026'};
+        color: ${props => props.page === 2 || props.page === 4 || props.page === 9 ? 'white' : '#0f1026'};
         transition: color 0.5s ease-in-out;
         font-family: 'Magh';
     }

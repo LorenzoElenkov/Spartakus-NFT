@@ -3,7 +3,8 @@ import React from "react";
 import styled from "styled-components";
 
 import theHeader from "../../images/Our Story/Our Story.png";
-import helmet from "../../images/Our Story/helmet.png";
+// import helmet from "../../images/Our Story/helmet.png";
+import helmet from "../../images/shlem200.png";
 import lines from "../../images/Our Story/Lines.png";
 
 
@@ -12,8 +13,8 @@ const StyledHelmet = styled.img`
   top: 50%;
   left: ${props => props.page === 2 ? '50%' : '-100%'};;
   transform-origin: 50% 50%;
-  transform: translateX(-50%) translateY(-50%);
-  width: 20%;
+  transform: translateX(-52%) translateY(-50%);
+  width: 47%;
   opacity: ${(props) => (props.page === 2 ? "1" : "0")};
   transition: left 0.4s ease-in-out;
   z-index: 1;

@@ -9,6 +9,7 @@ import instagram2 from '../../images/instagram4.svg';
 import twitter2 from '../../images/twitter4.svg';
 import discord2 from '../../images/discord4.svg';
 
+
 const SocialBar = styled.div`
     position: absolute;
     width: 30vw;
@@ -23,8 +24,8 @@ const SocialBar = styled.div`
     align-items: center;
 
     .instagram, .twitter, .discord {
-        width: 4vw;
-        height: 4vw;
+        width: 3vw;
+        height: 3vw;
         background: none;
         border: none;
     }
@@ -126,43 +127,44 @@ const NavigationBar = styled.nav`
 
 const Navigation = ({ currentPage, onLinkClick }) => {
 
+    const snd = new Audio('./clicksound.wav');
 
   return (
       <>
         <NavigationBar page={currentPage}>
-            <button className={currentPage === 1 ? 'homeBut active' : 'homeBut'} onClick={() => {onLinkClick(1)}}>Home</button>
+            <button className={currentPage === 1 ? 'homeBut active' : 'homeBut'} onClick={() => {onLinkClick(1); snd.play()}}>Home</button>
             <button className={currentPage >= 2 && currentPage <= 3 ? 'loreBut active' : 'loreBut'}>
                 Lore
                 <div className='innerMenuLore' page={currentPage}>
                     <span className='innerLorePointer'>\/</span>
-                    <button page={currentPage} onClick={() => {onLinkClick(2)}}>Story</button>
-                    <button page={currentPage} onClick={() => {onLinkClick(3)}}>Ancient Map</button>
+                    <button page={currentPage} onClick={() => {onLinkClick(2); snd.play()}}>Story</button>
+                    <button page={currentPage} onClick={() => {onLinkClick(3); snd.play()}}>Ancient Map</button>
                 </div>
             </button>
             <button className={currentPage > 3 && currentPage <= 6? 'roadmapBut active' : 'roadmapBut'}>
                 Roadmap
                 <div className='innerMenuRoadmap' page={currentPage}>
                     <span className='innerLorePointer'>\/</span>
-                    <button page={currentPage} onClick={() => {onLinkClick(4)}}>Roadmap</button>
-                    <button page={currentPage} onClick={() => {onLinkClick(5)}}>The Collection</button>
-                    <button page={currentPage} onClick={() => {onLinkClick(6)}}>Token</button>
+                    <button page={currentPage} onClick={() => {onLinkClick(4); snd.play()}}>Roadmap</button>
+                    <button page={currentPage} onClick={() => {onLinkClick(5); snd.play()}}>The Collection</button>
+                    <button page={currentPage} onClick={() => {onLinkClick(6); snd.play()}}>Token</button>
                 </div>
             </button>
             <button className={currentPage > 6 ? 'faqBut active' : 'faqBut'}>
                 FAQ
                 <div className='innerMenuFaq' page={currentPage}>
                     <span className='innerLorePointer'>\/</span>
-                    <button page={currentPage} onClick={() => {onLinkClick(7)}}>FAQ</button>
-                    <button page={currentPage} onClick={() => {onLinkClick(8)}}>Our Team</button>
-                    <button page={currentPage} onClick={() => {onLinkClick(9)}}>Contact</button>
+                    <button page={currentPage} onClick={() => {onLinkClick(7); snd.play()}}>FAQ</button>
+                    <button page={currentPage} onClick={() => {onLinkClick(8); snd.play()}}>Our Team</button>
+                    <button page={currentPage} onClick={() => {onLinkClick(9); snd.play()}}>Contact</button>
                 </div>
             </button>
         </NavigationBar>
 
         <SocialBar>
-            <button className='instagram'><img src={currentPage === 1 || currentPage === 4 || currentPage === 9 ? instagram2 : instagram} alt=''/></button>
-            <button className='twitter'><img src={currentPage === 1 || currentPage === 4 || currentPage === 9 ? twitter2 : twitter} alt=''/></button>
-            <button className='discord'><img src={currentPage === 1 || currentPage === 4 || currentPage === 9 ? discord2 : discord} alt=''/></button>
+            <a className='instagram' href='https://www.instagram.com/heroesofolympus_nft/' target='_blank' referrerPolicy='no-referrer'><img src={currentPage === 1 || currentPage === 4 || currentPage === 9 ? instagram2 : instagram} alt=''/></a>
+            <a className='twitter' href='https://twitter.com/Heroes_Olympus_' target='_blank' referrerPolicy='no-referrer'><img src={currentPage === 1 || currentPage === 4 || currentPage === 9 ? twitter2 : twitter} alt=''/></a>
+            <a className='discord' href='https://discord.gg/XHPyntDaF4' target='_blank' referrerPolicy='no-referrer'><img src={currentPage === 1 || currentPage === 4 || currentPage === 9 ? discord2 : discord} alt=''/></a>
         </SocialBar>
     </>
   )

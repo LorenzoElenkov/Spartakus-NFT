@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-import informationImage from '../../images/Information/information.png';
-import informationHelmet2 from '../../images/Information/Helmet.png';
+import informationImage from '../../images/motivinfo.svg';
+import informationHelmet2 from '../../images/shlem100.png';
 import discordLogo from '../../images/Information/discord.png';
 import logoShlem from '../../images/Information/prosto-shlem.png';
 import logo from '../../images/Information/logo.png'
@@ -35,7 +35,7 @@ const StyledBlueBG = styled.div`
 `;
 
 const StyledInformation = styled.img`
-    height: 25vmax;
+    height: 100vh;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -49,7 +49,7 @@ const StyledHelmet = styled.img`
     left: 49%;
     transform-origin: 50% 50%;
     transform: translateX(-50%) translateY(-50%);
-    width: 37.5%;
+    width: 47%;
     z-index: 1;
     opacity: ${props => props.page === 1 ? '1' : '0'};
     transition: top 0.4s ease-in-out;
@@ -162,25 +162,27 @@ const StyledLogo = styled.div`
     padding: 10px 1vw;
     align-items: center;
 
+    &:hover {
+        cursor: pointer;
+    }
+
     .logoShlem {
         justify-self: center;
-        // height: 80%;
         width: 2.5vw;
     }
 
     .logo {
-        // width: 80%;
         width: 8vw;
     }
 `;
 
-const Information = ({ currentPage }) => {
+const Information = ({ currentPage, onLinkClick }) => {
     
     
     const [inside, setInside] = useState(true);
   return (
     <>
-        <StyledLogo>
+        <StyledLogo onClick={() => onLinkClick(1)}>
             <img src={logoShlem} alt='helmet' className='logoShlem'/>
             <img src={logo} alt='heroes of olympus' className='logo'/>
         </StyledLogo>

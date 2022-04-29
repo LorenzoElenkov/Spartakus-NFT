@@ -2,7 +2,7 @@ import React from "react";
 
 import styled from "styled-components";
 
-import shoulder from "../../images/roadmpa/shoulder-1.png";
+import shoulder from "../../images/shlem4.png";
 import tokenImg from '../../images/roadmpa/token.png';
 
 const StyledContainer = styled.div`
@@ -19,8 +19,11 @@ const StyledContainer = styled.div`
   transition: top 0.5s ease-in-out;
 
   .shoulder {
-    transform: translateX(-5vw) translateY(60vh);
-    width: 130%;
+    position: absolute;
+    transform: translateX(-15vw) rotate(-20deg) translateY(90%);
+    width: 22%;
+    background: red;
+    /* height: 10%; */
   }
 
   .title {
@@ -43,9 +46,9 @@ const StyledContainer = styled.div`
   }
 
   .previewImg {
-      grid-column: 3/3;
-      grid-row: 2/2;
-    width: 90%;
+    grid-column: 3/3;
+    grid-row: 2/2;
+    width: 80%;
     margin-top: -25%;
     box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.5);
   }

@@ -128,7 +128,7 @@ const App = () => {
     <StyledApp>
       <Countdown currentPage={currentPage}/>
       <Navigation currentPage={currentPage} onLinkClick={handleLinkClick}/>
-      <Information currentPage={currentPage}/>
+      <Information currentPage={currentPage} onLinkClick={handleLinkClick}/>
       <OurStory currentPage={currentPage}/>
       <Map currentPage={currentPage}/>
       <Roadmap currentPage={currentPage}/>

@@ -1,4 +1,3 @@
-
 html {
   font-size: 62.5%;
   box-sizing: border-box;
@@ -13,6 +12,8 @@ body {
   -ms-overflow-style: none;
   scrollbar-width: none;
   overflow-y: scroll;
+
+  cursor: url('../src/images/kursor.png'), default;
 }
 
 body::-webkit-scrollbar {
