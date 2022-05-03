@@ -72,14 +72,14 @@ const App = () => {
       }
     }
 
-      // if (scrollCount.current > 20 && moveNext === true && currentPage < 9) {
-      //   moveNext = false;
-      //   setCurrentPage(prev => (prev + 1));
+      if (scrollCount.current > 20 && moveNext === true && currentPage < 9) {
+        moveNext = false;
+        setCurrentPage(prev => (prev + 1));
         
-      // } else if (scrollCount.current < -20 && moveNext === true && currentPage > 1) {
-      //   moveNext = false;
-      //   setCurrentPage(prev => (prev - 1));
-      // }
+      } else if (scrollCount.current < -20 && moveNext === true && currentPage > 1) {
+        moveNext = false;
+        setCurrentPage(prev => (prev - 1));
+      }
   };
 
   useEffect(() => {
