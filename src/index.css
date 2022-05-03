@@ -9,11 +9,27 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  -ms-overflow-style: none;
-  scrollbar-width: none;
   overflow-y: scroll;
 
-  cursor: url('../src/images/kursor.png'), default;
+  cursor: url('../src/images/kursor32.png'), default;
+}
+
+
+* {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+button {
+  cursor: url('../src/images/hoverkursor.png'), pointer;
+}
+
+a {
+  cursor: url('../src/images/hoverkursor.png'), pointer;
 }
 
 body::-webkit-scrollbar {

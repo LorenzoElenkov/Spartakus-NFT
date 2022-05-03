@@ -135,7 +135,7 @@ const StyledHOO = styled.div`
     .discordText {
         justify-self: center;
         align-self: center;
-        font-size: 1.2vw;
+        font-size: 1.1vw;
         font-family: 'Medium';
         letter-spacing: 1px;
         font-weight: 900;
@@ -150,7 +150,7 @@ const StyledHOO = styled.div`
     }
 `;
 
-const StyledLogo = styled.div`
+const StyledLogo = styled.a`
     position: absolute;
     top: 0;
     left: 0;
@@ -161,10 +161,6 @@ const StyledLogo = styled.div`
     grid-template-columns: 1fr max-content;
     padding: 10px 1vw;
     align-items: center;
-
-    &:hover {
-        cursor: pointer;
-    }
 
     .logoShlem {
         justify-self: center;

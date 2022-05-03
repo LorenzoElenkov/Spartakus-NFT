@@ -54,6 +54,7 @@ const App = () => {
   const [currentPage, setCurrentPage] = useState(1);
   let scrollCount = useRef(0);
 
+
   const trackScroll = (e) => {
     e.preventDefault();
     if (moveNext === true) {
@@ -63,8 +64,11 @@ const App = () => {
       } else if (currentPage === 9 && delta > 0) {
         scrollCount.current = 0;
       } else {
-        scrollCount.current += delta;
-        console.log(scrollCount.current);
+        if (e.deltaY % Math.floor(e.deltaY) !== 0 || (e.deltaY % 19 === 0)) {
+          scrollCount.current += delta*5 + 0.1;
+        } else {
+          scrollCount.current += delta;
+        }
       }
     }
 

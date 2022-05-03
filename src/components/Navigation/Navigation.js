@@ -9,6 +9,8 @@ import instagram2 from '../../images/instagram4.svg';
 import twitter2 from '../../images/twitter4.svg';
 import discord2 from '../../images/discord4.svg';
 
+import hoverCursor from '../../images/hoverkursor.png';
+
 
 const SocialBar = styled.div`
     position: absolute;
@@ -31,7 +33,6 @@ const SocialBar = styled.div`
     }
 
     .instagram:hover, .twitter:hover, .discord:hover {
-        cursor: pointer;
     }
 
     .instagram img, .twitter img {
@@ -70,10 +71,6 @@ const NavigationBar = styled.nav`
             position: relative;
         }
         
-        .homeBut:hover, .loreBut:hover, .roadmapBut:hover, .faqBut:hover {
-            cursor: pointer;
-        }
-
 
         .loreBut:hover .innerMenuLore, .roadmapBut:hover .innerMenuRoadmap, .faqBut:hover .innerMenuFaq {
             display: grid;

@@ -63,19 +63,21 @@ const StyledMapText = styled.span`
   align-self: center;
   justify-self: center;
   display: grid;
-  grid-template-rows: 5% 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
   width: 55%;
   height: 60%;
   row-gap: 4vh;
-
   .areaTitle {
     font-family: "Magh";
-    font-size: 4vw;
+    font-size: ${props => props.clicked === 0 ? '4vw' : '6vw'};
     letter-spacing: 4px;
     text-align: center;
     color: #f2911b;
-    grid-row: 2/2;
-    font-weight: 600;
+    grid-row: 1/1;
+    grid-column: 1/1;
+    font-weight: 900;
+    z-index: 1;
+    /* -webkit-text-stroke: 3px white; */
   }
 
   .areaText {
@@ -84,7 +86,9 @@ const StyledMapText = styled.span`
     white-space: pre-line;
     letter-spacing: 0.7px;
     text-align: center;
-    grid-row: 3/3;
+    grid-row: 4/4;
+    grid-column: 1/1;
+    z-index: 1;
   }
 
   .areaHint {
@@ -96,14 +100,22 @@ const StyledMapText = styled.span`
     border-top: 1px solid black;
     border-bottom: 1px solid black;
     width: max-content;
+    height: max-content;
     justify-self: center;
-    align-self: end;
-    grid-row: 4/4;
+    grid-row: 5/5;
+    grid-column: 1/1;
     animation: hintAnimate 3s infinite;
   }
 
   .areaIcon {
-    width: 30%;
+    /* height: 350px; */
+    /* height: 100%; */
+    width: 80%;
+    opacity: 0.15;
+    grid-column: 1/1;
+    grid-row: 1/3;
+    justify-self: center;
+    /* transform: translateY(-15%); */
   }
 
   @keyframes hintAnimate {
@@ -431,13 +443,14 @@ const Map = ({ currentPage }) => {
       <StyledMapText clicked={clickedArea}>
         <span className="areaTitle">
           {clickedArea === 0
-            ? "The map of Ancient Greece"
-            : `${areasNames[clickedArea].name}`}
+            ? <span>The map of Ancient Greece</span>
+            : <span>{areasNames[clickedArea]?.name}</span>}
         </span>
+        <img src={areasNames[clickedArea].icon} alt='' className='areaIcon'/>
         <span className="areaText">
           {clickedArea === 0
             ? "This is the zone of the warfare between the divine tribes. Almighty Chaos has divided the land equally among the 14 Gods and their corresponding tribes.\n\nThe main goal of each God is to capture all of the areas and become the ruler of Ancient Greece! This could be done only when he defeats each tribe separately."
-            : <img src={areasNames[clickedArea].icon} alt='' className='areaIcon'/>}
+            : areasText[clickedArea-1].text}
         </span>
         <span className="areaHint">
           Click an area on the map to find out more!
@@ -446,7 +459,7 @@ const Map = ({ currentPage }) => {
     </StyledMapContainer>
   );
 };
-
+// <img src={areasNames[clickedArea].icon} alt='' className='areaIcon'/>
 export default Map;
 
 const areasNames = [
@@ -466,3 +479,20 @@ const areasNames = [
   {name: 'Hades', icon: hades},
   {name: 'Poseidon', icon: poseidon},
 ];
+
+const areasText = [
+  {text: "The land, where family and childbirth are the most important moral values. It is right next to her husband's, Zeus, territory but that does not mean she is safe from the war"},
+  {text: "The land, where the one and only, god of thunder roams. It is the biggest land in Ancient Greece with its unique weather, depending on the mood of the mighty Zeus"},
+  {text: "The land, where love is everywhere. All of the people there are passionate and focused on pleasure. The nature there is beautiful with myrtles and roses across the whole land"},
+  {text: "The land, where nature is at its finest, wilderness everywhere. The people there have full respect for their land because they feed on it by hunting and farming"},
+  {text: "The land, where the blacksmiths live and work. All of the divine forges in Ancient Greece are there and work almost without any break"},
+  {text: "The land of the unstoppable warrios, where the god of war trains them to win in every battle. The conditions there are tough so the warriors are well prepared for every possible outcome"},
+  {text: "The land, where music is in the air. All sorts of herbs are being cultivated for the preparation of different remedies. There the animal diversity is high and the sunlight is always upon"},
+  {text: "The land of wittiness, where everyone is quick and cunning. The ruler here, Hermes, is the fastest God alive. Manipulative and adaptive skills are his strongest weapons in battles. His army is full of thieves, who plunder everyone they defeat"},
+  {text: "The son of Ares, Deimos, is the most dreadful God of them all. The ruler of this land is the fear and horror. It is uninhabited because only a few could survive in these terrifying conditions. In battle, the strongest power of his troops is panic, which could be very dangerous"},
+  {text: "The land of wisdom, where the philosophers are respected the most. There, every issue is solved by discussions and argumentation, but their war power and capacity are not to be underestimated. The mind of Athena is her most powerful weapon, making her a strong pretender for the war"},
+  {text: "The land of broadening souls and shadows, where Nyx, the first Goddess, is the ruler. Even the almighty Zeus is feared by the powers of Nyx, and that is why her territory is so distant from the land of thunders. As she is the strongest in the night, this place is shadowy and dark"},
+  {text: "The land of death, where terror and horror rule. There, the smell of fear is everything that a person could feel. The permanent night makes the place even more dreadful. Thanatos, the death himself, decides the destiny of those who are brave enough to stop there"},
+  {text: "This is the Underworld on Earth, where the souls of the dead roam. Its extreme climate conditions make it harder for everyone to survive, except Hades. His main companion, Cerberus, is the protector of this land"},
+  {text: "The land of waves and oceans, where terrifying creatures could be seen. Surrounded by water, this island is the safest place for Poseidon, and, there, his powers are the strongest. Regarding the war, its location is great, because it is separated from the main Greek land"},
+]
