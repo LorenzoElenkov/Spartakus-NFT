@@ -53,7 +53,8 @@ const StyledMapContainer = styled.div`
 const StyledMap = styled.img`
   margin-top: 8%;
   width: 85%;
-  align-self: center;
+  /* align-self: center; */
+  /* background-color: rgba(0, 255, 0, 0.2); */
   justify-self: end;
   grid-row: 1/1;
   grid-column: 1/1;
@@ -63,10 +64,10 @@ const StyledMapText = styled.span`
   align-self: center;
   justify-self: center;
   display: grid;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1.5fr 1fr;
   width: 55%;
   height: 60%;
-  row-gap: 4vh;
+  /* row-gap: 40px; */
   .areaTitle {
     font-family: "Magh";
     font-size: ${props => props.clicked === 0 ? '4vw' : '6vw'};
@@ -77,7 +78,6 @@ const StyledMapText = styled.span`
     grid-column: 1/1;
     font-weight: 900;
     z-index: 1;
-    /* -webkit-text-stroke: 3px white; */
   }
 
   .areaText {
@@ -86,9 +86,11 @@ const StyledMapText = styled.span`
     white-space: pre-line;
     letter-spacing: 0.7px;
     text-align: center;
-    grid-row: 4/4;
+    /* grid-row: 4/4; */
+    grid-row: ${props => props.clicked !== 0 ? '4/4' : '3/3'};
     grid-column: 1/1;
     z-index: 1;
+    /* margin-top: ${props => props.clicked === 0 ? '50px' : '0px'}; */
   }
 
   .areaHint {
@@ -102,8 +104,9 @@ const StyledMapText = styled.span`
     width: max-content;
     height: max-content;
     justify-self: center;
-    grid-row: 5/5;
+    grid-row: ${props => props.clicked !== 0 ? '5/5' : '4/4'};
     grid-column: 1/1;
+    margin-top: ${props => props.clicked === 0 ? '30px' : '0px'};
     animation: hintAnimate 3s infinite;
   }
 
@@ -112,8 +115,8 @@ const StyledMapText = styled.span`
     /* height: 100%; */
     width: 80%;
     opacity: 0.15;
-    grid-column: 1/1;
     grid-row: 1/3;
+    grid-column: 1/1;
     justify-self: center;
     /* transform: translateY(-15%); */
   }
@@ -135,8 +138,8 @@ const StyledMapPointers = styled.div`
   height: 50vw;
   grid-row: 1/1;
   grid-column: 1/1;
-  transform: translateX(20%) translateY(1.5%);
-  align-self: center;
+  transform: translateX(22%) translateY(9%);
+  /* background-color: rgba(255, 0, 0, 0.2); */
   z-index: 9001;
   /* background: green; */
   .one {
@@ -395,7 +398,7 @@ const Map = ({ currentPage }) => {
             : thirtheenth
         }
         clicked={clickedArea}
-      />
+      ></StyledMap>
       <StyledMapPointers>
         <button className="fourteen" alt="" onClick={() => setClickedArea(14)}>
           14
@@ -446,7 +449,7 @@ const Map = ({ currentPage }) => {
             ? <span>The map of Ancient Greece</span>
             : <span>{areasNames[clickedArea]?.name}</span>}
         </span>
-        <img src={areasNames[clickedArea].icon} alt='' className='areaIcon'/>
+        {clickedArea !== 0 && <img src={areasNames[clickedArea].icon} alt='' className='areaIcon'/>}
         <span className="areaText">
           {clickedArea === 0
             ? "This is the zone of the warfare between the divine tribes. Almighty Chaos has divided the land equally among the 14 Gods and their corresponding tribes.\n\nThe main goal of each God is to capture all of the areas and become the ruler of Ancient Greece! This could be done only when he defeats each tribe separately."
