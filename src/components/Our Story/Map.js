@@ -82,7 +82,7 @@ const StyledMapText = styled.span`
   grid-template-rows: 1fr 1fr 1.5fr 1fr;
   width: 55%;
   height: 60%;
-  /* row-gap: 40px; */
+  row-gap: 40px;
   .areaTitle {
     font-family: "Magh";
     font-size: ${props => props.clicked === 0 ? '4vw' : '6vw'};
