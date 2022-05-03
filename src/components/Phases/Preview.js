@@ -40,7 +40,7 @@ const StyledContainer = styled.div`
     }
 
     .slider div {
-        height: 80%;
+        height: 100%;
     }
 
     .slider img {

@@ -2,11 +2,11 @@ import React from 'react';
 
 import styled from 'styled-components';
 
-import black from '../../images/2 black.png';
-import red from '../../images/2 red.png';
-import blue from '../../images/2 blue.png';
-import purple from '../../images/2 purple.png';
-import green from '../../images/2 green.png';
+import black from '../../images/222 black.png';
+import red from '../../images/222 red.png';
+import blue from '../../images/222 blue.png';
+import purple from '../../images/222 purple.png';
+import green from '../../images/222 green.png';
 
 const StyledContainer = styled.div`
     position: absolute;
@@ -96,35 +96,35 @@ const Team = ({ currentPage }) => {
         <div className='teamContainer'>
             <img src={red} alt='' className='img1'/>
             <span className='name1'>
-                Hades' Hoplite
+                Lysandros
             </span>
             <span className='ceo'>
                 Blockchain Developer
             </span>
             <img src={blue} alt='' className='img2'/>
             <span className='name2'>
-                Poseidon's Hoplite
+                Isidoros
             </span>
             <span className='ceo'>
                 3D Art Designer
             </span>
             <img src={black} alt='' className='img3'/>
             <span className='name3'>
-                Thanatos' Hoplite
+                Markos
             </span>
             <span className='ceo'>
                 Marketing Manager
             </span>
             <img src={green} alt='' className='img4'/>
             <span className='name4'>
-                Artemis' Hoplite
+                Kallinikos
             </span>
             <span className='ceo'>
                 Discord Manager
             </span>
             <img src={purple} alt='' className='img5'/>
             <span className='name5'>
-                Nyx's Hoplite
+                Achilles
             </span>
             <span className='ceo'>
                 Founder

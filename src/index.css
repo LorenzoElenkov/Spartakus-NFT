@@ -32,6 +32,10 @@ a {
   cursor: url('../src/images/hoverkursor.png'), pointer;
 }
 
+li:hover {
+  cursor: url('../src/images/hoverkursor.png'), pointer;
+}
+
 body::-webkit-scrollbar {
   display: none;
 }

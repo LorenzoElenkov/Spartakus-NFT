@@ -2,8 +2,8 @@ import React from "react";
 
 import styled from "styled-components";
 
-import shoulder from "../../images/shlem4.png";
-import tokenImg from '../../images/roadmpa/token.png';
+import shoulder from "../../images/shlem999.png";
+import tokenImg from '../../images/Coin.gif';
 
 const StyledContainer = styled.div`
   position: absolute;
@@ -13,17 +13,15 @@ const StyledContainer = styled.div`
   height: 100vh;
   background: white;
   display: grid;
-  grid-template-columns: 15% 1fr 1fr;
+  grid-template-columns: 20% 1fr 1fr;
   grid-template-rows: 1fr 2fr;
   row-gap: 1vw;
   transition: top 0.5s ease-in-out;
 
   .shoulder {
     position: absolute;
-    transform: translateX(-15vw) rotate(-20deg) translateY(90%);
-    width: 22%;
-    background: red;
-    /* height: 10%; */
+    transform: translateX(-30%) translateY(43vh);
+    width: 27%;
   }
 
   .title {
@@ -50,7 +48,6 @@ const StyledContainer = styled.div`
     grid-row: 2/2;
     width: 80%;
     margin-top: -25%;
-    box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.5);
   }
 
 `;
@@ -61,6 +58,7 @@ const Token = ({ currentPage }) => {
       <img src={shoulder} alt="" className="shoulder" />
       <span className="title">$HROM</span>
       <span className="text">
+        $HROM will be the token of our DAO- the 'Agora' Dao and the in-game currency of our play-to-earn game. <br /><br />
         Storing the token will be available in every Solana wallet, for example
         Phantom. Swapping will mostly be available on Raydium and Saber.<br /> $HROM
         will be equally distributed among all of the tribes in the strategic

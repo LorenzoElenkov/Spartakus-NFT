@@ -140,7 +140,7 @@ const App = () => {
       <Token currentPage={currentPage}/>
       <Faq currentPage={currentPage}/>
       <Team currentPage={currentPage}/>
-      <Footer currentPage={currentPage}/>
+      <Footer currentPage={currentPage} onLinkClick={handleLinkClick}/>
     </StyledApp>
   )
 }

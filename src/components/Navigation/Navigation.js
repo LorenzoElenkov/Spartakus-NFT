@@ -159,9 +159,9 @@ const Navigation = ({ currentPage, onLinkClick }) => {
         </NavigationBar>
 
         <SocialBar>
-            <a className='instagram' href='https://www.instagram.com/heroesofolympus_nft/' target='_blank' referrerPolicy='no-referrer'><img src={currentPage === 1 || currentPage === 4 || currentPage === 9 ? instagram2 : instagram} alt=''/></a>
-            <a className='twitter' href='https://twitter.com/Heroes_Olympus_' target='_blank' referrerPolicy='no-referrer'><img src={currentPage === 1 || currentPage === 4 || currentPage === 9 ? twitter2 : twitter} alt=''/></a>
-            <a className='discord' href='https://discord.gg/XHPyntDaF4' target='_blank' referrerPolicy='no-referrer'><img src={currentPage === 1 || currentPage === 4 || currentPage === 9 ? discord2 : discord} alt=''/></a>
+            <a className='instagram' href='https://www.instagram.com/heroesofolympus_nft/' target='_blank' rel='noreferrer'><img src={currentPage === 1 || currentPage === 4 || currentPage === 9 ? instagram2 : instagram} alt=''/></a>
+            <a className='twitter' href='https://twitter.com/Heroes_Olympus_' target='_blank' rel='noreferrer'><img src={currentPage === 1 || currentPage === 4 || currentPage === 9 ? twitter2 : twitter} alt=''/></a>
+            <a className='discord' href='https://discord.gg/XHPyntDaF4' target='_blank' rel='noreferrer'><img src={currentPage === 1 || currentPage === 4 || currentPage === 9 ? discord2 : discord} alt=''/></a>
         </SocialBar>
     </>
   )

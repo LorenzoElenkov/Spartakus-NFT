@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-import informationImage from '../../images/motivinfo.svg';
+import informationImage from '../../images/motiv22.png';
 import informationHelmet2 from '../../images/shlem100.png';
 import discordLogo from '../../images/Information/discord.png';
 import logoShlem from '../../images/Information/prosto-shlem.png';
@@ -120,16 +120,17 @@ const StyledHOO = styled.div`
         align-self: center;
         transform: translateX(6vw) translateY(1vw);
         height: 5vw;
-        width: 15vw;
+        width: 18vw;
         display: grid;
         grid-template-columns: 3fr 1fr;
         background: #5863f1;
         border: none;
         z-index: 9000;
+        text-decoration: none;
     }
 
     .discordButton:active {
-        background: green;
+        background: #5863f1;
     }
 
     .discordText {
@@ -143,6 +144,7 @@ const StyledHOO = styled.div`
     }
 
     .discordLogo {
+        padding-right: 10px;
         width: 100%;
         align-self: center;
         justify-self: end;
@@ -213,12 +215,12 @@ const Information = ({ currentPage, onLinkClick }) => {
                     be rebuilt in the Metaverse. Join the Battle of
                     the Gods!
                 </span>
-                <button className='discordButton'>
+                <a className='discordButton' href='https://discord.com/invite/XHPyntDaF4' target='_blank' rel='noreferrer'>
                     <span className='discordText'>
                         Join our Discord 
                     </span>
                     <img className='discordLogo' src={discordLogo} alt=''/>
-                </button>
+                </a>
             </StyledHOO>
         </StyledBlueBG>
     </>

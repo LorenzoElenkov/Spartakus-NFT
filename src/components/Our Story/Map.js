@@ -2,21 +2,36 @@ import React, { useState } from "react";
 
 import styled from "styled-components";
 
-import fullMap from "../../images/Our Story/0.svg";
-import first from "../../images/Our Story/1.svg";
-import second from "../../images/Our Story/2.svg";
-import third from "../../images/Our Story/3.svg";
-import forth from "../../images/Our Story/4.svg";
-import fifth from "../../images/Our Story/5.svg";
-import sixth from "../../images/Our Story/6.svg";
-import seventh from "../../images/Our Story/7.svg";
-import eight from "../../images/Our Story/8.svg";
-import ninth from "../../images/Our Story/9.svg";
-import tenth from "../../images/Our Story/10.svg";
-import eleventh from "../../images/Our Story/11.svg";
-import twelveth from "../../images/Our Story/12.svg";
-import thirtheenth from "../../images/Our Story/13.svg";
-import fortheenth from "../../images/Our Story/14.svg";
+import fullMap from "../../images/map/PNG Karti.png";
+import first from "../../images/map/PNG Karti 1.png";
+import second from "../../images/map/PNG Karti 2.png";
+import third from "../../images/map/PNG Karti 3.png";
+import forth from "../../images/map/PNG Karti 4.png";
+import fifth from "../../images/map/PNG Karti 5.png";
+import sixth from "../../images/map/PNG Karti 6.png";
+import seventh from "../../images/map/PNG Karti 7.png";
+import eight from "../../images/map/PNG Karti 8.png";
+import ninth from "../../images/map/PNG Karti 9.png";
+import tenth from "../../images/map/PNG Karti 10.png";
+import eleventh from "../../images/map/PNG Karti 11.png";
+import twelveth from "../../images/map/PNG Karti 12.png";
+import thirtheenth from "../../images/map/PNG Karti 13.png";
+import fortheenth from "../../images/map/PNG Karti 14.png";
+// import fullMap from "../../images/Our Story/0.svg";
+// import first from "../../images/Our Story/1.svg";
+// import second from "../../images/Our Story/2.svg";
+// import third from "../../images/Our Story/3.svg";
+// import forth from "../../images/Our Story/4.svg";
+// import fifth from "../../images/Our Story/5.svg";
+// import sixth from "../../images/Our Story/6.svg";
+// import seventh from "../../images/Our Story/7.svg";
+// import eight from "../../images/Our Story/8.svg";
+// import ninth from "../../images/Our Story/9.svg";
+// import tenth from "../../images/Our Story/10.svg";
+// import eleventh from "../../images/Our Story/11.svg";
+// import twelveth from "../../images/Our Story/12.svg";
+// import thirtheenth from "../../images/Our Story/13.svg";
+// import fortheenth from "../../images/Our Story/14.svg";
 
 
 import hera from '../../images/map/hera.png';
@@ -51,8 +66,8 @@ const StyledMapContainer = styled.div`
 `;
 
 const StyledMap = styled.img`
-  margin-top: 8%;
-  width: 85%;
+  margin-top: 10%;
+  width: 82%;
   /* align-self: center; */
   /* background-color: rgba(0, 255, 0, 0.2); */
   justify-self: end;
@@ -144,8 +159,8 @@ const StyledMapPointers = styled.div`
   /* background: green; */
   .one {
     position: absolute;
-    top: 10%;
-    left: 83.5%;
+    top: 9.5%;
+    left: 86%;
     width: 7.5%;
     border: 1px solid white;
     border-radius: 10px;
@@ -172,8 +187,8 @@ const StyledMapPointers = styled.div`
   }
   .three {
     position: absolute;
-    top: 17%;
-    left: 30.5%;
+    top: 16.5%;
+    left: 31.5%;
     width: 7.5%;
     border: 1px solid white;
     border-radius: 10px;
@@ -187,7 +202,7 @@ const StyledMapPointers = styled.div`
   .four {
     position: absolute;
     top: 29%;
-    left: 15.5%;
+    left: 15%;
     width: 7.5%;
     border: 1px solid white;
     border-radius: 10px;
@@ -200,7 +215,7 @@ const StyledMapPointers = styled.div`
   }
   .five {
     position: absolute;
-    top: 30%;
+    top: 29%;
     left: 32%;
     width: 7.5%;
     border: 1px solid white;
@@ -214,8 +229,8 @@ const StyledMapPointers = styled.div`
   }
   .six {
     position: absolute;
-    top: 38%;
-    left: 24%;
+    top: 37.5%;
+    left: 24.5%;
     width: 7.5%;
     border: 1px solid white;
     border-radius: 10px;
@@ -242,8 +257,8 @@ const StyledMapPointers = styled.div`
   }
   .eight {
     position: absolute;
-    top: 41%;
-    left: 39%;
+    top: 40.5%;
+    left: 40.5%;
     width: 7.5%;
     border: 1px solid white;
     border-radius: 10px;
@@ -271,7 +286,7 @@ const StyledMapPointers = styled.div`
   .eleven {
     position: absolute;
     top: 60%;
-    left: 39%;
+    left: 41%;
     width: 7.5%;
     border: 1px solid white;
     border-radius: 10px;
@@ -284,7 +299,7 @@ const StyledMapPointers = styled.div`
   }
   .thirtheen {
     position: absolute;
-    top: 71.5%;
+    top: 71%;
     left: 38%;
     width: 7.5%;
     border: 1px solid white;
@@ -299,7 +314,7 @@ const StyledMapPointers = styled.div`
   .fourteen {
     position: absolute;
     top: 92.5%;
-    left: 72%;
+    left: 74%;
     width: 7.5%;
     border: 1px solid white;
     border-radius: 10px;
@@ -312,8 +327,8 @@ const StyledMapPointers = styled.div`
   }
   .ten {
     position: absolute;
-    top: 54%;
-    left: 52%;
+    top: 53.2%;
+    left: 54%;
     width: 7.5%;
     border: 1px solid white;
     border-radius: 10px;
@@ -326,8 +341,8 @@ const StyledMapPointers = styled.div`
   }
   .nine {
     position: absolute;
-    top: 49%;
-    left: 57.5%;
+    top: 48.2%;
+    left: 59%;
     width: 7.5%;
     border: 1px solid white;
     border-radius: 10px;
@@ -382,20 +397,20 @@ const Map = ({ currentPage }) => {
             : clickedArea === 6
             ? sixth
             : clickedArea === 7
-            ? eight
-            : clickedArea === 8
             ? seventh
+            : clickedArea === 8
+            ? eight
             : clickedArea === 9
-            ? tenth
+            ? ninth
             : clickedArea === 10
-            ? fortheenth
+            ? tenth
             : clickedArea === 11
             ? eleventh
             : clickedArea === 12
-            ? ninth
-            : clickedArea === 13
             ? twelveth
-            : thirtheenth
+            : clickedArea === 13
+            ? thirtheenth
+            : fortheenth
         }
         clicked={clickedArea}
       ></StyledMap>
