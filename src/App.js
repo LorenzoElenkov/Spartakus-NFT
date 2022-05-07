@@ -66,7 +66,7 @@ const App = () => {
         scrollCount.current = 0;
       } else {
         console.log(e);
-        if (e.deltaY % Math.floor(e.deltaY) !== 0 || (e.deltaY % 19 === 0) || (e.wheelDeltaY % 54 === 0)) {
+        if (e.deltaY % Math.floor(e.deltaY) !== 0 || (e.deltaY % 19 === 0) || (e.wheelDeltaY % 54 === 0) || (e.deltaY % 125 === 0) || (e.deltaY % 3 === 0)) {
           scrollCount.current += delta*5 + 0.1;
         } else {
           scrollCount.current += delta;

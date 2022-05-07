@@ -66,15 +66,18 @@ const StyledMapContainer = styled.div`
   transition: left 0.5s ease-in-out;
 `;
 
-const StyledMap = styled.img`
+const StyledMapWrapper = styled.div`
   margin-top: 10%;
-  /* width: 82%; */
+  width: 50%;
   height: 86%;
-  /* align-self: center; */
-  background-color: rgba(0, 255, 0, 0.2);
-  justify-self: end;
+  justify-self: center;
   grid-row: 1/1;
   grid-column: 1/1;
+  position: relative;
+`;
+
+const StyledMap = styled.img`
+  height: 100%;
 `;
 
 const StyledMapText = styled.span`
@@ -150,17 +153,20 @@ const StyledMapText = styled.span`
 `;
 
 const StyledMapPointers = styled.div`
-  position: relative;
+  /* position: relative;
   width: 80%;
   height: 88.8%;
   grid-row: 1/1;
   grid-column: 1/1;
-  /* transform: translateX(22%) translateY(9%); */
   justify-self: end;
   align-self: flex-end;
   background-color: rgba(255, 0, 0, 0.2);
-  z-index: 9001;
-  /* background: green; */
+  z-index: 9001; */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 162.5%;
+  height: 100%;
   .one {
     position: absolute;
     top: 9.5%;
@@ -384,6 +390,8 @@ const Map = ({ currentPage }) => {
   }
   return (
     <StyledMapContainer page={currentPage}>
+      <StyledMapWrapper>
+
       <StyledMap
         src={
           clickedArea === 0
@@ -462,6 +470,7 @@ const Map = ({ currentPage }) => {
           1
         </button>
       </StyledMapPointers>
+      </StyledMapWrapper>
       <StyledMapText clicked={clickedArea}>
         <span className="areaTitle">
           {clickedArea === 0

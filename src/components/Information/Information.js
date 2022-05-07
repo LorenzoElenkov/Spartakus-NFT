@@ -49,7 +49,8 @@ const StyledHelmet = styled.img`
     left: 49%;
     transform-origin: 50% 50%;
     transform: translateX(-50%) translateY(-50%);
-    width: 47%;
+    /* width: 47%; */
+    height: 80%;
     z-index: 1;
     opacity: ${props => props.page === 1 ? '1' : '0'};
     transition: top 0.4s ease-in-out;
