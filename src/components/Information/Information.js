@@ -1,11 +1,62 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import styled from 'styled-components';
 
 import informationImage from '../../images/motiv22.png';
 import informationHelmet2 from '../../images/shlem100.png';
 import discordLogo from '../../images/Information/discord.png';
 import logoShlem from '../../images/shlemLoo.png';
-import logo from '../../images/logo.svg'
+import logo from '../../images/logo.svg';
+import soundON from '../../images/soundON.png';
+import soundOFF from '../../images/soundOFF.png';
+
+
+const StyledMusic = styled.div`
+    position: relative;
+    top: 0;
+    width: 50%;
+    left: 50%;
+    height: 100%;
+    z-index: 2;
+    overflow-x: hidden;
+`;
+
+const StyledMusicContainer = styled.div`
+    position: absolute;
+    padding: 4px;
+    width: 130px;
+    height: 80px;
+    top: calc(50% - 40px);
+    left: calc(100% - 28px);
+    background-color: ${props => props.page === 1 || props.page === 4 || props.page === 9 ? 'white' : 'rgba(15,16,38,255)'};
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    transition: all 0.3s ease-in-out;
+    padding: 10px;
+
+    span {
+        font-size: 2rem;
+        letter-spacing: 1px;
+        font-family: 'Magh';
+        position: absolute;
+        top: 27.5%;
+        left: 5px;
+        transform-origin: 50% 100%;
+        transform: rotate(-90deg);
+        color: ${props => props.page === 1 || props.page === 4 || props.page === 9 ? 'rgba(15,16,38,255)' : 'white'};
+    }
+
+    &:hover {
+        left: calc(100% - 130px);
+    }
+
+    img {
+        width: 50%;
+        position: absolute;
+        top: 12%;
+        left: 25%;
+    }
+
+`;
 
 const StyledWhiteBG = styled.div`
     position: absolute;
@@ -64,10 +115,10 @@ const StyledCPTH = styled.div`
     margin-top: 50px;
 
     .titleCollection {
-        font-size: 2.5vmax;
+        font-size: 3.2vmax;
         color: rgba(73,115,242,255);
-        letter-spacing: 2px;
-        font-family: 'Medium';
+        letter-spacing: 4px;
+        font-family: 'Magh';
         transform: scaleY(0.9);
         font-weight: 600;
     }
@@ -85,7 +136,6 @@ const StyledHOO = styled.div`
     width: 55%;
     justify-self: center;
     z-index: 9000;
-
     @font-face {
         font-family: 'Magh';
         src: url('./fonts/Maghfirea.otf');
@@ -126,10 +176,15 @@ const StyledHOO = styled.div`
         grid-template-columns: 3fr 1fr;
         background: #5863f1;
         border: none;
-        z-index: 9000;
+        z-index: 9999;
         text-decoration: none;
     }
 
+    .discordButton:hover {
+        background: rgba(73,115,242,255);
+        box-shadow: 0px 0px 50px 5px rgba(63, 71, 176, 1);
+    }
+    
     .discordButton:active {
         background: #5863f1;
     }
@@ -137,9 +192,9 @@ const StyledHOO = styled.div`
     .discordText {
         justify-self: center;
         align-self: center;
-        font-size: 1.1vw;
-        font-family: 'Medium';
-        letter-spacing: 1px;
+        font-size: 1.7vw;
+        font-family: 'Magh';
+        letter-spacing: 2px;
         font-weight: 900;
         color: white;
     }
@@ -159,16 +214,15 @@ const StyledLogo = styled.a`
     left: 0;
     width: 13vw;
     z-index: 1;
-    background: #0f1026; //
+    background: #0f1026;
     display: grid;
-    grid-template-columns: 1fr max-content;
+    grid-template-columns: max-content max-content;
     padding: 10px 1vw;
     align-items: center;
     border-bottom-right-radius: 50px;
-
     .logoShlem {
-        justify-self: center;
-        width: 4vw;
+        /* justify-self: center; */
+        width: 4.0vw;
     }
 
     .logo {
@@ -177,11 +231,32 @@ const StyledLogo = styled.a`
 `;
 
 const Information = ({ currentPage, onLinkClick }) => {
-    
-    
+    const discordSound = new Audio('./discordSound.wav');
+
+    const discordRef = useRef(null);
     const [inside, setInside] = useState(true);
+
+
+    useEffect(() => {
+        discordRef.current.addEventListener('mouseenter', () => {
+            console.log(123);
+            discordSound.play();
+        });
+        discordRef.current.addEventListener('mouseleave', () => {
+            console.log(456);
+            // discordSound.pause();
+        })
+    },[]);
   return (
     <>
+        <StyledMusic>
+            <StyledMusicContainer page={currentPage}>
+                <span>
+                    Music
+                </span>
+                <img src={soundON} alt=''/>
+            </StyledMusicContainer>
+        </StyledMusic>
         <StyledLogo onClick={() => onLinkClick(1)}>
             <img src={logoShlem} alt='helmet' className='logoShlem'/>
             <img src={logo} alt='heroes of olympus' className='logo'/>
@@ -217,7 +292,7 @@ const Information = ({ currentPage, onLinkClick }) => {
                     be rebuilt in the Metaverse. Join the Battle of
                     the Gods!
                 </span>
-                <a className='discordButton' href='https://discord.com/invite/XHPyntDaF4' target='_blank' rel='noreferrer'>
+                <a className='discordButton' href='https://discord.com/invite/XHPyntDaF4' target='_blank' rel='noreferrer' ref={discordRef}>
                     <span className='discordText'>
                         Join our Discord 
                     </span>

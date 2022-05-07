@@ -17,7 +17,7 @@ const SocialBar = styled.div`
     height: 75px;
     top: calc(100vh - 80px);
     left: 69vw;
-    z-index: 9999;
+    z-index: 9998;
     display: flex;
     flex-direction: row;
     gap: 10px;
@@ -53,7 +53,7 @@ const NavigationBar = styled.nav`
         top: 0;
         left: 50vw;
         width: 50vw;
-        z-index: 9999;
+        z-index: 9998;
         display: grid;
         grid-template-columns: 12% repeat(5, 1fr);
         .homeBut {
@@ -79,9 +79,17 @@ const NavigationBar = styled.nav`
             display: grid;
         }
 
+        .loreBut:hover .invisibleSpace, .roadmapBut:hover .invisibleSpace, .faqBut:hover .invisibleSpace {
+            display: grid;
+        }
+
+        .invisibleSpace:hover .innerMenuLore, .invisibleSpace:hover .innerMenuRoadmap, .invisibleSpace:hover .innerMenuFaq {
+            display: grid;
+        }
+
         .innerMenuLore, .innerMenuRoadmap, .innerMenuFaq {
             position: absolute;
-            top: calc(4vh + 1.2vw);
+            top: calc(4vh + 2.2vw);
             left: 0;
             display: none;
             justify-content: center;
@@ -90,7 +98,7 @@ const NavigationBar = styled.nav`
             border: 1px solid black;
             border-top: none;
             padding-top: 2vh;
-            z-index: 9999;
+            z-index: 9998;
         }
 
         .innerMenuLore:hover, .innerMenuRoadmap:hover, .innerMenuFaq:hover {
@@ -123,9 +131,21 @@ const NavigationBar = styled.nav`
             color: black;
         }
 
+        .invisibleSpace {
+            position: absolute;
+            display: none;
+            top: calc(4vh + 1.2vw);
+            left: 0;
+            width: 100%;
+            height: 1vw;
+            background-color: transparent;
+        }
+
         @media screen and (max-width: 688px) {
             
         }
+
+
     `;
 
 
@@ -137,16 +157,18 @@ const Navigation = ({ currentPage, onLinkClick }) => {
       <>
         <NavigationBar page={currentPage}>
             <button className={currentPage === 1 ? 'homeBut active' : 'homeBut'} onClick={() => {onLinkClick(1); snd.play()}}>Home</button>
-            <button className={currentPage >= 2 && currentPage <= 3 ? 'loreBut active' : 'loreBut'}>
+            <button className={currentPage >= 2 && currentPage <= 3 ? 'loreBut active' : 'loreBut'} onClick={() => {onLinkClick(2); snd.play()}}>
                 Lore
+                <div className='invisibleSpace'/>
                 <div className='innerMenuLore' page={currentPage}>
                     <span className='innerLorePointer'>\/</span>
                     <button page={currentPage} onClick={() => {onLinkClick(2); snd.play()}}>Story</button>
                     <button page={currentPage} onClick={() => {onLinkClick(3); snd.play()}}>Ancient Map</button>
                 </div>
             </button>
-            <button className={currentPage > 3 && currentPage <= 6? 'roadmapBut active' : 'roadmapBut'}>
+            <button className={currentPage > 3 && currentPage <= 6? 'roadmapBut active' : 'roadmapBut'} onClick={() => {onLinkClick(4); snd.play()}}>
                 Roadmap
+                <div className='invisibleSpace'/>
                 <div className='innerMenuRoadmap' page={currentPage}>
                     <span className='innerLorePointer'>\/</span>
                     <button page={currentPage} onClick={() => {onLinkClick(4); snd.play()}}>Roadmap</button>
@@ -154,8 +176,9 @@ const Navigation = ({ currentPage, onLinkClick }) => {
                     <button page={currentPage} onClick={() => {onLinkClick(6); snd.play()}}>Token</button>
                 </div>
             </button>
-            <button className={currentPage > 6 ? 'faqBut active' : 'faqBut'}>
+            <button className={currentPage > 6 ? 'faqBut active' : 'faqBut'} onClick={() => {onLinkClick(7); snd.play()}}>
                 FAQ
+                <div className='invisibleSpace'/>
                 <div className='innerMenuFaq' page={currentPage}>
                     <span className='innerLorePointer'>\/</span>
                     <button page={currentPage} onClick={() => {onLinkClick(7); snd.play()}}>FAQ</button>

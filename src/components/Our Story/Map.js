@@ -3,7 +3,8 @@ import React, { useState } from "react";
 import styled from "styled-components";
 
 import fullMap from "../../images/map/PNG Karti.png";
-import first from "../../images/map/PNG Karti 1.png";
+// import first from "../../images/map/PNG Karti 1.png";
+import first from "../../images/1.png";
 import second from "../../images/map/PNG Karti 2.png";
 import third from "../../images/map/PNG Karti 3.png";
 import forth from "../../images/map/PNG Karti 4.png";
@@ -77,7 +78,7 @@ const StyledMapWrapper = styled.div`
 
 const StyledMap = styled.img`
   height: 100%;
-  background-color: rgba(0, 255, 0, 0.2);
+  /* background-color: rgba(0, 255, 0, 0.2); */
 `;
 
 const StyledMapText = styled.span`
@@ -167,7 +168,7 @@ const StyledMapPointers = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(255, 0, 0, 0.2);
+  /* background-color: rgba(255, 0, 0, 0.2); */
   .one {
     position: absolute;
     top: 9.5%;

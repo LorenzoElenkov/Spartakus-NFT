@@ -12,6 +12,7 @@ import Roadmap from './components/Phases/Roadmap';
 import Token from './components/Phases/Token';
 
 import styled from 'styled-components';
+import Loading from './components/Loading/Loading';
 
 const StyledApp = styled.div`
   position: relative;
@@ -50,9 +51,16 @@ const StyledApp = styled.div`
 const App = () => {
   // const [moveNext, setMoveNext] = useState(false);
   const snd = new Audio('./clicksound.wav');
+  const bgMusic = new Audio('./bgMusic.mp3');
+
+  bgMusic.play();
+  bgMusic.volume = 0.2;
+
+
   let moveNext = false;
 
   const [currentPage, setCurrentPage] = useState(1);
+  const [isInSite, setIsInSite] = useState(false);
   let scrollCount = useRef(0);
 
 
@@ -106,8 +114,6 @@ const App = () => {
     //     }
     //   }
     // });
-
-    
     
   },[currentPage]);
 
@@ -130,9 +136,14 @@ const App = () => {
     setCurrentPage(link);
   };
 
+  const handleLoadingClick = () => {
+    setIsInSite(true);
+  };
+
 
   return (
     <StyledApp>
+      {!isInSite && <Loading clicked={handleLoadingClick}/>}
       <Countdown currentPage={currentPage}/>
       <Navigation currentPage={currentPage} onLinkClick={handleLinkClick}/>
       <Information currentPage={currentPage} onLinkClick={handleLinkClick}/>
