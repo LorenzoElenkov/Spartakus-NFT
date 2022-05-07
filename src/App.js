@@ -49,6 +49,7 @@ const StyledApp = styled.div`
 
 const App = () => {
   // const [moveNext, setMoveNext] = useState(false);
+  const snd = new Audio('./clicksound.wav');
   let moveNext = false;
 
   const [currentPage, setCurrentPage] = useState(1);
@@ -64,7 +65,8 @@ const App = () => {
       } else if (currentPage === 9 && delta > 0) {
         scrollCount.current = 0;
       } else {
-        if (e.deltaY % Math.floor(e.deltaY) !== 0 || (e.deltaY % 19 === 0)) {
+        console.log(e);
+        if (e.deltaY % Math.floor(e.deltaY) !== 0 || (e.deltaY % 19 === 0) || (e.wheelDeltaY % 54 === 0)) {
           scrollCount.current += delta*5 + 0.1;
         } else {
           scrollCount.current += delta;
@@ -109,6 +111,7 @@ const App = () => {
 
   useEffect(() => {
     scrollCount.current = 0;
+    snd.play();
     const move = setTimeout(() => {
       moveNext = true;
       scrollCount.current = 0;
@@ -145,4 +148,4 @@ const App = () => {
   )
 }
 
-export default App
+export default App;
