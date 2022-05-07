@@ -71,7 +71,7 @@ const StyledMap = styled.img`
   /* width: 82%; */
   height: 86%;
   /* align-self: center; */
-  /* background-color: rgba(0, 255, 0, 0.2); */
+  background-color: rgba(0, 255, 0, 0.2);
   justify-self: end;
   grid-row: 1/1;
   grid-column: 1/1;
