@@ -68,9 +68,8 @@ const StyledMapContainer = styled.div`
 
 const StyledMapWrapper = styled.div`
   margin-top: 10%;
-  width: 50%;
   height: 86%;
-  justify-self: center;
+  justify-self: end;
   grid-row: 1/1;
   grid-column: 1/1;
   position: relative;
@@ -78,6 +77,7 @@ const StyledMapWrapper = styled.div`
 
 const StyledMap = styled.img`
   height: 100%;
+  background-color: rgba(0, 255, 0, 0.2);
 `;
 
 const StyledMapText = styled.span`
@@ -165,8 +165,9 @@ const StyledMapPointers = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  width: 162.5%;
+  width: 100%;
   height: 100%;
+  background-color: rgba(255, 0, 0, 0.2);
   .one {
     position: absolute;
     top: 9.5%;
