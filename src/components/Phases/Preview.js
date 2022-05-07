@@ -76,7 +76,7 @@ const Preview = ({ currentPage }) => {
     <StyledContainer page={currentPage}>
         <img src={trident} alt='' className='tridentImg'/>
         <span className='previewText'>Preview our Collection</span>
-        <Slider slidesToShow={3} className='slider' centerMode={true} autoplay={true} autoplaySpeed={3000} page={currentPage} pauseOnHover={false}>
+        <Slider slidesToShow={3} className='slider' centerMode={true} autoplay={true} autoplaySpeed={2000} page={currentPage} pauseOnHover={true}>
             <div>
                 <img src={trident} alt=''/>
             </div>

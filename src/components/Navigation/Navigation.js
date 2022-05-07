@@ -9,7 +9,6 @@ import instagram2 from '../../images/instagram4.svg';
 import twitter2 from '../../images/twitter4.svg';
 import discord2 from '../../images/discord4.svg';
 
-import hoverCursor from '../../images/hoverkursor.png';
 
 
 const SocialBar = styled.div`
@@ -41,6 +40,10 @@ const SocialBar = styled.div`
 
     .discord img {
         width: 110%;
+    }
+
+    @media screen and (max-width: 688px) {
+        display: none;
     }
 `;
 
@@ -118,6 +121,10 @@ const NavigationBar = styled.nav`
             color: black;
             letter-spacing: -2px;
             color: black;
+        }
+
+        @media screen and (max-width: 688px) {
+            
         }
     `;
 

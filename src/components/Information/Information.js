@@ -4,8 +4,8 @@ import styled from 'styled-components';
 import informationImage from '../../images/motiv22.png';
 import informationHelmet2 from '../../images/shlem100.png';
 import discordLogo from '../../images/Information/discord.png';
-import logoShlem from '../../images/Information/prosto-shlem.png';
-import logo from '../../images/Information/logo.png'
+import logoShlem from '../../images/shlemLoo.png';
+import logo from '../../images/logo.svg'
 
 const StyledWhiteBG = styled.div`
     position: absolute;
@@ -164,10 +164,11 @@ const StyledLogo = styled.a`
     grid-template-columns: 1fr max-content;
     padding: 10px 1vw;
     align-items: center;
+    border-bottom-right-radius: 50px;
 
     .logoShlem {
         justify-self: center;
-        width: 2.5vw;
+        width: 4vw;
     }
 
     .logo {

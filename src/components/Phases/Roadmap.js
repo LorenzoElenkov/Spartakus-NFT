@@ -29,7 +29,7 @@ const StyledCorousel = styled.div`
     position: absolute;
     top: 60%;
     left: 80%;
-    width: 20%;
+    height: 40%;
   }
 `;
 

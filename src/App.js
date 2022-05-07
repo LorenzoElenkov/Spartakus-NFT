@@ -77,10 +77,12 @@ const App = () => {
       if (scrollCount.current > 20 && moveNext === true && currentPage < 9) {
         moveNext = false;
         setCurrentPage(prev => (prev + 1));
+        snd.play();
         
       } else if (scrollCount.current < -20 && moveNext === true && currentPage > 1) {
         moveNext = false;
         setCurrentPage(prev => (prev - 1));
+        snd.play();
       }
   };
 
@@ -111,18 +113,16 @@ const App = () => {
 
   useEffect(() => {
     scrollCount.current = 0;
-    snd.play();
     const move = setTimeout(() => {
       moveNext = true;
       scrollCount.current = 0;
       window.addEventListener('wheel', trackScroll);
       console.log(`moveNext: ${moveNext}`);
-    }, 1500);
+    }, 3000);
     return () => {
       window.removeEventListener('wheel', trackScroll);
       scrollCount.current = 0;
       clearTimeout(move);
-      console.log('asd');
     }
   },[currentPage])
   
