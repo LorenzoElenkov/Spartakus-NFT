@@ -37,6 +37,7 @@ const StyledContainer = styled.div`
     .slider {
         grid-row: 5/5;
         display: ${props => props.page === 5 ? 'block' : 'none'};
+        background-color: red;
     }
 
     .slider div {
