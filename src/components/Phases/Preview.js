@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 import previewImg from '../../images/previewIcon.png';
 import trident from '../../images/trident.png';
 
-import Slider from 'infinite-react-carousel';
+import Slider from 'infinite-react-carousel/lib/carousel/slider';
 
 const StyledContainer = styled.div`
     position: absolute;
@@ -37,7 +37,7 @@ const StyledContainer = styled.div`
     .slider {
         grid-row: 5/5;
         display: ${props => props.page === 5 ? 'block' : 'none'};
-        background-color: red;
+        z-index: 1;
     }
 
     .slider div {
@@ -45,7 +45,7 @@ const StyledContainer = styled.div`
     }
 
     .slider img {
-        width: 80%;
+        height: 45vh;
         box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.5);
     }
 `;
@@ -76,11 +76,12 @@ const Preview = ({ currentPage, images }) => {
     const addImageLoaded = () => {
         images();
     };
+
   return (
     <StyledContainer page={currentPage}>
         <img src={trident} alt='' className='tridentImg' onLoad={addImageLoaded}/>
         <span className='previewText'>Preview our Collection</span>
-        <Slider slidesToShow={3} className='slider' centerMode={true} autoplay={true} autoplaySpeed={2000} page={currentPage} pauseOnHover={true}>
+        <Slider slidesToShow={3} className='slider' centerMode={true} centerPadding={50} autoplay={true} pauseOnHover={true} autoplaySpeed={2000} page={currentPage}>
             <div>
                 <img src={trident} alt='' onLoad={addImageLoaded}/>
             </div>

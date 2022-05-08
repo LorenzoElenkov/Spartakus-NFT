@@ -17,11 +17,12 @@ const StyledContainer = styled.div`
   grid-template-rows: 1fr 2fr;
   row-gap: 1vw;
   transition: top 0.5s ease-in-out;
+  overflow: hidden;
 
   .shoulder {
     position: absolute;
     transform: translateX(-30%) translateY(43vh);
-    width: 27%;
+    height: 67%;
   }
 
   .title {

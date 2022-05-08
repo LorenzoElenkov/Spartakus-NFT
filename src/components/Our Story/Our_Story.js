@@ -32,6 +32,8 @@ const StyledWhiteBG = styled.div`
   display: grid;
   grid-template-columns: 26% 74%;
   grid-template-rows: repeat(8, 1fr);
+  overflow: hidden;
+
 `;
 
 const StyledBlueBG = styled.div`
@@ -45,6 +47,7 @@ const StyledBlueBG = styled.div`
   display: grid;
   grid-template-columns: 7.5% 85% 7.5%;
   grid-template-rows: repeat(8, 1fr);
+  overflow: hidden;
 `;
 
 const StyledHeader = styled.img`

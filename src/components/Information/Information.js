@@ -15,8 +15,8 @@ import soundOFFW from '../../images/soundOFFWhite.png';
 const StyledMusic = styled.div`
     position: relative;
     top: 0;
-    width: 50%;
-    left: 50%;
+    width: 3%;
+    left: 97%;
     height: 100%;
     z-index: 2;
     overflow: hidden;
@@ -79,6 +79,7 @@ const StyledWhiteBG = styled.div`
     justify-content: center;
     align-items: center;
     transition: left 0.5s ease-in-out;
+    overflow: hidden;
 `; 
 
 const StyledBlueBG = styled.div`
@@ -93,6 +94,7 @@ const StyledBlueBG = styled.div`
     justify-content: center;
     align-items: center;
     transition: top 0.5s ease-in-out;
+    overflow: hidden;
 `;
 
 const StyledInformation = styled.img`
@@ -260,7 +262,6 @@ const Information = ({ currentPage, onLinkClick, images, music, volume }) => {
         });
     },[]);
 
-    const soundRef = useRef(null);
 
     const changeVolume = (step) => {
         music(step);

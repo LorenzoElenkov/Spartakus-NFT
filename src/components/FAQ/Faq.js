@@ -6,14 +6,15 @@ const StyledContainer = styled.div`
     position: absolute;
     top: 0;
     left: ${props => props.page === 7 ? '0' : '-110vw'};
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     transition: left 0.5s ease-in-out;
     display: grid;
     grid-template-rows: 20% 10% max-content;
+    overflow: hidden;
     .title {
         font-family: 'Magh';
-        font-size: 2.5vw;
+        font-size: 4.2vh;
         color: #0f1026;
         align-self: end;
         height: max-content;
@@ -23,7 +24,7 @@ const StyledContainer = styled.div`
 
     .subtext {
         font-family: 'Medium';
-        font-size: 1vw;
+        font-size: 1.8vh;
         color: #0f1026;
         justify-self: center;
         align-self: center;
@@ -33,7 +34,7 @@ const StyledContainer = styled.div`
 
 const StyledAccordion = styled.div`
     display: grid;
-    grid-template-rows: repeat(autofill, max-content);
+    grid-template-rows: repeat(autofill, 1fr);
     row-gap: 25px;
     margin-top: 20px;
     div {
@@ -43,14 +44,14 @@ const StyledAccordion = styled.div`
         grid-template-rows: repeat(autofill, 1fr);
     }
     div > span {
-        font-size: 1.2vw;
+        font-size: 2vh;
         text-align: left;
         display: block;
         font-family: 'Medium';
         color: black;
         justify-self: center;
         transition: all 0.5s;
-        height: 30px;
+        height: 3vh;
     }
 
     // div span:nth-child(2n) {
@@ -87,7 +88,7 @@ const StyledAccordion = styled.div`
         transition: all 1s;
         display: block;
         margin-top: 10px;
-        font-size: 1.2vw;
+        font-size: 2;
         font-weight: 0;
         transition: all 0.5s;
         width: 100%;

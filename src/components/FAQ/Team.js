@@ -18,6 +18,7 @@ const StyledContainer = styled.div`
     display: grid;
     grid-template-rows: 25% 1fr 20%;
     transition: top 0.5s ease-in-out;
+    overflow: hidden;
 
     .teamTitle {
         color: #0f1026;

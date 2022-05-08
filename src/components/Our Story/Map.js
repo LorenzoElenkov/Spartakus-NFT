@@ -65,6 +65,7 @@ const StyledMapContainer = styled.div`
   grid-template-columns: 50% 50%;
   grid-template-rows: 100vh;
   transition: left 0.5s ease-in-out;
+  overflow: hidden;
 `;
 
 const StyledMapWrapper = styled.div`
