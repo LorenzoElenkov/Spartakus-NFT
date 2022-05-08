@@ -385,7 +385,12 @@ const StyledMapPointers = styled.div`
     transform: scale(1.2);
   }
 `;
-const Map = ({ currentPage }) => {
+const Map = ({ currentPage, images }) => {
+
+  const addImageLoaded = () => {
+    images();
+  };
+
   const [clickedArea, setClickedArea] = useState(0);
   if (currentPage !== 3 && clickedArea !== 0) {
     setClickedArea(0);
@@ -427,6 +432,7 @@ const Map = ({ currentPage }) => {
             : fortheenth
         }
         clicked={clickedArea}
+        onLoad={addImageLoaded}
       ></StyledMap>
       <StyledMapPointers>
         <button className="fourteen" alt="" onClick={() => setClickedArea(14)}>
@@ -479,7 +485,7 @@ const Map = ({ currentPage }) => {
             ? <span>The map of Ancient Greece</span>
             : <span>{areasNames[clickedArea]?.name}</span>}
         </span>
-        {clickedArea !== 0 && <img src={areasNames[clickedArea].icon} alt='' className='areaIcon'/>}
+        {clickedArea !== 0 && <img src={areasNames[clickedArea].icon} alt='' className='areaIcon' onLoad={addImageLoaded}/>}
         <span className="areaText">
           {clickedArea === 0
             ? "This is the zone of the warfare between the divine tribes. Almighty Chaos has divided the land equally among the 14 Gods and their corresponding tribes.\n\nThe main goal of each God is to capture all of the areas and become the ruler of Ancient Greece! This could be done only when he defeats each tribe separately."

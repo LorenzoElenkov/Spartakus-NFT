@@ -82,13 +82,15 @@ const StyledDarkBlue = styled.div`
   }
 `;
 
-const Footer = ({ currentPage, onLinkClick }) => {
-
+const Footer = ({ currentPage, onLinkClick, images }) => {
+  const addImageLoaded = () => {
+    images();
+  };
 
   return (
     <>
       <StyledLightBlue page={currentPage}>
-        <img src={logo} alt="" />
+        <img src={logo} alt="" onLoad={addImageLoaded}/>
         <ul>
           <li onClick={() => onLinkClick(1)}>Home</li>
           <li onClick={() => onLinkClick(2)}>Lore</li>

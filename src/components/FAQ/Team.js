@@ -89,40 +89,43 @@ const StyledContainer = styled.div`
         color: rgb(0, 0, 150);
     }
 `;
-const Team = ({ currentPage }) => {
+const Team = ({ currentPage, images }) => {
+    const addImageLoaded = () => {
+        images();
+    };
   return (
     <StyledContainer page={currentPage}>
         <span className='teamTitle'>Meet the Team</span>
         <div className='teamContainer'>
-            <img src={red} alt='' className='img1'/>
+            <img src={red} alt='' className='img1' onLoad={addImageLoaded}/>
             <span className='name1'>
                 Lysandros
             </span>
             <span className='ceo'>
                 Blockchain Developer
             </span>
-            <img src={blue} alt='' className='img2'/>
+            <img src={blue} alt='' className='img2' onLoad={addImageLoaded}/>
             <span className='name2'>
                 Isidoros
             </span>
             <span className='ceo'>
                 3D Art Designer
             </span>
-            <img src={black} alt='' className='img3'/>
+            <img src={black} alt='' className='img3' onLoad={addImageLoaded}/>
             <span className='name3'>
                 Markos
             </span>
             <span className='ceo'>
                 Marketing Manager
             </span>
-            <img src={green} alt='' className='img4'/>
+            <img src={green} alt='' className='img4' onLoad={addImageLoaded}/>
             <span className='name4'>
                 Kallinikos
             </span>
             <span className='ceo'>
                 Discord Manager
             </span>
-            <img src={purple} alt='' className='img5'/>
+            <img src={purple} alt='' className='img5' onLoad={addImageLoaded}/>
             <span className='name5'>
                 Achilles
             </span>

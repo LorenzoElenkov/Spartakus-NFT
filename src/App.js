@@ -1,4 +1,5 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef, useState, useMemo } from 'react'
+import useSound from 'use-sound';
 import Countdown from './components/Countdown/Countdown';
 import Faq from './components/FAQ/Faq';
 import Team from './components/FAQ/Team';
@@ -13,6 +14,8 @@ import Token from './components/Phases/Token';
 
 import styled from 'styled-components';
 import Loading from './components/Loading/Loading';
+
+import bgMusic2 from './images/bgMusic2.mp3';
 
 const StyledApp = styled.div`
   position: relative;
@@ -52,16 +55,25 @@ const App = () => {
   // const [moveNext, setMoveNext] = useState(false);
   const snd = new Audio('./clicksound.wav');
   const bgMusic = new Audio('./bgMusic.mp3');
-
-  bgMusic.play();
-  bgMusic.volume = 0.2;
-
+  bgMusic.loop = true;
+  
 
   let moveNext = false;
 
   const [currentPage, setCurrentPage] = useState(1);
   const [isInSite, setIsInSite] = useState(false);
+  const [imagesLoadedPerc, setImagesLoadedPerc] = useState(0);
+
   let scrollCount = useRef(0);
+  let imagesLoaded = useRef(0);
+
+
+  const changeImagesLoaded = () => {
+    imagesLoaded.current++;
+    if (imagesLoaded.current === 20) {
+      setImagesLoadedPerc(20);
+    }
+  };
 
 
   const trackScroll = (e) => {
@@ -95,29 +107,6 @@ const App = () => {
   };
 
   useEffect(() => {
-
-    // setTimeout(() => {
-    //   setMoveNext(true);
-    //   console.log(moveNext);
-    // }, 2000);
-    // window.addEventListener('wheel', (e) => {
-    //   scrollCount.current += 1;
-    //   if (scrollCount.current > 16 && e.deltaY > 40 && e.deltaY < 46) {
-    //     scrollCount.current = 0;
-    //     if (moveNext === true) {
-    //       setCurrentPage(prev => (prev + 1));
-    //     }
-    //   } else if (scrollCount.current > 16 && e.deltaY < -40 && e.deltaY > -46) {
-    //     scrollCount.current = 0;
-    //     if (moveNext === true) {
-    //       setCurrentPage(prev => (prev - 1));
-    //     }
-    //   }
-    // });
-    
-  },[currentPage]);
-
-  useEffect(() => {
     scrollCount.current = 0;
     const move = setTimeout(() => {
       moveNext = true;
@@ -136,25 +125,40 @@ const App = () => {
     setCurrentPage(link);
   };
 
+  const [bgVolume, setBgVolume] = useState(0.2);
+  const [playMusic] = useSound(bgMusic2, { volume: bgVolume, loop: true });
+
   const handleLoadingClick = () => {
     setIsInSite(true);
+    playMusic();
+  };
+
+  const handleVolume = (step) => {
+    if (bgVolume > 0.06) {
+      setBgVolume(bgVolume - step);
+    }
+     else if (bgVolume < 0.06 && bgVolume > 0.05) {
+      setBgVolume(0);
+    } else {
+      setBgVolume(0.2);
+    }
   };
 
 
   return (
     <StyledApp>
-      {!isInSite && <Loading clicked={handleLoadingClick}/>}
+      {!isInSite && <Loading clicked={handleLoadingClick} images={imagesLoaded.current}/>}
       <Countdown currentPage={currentPage}/>
       <Navigation currentPage={currentPage} onLinkClick={handleLinkClick}/>
-      <Information currentPage={currentPage} onLinkClick={handleLinkClick}/>
-      <OurStory currentPage={currentPage}/>
-      <Map currentPage={currentPage}/>
-      <Roadmap currentPage={currentPage}/>
-      <Preview currentPage={currentPage}/>
-      <Token currentPage={currentPage}/>
-      <Faq currentPage={currentPage}/>
-      <Team currentPage={currentPage}/>
-      <Footer currentPage={currentPage} onLinkClick={handleLinkClick}/>
+      <Information currentPage={currentPage} onLinkClick={handleLinkClick} images={changeImagesLoaded} music={handleVolume} volume={bgVolume}/>
+      <OurStory currentPage={currentPage} images={changeImagesLoaded}/>
+      <Map currentPage={currentPage} images={changeImagesLoaded}/>
+      <Roadmap currentPage={currentPage} images={changeImagesLoaded}/>
+      <Preview currentPage={currentPage} images={changeImagesLoaded}/>
+      <Token currentPage={currentPage} images={changeImagesLoaded}/>
+      <Faq currentPage={currentPage} images={changeImagesLoaded}/>
+      <Team currentPage={currentPage} images={changeImagesLoaded}/>
+      <Footer currentPage={currentPage} onLinkClick={handleLinkClick} images={changeImagesLoaded}/>
     </StyledApp>
   )
 }

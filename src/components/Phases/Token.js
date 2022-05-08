@@ -52,10 +52,13 @@ const StyledContainer = styled.div`
 
 `;
 
-const Token = ({ currentPage }) => {
+const Token = ({ currentPage, images }) => {
+  const addImageLoaded = () => {
+    images();
+  };
   return (
     <StyledContainer page={currentPage}>
-      <img src={shoulder} alt="" className="shoulder" />
+      <img src={shoulder} alt="" className="shoulder" onLoad={addImageLoaded}/>
       <span className="title">$HROM</span>
       <span className="text">
         $HROM will be the token of our DAO- the 'Agora' Dao and the in-game currency of our play-to-earn game. <br /><br />
@@ -66,7 +69,7 @@ const Token = ({ currentPage }) => {
         amount of $HROM received. The coin will play a major role in the game’s
         mechanics.
       </span>
-      <img src={tokenImg} alt='' className='previewImg' />
+      <img src={tokenImg} alt='' className='previewImg' onLoad={addImageLoaded}/>
     </StyledContainer>
   );
 };

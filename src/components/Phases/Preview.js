@@ -71,26 +71,29 @@ const StyledContainer = styled.div`
 
 
 
-const Preview = ({ currentPage }) => {
+const Preview = ({ currentPage, images }) => {
+    const addImageLoaded = () => {
+        images();
+    };
   return (
     <StyledContainer page={currentPage}>
-        <img src={trident} alt='' className='tridentImg'/>
+        <img src={trident} alt='' className='tridentImg' onLoad={addImageLoaded}/>
         <span className='previewText'>Preview our Collection</span>
         <Slider slidesToShow={3} className='slider' centerMode={true} autoplay={true} autoplaySpeed={2000} page={currentPage} pauseOnHover={true}>
             <div>
-                <img src={trident} alt=''/>
+                <img src={trident} alt='' onLoad={addImageLoaded}/>
             </div>
             <div>
-                <img src={previewImg} alt=''/>
+                <img src={previewImg} alt='' onLoad={addImageLoaded}/>
             </div>
             <div>
-                <img src={previewImg} alt=''/>
+                <img src={previewImg} alt='' onLoad={addImageLoaded}/>
             </div>
             <div>
-                <img src={previewImg} alt=''/>
+                <img src={previewImg} alt='' onLoad={addImageLoaded}/>
             </div>
             <div>
-                <img src={previewImg} alt=''/>
+                <img src={previewImg} alt='' onLoad={addImageLoaded}/>
             </div>
         </Slider>
     </StyledContainer>

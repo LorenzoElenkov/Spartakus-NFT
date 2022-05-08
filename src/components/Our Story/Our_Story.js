@@ -101,7 +101,10 @@ const StyledMap = styled.img`
 
 
 
-const Lore = ({ currentPage }) => {
+const Lore = ({ currentPage, images }) => {
+  const addImageLoaded = () => {
+    images();
+  };
   return (
     <>
       <StyledBlueBG page={currentPage}>
@@ -122,9 +125,9 @@ const Lore = ({ currentPage }) => {
           into his hands.
         </StyledHeaderText>
       </StyledBlueBG>
-      <StyledHelmet src={helmet} alt="" page={currentPage} />
+      <StyledHelmet src={helmet} alt="" page={currentPage} onLoad={addImageLoaded}/>
       <StyledWhiteBG page={currentPage}>
-        <StyledWhiteLines src={lines}/>
+        <StyledWhiteLines src={lines} onLoad={addImageLoaded}/>
         <StyledWhiteSecondaryText>
             The king of the Earth had to be the worthiest among
             the Olympians and so the competition had to be fair.

@@ -157,7 +157,7 @@ const Navigation = ({ currentPage, onLinkClick }) => {
       <>
         <NavigationBar page={currentPage}>
             <button className={currentPage === 1 ? 'homeBut active' : 'homeBut'} onClick={() => {onLinkClick(1); snd.play()}}>Home</button>
-            <button className={currentPage >= 2 && currentPage <= 3 ? 'loreBut active' : 'loreBut'} onClick={() => {onLinkClick(2); snd.play()}}>
+            <button className={currentPage >= 2 && currentPage <= 3 ? 'loreBut active' : 'loreBut'}>
                 Lore
                 <div className='invisibleSpace'/>
                 <div className='innerMenuLore' page={currentPage}>
@@ -166,7 +166,7 @@ const Navigation = ({ currentPage, onLinkClick }) => {
                     <button page={currentPage} onClick={() => {onLinkClick(3); snd.play()}}>Ancient Map</button>
                 </div>
             </button>
-            <button className={currentPage > 3 && currentPage <= 6? 'roadmapBut active' : 'roadmapBut'} onClick={() => {onLinkClick(4); snd.play()}}>
+            <button className={currentPage > 3 && currentPage <= 6? 'roadmapBut active' : 'roadmapBut'}>
                 Roadmap
                 <div className='invisibleSpace'/>
                 <div className='innerMenuRoadmap' page={currentPage}>
@@ -176,7 +176,7 @@ const Navigation = ({ currentPage, onLinkClick }) => {
                     <button page={currentPage} onClick={() => {onLinkClick(6); snd.play()}}>Token</button>
                 </div>
             </button>
-            <button className={currentPage > 6 ? 'faqBut active' : 'faqBut'} onClick={() => {onLinkClick(7); snd.play()}}>
+            <button className={currentPage > 6 ? 'faqBut active' : 'faqBut'}>
                 FAQ
                 <div className='invisibleSpace'/>
                 <div className='innerMenuFaq' page={currentPage}>

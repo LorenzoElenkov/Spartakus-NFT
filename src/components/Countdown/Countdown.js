@@ -31,8 +31,8 @@ const StyledCountdownContainer = styled.div`
 
     .spanHeader {
         grid-column: 1/5;
-        background: #0f1026;
-        color: white;
+        background-color: ${props => props.page === 2 || props.page === 4 ? 'white' : '#0f1026'};
+        color: ${props => props.page === 2 || props.page === 4 ? '#0f1026' : 'white'};
         font-size: 1.5vw;
         font-family: 'Magh';
         padding: 1vh 0;
