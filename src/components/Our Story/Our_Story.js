@@ -6,6 +6,8 @@ import theHeader from "../../images/Our Story/Our Story.png";
 // import helmet from "../../images/Our Story/helmet.png";
 import helmet from "../../images/shlem200.png";
 import lines from "../../images/Our Story/Lines.png";
+import informationImage from "../../images/motiv22.png";
+
 
 
 const StyledHelmet = styled.img`
@@ -14,11 +16,13 @@ const StyledHelmet = styled.img`
   left: ${props => props.page === 2 ? '50%' : '-100%'};;
   transform-origin: 50% 50%;
   transform: translateX(-52%) translateY(-50%);
-  /* width: 47%; */
   height: 85%;
   opacity: ${(props) => (props.page === 2 ? "1" : "0")};
   transition: left 0.4s ease-in-out;
   z-index: 1;
+  @media screen and (max-width: 425px) {
+    display: none;
+  }
 `;
 
 const StyledWhiteBG = styled.div`
@@ -32,8 +36,29 @@ const StyledWhiteBG = styled.div`
   display: grid;
   grid-template-columns: 26% 74%;
   grid-template-rows: repeat(8, 1fr);
-  overflow: hidden;
-
+  /* overflow: hidden; */
+  
+  .motiv {
+    display: none;
+  }
+  
+  @media screen and (max-width: 425px) {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 45vh;
+    display: flex;
+    flex-direction: column;
+    .motiv {
+    transform: rotate(90deg) translateY(-42.2%);
+    height: 100vw;
+    width: 50px;
+    display: block;
+    margin-top: -130px;
+    }
+  }
+  
 `;
 
 const StyledBlueBG = styled.div`
@@ -48,6 +73,16 @@ const StyledBlueBG = styled.div`
   grid-template-columns: 7.5% 85% 7.5%;
   grid-template-rows: repeat(8, 1fr);
   overflow: hidden;
+  @media screen and (max-width: 425px) {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 55vh;
+    background: white;
+  }
 `;
 
 const StyledHeader = styled.img`
@@ -56,6 +91,20 @@ const StyledHeader = styled.img`
   width: 47.5%;
   align-self: end;
   padding-top: 5vh;
+  @media screen and (max-width: 320px) {
+    margin-top: 50px;
+    height: 300px;
+    top: 35%;
+    filter: invert(1);
+    width: 160px;
+    height: 45px;
+    padding-top: 0;
+    align-self: center;
+  }
+  @media screen and (min-width: 321px) and (max-width: 375px) {
+  }
+  @media screen and (min-width: 376px) and (max-width: 425px) {
+  }
 `;
 
 const StyledHeaderText = styled.span`
@@ -68,12 +117,29 @@ const StyledHeaderText = styled.span`
   font-weight: 700;
   letter-spacing: 1.44px;
   line-height: 130%;
+  @media screen and (max-width: 320px) {
+    color: #0f1026;
+    justify-self: center;
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: calc(100% - 40px);
+    font-size: 0.9rem;
+    margin-top: 10px;
+  }
+  @media screen and (min-width: 321px) and (max-width: 375px) {
+  }
+  @media screen and (min-width: 376px) and (max-width: 425px) {
+  }
 `;
 
 const StyledWhiteLines = styled.img`
     grid-row: 3/3;
     grid-column: 2/2;
     height: 15vw;
+    @media screen and (max-width: 425px) {
+      display: none;
+    }
 `;
 
 const StyledWhiteSecondaryText = styled.span`
@@ -87,19 +153,18 @@ const StyledWhiteSecondaryText = styled.span`
     line-height: 130%;
     width: 78%;
     margin-top: -5vw;
-`;
-
-const StyledMapMenu = styled.div`
-
-
-`;
-
-const StyledMap = styled.img`
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 80%;
-    // height: 90vh;
+    @media screen and (max-width: 320px) {
+      font-size: 0.9rem;
+      width: calc(100% - 40px);
+      padding: 0 20px;
+      margin-top: -120px;
+      grid-row: 1/1;
+      grid-column: 1/1;
+    }
+    @media screen and (min-width: 321px) and (max-width: 375px) {
+    }
+    @media screen and (min-width: 376px) and (max-width: 425px) {
+    }
 `;
 
 
@@ -131,6 +196,7 @@ const Lore = ({ currentPage, images }) => {
       <StyledHelmet src={helmet} alt="" page={currentPage} onLoad={addImageLoaded}/>
       <StyledWhiteBG page={currentPage}>
         <StyledWhiteLines src={lines} onLoad={addImageLoaded}/>
+        <img className="motiv" src={informationImage} onLoad={addImageLoaded} alt=''/>
         <StyledWhiteSecondaryText>
             The king of the Earth had to be the worthiest among
             the Olympians and so the competition had to be fair.

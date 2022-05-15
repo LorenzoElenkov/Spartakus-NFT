@@ -18,21 +18,6 @@ import eleventh from "../../images/map/PNG Karti 11.png";
 import twelveth from "../../images/map/PNG Karti 12.png";
 import thirtheenth from "../../images/map/PNG Karti 13.png";
 import fortheenth from "../../images/map/PNG Karti 14.png";
-// import fullMap from "../../images/Our Story/0.svg";
-// import first from "../../images/Our Story/1.svg";
-// import second from "../../images/Our Story/2.svg";
-// import third from "../../images/Our Story/3.svg";
-// import forth from "../../images/Our Story/4.svg";
-// import fifth from "../../images/Our Story/5.svg";
-// import sixth from "../../images/Our Story/6.svg";
-// import seventh from "../../images/Our Story/7.svg";
-// import eight from "../../images/Our Story/8.svg";
-// import ninth from "../../images/Our Story/9.svg";
-// import tenth from "../../images/Our Story/10.svg";
-// import eleventh from "../../images/Our Story/11.svg";
-// import twelveth from "../../images/Our Story/12.svg";
-// import thirtheenth from "../../images/Our Story/13.svg";
-// import fortheenth from "../../images/Our Story/14.svg";
 
 
 import hera from '../../images/map/hera.png';
@@ -66,6 +51,10 @@ const StyledMapContainer = styled.div`
   grid-template-rows: 100vh;
   transition: left 0.5s ease-in-out;
   overflow: hidden;
+  @media screen and (max-width: 768px) {
+    position: relative;
+    left: 0;
+  }
 `;
 
 const StyledMapWrapper = styled.div`
@@ -399,7 +388,6 @@ const Map = ({ currentPage, images }) => {
   return (
     <StyledMapContainer page={currentPage}>
       <StyledMapWrapper>
-
       <StyledMap
         src={
           clickedArea === 0

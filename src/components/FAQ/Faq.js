@@ -30,6 +30,28 @@ const StyledContainer = styled.div`
         align-self: center;
         letter-spacing: 1.2px;
     }
+    @media screen and (max-width: 320px) {
+        position: relative;
+        left: 0;
+        height: max-content;
+        overflow: visible;
+        display: grid;
+        grid-template-rows: repeat(auto-fill, max-content);
+        .title {
+            font-size: 2.4rem;
+            align-self: end;
+        }
+
+        .subtext {
+            font-size: 1.2rem;
+        }
+
+    }
+    @media screen and (min-width: 321px) and (max-width: 375px) {
+
+    }
+    @media screen and (min-width: 376px) and (max-width: 425px) {
+    }
 `;
 
 const StyledAccordion = styled.div`
@@ -53,21 +75,6 @@ const StyledAccordion = styled.div`
         transition: all 0.5s;
         height: 3vh;
     }
-
-    // div span:nth-child(2n) {
-    //     margin-bottom: 100px;
-    //     color: black;
-    //     // background: white;
-    //     transition: all 0.5s ease-in-out;
-    //     padding: 10px 20px;
-    //     width: 80%;
-    //     font-size: 0.9vw;
-    //     // margin-bottom: 50px;
-    // }
-
-    // div span:nth-child(2n) > span {
-    //     color: red;
-    // }
 
     div span {
         color: black;
@@ -104,6 +111,42 @@ const StyledAccordion = styled.div`
         opacity: 0.15;
     }
 
+    @media screen and (max-width: 320px) {
+        display: grid;
+        grid-template-rows: repeat(autofill, 1fr);
+        row-gap: 25px;
+        margin-top: 20px;
+        div {
+            justify-self: center;
+            width: 100%;
+            display: grid;
+            grid-template-rows: repeat(autofill, 1fr);
+        }
+        div > span {
+            font-size: 2vh;
+            text-align: left;
+            display: block;
+            font-family: 'Medium';
+            color: black;
+            justify-self: center;
+            transition: all 0.5s;
+            height: 3vh;
+        }
+
+        div span {
+            color: black;
+            width: 90%;
+            height: max-content;
+            border-bottom: 1px solid lightgray;
+            transition: all 0.5s;
+        }
+
+    }
+    @media screen and (min-width: 321px) and (max-width: 375px) {
+
+    }
+    @media screen and (min-width: 376px) and (max-width: 425px) {
+    }
 `;
 
 const Faq = ({ currentPage }) => {

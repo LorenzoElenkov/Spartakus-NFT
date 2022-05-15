@@ -22,7 +22,7 @@ const StyledContainer = styled.div`
   .shoulder {
     position: absolute;
     transform: translateX(-30%) translateY(43vh);
-    height: 67%;
+    height: 57%;
   }
 
   .title {
@@ -50,7 +50,49 @@ const StyledContainer = styled.div`
     width: 80%;
     margin-top: -25%;
   }
+  @media screen and (max-width: 320px) {
+    position: relative;
+    left: 0;
+    top: 0;
+    row-gap: 0;
+    display: flex;
+    flex-direction: column;
 
+    .shoulder {
+    position: absolute;
+    transform: translateX(-30%) translateY(50%);
+    height: 57%;
+    opacity: 0.3;
+    }
+
+    .title {
+        margin-top: 50px;
+        font-size: 4rem;
+        width: 100%;
+        text-align: center;
+      }
+    .text {
+        font-size: 1.2rem;
+        padding: 0 20px;
+        margin-top: 170px;
+        text-align: center;
+        width: 85%;
+    }
+
+    .previewImg {
+      width: 50%;
+      margin-top: 0;
+      position: absolute;
+      top: 100px;
+      left: 25%;
+    }
+  }
+  @media screen and (min-width: 321px) and (max-width: 375px) {
+   
+  }
+  @media screen and (min-width: 376px) and (max-width: 425px) {
+    
+  }
 `;
 
 const Token = ({ currentPage, images }) => {

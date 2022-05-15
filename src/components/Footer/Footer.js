@@ -50,6 +50,31 @@ const StyledLightBlue = styled.div`
     margin-right: 15px;
     margin-bottom: 4px;
   }
+  @media screen and (max-width: 320px) {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: max-content;
+    background: #161b54;
+    transition: left 0.5s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    img:nth-child(1) {
+      margin: 50px 0;
+      align-self: center;
+      width: 60%;
+    }
+
+    ul {
+      display: none;
+    }
+  }
+  @media screen and (min-width: 321px) and (max-width: 375px) {
+
+  }
+  @media screen and (min-width: 376px) and (max-width: 425px) {
+  }
 
 `;
 
@@ -79,6 +104,34 @@ const StyledDarkBlue = styled.div`
       justify-self: center;
       grid-row: 2/2;
       grid-column: 1/1;
+  }
+  
+  @media screen and (max-width: 320px) {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    .twitterEmbed {
+    grid-column: 1/1;
+    grid-row: 1/3;
+    width: 90%;
+    align-self: center;
+    margin-bottom: 30px;
+    }
+
+    .twitterTitle {
+        font-size: 2.5rem;
+        align-self: center;
+        padding: 30px 0;
+    }
+  }
+  @media screen and (min-width: 321px) and (max-width: 375px) {
+
+  }
+  @media screen and (min-width: 376px) and (max-width: 425px) {
   }
 `;
 

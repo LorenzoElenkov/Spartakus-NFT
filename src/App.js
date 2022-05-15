@@ -26,6 +26,10 @@ const StyledApp = styled.div`
   grid-template-columns: 100vw;
   grid-template-rows: repeat(auto-fill, 100vh);
 
+  @media screen and (max-width: 765px) {
+    display: block;
+  }
+
   @font-face {
     font-family: 'Magh';
     src: url('./fonts/Maghfirea.otf');
@@ -70,8 +74,8 @@ const App = () => {
 
   const changeImagesLoaded = () => {
     imagesLoaded.current++;
-    if (imagesLoaded.current === 20) {
-      setImagesLoadedPerc(20);
+    if (imagesLoaded.current === 21) {
+      setImagesLoadedPerc(21);
     }
   };
 
@@ -94,16 +98,16 @@ const App = () => {
       }
     }
 
-      if (scrollCount.current > 20 && moveNext === true && currentPage < 9) {
-        moveNext = false;
-        setCurrentPage(prev => (prev + 1));
-        snd.play();
+      // if (scrollCount.current > 20 && moveNext === true && currentPage < 9) {
+      //   moveNext = false;
+      //   setCurrentPage(prev => (prev + 1));
+      //   snd.play();
         
-      } else if (scrollCount.current < -20 && moveNext === true && currentPage > 1) {
-        moveNext = false;
-        setCurrentPage(prev => (prev - 1));
-        snd.play();
-      }
+      // } else if (scrollCount.current < -20 && moveNext === true && currentPage > 1) {
+      //   moveNext = false;
+      //   setCurrentPage(prev => (prev - 1));
+      //   snd.play();
+      // }
   };
 
   useEffect(() => {
@@ -147,7 +151,7 @@ const App = () => {
 
   return (
     <StyledApp>
-      {!isInSite && <Loading clicked={handleLoadingClick} images={imagesLoaded.current}/>}
+      {/* {!isInSite && <Loading clicked={handleLoadingClick} images={imagesLoaded.current}/>} */}
       <Countdown currentPage={currentPage}/>
       <Navigation currentPage={currentPage} onLinkClick={handleLinkClick}/>
       <Information currentPage={currentPage} onLinkClick={handleLinkClick} images={changeImagesLoaded} music={handleVolume} volume={bgVolume}/>

@@ -14,7 +14,11 @@ const StyledRoadmapContainer = styled.div`
   height: 100vh;
   background: #0f1026;
   transition: top 0.5s ease-in-out;
-
+  @media screen and (max-width: 768px) {
+    position: relative;
+    top: 0;
+    height: max-content;
+  }
 `;
 
 const StyledCorousel = styled.div`
@@ -33,12 +37,18 @@ const StyledCorousel = styled.div`
     left: 80%;
     height: 40vh;
   }
+  @media screen and (max-width: 768px) {
+    display: block;
+    img {
+      display: none;
+    }
+  }
 `;
 
 const StyledPhase = styled.div`
   display: grid;
   grid-template-columns: max-content 1fr;
-  grid-template-rows: 15% repeat(6, max-content);
+  grid-template-rows: repeat(7, max-content);
   grid-row: 2/2;
 
   .number {
@@ -115,6 +125,72 @@ const StyledPhase = styled.div`
     background-repeat: no-repeat;
     margin-left: -40px;
     padding-left: 0.5vw;
+  }
+  @media screen and (max-width: 320px) {
+    margin-top: 30px;
+    .number {
+      font-size: 7rem;
+      color: white;
+      text-shadow: 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff,
+        0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff;
+      grid-column: 1/1;
+      grid-row: 1/10;
+      padding-right: 2vw;
+      padding-top: 3vh;
+    }
+
+    .title {
+      font-size: 4rem;
+    }
+
+    .subtitle {
+      grid-column: 2/2;
+      grid-row: 2/2;
+      color: white;
+      font-family: "Medium";
+      font-size: 1.2rem;
+      font-weight: 800;
+      border-top: 2px solid #f2cb05;
+      padding-top: 1.5vw;
+      width: 100%;
+    }
+
+    .quote {
+      grid-column: 2/2;
+      grid-row: 3/3;
+      color: white;
+      font-size: 1rem;
+      margin-top: 0.5vw;
+      margin-bottom: 30px;
+      font-family: "Medium";
+    }
+
+    .unorderedList {
+      grid-column: 2/2;
+      grid-row: 4/4;
+      color: white;
+      display: grid;
+      font-size: 1.2rem;
+      row-gap: 1vw;
+      height: 100%;
+      width: 80%;
+    }
+
+    .unorderedList li::before {
+      width: 15px;
+      height: 15px;
+    }
+  }
+  @media screen and (min-width: 321px) and (max-width: 375px) {
+    
+  }
+  @media screen and (min-width: 376px) and (max-width: 425px) {
+    
+  }
+  @media screen and (max-width: 768px) {
+    &:nth-child(1) {
+      margin-top: 50px;
+    }
   }
 `;
 

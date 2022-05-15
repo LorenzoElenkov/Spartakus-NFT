@@ -14,8 +14,8 @@ const StyledLoadingContainer = styled.div`
     position: absolute;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     background: #0f1026;
     z-index: 9999;
     display: flex;
@@ -45,9 +45,54 @@ const StyledLoadingContainer = styled.div`
         font-family: 'Magh';
         letter-spacing: 1px;
     }
-
     button:hover {
         color: white;
+    }
+
+    @media screen and (max-width: 320px) {
+        
+        img {
+            width: 60%;
+            margin-bottom: 50px;
+        }
+
+        .loading, .ready {
+            font-size: 3rem;
+        }
+        button {
+            font-size: 2rem;
+            padding: 5px 15px;
+        }
+    }
+
+    @media screen and (min-width: 321px) and (max-width: 375px) {
+        img {
+            width: 60%;
+            margin-bottom: 50px;
+        }
+
+        .loading, .ready {
+            font-size: 4rem;
+        }
+        button {
+            font-size: 2.5rem;
+            padding: 5px 15px;
+        }
+    }
+
+    @media screen and (min-width: 376px) and (max-width: 425px) {
+        img {
+            width: 61%;
+            margin-bottom: 50px;
+        }
+
+        .loading, .ready {
+            font-size: 4rem;
+        }
+        button {
+            font-size: 2.8rem;
+            padding: 5px 15px;
+        }
     }
 `;
 
@@ -68,9 +113,22 @@ const StyledProgressBar = styled.div`
         top: 0;
         left: ${props => (props.images - 100) + '%'};
         background: #5863f1;
-        ${props => props.images === 20 && animationPlay};
+        ${props => props.images === 21 && animationPlay};
         animation-fill-mode: forwards;
         -webkit-animation-fill-mode: forwards;
+    }
+
+    @media screen and (max-width: 320px) {
+        width: 75%;
+        height: 20px;
+    }
+    @media screen and (min-width: 321px) and (max-width: 375px){
+        width: 75%;
+        height: 25px;
+    }
+    @media screen and (min-width: 376px) and (max-width: 414px){
+        width: 75%;
+        height: 28px;
     }
 `;
 
@@ -89,7 +147,7 @@ const Loading = ({ clicked, images }) => {
 
     const [hasLoaded, setHasLoaded] = useState(false);
     useEffect(() => {
-        if (images === 20) {
+        if (images === 21) {
             setTimeout(() => {
                 setHasLoaded(true);
             }, 2100);

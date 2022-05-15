@@ -48,28 +48,35 @@ const StyledContainer = styled.div`
         height: 45vh;
         box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.5);
     }
+
+    @media screen and (max-width: 768px) {
+        position: relative;
+        left: 0;
+        .tridentImg {
+            width: 60px;
+        }
+
+        .previewText {
+            font-size: 2.5rem;
+        }
+
+        .slider {
+            display: block;
+        }
+
+        .slider img {
+            height: 220px;
+        }
+    }
 `;
 
-// const StyledCorouselPreview = styled.div`
-//     grid-row: 5/5;
-//     width: 100vw;
-//     height: 100%;
-//     overflow-x: scroll;
-//     display: grid;
-//     grid-template-columns: 1% repeat(5, 25%) 1%;
-//     column-gap: 3vw;
-//     /* background: red; */
-//     /* padding: 50px 50px; */
-//     img {
-//         width: 100%;
-//         box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.5);
-//     }
-
-//     img:nth-child(1) {
-//         grid-column: 2/2;
-//     }
-// `;
-
+const slidesToShowFn = () => {
+    if (window.innerWidth < 768) {
+        return 1;
+    } else {
+        return 3;
+    }
+}
 
 
 const Preview = ({ currentPage, images }) => {
@@ -81,7 +88,7 @@ const Preview = ({ currentPage, images }) => {
     <StyledContainer page={currentPage}>
         <img src={trident} alt='' className='tridentImg' onLoad={addImageLoaded}/>
         <span className='previewText'>Preview our Collection</span>
-        <Slider slidesToShow={3} className='slider' centerMode={true} centerPadding={50} autoplay={true} pauseOnHover={true} autoplaySpeed={2000} page={currentPage}>
+        <Slider slidesToShow={slidesToShowFn()} className='slider' centerMode={true} centerPadding={50} autoplay={true} pauseOnHover={true} autoplaySpeed={2000} page={currentPage}>
             <div>
                 <img src={trident} alt='' onLoad={addImageLoaded}/>
             </div>
