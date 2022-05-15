@@ -151,9 +151,10 @@ const StyledDarkBlue = styled.div`
     .twitterEmbed {
     grid-column: 1/1;
     grid-row: 1/3;
-    width: 60%;
+    width: 80%;
     align-self: center;
     margin-bottom: 30px;
+    padding: 0;
     }
 
     .twitterTitle {
@@ -173,15 +174,16 @@ const StyledDarkBlue = styled.div`
     .twitterEmbed {
     grid-column: 1/1;
     grid-row: 1/3;
-    width: 60%;
+    width: 80%;
     align-self: center;
     margin-bottom: 30px;
+    padding: 0;
     }
 
     .twitterTitle {
-        font-size: 2.5rem;
-        align-self: center;
-        padding: 30px 0;
+      font-size: 2.5rem;
+      align-self: center;
+      padding: 30px 0;
     }
   }
   @media screen and (min-width: 376px) and (max-width: 425px) {
@@ -195,9 +197,10 @@ const StyledDarkBlue = styled.div`
     .twitterEmbed {
     grid-column: 1/1;
     grid-row: 1/3;
-    width: 60%;
+    width: 80%;
     align-self: center;
     margin-bottom: 30px;
+    padding: 0;
     }
 
     .twitterTitle {
@@ -228,7 +231,7 @@ const Footer = ({ currentPage, onLinkClick, images }) => {
       <StyledDarkBlue page={currentPage}>
         <span className='twitterTitle'>Our Twitter Updates</span>
         <div className="twitterEmbed">
-            <Timeline dataSource={{ sourceType: "profile", screenName:'crypto_alerting'}} options={{chrome: 'noheader, nofooter', height: 300}}></Timeline>
+            <Timeline dataSource={{ sourceType: "profile", screenName:'crypto_alerting'}} options={{chrome: 'noheader, nofooter', height: 300, width: 300}}></Timeline>
         </div>
       </StyledDarkBlue>
     </>
