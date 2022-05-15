@@ -33,7 +33,7 @@ const StyledContainer = styled.div`
     @media screen and (max-width: 320px) {
         position: relative;
         left: 0;
-        overflow: visible;
+        /* overflow: visible; */
         display: grid;
         padding-bottom: 30px;
         grid-template-rows: repeat(auto-fill, max-content);
@@ -50,7 +50,7 @@ const StyledContainer = styled.div`
     @media screen and (min-width: 321px) and (max-width: 375px) {
         position: relative;
         left: 0;
-        overflow: visible;
+        /* overflow: visible; */
         display: grid;
         padding-bottom: 30px;
         grid-template-rows: repeat(auto-fill, max-content);
@@ -66,7 +66,7 @@ const StyledContainer = styled.div`
     @media screen and (min-width: 376px) and (max-width: 425px) {
         position: relative;
         left: 0;
-        overflow: visible;
+        /* overflow: visible; */
         display: grid;
         padding-bottom: 30px;
         grid-template-rows: repeat(auto-fill, max-content);

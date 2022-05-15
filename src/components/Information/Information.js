@@ -188,9 +188,8 @@ const StyledCPTH = styled.div`
 
 const StyledHOO = styled.div`
   width: 55%;
-  justify-self: center;
+  /* justify-self: center; */
   z-index: 9000;
-  
   @font-face {
     font-family: "Magh";
     src: url("./fonts/Maghfirea.otf");
@@ -273,6 +272,9 @@ const StyledHOO = styled.div`
       font-size: 11vw;
       letter-spacing: 2px;
       justify-self: center;
+      transform: none;
+      margin-bottom: 30px;
+
     }
 
     .textBlue {
@@ -311,7 +313,7 @@ const StyledHOO = styled.div`
     }
   }
   @media screen and (min-width: 321px) and (max-width: 375px) {
-    width: 95%;
+    width: 100vw;
     align-self: end;
     margin-bottom: 30px;
     display: flex;
@@ -320,7 +322,9 @@ const StyledHOO = styled.div`
       font-family: "Magh";
       font-size: 11vw;
       letter-spacing: 2px;
-      justify-self: center;
+      align-self: center;
+      transform: none;
+      margin-bottom: 30px;
     }
 
     .textBlue {
@@ -369,6 +373,9 @@ const StyledHOO = styled.div`
       font-size: 11vw;
       letter-spacing: 2px;
       justify-self: center;
+      transform: none;
+      margin-bottom: 30px;
+
     }
 
     .textBlue {
@@ -531,8 +538,8 @@ const Information = ({ currentPage, onLinkClick, images, music, volume }) => {
       />
       <StyledBlueBG page={currentPage}>
         <StyledHOO>
-          <span className={"titleBlue"}>Heroes of Olympus</span>
-          <span className={"textBlue"}>
+          <span className="titleBlue">Heroes of Olympus</span>
+          <span className="textBlue">
             Collection of 10,878 ultra-realistic 3D heroes, sealed in the Cursed
             Chests of Chaos, on the Solana blockchain! Ancient Greece is about
             to be rebuilt in the Metaverse. Join the Battle of the Gods!

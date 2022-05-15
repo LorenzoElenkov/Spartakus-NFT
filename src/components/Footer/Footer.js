@@ -16,7 +16,6 @@ const StyledLightBlue = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   row-gap: 1vh;
-
   img:nth-child(1) {
     justify-self: center;
     align-self: center;
@@ -152,7 +151,7 @@ const StyledDarkBlue = styled.div`
     .twitterEmbed {
     grid-column: 1/1;
     grid-row: 1/3;
-    width: 90%;
+    width: 60%;
     align-self: center;
     margin-bottom: 30px;
     }
@@ -167,14 +166,14 @@ const StyledDarkBlue = styled.div`
     position: relative;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 100vw;
     height: max-content;
     display: flex;
     flex-direction: column;
     .twitterEmbed {
     grid-column: 1/1;
     grid-row: 1/3;
-    width: 90%;
+    width: 60%;
     align-self: center;
     margin-bottom: 30px;
     }
@@ -196,7 +195,7 @@ const StyledDarkBlue = styled.div`
     .twitterEmbed {
     grid-column: 1/1;
     grid-row: 1/3;
-    width: 90%;
+    width: 60%;
     align-self: center;
     margin-bottom: 30px;
     }

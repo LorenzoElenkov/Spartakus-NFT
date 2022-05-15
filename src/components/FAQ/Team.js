@@ -95,7 +95,6 @@ const StyledContainer = styled.div`
         height: max-content;
         display: flex;
         flex-direction: column;
-        overflow: visible;
 
         .teamTitle {
             margin-top: 50px;
@@ -163,7 +162,6 @@ const StyledContainer = styled.div`
         height: max-content;
         display: flex;
         flex-direction: column;
-        overflow: visible;
 
         .teamTitle {
             margin-top: 50px;
@@ -224,7 +222,69 @@ const StyledContainer = styled.div`
         }
     }
     @media screen and (min-width: 376px) and (max-width: 425px) {
-        
+        position: relative;
+        top: 0;
+        height: max-content;
+        display: flex;
+        flex-direction: column;
+
+        .teamTitle {
+            margin-top: 50px;
+            align-self: center;
+            margin-bottom: 5vh;
+            font-family: 'Medium';
+            letter-spacing: 1px;
+            font-size: 2rem;
+        }
+
+        .teamContainer {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding-top: 20px;
+        }
+
+        .teamContainer span {
+            font-size: 1.5rem;
+        }
+
+        .img1, .img2, .img3, .img4, .img5 {
+            grid-row: 1/1;
+            justify-self: center;
+            align-self: center;
+            width: 50%;
+        }
+
+        .name1, .name2, .name3, .name4, .name5 {
+            color: white;
+            grid-row: 2/2;
+            justify-self: center;
+            align-self: center;
+        }
+
+        .ceo {
+            grid-row: 3/3;
+            justify-self: center;
+            color: #f2cb05;
+            align-self: center;
+            margin-bottom: 40px;
+        }
+
+        .still {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            margin-top: 10px;
+        }
+
+        .subtextStill {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+        }
+
+        .underline {
+            text-decoration: underline;
+            color: rgb(0, 0, 150);
+        }
     }
 `;
 const Team = ({ currentPage, images }) => {
