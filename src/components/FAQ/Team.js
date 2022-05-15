@@ -221,7 +221,7 @@ const StyledContainer = styled.div`
             color: rgb(0, 0, 150);
         }
     }
-    @media screen and (min-width: 376px) and (max-width: 425px) {
+    @media screen and (min-width: 376px) and (max-width: 428px) {
         position: relative;
         top: 0;
         height: max-content;

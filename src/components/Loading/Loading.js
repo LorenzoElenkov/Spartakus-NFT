@@ -80,7 +80,7 @@ const StyledLoadingContainer = styled.div`
         }
     }
 
-    @media screen and (min-width: 376px) and (max-width: 425px) {
+    @media screen and (min-width: 376px) and (max-width: 428px) {
         img {
             width: 61%;
             margin-bottom: 50px;

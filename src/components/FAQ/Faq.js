@@ -63,7 +63,7 @@ const StyledContainer = styled.div`
             font-size: 1.2rem;
         }
     }
-    @media screen and (min-width: 376px) and (max-width: 425px) {
+    @media screen and (min-width: 376px) and (max-width: 428px) {
         position: relative;
         left: 0;
         /* overflow: visible; */
@@ -199,7 +199,7 @@ const StyledAccordion = styled.div`
             transition: all 0.5s;
         }
     }
-    @media screen and (min-width: 376px) and (max-width: 425px) {
+    @media screen and (min-width: 376px) and (max-width: 428px) {
         display: grid;
         grid-template-rows: repeat(autofill, 1fr);
         row-gap: 25px;

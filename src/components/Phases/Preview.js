@@ -84,7 +84,7 @@ const StyledContainer = styled.div`
         }
 
     }
-    @media screen and (min-width: 376px) and (max-width: 425px) {
+    @media screen and (min-width: 376px) and (max-width: 428px) {
         .tridentImg {
             width: 60px;
         }

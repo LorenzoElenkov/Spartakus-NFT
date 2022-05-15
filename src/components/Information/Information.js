@@ -153,7 +153,7 @@ const StyledHelmet = styled.img`
     transform: none;
 
   }
-  @media screen and (min-width: 376px) and (max-width: 425px) {
+  @media screen and (min-width: 376px) and (max-width: 428px) {
     height: 400px;
     transform: none;
     top: 30px;
@@ -362,7 +362,7 @@ const StyledHOO = styled.div`
       padding-right: 0px;
     }
   }
-  @media screen and (min-width: 376px) and (max-width: 425px) {
+  @media screen and (min-width: 376px) and (max-width: 428px) {
     width: 95%;
     align-self: end;
     margin-bottom: 30px;

@@ -74,7 +74,7 @@ const StyledWhiteBG = styled.div`
     margin-top: -130px;
     }
   }
-  @media screen and (min-width: 376px) and (max-width: 425px) {
+  @media screen and (min-width: 376px) and (max-width: 428px) {
     position: relative;
     top: 0;
     left: 0;
@@ -105,7 +105,7 @@ const StyledBlueBG = styled.div`
   grid-template-columns: 7.5% 85% 7.5%;
   grid-template-rows: repeat(8, 1fr);
   overflow: hidden;
-  @media screen and (max-width: 425px) {
+  @media screen and (max-width: 428px) {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -144,7 +144,7 @@ const StyledHeader = styled.img`
     padding-top: 0;
     align-self: center;
   }
-  @media screen and (min-width: 376px) and (max-width: 425px) {
+  @media screen and (min-width: 376px) and (max-width: 428px) {
     margin-top: 50px;
     height: 300px;
     top: 35%;
@@ -186,7 +186,7 @@ const StyledHeaderText = styled.span`
     font-size: 1.1rem;
     margin-top: 10px;
   }
-  @media screen and (min-width: 376px) and (max-width: 425px) {
+  @media screen and (min-width: 376px) and (max-width: 428px) {
     color: #0f1026;
     justify-self: center;
     width: 100%;
@@ -202,7 +202,7 @@ const StyledWhiteLines = styled.img`
     grid-row: 3/3;
     grid-column: 2/2;
     height: 15vw;
-    @media screen and (max-width: 425px) {
+    @media screen and (max-width: 428px) {
       display: none;
     }
 `;
@@ -234,7 +234,7 @@ const StyledWhiteSecondaryText = styled.span`
       grid-row: 1/1;
       grid-column: 1/1;
     }
-    @media screen and (min-width: 376px) and (max-width: 425px) {
+    @media screen and (min-width: 376px) and (max-width: 428px) {
       font-size: 1.2rem;
       width: calc(100% - 40px);
       padding: 0 20px;

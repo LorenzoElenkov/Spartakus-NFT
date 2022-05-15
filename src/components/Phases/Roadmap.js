@@ -236,7 +236,7 @@ const StyledPhase = styled.div`
       height: 15px;
     }
   }
-  @media screen and (min-width: 376px) and (max-width: 425px) {
+  @media screen and (min-width: 376px) and (max-width: 428px) {
     margin-top: 30px;
     .number {
       font-size: 7rem;

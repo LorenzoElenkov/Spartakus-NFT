@@ -89,7 +89,7 @@ const StyledLightBlue = styled.div`
       display: none;
     }
   }
-  @media screen and (min-width: 376px) and (max-width: 425px) {
+  @media screen and (min-width: 376px) and (max-width: 428px) {
     position: relative;
     top: 0;
     left: 0;
@@ -186,7 +186,7 @@ const StyledDarkBlue = styled.div`
       padding: 30px 0;
     }
   }
-  @media screen and (min-width: 376px) and (max-width: 425px) {
+  @media screen and (min-width: 376px) and (max-width: 428px) {
     position: relative;
     top: 0;
     left: 0;

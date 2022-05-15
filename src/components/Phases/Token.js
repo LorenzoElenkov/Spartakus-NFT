@@ -124,7 +124,7 @@ const StyledContainer = styled.div`
       left: 25%;
     }
   }
-  @media screen and (min-width: 376px) and (max-width: 425px) {
+  @media screen and (min-width: 376px) and (max-width: 428px) {
     position: relative;
     left: 0;
     top: 0;
