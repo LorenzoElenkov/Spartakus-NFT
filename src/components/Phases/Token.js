@@ -88,10 +88,78 @@ const StyledContainer = styled.div`
     }
   }
   @media screen and (min-width: 321px) and (max-width: 375px) {
-   
+    position: relative;
+    left: 0;
+    top: 0;
+    row-gap: 0;
+    display: flex;
+    flex-direction: column;
+
+    .shoulder {
+    position: absolute;
+    transform: translateX(-30%) translateY(50%);
+    height: 57%;
+    opacity: 0.3;
+    }
+
+    .title {
+        margin-top: 50px;
+        font-size: 4rem;
+        width: 100%;
+        text-align: center;
+      }
+    .text {
+        font-size: 1.5rem;
+        padding: 0 20px;
+        margin-top: 220px;
+        text-align: center;
+        width: 85%;
+    }
+
+    .previewImg {
+      width: 50%;
+      margin-top: 0;
+      position: absolute;
+      top: 100px;
+      left: 25%;
+    }
   }
   @media screen and (min-width: 376px) and (max-width: 425px) {
-    
+    position: relative;
+    left: 0;
+    top: 0;
+    row-gap: 0;
+    display: flex;
+    flex-direction: column;
+
+    .shoulder {
+    position: absolute;
+    transform: translateX(-30%) translateY(50%);
+    height: 57%;
+    opacity: 0.3;
+    }
+
+    .title {
+        margin-top: 50px;
+        font-size: 4rem;
+        width: 100%;
+        text-align: center;
+      }
+    .text {
+        font-size: 1.5rem;
+        padding: 0 20px;
+        margin-top: 220px;
+        text-align: center;
+        width: 85%;
+    }
+
+    .previewImg {
+      width: 50%;
+      margin-top: 0;
+      position: absolute;
+      top: 100px;
+      left: 25%;
+    }
   }
 `;
 

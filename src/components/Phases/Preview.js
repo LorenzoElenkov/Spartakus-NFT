@@ -49,9 +49,7 @@ const StyledContainer = styled.div`
         box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.5);
     }
 
-    @media screen and (max-width: 768px) {
-        position: relative;
-        left: 0;
+    @media screen and (max-width: 320px) {
         .tridentImg {
             width: 60px;
         }
@@ -67,6 +65,46 @@ const StyledContainer = styled.div`
         .slider img {
             height: 220px;
         }
+    }
+    @media screen and (min-width: 321px) and (max-width: 375px) {
+        .tridentImg {
+            width: 80px;
+        }
+
+        .previewText {
+            font-size: 2.8rem;
+        }
+
+        .slider {
+            display: block;
+        }
+
+        .slider img {
+            height: 260px;
+        }
+
+    }
+    @media screen and (min-width: 376px) and (max-width: 425px) {
+        .tridentImg {
+            width: 60px;
+        }
+
+        .previewText {
+            font-size: 2.5rem;
+        }
+
+        .slider {
+            display: block;
+        }
+
+        .slider img {
+            height: 300px;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        position: relative;
+        left: 0;
     }
 `;
 

@@ -20,7 +20,7 @@ const StyledHelmet = styled.img`
   opacity: ${(props) => (props.page === 2 ? "1" : "0")};
   transition: left 0.4s ease-in-out;
   z-index: 1;
-  @media screen and (max-width: 425px) {
+  @media screen and (max-width: 768px) {
     display: none;
   }
 `;
@@ -41,8 +41,8 @@ const StyledWhiteBG = styled.div`
   .motiv {
     display: none;
   }
-  
-  @media screen and (max-width: 425px) {
+
+  @media screen and (max-width: 320px) {
     position: relative;
     top: 0;
     left: 0;
@@ -51,7 +51,39 @@ const StyledWhiteBG = styled.div`
     display: flex;
     flex-direction: column;
     .motiv {
-    transform: rotate(90deg) translateY(-42.2%);
+    transform: rotate(90deg) translateY(-42.3%);
+    height: 100vw;
+    width: 50px;
+    display: block;
+    margin-top: -130px;
+    }
+  }
+  @media screen and (min-width: 321px) and (max-width: 375px) {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 45vh;
+    display: flex;
+    flex-direction: column;
+    .motiv {
+    transform: rotate(90deg) translateY(-43.3%);
+    height: 100vw;
+    width: 50px;
+    display: block;
+    margin-top: -130px;
+    }
+  }
+  @media screen and (min-width: 376px) and (max-width: 425px) {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    .motiv {
+    transform: rotate(90deg) translateY(-44%);
     height: 100vw;
     width: 50px;
     display: block;
@@ -83,6 +115,7 @@ const StyledBlueBG = styled.div`
     height: 55vh;
     background: white;
   }
+
 `;
 
 const StyledHeader = styled.img`
@@ -102,8 +135,24 @@ const StyledHeader = styled.img`
     align-self: center;
   }
   @media screen and (min-width: 321px) and (max-width: 375px) {
+    margin-top: 50px;
+    height: 300px;
+    top: 35%;
+    filter: invert(1);
+    width: 160px;
+    height: 45px;
+    padding-top: 0;
+    align-self: center;
   }
   @media screen and (min-width: 376px) and (max-width: 425px) {
+    margin-top: 50px;
+    height: 300px;
+    top: 35%;
+    filter: invert(1);
+    width: 160px;
+    height: 45px;
+    padding-top: 0;
+    align-self: center;
   }
 `;
 
@@ -128,8 +177,24 @@ const StyledHeaderText = styled.span`
     margin-top: 10px;
   }
   @media screen and (min-width: 321px) and (max-width: 375px) {
+    color: #0f1026;
+    justify-self: center;
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: calc(100% - 40px);
+    font-size: 1.1rem;
+    margin-top: 10px;
   }
   @media screen and (min-width: 376px) and (max-width: 425px) {
+    color: #0f1026;
+    justify-self: center;
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: calc(100% - 40px);
+    font-size: 1.3rem;
+    margin-top: 10px;
   }
 `;
 
@@ -162,8 +227,20 @@ const StyledWhiteSecondaryText = styled.span`
       grid-column: 1/1;
     }
     @media screen and (min-width: 321px) and (max-width: 375px) {
+      font-size: 1rem;
+      width: calc(100% - 40px);
+      padding: 0 20px;
+      margin-top: -130px;
+      grid-row: 1/1;
+      grid-column: 1/1;
     }
     @media screen and (min-width: 376px) and (max-width: 425px) {
+      font-size: 1.2rem;
+      width: calc(100% - 40px);
+      padding: 0 20px;
+      margin-top: -120px;
+      grid-row: 1/1;
+      grid-column: 1/1;
     }
 `;
 

@@ -182,10 +182,114 @@ const StyledPhase = styled.div`
     }
   }
   @media screen and (min-width: 321px) and (max-width: 375px) {
-    
+    margin-top: 30px;
+    .number {
+      font-size: 7rem;
+      color: white;
+      text-shadow: 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff,
+        0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff;
+      grid-column: 1/1;
+      grid-row: 1/10;
+      padding-right: 2vw;
+      padding-top: 3vh;
+    }
+
+    .title {
+      font-size: 4rem;
+    }
+
+    .subtitle {
+      grid-column: 2/2;
+      grid-row: 2/2;
+      color: white;
+      font-family: "Medium";
+      font-size: 1.2rem;
+      font-weight: 800;
+      border-top: 2px solid #f2cb05;
+      padding-top: 1.5vw;
+      width: 100%;
+    }
+
+    .quote {
+      grid-column: 2/2;
+      grid-row: 3/3;
+      color: white;
+      font-size: 1rem;
+      margin-top: 0.5vw;
+      margin-bottom: 30px;
+      font-family: "Medium";
+    }
+
+    .unorderedList {
+      grid-column: 2/2;
+      grid-row: 4/4;
+      color: white;
+      display: grid;
+      font-size: 1.2rem;
+      row-gap: 1vw;
+      height: 100%;
+      width: 80%;
+    }
+
+    .unorderedList li::before {
+      width: 15px;
+      height: 15px;
+    }
   }
   @media screen and (min-width: 376px) and (max-width: 425px) {
-    
+    margin-top: 30px;
+    .number {
+      font-size: 7rem;
+      color: white;
+      text-shadow: 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff,
+        0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff;
+      grid-column: 1/1;
+      grid-row: 1/10;
+      padding-right: 2vw;
+      padding-top: 3vh;
+    }
+
+    .title {
+      font-size: 4rem;
+    }
+
+    .subtitle {
+      grid-column: 2/2;
+      grid-row: 2/2;
+      color: white;
+      font-family: "Medium";
+      font-size: 1.2rem;
+      font-weight: 800;
+      border-top: 2px solid #f2cb05;
+      padding-top: 1.5vw;
+      width: 100%;
+    }
+
+    .quote {
+      grid-column: 2/2;
+      grid-row: 3/3;
+      color: white;
+      font-size: 1rem;
+      margin-top: 0.5vw;
+      margin-bottom: 30px;
+      font-family: "Medium";
+    }
+
+    .unorderedList {
+      grid-column: 2/2;
+      grid-row: 4/4;
+      color: white;
+      display: grid;
+      font-size: 1.2rem;
+      row-gap: 1vw;
+      height: 100%;
+      width: 80%;
+    }
+
+    .unorderedList li::before {
+      width: 15px;
+      height: 15px;
+    }
   }
   @media screen and (max-width: 768px) {
     &:nth-child(1) {

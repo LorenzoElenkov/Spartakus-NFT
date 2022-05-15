@@ -33,9 +33,9 @@ const StyledContainer = styled.div`
     @media screen and (max-width: 320px) {
         position: relative;
         left: 0;
-        height: max-content;
         overflow: visible;
         display: grid;
+        padding-bottom: 30px;
         grid-template-rows: repeat(auto-fill, max-content);
         .title {
             font-size: 2.4rem;
@@ -48,9 +48,36 @@ const StyledContainer = styled.div`
 
     }
     @media screen and (min-width: 321px) and (max-width: 375px) {
+        position: relative;
+        left: 0;
+        overflow: visible;
+        display: grid;
+        padding-bottom: 30px;
+        grid-template-rows: repeat(auto-fill, max-content);
+        .title {
+            font-size: 2.4rem;
+            align-self: end;
+        }
 
+        .subtext {
+            font-size: 1.2rem;
+        }
     }
     @media screen and (min-width: 376px) and (max-width: 425px) {
+        position: relative;
+        left: 0;
+        overflow: visible;
+        display: grid;
+        padding-bottom: 30px;
+        grid-template-rows: repeat(auto-fill, max-content);
+        .title {
+            font-size: 2.4rem;
+            align-self: end;
+        }
+
+        .subtext {
+            font-size: 1.2rem;
+        }
     }
 `;
 
@@ -143,9 +170,64 @@ const StyledAccordion = styled.div`
 
     }
     @media screen and (min-width: 321px) and (max-width: 375px) {
+        display: grid;
+        grid-template-rows: repeat(autofill, 1fr);
+        row-gap: 25px;
+        margin-top: 20px;
+        div {
+            justify-self: center;
+            width: 100%;
+            display: grid;
+            grid-template-rows: repeat(autofill, 1fr);
+        }
+        div > span {
+            font-size: 2vh;
+            text-align: left;
+            display: block;
+            font-family: 'Medium';
+            color: black;
+            justify-self: center;
+            transition: all 0.5s;
+            height: 3vh;
+        }
 
+        div span {
+            color: black;
+            width: 90%;
+            height: max-content;
+            border-bottom: 1px solid lightgray;
+            transition: all 0.5s;
+        }
     }
     @media screen and (min-width: 376px) and (max-width: 425px) {
+        display: grid;
+        grid-template-rows: repeat(autofill, 1fr);
+        row-gap: 25px;
+        margin-top: 20px;
+        div {
+            justify-self: center;
+            width: 100%;
+            display: grid;
+            grid-template-rows: repeat(autofill, 1fr);
+        }
+        div > span {
+            font-size: 2vh;
+            text-align: left;
+            display: block;
+            font-family: 'Medium';
+            color: black;
+            justify-self: center;
+            transition: all 0.5s;
+            height: 3vh;
+        }
+
+        div span {
+            color: black;
+            width: 90%;
+            height: max-content;
+            border-bottom: 1px solid lightgray;
+            transition: all 0.5s;
+        }
     }
 `;
 
