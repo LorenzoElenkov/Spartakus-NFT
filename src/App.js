@@ -98,16 +98,16 @@ const App = () => {
       }
     }
 
-      // if (scrollCount.current > 20 && moveNext === true && currentPage < 9) {
-      //   moveNext = false;
-      //   setCurrentPage(prev => (prev + 1));
-      //   snd.play();
+      if (scrollCount.current > 20 && moveNext === true && currentPage < 9 && window.innerWidth < 429) {
+        moveNext = false;
+        setCurrentPage(prev => (prev + 1));
+        snd.play();
         
-      // } else if (scrollCount.current < -20 && moveNext === true && currentPage > 1) {
-      //   moveNext = false;
-      //   setCurrentPage(prev => (prev - 1));
-      //   snd.play();
-      // }
+      } else if (scrollCount.current < -20 && moveNext === true && currentPage > 1 && window.innerWidth < 429) {
+        moveNext = false;
+        setCurrentPage(prev => (prev - 1));
+        snd.play();
+      }
   };
 
   useEffect(() => {
@@ -151,7 +151,7 @@ const App = () => {
 
   return (
     <StyledApp>
-      {/* {!isInSite && <Loading clicked={handleLoadingClick} images={imagesLoaded.current}/>} */}
+      {!isInSite && <Loading clicked={handleLoadingClick} images={imagesLoaded.current}/>}
       <Countdown currentPage={currentPage}/>
       <Navigation currentPage={currentPage} onLinkClick={handleLinkClick}/>
       <Information currentPage={currentPage} onLinkClick={handleLinkClick} images={changeImagesLoaded} music={handleVolume} volume={bgVolume}/>
