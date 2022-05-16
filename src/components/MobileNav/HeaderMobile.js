@@ -47,7 +47,7 @@ const HeaderMobile = ({ music, volume }) => {
         </div>
       </StyledMobileNavigation>
       <StyledMobileNavContainer>
-        <img src={shlemLogo2} alt=''/>
+        <img src={shlemLogo} alt=''/>
         <div className='menuButton' onClick={openMenuHandler}>
             <div className='topLine'/>
             <div className='midLine'/>
@@ -63,7 +63,7 @@ export default HeaderMobile;
 
 const StyledMobileNavigation = styled.nav`
     position: fixed;
-    top: ${props => props.isOpen ? '0' : '-110%'};
+    top: ${props => props.isOpen ? '0' : '-120%'};
     left: 0;
     width: 100%;
     height: 100%;
