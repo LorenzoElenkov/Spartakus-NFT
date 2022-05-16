@@ -30,7 +30,6 @@ const HeaderMobile = ({ music, volume }) => {
         <div className='topBar'>
             <img src={shlemLogo} alt=''/>
             <button className='closeMenu' onClick={openMenuHandler}>X</button>
-            
         </div>
         <div className='links'>
             <button>Home</button>
@@ -105,6 +104,7 @@ const StyledMobileNavigation = styled.nav`
         border-radius: 50%;
         font-size: 2rem;
         color: white;
+        text-align: center;
     }
 
     & > .links {
