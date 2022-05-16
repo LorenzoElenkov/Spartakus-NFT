@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 
 import shlemLogo from '../../images/shlemLoo.png';
+import shlemLogo2 from '../../images/ShlemSVG.svg';
 import shlemBG from '../../images/shlem200.png';
 import instagram2 from '../../images/instagram3.svg';
 import twitter2 from '../../images/twitter3.svg';
@@ -25,7 +26,7 @@ const HeaderMobile = ({ music, volume }) => {
   return (
       <>{window.outerWidth < 429 && <>
       <StyledMobileNavigation isOpen={isMenuOn} volumeBG={volume}>
-        <img src={shlemBG} alt=''/>
+        <img src={shlemLogo2} alt=''/>
         <div className='topBar'>
             <img src={shlemLogo} alt=''/>
             <button className='closeMenu' onClick={openMenuHandler}>X</button>
@@ -234,7 +235,7 @@ const StyledMobileNavContainer = styled.header`
             
         }
         img {
-        width: 30px;
+        width: 45px;
         }
     }
     @media screen and (min-width: 321px) and (max-width: 375px) {
@@ -249,7 +250,7 @@ const StyledMobileNavContainer = styled.header`
             
         }
         img {
-        width: 40px;
+        width: 50px;
         }
     }
     @media screen and (min-width: 376px) and (max-width: 428px) {
