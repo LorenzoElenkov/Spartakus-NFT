@@ -231,7 +231,7 @@ const Footer = ({ currentPage, onLinkClick, images }) => {
       <StyledDarkBlue page={currentPage}>
         <span className='twitterTitle'>Our Twitter Updates</span>
         <div className="twitterEmbed">
-            <Timeline dataSource={{ sourceType: "profile", screenName:'crypto_alerting'}} options={{chrome: 'noheader, nofooter', height: 300, width: 300}}></Timeline>
+            <Timeline dataSource={{ sourceType: "profile", screenName:'crypto_alerting'}} options={{chrome: 'noheader, nofooter', height: 300, width: 500}}></Timeline>
         </div>
       </StyledDarkBlue>
     </>

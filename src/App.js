@@ -16,6 +16,7 @@ import styled from 'styled-components';
 import Loading from './components/Loading/Loading';
 
 import bgMusic2 from './images/bgMusic2.mp3';
+import HeaderMobile from './components/MobileNav/HeaderMobile';
 
 const StyledApp = styled.div`
   position: relative;
@@ -98,18 +99,18 @@ const App = () => {
       }
     }
 
-      if (scrollCount.current > 20 && moveNext === true && currentPage < 9 && window.innerWidth < 429) {
+      if (scrollCount.current > 20 && moveNext === true && currentPage < 9 && window.outerWidth > 429) {
         moveNext = false;
         setCurrentPage(prev => (prev + 1));
         snd.play();
         
-      } else if (scrollCount.current < -20 && moveNext === true && currentPage > 1 && window.innerWidth < 429) {
+      } else if (scrollCount.current < -20 && moveNext === true && currentPage > 1 && window.outerWidth > 429) {
         moveNext = false;
         setCurrentPage(prev => (prev - 1));
         snd.play();
       }
   };
-
+  console.log(window.outerWidth);
   useEffect(() => {
     scrollCount.current = 0;
     const move = setTimeout(() => {
@@ -153,6 +154,7 @@ const App = () => {
     <StyledApp>
       {!isInSite && <Loading clicked={handleLoadingClick} images={imagesLoaded.current}/>}
       <Countdown currentPage={currentPage}/>
+      {window.outerWidth < 429 && <HeaderMobile music={handleVolume} volume={bgVolume}/>}
       <Navigation currentPage={currentPage} onLinkClick={handleLinkClick}/>
       <Information currentPage={currentPage} onLinkClick={handleLinkClick} images={changeImagesLoaded} music={handleVolume} volume={bgVolume}/>
       <OurStory currentPage={currentPage} images={changeImagesLoaded}/>

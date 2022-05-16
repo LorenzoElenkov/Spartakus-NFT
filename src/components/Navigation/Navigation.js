@@ -141,8 +141,8 @@ const NavigationBar = styled.nav`
             background-color: transparent;
         }
 
-        @media screen and (max-width: 688px) {
-            
+        @media screen and (max-width: 428px) {
+
         }
 
 
@@ -154,39 +154,39 @@ const Navigation = ({ currentPage, onLinkClick }) => {
     const snd = new Audio('./clicksound.wav');
 
   return (
-      <>
-        <NavigationBar page={currentPage}>
-            <button className={currentPage === 1 ? 'homeBut active' : 'homeBut'} onClick={() => {onLinkClick(1); snd.play()}}>Home</button>
-            <button className={currentPage >= 2 && currentPage <= 3 ? 'loreBut active' : 'loreBut'}>
-                Lore
-                <div className='invisibleSpace'/>
-                <div className='innerMenuLore' page={currentPage}>
-                    <span className='innerLorePointer'>\/</span>
-                    <button page={currentPage} onClick={() => {onLinkClick(2); snd.play()}}>Story</button>
-                    <button page={currentPage} onClick={() => {onLinkClick(3); snd.play()}}>Ancient Map</button>
-                </div>
-            </button>
-            <button className={currentPage > 3 && currentPage <= 6? 'roadmapBut active' : 'roadmapBut'}>
-                Roadmap
-                <div className='invisibleSpace'/>
-                <div className='innerMenuRoadmap' page={currentPage}>
-                    <span className='innerLorePointer'>\/</span>
-                    <button page={currentPage} onClick={() => {onLinkClick(4); snd.play()}}>Roadmap</button>
-                    <button page={currentPage} onClick={() => {onLinkClick(5); snd.play()}}>The Collection</button>
-                    <button page={currentPage} onClick={() => {onLinkClick(6); snd.play()}}>Token</button>
-                </div>
-            </button>
-            <button className={currentPage > 6 ? 'faqBut active' : 'faqBut'}>
-                FAQ
-                <div className='invisibleSpace'/>
-                <div className='innerMenuFaq' page={currentPage}>
-                    <span className='innerLorePointer'>\/</span>
-                    <button page={currentPage} onClick={() => {onLinkClick(7); snd.play()}}>FAQ</button>
-                    <button page={currentPage} onClick={() => {onLinkClick(8); snd.play()}}>Our Team</button>
-                    <button page={currentPage} onClick={() => {onLinkClick(9); snd.play()}}>Contact</button>
-                </div>
-            </button>
-        </NavigationBar>
+      <>{window.outerWidth > 428 && <NavigationBar page={currentPage}>
+        <button className={currentPage === 1 ? 'homeBut active' : 'homeBut'} onClick={() => {onLinkClick(1); snd.play()}}>Home</button>
+        <button className={currentPage >= 2 && currentPage <= 3 ? 'loreBut active' : 'loreBut'}>
+            Lore
+            <div className='invisibleSpace'/>
+            <div className='innerMenuLore' page={currentPage}>
+                <span className='innerLorePointer'>\/</span>
+                <button page={currentPage} onClick={() => {onLinkClick(2); snd.play()}}>Story</button>
+                <button page={currentPage} onClick={() => {onLinkClick(3); snd.play()}}>Ancient Map</button>
+            </div>
+        </button>
+        <button className={currentPage > 3 && currentPage <= 6? 'roadmapBut active' : 'roadmapBut'}>
+            Roadmap
+            <div className='invisibleSpace'/>
+            <div className='innerMenuRoadmap' page={currentPage}>
+                <span className='innerLorePointer'>\/</span>
+                <button page={currentPage} onClick={() => {onLinkClick(4); snd.play()}}>Roadmap</button>
+                <button page={currentPage} onClick={() => {onLinkClick(5); snd.play()}}>The Collection</button>
+                <button page={currentPage} onClick={() => {onLinkClick(6); snd.play()}}>Token</button>
+            </div>
+        </button>
+        <button className={currentPage > 6 ? 'faqBut active' : 'faqBut'}>
+            FAQ
+            <div className='invisibleSpace'/>
+            <div className='innerMenuFaq' page={currentPage}>
+                <span className='innerLorePointer'>\/</span>
+                <button page={currentPage} onClick={() => {onLinkClick(7); snd.play()}}>FAQ</button>
+                <button page={currentPage} onClick={() => {onLinkClick(8); snd.play()}}>Our Team</button>
+                <button page={currentPage} onClick={() => {onLinkClick(9); snd.play()}}>Contact</button>
+            </div>
+        </button>
+        </NavigationBar>}
+        
 
         <SocialBar>
             <a className='instagram' href='https://www.instagram.com/heroesofolympus_nft/' target='_blank' rel='noreferrer'><img src={currentPage === 1 || currentPage === 4 || currentPage === 9 ? instagram2 : instagram} alt=''/></a>

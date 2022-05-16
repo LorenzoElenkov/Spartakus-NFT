@@ -63,7 +63,8 @@ const StyledContainer = styled.div`
         }
 
         .slider img {
-            height: 220px;
+            height: 200px;
+            transform: translateY(50px);
         }
     }
     @media screen and (min-width: 321px) and (max-width: 375px) {
@@ -81,6 +82,7 @@ const StyledContainer = styled.div`
 
         .slider img {
             height: 260px;
+            transform: translateY(50px);
         }
 
     }
@@ -99,6 +101,7 @@ const StyledContainer = styled.div`
 
         .slider img {
             height: 300px;
+            transform: translateY(50px);
         }
     }
 
@@ -109,7 +112,7 @@ const StyledContainer = styled.div`
 `;
 
 const slidesToShowFn = () => {
-    if (window.innerWidth < 768) {
+    if (window.outerWidth < 768) {
         return 1;
     } else {
         return 3;

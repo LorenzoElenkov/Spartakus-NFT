@@ -67,8 +67,8 @@ const Countdown = ({ currentPage }) => {
         }, 1000);
     },[diff]);
 
-  return (
-    <StyledCountdownContainer page={currentPage}>
+  return (<>
+    {window.outerWidth > 428 && <StyledCountdownContainer page={currentPage}>
         <span className='spanHeader'>WHITELIST SALE IN</span>
         <span className='spanTitle'>DAYS</span>
         <span className='spanTitle'>HOURS</span>
@@ -78,7 +78,8 @@ const Countdown = ({ currentPage }) => {
         <span className='spanCount'>{hours > 9 ? hours : `0${hours}`}</span>
         <span className='spanCount'>{minutes > 9 ? minutes : `0${minutes}`}</span>
         <span className='spanCount'>{seconds > 9 ? seconds : `0${seconds}`}</span>
-    </StyledCountdownContainer>
+    </StyledCountdownContainer>}
+    </>
   )
 }
 

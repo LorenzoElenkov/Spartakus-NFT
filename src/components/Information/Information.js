@@ -188,7 +188,7 @@ const StyledCPTH = styled.div`
 
 const StyledHOO = styled.div`
   width: 55%;
-  /* justify-self: center; */
+  justify-self: center;
   z-index: 9000;
   @font-face {
     font-family: "Magh";
@@ -204,6 +204,7 @@ const StyledHOO = styled.div`
     transform: translateX(6vw) translateY(-4vw);
     line-height: 4vw;
     font-weight: 700;
+    align-self: flex-start;
   }
 
   .textBlue {
@@ -262,7 +263,7 @@ const StyledHOO = styled.div`
   }
 
   @media screen and (max-width: 320px) {
-    width: 95%;
+    width: 100%;
     align-self: end;
     margin-bottom: 30px;
     display: flex;
@@ -272,9 +273,9 @@ const StyledHOO = styled.div`
       font-size: 11vw;
       letter-spacing: 2px;
       justify-self: center;
+      align-self: center;
       transform: none;
       margin-bottom: 30px;
-
     }
 
     .textBlue {
@@ -304,7 +305,7 @@ const StyledHOO = styled.div`
     }
 
     .discordText {
-      font-size: 6vw;
+      font-size: 2rem;
     }
 
     .discordLogo {
@@ -313,7 +314,7 @@ const StyledHOO = styled.div`
     }
   }
   @media screen and (min-width: 321px) and (max-width: 375px) {
-    width: 100vw;
+    width: 100%;
     align-self: end;
     margin-bottom: 30px;
     display: flex;
@@ -354,7 +355,7 @@ const StyledHOO = styled.div`
     }
 
     .discordText {
-      font-size: 6vw;
+      font-size: 2rem;
     }
 
     .discordLogo {
@@ -363,7 +364,7 @@ const StyledHOO = styled.div`
     }
   }
   @media screen and (min-width: 376px) and (max-width: 428px) {
-    width: 95%;
+    width: 100%;
     align-self: end;
     margin-bottom: 30px;
     display: flex;
@@ -373,9 +374,9 @@ const StyledHOO = styled.div`
       font-size: 11vw;
       letter-spacing: 2px;
       justify-self: center;
+      align-self: center;
       transform: none;
       margin-bottom: 30px;
-
     }
 
     .textBlue {
@@ -405,7 +406,7 @@ const StyledHOO = styled.div`
     }
 
     .discordText {
-      font-size: 6vw;
+      font-size: 2rem;
     }
 
     .discordLogo {
@@ -462,7 +463,7 @@ const Information = ({ currentPage, onLinkClick, images, music, volume }) => {
 
   return (
     <>
-      <StyledMusic>
+    {window.outerWidth > 428 && <StyledMusic>
         <StyledMusicContainer page={currentPage} volumeBG={volume}>
           <span>Music</span>
           {volume !== 0 && (
@@ -497,11 +498,11 @@ const Information = ({ currentPage, onLinkClick, images, music, volume }) => {
           )}
           <div />
         </StyledMusicContainer>
-      </StyledMusic>
-      <StyledLogo onClick={() => onLinkClick(1)} page={currentPage}>
+      </StyledMusic>}
+      {window.outerWidth > 428 && <StyledLogo onClick={() => onLinkClick(1)} page={currentPage}>
         <img src={logoShlem} alt="helmet" className="logoShlem" />
         <img src={logo} alt="heroes of olympus" className="logo" />
-      </StyledLogo>
+      </StyledLogo>}
       <StyledWhiteBG page={currentPage}>
         <div>
           <StyledCPTH>
