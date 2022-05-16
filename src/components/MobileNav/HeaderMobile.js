@@ -26,7 +26,7 @@ const HeaderMobile = ({ music, volume }) => {
   return (
       <>{window.outerWidth < 429 && <>
       <StyledMobileNavigation isOpen={isMenuOn} volumeBG={volume}>
-        <img src={shlemLogo2} alt=''/>
+        <img src={shlemBG} alt=''/>
         <div className='topBar'>
             <img src={shlemLogo} alt=''/>
             <button className='closeMenu' onClick={openMenuHandler}>X</button>
@@ -48,7 +48,7 @@ const HeaderMobile = ({ music, volume }) => {
         </div>
       </StyledMobileNavigation>
       <StyledMobileNavContainer>
-        <img src={shlemLogo} alt=''/>
+        <img src={shlemLogo2} alt=''/>
         <div className='menuButton' onClick={openMenuHandler}>
             <div className='topLine'/>
             <div className='midLine'/>
