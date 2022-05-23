@@ -130,7 +130,7 @@ const App = () => {
     setCurrentPage(link);
   };
 
-  const [bgVolume, setBgVolume] = useState(0.2);
+  const [bgVolume, setBgVolume] = useState(0.1);
   const [playMusic] = useSound(bgMusic2, { volume: bgVolume, loop: true });
 
   const handleLoadingClick = () => {
