@@ -4,20 +4,20 @@ import styled from "styled-components";
 
 import fullMap from "../../images/map/PNG Karti.png";
 // import first from "../../images/map/PNG Karti 1.png";
-import first from "../../images/1.png";
-import second from "../../images/map/PNG Karti 2.png";
-import third from "../../images/map/PNG Karti 3.png";
-import forth from "../../images/map/PNG Karti 4.png";
-import fifth from "../../images/map/PNG Karti 5.png";
-import sixth from "../../images/map/PNG Karti 6.png";
-import seventh from "../../images/map/PNG Karti 7.png";
-import eight from "../../images/map/PNG Karti 8.png";
-import ninth from "../../images/map/PNG Karti 9.png";
-import tenth from "../../images/map/PNG Karti 10.png";
-import eleventh from "../../images/map/PNG Karti 11.png";
-import twelveth from "../../images/map/PNG Karti 12.png";
-import thirtheenth from "../../images/map/PNG Karti 13.png";
-import fortheenth from "../../images/map/PNG Karti 14.png";
+import first from "../../images/PNG Karti1.png";
+import second from "../../images/PNG Karti2.png";
+import third from "../../images/PNG Karti3.png";
+import forth from "../../images/PNG Karti4.png";
+import fifth from "../../images/PNG Karti5.png";
+import sixth from "../../images/PNG Karti6.png";
+import seventh from "../../images/PNG Karti7.png";
+import eight from "../../images/PNG Karti8.png";
+import ninth from "../../images/PNG Karti9.png";
+import tenth from "../../images/PNG Karti10.png";
+import eleventh from "../../images/PNG Karti11.png";
+import twelveth from "../../images/PNG Karti12.png";
+import thirtheenth from "../../images/PNG Karti13.png";
+import fortheenth from "../../images/PNG Karti14.png";
 
 
 import hera from '../../images/map/hera.png';
@@ -161,8 +161,8 @@ const StyledMapPointers = styled.div`
   /* background-color: rgba(255, 0, 0, 0.2); */
   .one {
     position: absolute;
-    top: 9.5%;
-    left: 86%;
+    top: 11.5%;
+    left: 82%;
     width: 7.5%;
     border: 1px solid white;
     border-radius: 10px;
@@ -175,7 +175,7 @@ const StyledMapPointers = styled.div`
 
   .two {
     position: absolute;
-    top: 10%;
+    top: 12%;
     left: 55.5%;
     width: 7.5%;
     border: 1px solid white;
@@ -189,7 +189,7 @@ const StyledMapPointers = styled.div`
   }
   .three {
     position: absolute;
-    top: 16.5%;
+    top: 19%;
     left: 31.5%;
     width: 7.5%;
     border: 1px solid white;
@@ -204,7 +204,7 @@ const StyledMapPointers = styled.div`
   .four {
     position: absolute;
     top: 29%;
-    left: 15%;
+    left: 17%;
     width: 7.5%;
     border: 1px solid white;
     border-radius: 10px;
@@ -217,7 +217,7 @@ const StyledMapPointers = styled.div`
   }
   .five {
     position: absolute;
-    top: 29%;
+    top: 30.5%;
     left: 32%;
     width: 7.5%;
     border: 1px solid white;
@@ -231,7 +231,7 @@ const StyledMapPointers = styled.div`
   }
   .six {
     position: absolute;
-    top: 37.5%;
+    top: 39%;
     left: 24.5%;
     width: 7.5%;
     border: 1px solid white;
@@ -245,8 +245,8 @@ const StyledMapPointers = styled.div`
   }
   .seven {
     position: absolute;
-    top: 46%;
-    left: 27%;
+    top: 47%;
+    left: 27.5%;
     width: 7.5%;
     border: 1px solid white;
     border-radius: 10px;
@@ -259,8 +259,8 @@ const StyledMapPointers = styled.div`
   }
   .eight {
     position: absolute;
-    top: 40.5%;
-    left: 40.5%;
+    top: 41.5%;
+    left: 39.5%;
     width: 7.5%;
     border: 1px solid white;
     border-radius: 10px;
@@ -274,7 +274,7 @@ const StyledMapPointers = styled.div`
   .twelve {
     position: absolute;
     top: 60%;
-    left: 27%;
+    left: 27.5%;
     width: 7.5%;
     border: 1px solid white;
     border-radius: 10px;
@@ -288,7 +288,7 @@ const StyledMapPointers = styled.div`
   .eleven {
     position: absolute;
     top: 60%;
-    left: 41%;
+    left: 39.5%;
     width: 7.5%;
     border: 1px solid white;
     border-radius: 10px;
@@ -315,8 +315,8 @@ const StyledMapPointers = styled.div`
   }
   .fourteen {
     position: absolute;
-    top: 92.5%;
-    left: 74%;
+    top: 91.5%;
+    left: 70%;
     width: 7.5%;
     border: 1px solid white;
     border-radius: 10px;
@@ -329,8 +329,8 @@ const StyledMapPointers = styled.div`
   }
   .ten {
     position: absolute;
-    top: 53.2%;
-    left: 54%;
+    top: 54%;
+    left: 52%;
     width: 7.5%;
     border: 1px solid white;
     border-radius: 10px;
@@ -343,8 +343,8 @@ const StyledMapPointers = styled.div`
   }
   .nine {
     position: absolute;
-    top: 48.2%;
-    left: 59%;
+    top: 49%;
+    left: 56.8%;
     width: 7.5%;
     border: 1px solid white;
     border-radius: 10px;
