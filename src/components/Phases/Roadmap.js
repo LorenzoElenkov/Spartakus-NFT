@@ -326,8 +326,8 @@ const Roadmap = ({ currentPage, images }) => {
             <StyledPhase>
                 <span className='number'>2</span>
                 <span className='title'>Phase II</span>
-                <span className='subtitle'>??????THE ART OF EVENT REINVENTION????</span>
-                <span className='quote'>??????- LEFAIR MAGAZINE??????</span>
+                <span className='subtitle'>Establishment of the Heroes of Olympus' DAO and token</span>
+                <span className='quote'>- Agora Dao and $HROM</span>
                 <ul className='unorderedList'>
                     <li className='unordered1'>Exclusive Airdrops every week</li>
                     <li className='unordered1'>Each "HERO" in your wallet will grant you one AIRDROP piece</li>
