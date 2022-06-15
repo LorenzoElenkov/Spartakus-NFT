@@ -19,7 +19,7 @@ const RarityTool = (props) => {
 
     const handleChosenNumber = (e) => {
         if (e === '') {
-            setChosenNumber(Math.floor(Math.random() * 10878));
+            setChosenNumber(0);
         } else if (e > 10877){
             setChosenNumber(10877);
         } else if (e < 0) {
