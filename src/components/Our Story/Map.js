@@ -2,8 +2,7 @@ import React, { useState } from "react";
 
 import styled from "styled-components";
 
-import fullMap from "../../images/map/PNG Karti.png";
-// import first from "../../images/map/PNG Karti 1.png";
+import fullMap from "../../images/map/PNG Karti0.png";
 import first from "../../images/PNG Karti1.png";
 import second from "../../images/PNG Karti2.png";
 import third from "../../images/PNG Karti3.png";
@@ -509,18 +508,18 @@ const areasNames = [
 ];
 
 const areasText = [
-  {text: "The land, where family and childbirth are the most important moral values. It is right next to her husband's, Zeus, territory but that does not mean she is safe from the war"},
-  {text: "The land, where the one and only, god of thunder roams. It is the biggest land in Ancient Greece with its unique weather, depending on the mood of the mighty Zeus"},
-  {text: "The land, where love is everywhere. All of the people there are passionate and focused on pleasure. The nature there is beautiful with myrtles and roses across the whole land"},
-  {text: "The land, where nature is at its finest, wilderness everywhere. The people there have full respect for their land because they feed on it by hunting and farming"},
-  {text: "The land, where the blacksmiths live and work. All of the divine forges in Ancient Greece are there and work almost without any break"},
-  {text: "The land of the unstoppable warrios, where the god of war trains them to win in every battle. The conditions there are tough so the warriors are well prepared for every possible outcome"},
-  {text: "The land, where music is in the air. All sorts of herbs are being cultivated for the preparation of different remedies. There the animal diversity is high and the sunlight is always upon"},
-  {text: "The land of wittiness, where everyone is quick and cunning. The ruler here, Hermes, is the fastest God alive. Manipulative and adaptive skills are his strongest weapons in battles. His army is full of thieves, who plunder everyone they defeat"},
-  {text: "The son of Ares, Deimos, is the most dreadful God of them all. The ruler of this land is the fear and horror. It is uninhabited because only a few could survive in these terrifying conditions. In battle, the strongest power of his troops is panic, which could be very dangerous"},
-  {text: "The land of wisdom, where the philosophers are respected the most. There, every issue is solved by discussions and argumentation, but their war power and capacity are not to be underestimated. The mind of Athena is her most powerful weapon, making her a strong pretender for the war"},
-  {text: "The land of broadening souls and shadows, where Nyx, the first Goddess, is the ruler. Even the almighty Zeus is feared by the powers of Nyx, and that is why her territory is so distant from the land of thunders. As she is the strongest in the night, this place is shadowy and dark"},
-  {text: "The land of death, where terror and horror rule. There, the smell of fear is everything that a person could feel. The permanent night makes the place even more dreadful. Thanatos, the death himself, decides the destiny of those who are brave enough to stop there"},
-  {text: "This is the Underworld on Earth, where the souls of the dead roam. Its extreme climate conditions make it harder for everyone to survive, except Hades. His main companion, Cerberus, is the protector of this land"},
-  {text: "The land of waves and oceans, where terrifying creatures could be seen. Surrounded by water, this island is the safest place for Poseidon, and, there, his powers are the strongest. Regarding the war, its location is great, because it is separated from the main Greek land"},
+  {text: "The Land, where family and childbirth are the cornerstones of everything. Hera’s kingdom is right next to her husband’s (Zeus) land. That, however, does not mean that this place is safe from war"},
+  {text: "The Land, where the one and only God of thunder reigns. It is the biggest realm in Ancient Greece. Its unique weather is dictated by the mood of the mighty Zeus"},
+  {text: "The Land, where love is everywhere. The populace of this place is Hedonistic and Decadent. Nature—is almost as beautiful as the one in Elysium"},
+  {text: "The Land, where nature is at its finest and wildlife is everywhere. Hunting is a religious activity here, and the locals worship the Land as if it is a deity. For Mother nature which feeds mankind with livestock and fertile Land, is worthy of the utmost respect"},
+  {text: "The Land, where blacksmiths live and work. Weapons of the finest quality are produced here, bathed in the blood, sweat, and tears of the most talented craftsmen"},
+  {text: "The Land, where the best warriors of Greece complete their training. Here the special ones are chosen by the God of war to polish their skills to become unstoppable. The conditions here are rough, creating the best training for the most esteemed warriors of Greece"},
+  {text: "The Land, where music is in the air. Rich in herbs, this place is where the cultivation and preparation of different remedies is at its finest. The magnificent God Apollon reigns in these lands"},
+  {text: "The Land of wittiness, where everyone is sharp as a whip and cunning as a fox. The ruler here, Hermes, is the fastest God alive. His manipulative skills are his strongest weapon in battle. The army of Hermes is comprised of thieves and other low lives who make sure to leave the bodies of their defeated enemies without a single penny"},
+  {text: "The son of Ares, Deimos, is the most dreadful of the gods. Fear and horror rule over his realm. Only a handful can survive the inhospitable conditions of these lands. The strongest power of Deimos’s men is their ability to instill panic into their enemies"},
+  {text: "The Land of wisdom, where philosophy is respected the most. Here, Every issue is solved through lengthy and tedious discussions. However, Military prowess is as valued as knowledge. Athena’s most precious weapon is her sharp mind, making her a strong contender."},
+  {text: "The Land of lost souls and shadows, where Nyx, the first Goddess, reigns. Even the almighty Zeus fears the power of this deity, which is why her territory is so distant from the Land of thunders. The power of Nyx culminates during the night, which is why her kingdom is dark and covered with shadows."},
+  {text: "The Land of death, where horror permeates everything and the sun never rises. Fear is all one could feel when entering this dark place. Thanatos, the God of death, decides the destiny of those brave enough to step here."},
+  {text: "The Underworld on Earth, where the souls of the dead roam. Its extreme climate can make survival an almost impossible task for anyone. Of course, with one minor exception. Hades, the sovereign of the underworld- thrives in such conditions. Adding up to the inhospitality of the underworld is its guardian Cerberus, a three-headed beast whose name alone instills fear in every warrior."},
+  {text: "The Land of waves and home of many terrifying sea creatures. Surrounded by water, this island is where Poseidon is strongest. Separated miles from the Greek mainland, the realm of Poseidon is an almost impregnable fortress."},
 ]

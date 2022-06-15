@@ -28,7 +28,7 @@ const StyledMusic = styled.div`
 const StyledMusicContainer = styled.div`
   position: absolute;
   padding: 4px;
-  width: 130px;
+  width: 200px;
   height: 80px;
   top: calc(50% - 40px);
   left: calc(100% - 28px);
@@ -66,15 +66,15 @@ const StyledMusicContainer = styled.div`
   .volumeOn {
     width: 40%;
     position: absolute;
-    top: 19%;
-    left: 27%;
+    top: 6%;
+    left: 16%;
     opacity: ${(props) => props.volumeBG / 0.2};
   }
   .volumeOff {
     width: 40%;
     position: absolute;
-    top: 19%;
-    left: 27%;
+    top: 6%;
+    left: 16%;
     opacity: 1;
   }
 `;

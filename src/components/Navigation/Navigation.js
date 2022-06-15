@@ -55,17 +55,18 @@ const NavigationBar = styled.nav`
         width: 50vw;
         z-index: 9998;
         display: grid;
-        grid-template-columns: 12% repeat(5, 1fr);
+        grid-template-columns: 5% repeat(6, 1fr) 5%;
+        /* column-gap: 5px; */
         .homeBut {
             grid-column: 2/2;
         }
 
-        .homeBut, .loreBut, .roadmapBut, .faqBut {
+        .homeBut, .loreBut, .roadmapBut, .faqBut, .rarityTool {
             background: transparent;
             border: none;
             font-size: 1.2vw;
             border-top: 7px solid transparent;
-            padding-top: 4vh;
+            padding-top: 2vh;
             color: ${props => props.page === 1 || props.page === 4 || props.page === 9 ? 'white' : '#0f1026'};
             font-weight: 800;
             letter-spacing: 2px;
@@ -141,6 +142,7 @@ const NavigationBar = styled.nav`
             background-color: transparent;
         }
 
+
         @media screen and (max-width: 428px) {
 
         }
@@ -149,9 +151,13 @@ const NavigationBar = styled.nav`
     `;
 
 
-const Navigation = ({ currentPage, onLinkClick }) => {
+const Navigation = ({ currentPage, onLinkClick, onRTClick }) => {
 
     const snd = new Audio('./clicksound.wav');
+
+    const onRT = (state) => {
+        onRTClick(state);
+    }
 
   return (
       <>{window.outerWidth > 428 && <NavigationBar page={currentPage}>
@@ -175,6 +181,8 @@ const Navigation = ({ currentPage, onLinkClick }) => {
                 <button page={currentPage} onClick={() => {onLinkClick(6); snd.play()}}>Token</button>
             </div>
         </button>
+        <button className='rarityTool' onClick={() => onRT(true)}>Rarity</button>
+        <button className='rarityTool'>White<br/>paper</button>
         <button className={currentPage > 6 ? 'faqBut active' : 'faqBut'}>
             FAQ
             <div className='invisibleSpace'/>

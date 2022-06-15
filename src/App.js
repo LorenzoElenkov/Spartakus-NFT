@@ -17,6 +17,7 @@ import Loading from './components/Loading/Loading';
 
 import bgMusic2 from './images/bgMusic2.mp3';
 import HeaderMobile from './components/MobileNav/HeaderMobile';
+import RarityTool from './components/RarityTool/RarityTool';
 
 const StyledApp = styled.div`
   position: relative;
@@ -68,6 +69,7 @@ const App = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [isInSite, setIsInSite] = useState(false);
   const [imagesLoadedPerc, setImagesLoadedPerc] = useState(0);
+  const [showRT, setShowRT] = useState(false);
 
   let scrollCount = useRef(0);
   let imagesLoaded = useRef(0);
@@ -155,7 +157,8 @@ const App = () => {
       {!isInSite && <Loading clicked={handleLoadingClick} images={imagesLoaded.current}/>}
       <Countdown currentPage={currentPage}/>
       {window.outerWidth < 429 && <HeaderMobile music={handleVolume} volume={bgVolume}/>}
-      <Navigation currentPage={currentPage} onLinkClick={handleLinkClick}/>
+      <Navigation currentPage={currentPage} onLinkClick={handleLinkClick} onRTClick={(state) => setShowRT(state)}/>
+      {showRT && <RarityTool onRTClose={() => setShowRT(false)}/>}
       <Information currentPage={currentPage} onLinkClick={handleLinkClick} images={changeImagesLoaded} music={handleVolume} volume={bgVolume}/>
       <OurStory currentPage={currentPage} images={changeImagesLoaded}/>
       <Map currentPage={currentPage} images={changeImagesLoaded}/>
