@@ -14,8 +14,8 @@ import soundOFFW from "../../images/soundOFFWhite.png";
 const StyledMusic = styled.div`
   position: relative;
   top: 0;
-  width: 8%;
-  left: 92%;
+  width: 200px;
+  left: calc(100% - 200px);
   height: 100%;
   z-index: 2;
   overflow: hidden;

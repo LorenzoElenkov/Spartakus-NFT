@@ -58,7 +58,8 @@ const RarityTool = (props) => {
             <div className='traits'>
                 <label>Tribe</label>
                 {/* <span>{chosenNumber !== '' ? fullReveal[chosenNumber].traits[2].value : '???'}</span> */}
-                <span className={chosenNumber !== oldChosen ? 'animate' : ''}>{chosenNumber ? firstReveal[chosenNumber].tribe : '???'}</span>
+                {/* <span className={chosenNumber !== oldChosen ? 'animate' : ''}>{chosenNumber ? firstReveal[chosenNumber].tribe : '???'}</span> */}
+                <span>{chosenNumber ? firstReveal[chosenNumber].tribe : '???'}</span>
                 <label>Class</label>
                 <span>{chosenNumber ? firstReveal[chosenNumber].class : '???'}</span>
                 {/* <span>{chosenNumber !== '' ? fullReveal[chosenNumber].traits[1].value : '???'}</span> */}
