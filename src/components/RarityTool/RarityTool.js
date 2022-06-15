@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import { keyframes } from 'styled-components';
 
 import firstReveal from '../../rarity/First_Reveal2.json';
-import fullReveal from '../../rarity/Full_reveal.json';
 
 // import asd from '../../../public/logo192.png';
 const RarityTool = (props) => {
