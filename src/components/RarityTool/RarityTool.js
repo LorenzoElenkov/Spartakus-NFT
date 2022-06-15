@@ -19,7 +19,7 @@ const RarityTool = (props) => {
 
     const handleChosenNumber = (e) => {
         if (e === '') {
-            setChosenNumber(0);
+            // setChosenNumber(0);
         } else if (e > 10877){
             setChosenNumber(10877);
         } else if (e < 0) {
@@ -40,7 +40,7 @@ const RarityTool = (props) => {
                 <div className='bg'>
                     <h2>ID</h2>
                 </div>
-                <input type="number" className='idInput' onKeyDown={(e) => e.code >= 48 && e.code <= 57} value={chosenNumber} onChange={(e) => handleChosenNumber(e.target.value)} min='0' max='10877'/>
+                <input type="number" className='idInput' onKeyDown={(e) => e.code >= 48 && e.code <= 57} value={chosenNumber} onChange={(e) => handleChosenNumber(e.target.value)} min='0' max='10877' pattern="[0-9]+"/>
                 {/* <label>Rank</label>
                 <input type="number" className='rankInput' /> */}
             </div>
