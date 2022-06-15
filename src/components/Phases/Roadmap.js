@@ -176,9 +176,9 @@ const StyledPhase = styled.div`
       width: 80%;
     }
 
-    .unorderedList li::before {
-      width: 15px;
-      height: 15px;
+    .unorderedList.none li::before {
+      display: none;
+      background-color: red;
     }
   }
   @media screen and (min-width: 321px) and (max-width: 375px) {
@@ -290,6 +290,10 @@ const StyledPhase = styled.div`
       width: 15px;
       height: 15px;
     }
+
+    li.unorderedListnone::before {
+      display: none;
+    }
   }
   @media screen and (max-width: 768px) {
     &:nth-child(1) {
@@ -311,9 +315,9 @@ const Roadmap = ({ currentPage, images }) => {
                 <span className='subtitle'>THE MOST EPIC REVEAL IN THE NFT SPACE</span>
                 <span className='quote'>- Heroes of Olympus</span>
                 <ul className='unorderedList'>
-                    <li className='unordered1'>Tribe Reveal</li>
-                    <li className='unordered1'>Class Reveal</li>
-                    <li className='unordered1'>Unleashing the "HEROES"</li>
+                    <li className='unordered1none'>1. Tribe Reveal</li>
+                    <li className='unordered1none'>2. Class Reveal</li>
+                    <li className='unordered1none'>3. Unleashing the "HEROES"</li>
                     <li className='unordered1'>Rarity Scale</li>
                     <li className='unordered1'>FULL COPYRIGHT ON YOUR "HERO"</li>
                     <li className='unordered1'>TRIBE SERVERS WILL BE UNLOCKED FOR HOLDERS</li>
@@ -330,9 +334,9 @@ const Roadmap = ({ currentPage, images }) => {
                 <span className='quote'>- Agora Dao and $HROM</span>
                 <ul className='unorderedList'>
                     <li className='unordered1'>Exclusive Airdrops every week</li>
-                    <li className='unordered1'>Each "HERO" in your wallet will grant you one AIRDROP piece</li>
-                    <li className='unordered1'>Each Airdrop will be 1/4 of an ancient puzzle</li>
-                    <li className='unordered1'>Collect all 4 pieces to redeem your mystery reward</li>
+                    <li className='unordered1'>- Each "HERO" in your wallet will grant you one AIRDROP piece</li>
+                    <li className='unordered1'>- Each Airdrop will be 1/4 of an ancient puzzle</li>
+                    <li className='unordered1'>- Collect all 4 pieces to redeem your mystery reward</li>
                     <li className='unordered1'>Introduction to $HROM token</li>
                     <li className='unordered1'>Establishment of AgoraDAO</li>
                     <li className='unordered1'>The development of our P2E game <br /> "The Ancient Greek War", "Conflict of Elada"</li>

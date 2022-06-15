@@ -473,7 +473,7 @@ const Map = ({ currentPage, images }) => {
             ? <span>The map of Ancient Greece</span>
             : <span>{areasNames[clickedArea]?.name}</span>}
         </span>
-        {clickedArea !== 0 && <img src={areasNames[clickedArea].icon} alt='' className='areaIcon' onLoad={addImageLoaded}/>}
+        {clickedArea !== 0 && <img src={areasNames[clickedArea].icon} alt='' className='areaIcon' onLoad={addImageLoaded} draggable={false} onContextMenu={(e) => e.preventDefault()}/>}
         <span className="areaText">
           {clickedArea === 0
             ? "This is the zone of the warfare between the divine tribes. Almighty Chaos has divided the land equally among the 14 Gods and their corresponding tribes.\n\nThe main goal of each God is to capture all of the areas and become the ruler of Ancient Greece! This could be done only when he defeats each tribe separately."

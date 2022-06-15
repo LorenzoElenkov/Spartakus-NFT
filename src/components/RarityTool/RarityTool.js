@@ -10,7 +10,7 @@ import fullReveal from '../../rarity/Full_reveal.json';
 const RarityTool = (props) => {
 
     const backdropRef = useRef(null);
-    const [chosenNumber, setChosenNumber] = useState(Math.floor(Math.random() * 10878));
+    const [chosenNumber, setChosenNumber] = useState('');
     const [oldChosen, setOldChosen] = useState(0);
 
     useEffect(() => {
@@ -51,7 +51,7 @@ const RarityTool = (props) => {
                 <div className='bg'>
                     <h2>ID</h2>
                 </div>
-                <input type="number" className='idInput' onKeyDown={(e) => e.code >= 48 && e.code <= 57} value={chosenNumber} onChange={(e) => handleChosenNumber(e.target.value)} min='0' max='10877' pattern="[0-9]+"/>
+                <input type="number" className='idInput' onKeyDown={(e) => e.code >= 48 && e.code <= 57} value={chosenNumber} onChange={(e) => handleChosenNumber(e.target.value)} min='0' max='10877' pattern="[0-9]+" disabled={true}/>
                 {/* <label>Rank</label>
                 <input type="number" className='rankInput' /> */}
             </div>
