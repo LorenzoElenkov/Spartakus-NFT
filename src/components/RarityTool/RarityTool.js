@@ -1,6 +1,7 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 
 import styled from 'styled-components';
+import { keyframes } from 'styled-components';
 
 import firstReveal from '../../rarity/First_Reveal2.json';
 import fullReveal from '../../rarity/Full_reveal.json';
@@ -10,6 +11,16 @@ const RarityTool = (props) => {
 
     const backdropRef = useRef(null);
     const [chosenNumber, setChosenNumber] = useState(Math.floor(Math.random() * 10878));
+    const [oldChosen, setOldChosen] = useState(0);
+
+    useEffect(() => {
+        
+        const changeFlash = setTimeout(() => {
+            setOldChosen(chosenNumber);
+        }, 500);
+
+
+    },[chosenNumber])
 
     const detectClick = (e) => {
         if (e.target === backdropRef.current) {
@@ -19,7 +30,7 @@ const RarityTool = (props) => {
 
     const handleChosenNumber = (e) => {
         if (e === '') {
-            // setChosenNumber(0);
+            setChosenNumber('');
         } else if (e > 10877){
             setChosenNumber(10877);
         } else if (e < 0) {
@@ -44,25 +55,37 @@ const RarityTool = (props) => {
                 {/* <label>Rank</label>
                 <input type="number" className='rankInput' /> */}
             </div>
-            <img src={process.env.PUBLIC_URL + 'reveal/' + firstReveal[chosenNumber].url} alt='' className='revealImage'/>
+            <img src={chosenNumber !== '' ? process.env.PUBLIC_URL + 'reveal/' + firstReveal[chosenNumber].url : process.env.PUBLIC_URL + 'reveal/None.png'} alt='' className='revealImage'/>
             <div className='traits'>
                 <label>Tribe</label>
-                <span>{fullReveal[chosenNumber].traits[2].value}</span>
+                {/* <span>{chosenNumber !== '' ? fullReveal[chosenNumber].traits[2].value : '???'}</span> */}
+                <span className={chosenNumber !== oldChosen ? 'animate' : ''}>{chosenNumber ? firstReveal[chosenNumber].tribe : '???'}</span>
                 <label>Class</label>
-                <span>{fullReveal[chosenNumber].traits[1].value}</span>
+                <span>{chosenNumber ? firstReveal[chosenNumber].class : '???'}</span>
+                {/* <span>{chosenNumber !== '' ? fullReveal[chosenNumber].traits[1].value : '???'}</span> */}
                 <label>Background</label>
-                <span>{fullReveal[chosenNumber].traits[3].value}</span>
+                <span>{chosenNumber ? firstReveal[chosenNumber].background : '???'}</span>
+                {/* <span>{chosenNumber !== '' ? fullReveal[chosenNumber].traits[3].value : '???'}</span> */}
                 <label>Armor</label>
-                <span>{fullReveal[chosenNumber].traits[0].value}</span>
+                <span>{chosenNumber ? firstReveal[chosenNumber].armor : '???'}</span>
+                {/* <span>{chosenNumber !== '' ? fullReveal[chosenNumber].traits[0].value : '???'}</span> */}
                 <label>Weapon Type</label>
-                <span>{fullReveal[chosenNumber].traits[4].value === 'None' ? 'None' : fullReveal[chosenNumber].traits[4].value.split(" ")[1][0].toUpperCase() + fullReveal[chosenNumber].traits[4].value.split(" ")[1].substring(1)}</span>
+                <span>{chosenNumber ? firstReveal[chosenNumber].weapon : '???'}</span>
+                {/* <span>{chosenNumber !== '' ? (fullReveal[chosenNumber].traits[4].value === 'None' ? 'None' : fullReveal[chosenNumber].traits[4].value.split(" ")[1][0].toUpperCase() + fullReveal[chosenNumber].traits[4].value.split(" ")[1].substring(1)) : '???'}</span> */}
                 <label>Weapon Material</label>
-                <span>{fullReveal[chosenNumber].traits[4].value.split(" ")[0]}</span>
+                <span>{chosenNumber ? firstReveal[chosenNumber].weapon : '???'}</span>
+                {/* <span>{chosenNumber !== '' ? fullReveal[chosenNumber].traits[4].value.split(" ")[0] : '???'}</span> */}
             </div>
         </StyledContainer>
     </StyledBackdrop>
   )
 }
+
+const glowAnimation = keyframes`
+    33% { background-color: #303480}
+    66% { background-color: #060712}
+    100% { background-color: #303480}
+`;
 
 const StyledContainer = styled.div`
     align-self: center;
@@ -89,6 +112,7 @@ const StyledContainer = styled.div`
         border-radius: 25px;
         justify-self: center;
         margin-bottom: 50px;
+        align-self: center;
     }
 
     .description {
@@ -139,6 +163,8 @@ const StyledContainer = styled.div`
         grid-template-columns: max-content 1fr;
         font-size: 2rem;
         row-gap: 10px;
+        margin-bottom: 28px;
+
         label {
             background-color: #303480;
             border-top-left-radius: 10px;
@@ -150,7 +176,9 @@ const StyledContainer = styled.div`
             background-color: #060712;
             height: max-content;
             padding: 1.2rem;
-
+        }
+        .animate {
+            animation: ${glowAnimation} 1s ;
         }
     }
 `;
