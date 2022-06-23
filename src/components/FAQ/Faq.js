@@ -248,7 +248,7 @@ const Faq = ({ currentPage }) => {
                         }}}>
                     Q: What blockchain will you launch on?
                     <span className={question === 1 ? 'accordionAnswer1 active' : 'accordionAnswer1'} question={question}>
-                    A: "Heroes of Olympus" will launch on the Solana blockchain, because of its low fees and quick transactions.
+                    A: "Heroes of Olympus" will launch on the Solana blockchain, because of its low fees and quick transactions. It will follow 3-step reveal.
                 </span>
                 </span>
             </div>
@@ -295,7 +295,7 @@ const Faq = ({ currentPage }) => {
                         }}}>
                     Q: How can I get whitelisted? How many spots there will be?
                     <span className={question === 4 ? 'accordionAnswer4 active' : 'accordionAnswer4'}>
-                    A: Whitelist spots will be given in both our Discord and Twitter for community contributors and giveaway winners. <br /> There will be 1,878 WL spots.
+                    A: Whitelist spots will be given in both our Discord and Twitter for community contributors and giveaway winners. <br /> There will be 3,000 WL spots.
                 </span>
                 </span>
             </div>
@@ -321,7 +321,7 @@ const Faq = ({ currentPage }) => {
                         }}}>
                     Q: When is the mint date?
                     <span className={question === 6 ? 'accordionAnswer6 active' : 'accordionAnswer6'}>
-                    A: The mint will be at the end of June with no exact date, for now.
+                    A: The mint will be at the mid of August '22 with no exact date, for now.
                 </span>
                 </span>
             </div>
@@ -360,7 +360,7 @@ const Faq = ({ currentPage }) => {
                         }}}>
                     Q: On which marketplaces our NFTs will be available?
                     <span className={question === 9 ? 'accordionAnswer6 active' : 'accordionAnswer6'}>
-                    A: You will be able to find us on Solanart, Magic Eden, and SolSea.
+                    A: You will be able to find us on Solanart, Magic Eden, SolSea, OpenSea.
                 </span>
                 </span>
             </div>

@@ -61,6 +61,12 @@ const NavigationBar = styled.nav`
             grid-column: 2/2;
         }
 
+        a {
+            text-decoration: none;
+            justify-self: center;
+            text-align: center;
+        }
+
         .homeBut, .loreBut, .roadmapBut, .faqBut, .rarityTool {
             background: transparent;
             border: none;
