@@ -47,8 +47,7 @@ const StyledCountdownContainer = styled.div`
 
 const Countdown = ({ currentPage }) => {
 
-    //1654030801000
-    //1660510800
+    // 15 August 2022 00:00:00 GMT+3
     const releaseDate = 1660510800000;
     let diff2 = releaseDate - Date.now();
     const [diff, setDiff] = useState(releaseDate - Date.now());
