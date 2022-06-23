@@ -8,7 +8,7 @@ import discord from '../../images/discord3.svg';
 import instagram2 from '../../images/instagram4.svg';
 import twitter2 from '../../images/twitter4.svg';
 import discord2 from '../../images/discord4.svg';
-
+import litepaper from '../../images/litepaper.pdf';
 
 
 const SocialBar = styled.div`
@@ -182,7 +182,7 @@ const Navigation = ({ currentPage, onLinkClick, onRTClick }) => {
             </div>
         </button>
         <button className='rarityTool' onClick={() => onRT(true)}>Rarity</button>
-        <button className='rarityTool'>White<br/>paper</button>
+        <a className='rarityTool' alt='litepaper' href={litepaper} target="_blank" rel="noreferrer">Lite<br/>paper</a>
         <button className={currentPage > 6 ? 'faqBut active' : 'faqBut'}>
             FAQ
             <div className='invisibleSpace'/>

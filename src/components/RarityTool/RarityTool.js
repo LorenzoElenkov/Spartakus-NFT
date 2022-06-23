@@ -123,7 +123,7 @@ const StyledContainer = styled.div`
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-
+        text-align: start;
         .second {
             font-size: 2rem;
             color: gray;
@@ -134,13 +134,15 @@ const StyledContainer = styled.div`
         grid-column: 2/3;
         justify-self: end;
         display: flex;
-
+        height: 40px;
         .bg {
             background-color: #303480;
+            display: flex;
         }
         h2 {
             font-size: 2rem;
-            padding: 2px 10px 0px 10px;
+            padding: 0 20px;
+            align-self: center;
         }
 
         input {
@@ -152,9 +154,6 @@ const StyledContainer = styled.div`
             
         }
 
-        /* input:nth-child(2) {
-            margin-right: 30px;
-        } */
     }
 
     .traits {

@@ -2,7 +2,7 @@ import React from "react";
 
 import styled from "styled-components";
 
-import shoulder from "../../images/shlem999.png";
+import shoulder from "../../images/shlem998.png";
 import tokenImg from '../../images/Coin.gif';
 
 const StyledContainer = styled.div`

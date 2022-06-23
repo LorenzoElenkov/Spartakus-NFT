@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useRef } from 'react/cjs/react.production.min';
 import styled, { keyframes } from 'styled-components';
 import { css } from 'styled-components';
-import loadingLogo from '../../images/footerLogo.png';
+import loadingLogo from '../../images/footerLogo1.png';
 
 const flashing = keyframes`
     50% {
@@ -113,7 +113,7 @@ const StyledProgressBar = styled.div`
         top: 0;
         left: ${props => (props.images - 100) + '%'};
         background: #5863f1;
-        ${props => props.images === 36 && animationPlay};
+        ${props => props.images === 35 && animationPlay};
         animation-fill-mode: forwards;
         -webkit-animation-fill-mode: forwards;
     }
@@ -147,7 +147,7 @@ const Loading = ({ clicked, images }) => {
 
     const [hasLoaded, setHasLoaded] = useState(false);
     useEffect(() => {
-        if (images === 36) {
+        if (images === 35) {
             setTimeout(() => {
                 setHasLoaded(true);
             }, 2100);

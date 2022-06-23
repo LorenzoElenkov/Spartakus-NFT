@@ -150,7 +150,7 @@ const Preview = ({ currentPage, images }) => {
     <StyledContainer page={currentPage}>
         <img src={trident} alt='' className='tridentImg' onLoad={addImageLoaded}/>
         <span className='previewText'>Preview our Collection</span>
-        <Slider slidesToShow={slidesToShowFn()} className='slider' centerMode={true} centerPadding={50} autoplay={true} pauseOnHover={true} autoplaySpeed={2000} page={currentPage}>
+        <Slider slidesToShow={slidesToShowFn()} className='slider' centerMode={true} centerPadding={50} autoplay={true} pauseOnHover={true} autoplaySpeed={2000} page={currentPage} arrows={false}>
             <div>
                 <img src={a} alt='' onLoad={addImageLoaded}/>
             </div>

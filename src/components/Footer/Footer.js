@@ -2,7 +2,7 @@ import React from "react";
 
 import styled from "styled-components";
 
-import logo from "../../images/footerLogo.png";
+import logo from "../../images/footerLogo1.png";
 import { Timeline } from "react-twitter-widgets";
 
 const StyledLightBlue = styled.div`
@@ -231,7 +231,7 @@ const Footer = ({ currentPage, onLinkClick, images }) => {
       <StyledDarkBlue page={currentPage}>
         <span className='twitterTitle'>Our Twitter Updates</span>
         <div className="twitterEmbed">
-            <Timeline dataSource={{ sourceType: "profile", screenName:'crypto_alerting'}} options={{chrome: 'noheader, nofooter', height: 300, width: 500}}></Timeline>
+            <Timeline dataSource={{ sourceType: "profile", screenName:'Heroes_Olympus_'}} options={{chrome: 'noheader, nofooter', height: 300, width: 500}}></Timeline>
         </div>
       </StyledDarkBlue>
     </>

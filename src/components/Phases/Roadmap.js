@@ -126,6 +126,15 @@ const StyledPhase = styled.div`
     margin-left: -40px;
     padding-left: 0.5vw;
   }
+
+  .unorderedList li.unordered1none::before {
+    display: none;
+  }
+
+  .unorderedList li.unordered1none {
+    margin-left: -38px;
+  }
+
   @media screen and (max-width: 320px) {
     margin-top: 30px;
     .number {
@@ -334,12 +343,12 @@ const Roadmap = ({ currentPage, images }) => {
                 <span className='quote'>- Agora Dao and $HROM</span>
                 <ul className='unorderedList'>
                     <li className='unordered1'>Exclusive Airdrops every week</li>
-                    <li className='unordered1'>- Each "HERO" in your wallet will grant you one AIRDROP piece</li>
-                    <li className='unordered1'>- Each Airdrop will be 1/4 of an ancient puzzle</li>
-                    <li className='unordered1'>- Collect all 4 pieces to redeem your mystery reward</li>
+                    <li className='unordered1none'>- Each "HERO" in your wallet will grant you one AIRDROP piece</li>
+                    <li className='unordered1none'>- Each Airdrop will be 1/4 of an ancient puzzle</li>
+                    <li className='unordered1none'>- Collect all 4 pieces to redeem your mystery reward</li>
                     <li className='unordered1'>Introduction to $HROM token</li>
                     <li className='unordered1'>Establishment of AgoraDAO</li>
-                    <li className='unordered1'>The development of our P2E game <br /> "The Ancient Greek War", "Conflict of Elada"</li>
+                    <li className='unordered1'>The development of our P2E game <br /> "The Ancient Greek War"</li>
                 </ul>
             </StyledPhase>
             <StyledPhase>

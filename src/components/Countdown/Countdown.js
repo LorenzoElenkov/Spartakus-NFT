@@ -10,6 +10,7 @@ const StyledCountdownContainer = styled.div`
     display: grid;
     grid-template-columns: repeat(4, 6vw);
     z-index: 5;
+    background-color: ${props => props.page === 1 ? 'rgba(255, 255, 255, 0.75)' : 'transparent'};
     .spanCount {
         font-size: 1.5vw;
         font-family: 'Magh';

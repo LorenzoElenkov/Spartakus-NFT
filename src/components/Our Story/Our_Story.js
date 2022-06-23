@@ -3,11 +3,8 @@ import React from "react";
 import styled from "styled-components";
 
 import theHeader from "../../images/Our Story/Our Story.png";
-// import helmet from "../../images/Our Story/helmet.png";
-import helmet from "../../images/shlem200.png";
+import helmet from "../../images/shlem201.png";
 import lines from "../../images/Our Story/Lines.png";
-import informationImage from "../../images/motiv22.png";
-
 
 
 const StyledHelmet = styled.img`
@@ -273,7 +270,6 @@ const Lore = ({ currentPage, images }) => {
       <StyledHelmet src={helmet} alt="" page={currentPage} onLoad={addImageLoaded}/>
       <StyledWhiteBG page={currentPage}>
         <StyledWhiteLines src={lines} onLoad={addImageLoaded}/>
-        <img className="motiv" src={informationImage} onLoad={addImageLoaded} alt=''/>
         <StyledWhiteSecondaryText>
             The king of the Earth had to be the worthiest among
             the Olympians and so the competition had to be fair.

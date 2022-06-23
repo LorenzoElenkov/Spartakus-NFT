@@ -77,8 +77,8 @@ const App = () => {
 
   const changeImagesLoaded = () => {
     imagesLoaded.current++;
-    if (imagesLoaded.current === 21) {
-      setImagesLoadedPerc(21);
+    if (imagesLoaded.current === 35) {
+      setImagesLoadedPerc(35);
     }
   };
 
@@ -92,7 +92,6 @@ const App = () => {
       } else if (currentPage === 9 && delta > 0) {
         scrollCount.current = 0;
       } else {
-        console.log(e);
         if (e.deltaY % Math.floor(e.deltaY) !== 0 || (e.deltaY % 19 === 0) || (e.wheelDeltaY % 54 === 0) || (e.deltaY % 125 === 0) || (e.deltaY % 3 === 0)) {
           scrollCount.current += delta*5 + 0.1;
         } else {
@@ -101,25 +100,24 @@ const App = () => {
       }
     }
 
-      if (scrollCount.current > 20 && moveNext === true && currentPage < 9 && window.outerWidth > 429) {
+      if (scrollCount.current > 20 && moveNext === true && currentPage < 9 && window.outerWidth > 429 && isInSite) {
         moveNext = false;
         setCurrentPage(prev => (prev + 1));
         snd.play();
         
-      } else if (scrollCount.current < -20 && moveNext === true && currentPage > 1 && window.outerWidth > 429) {
+      } else if (scrollCount.current < -20 && moveNext === true && currentPage > 1 && window.outerWidth > 429 && isInSite) {
         moveNext = false;
         setCurrentPage(prev => (prev - 1));
         snd.play();
       }
   };
-  console.log(window.outerWidth);
+
   useEffect(() => {
     scrollCount.current = 0;
     const move = setTimeout(() => {
       moveNext = true;
       scrollCount.current = 0;
       window.addEventListener('wheel', trackScroll);
-      console.log(`moveNext: ${moveNext}`);
     }, 3000);
     return () => {
       window.removeEventListener('wheel', trackScroll);
@@ -141,10 +139,11 @@ const App = () => {
   };
 
   const handleVolume = (step) => {
-    if (bgVolume > 0.06) {
-      setBgVolume(bgVolume - step);
+    if (bgVolume > 0.05) {
+      let normalizedVolume = bgVolume - step;
+      setBgVolume(Number(normalizedVolume.toFixed(2)));
     }
-     else if (bgVolume < 0.06 && bgVolume > 0.05) {
+     else if (bgVolume === 0.05) {
       setBgVolume(0);
     } else {
       setBgVolume(0.2);

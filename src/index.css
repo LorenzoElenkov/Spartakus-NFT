@@ -33,7 +33,7 @@ a {
 }
 
 li:hover {
-  cursor: url('../src/images/hoverkursor.png'), pointer;
+  /* cursor: url('../src/images/hoverkursor.png'), pointer; */
 }
 
 body::-webkit-scrollbar {

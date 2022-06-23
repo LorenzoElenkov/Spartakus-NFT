@@ -3,20 +3,20 @@ import React, { useState } from "react";
 import styled from "styled-components";
 
 import fullMap from "../../images/map/PNG Karti0.png";
-import first from "../../images/PNG Karti1.png";
-import second from "../../images/PNG Karti2.png";
-import third from "../../images/PNG Karti3.png";
-import forth from "../../images/PNG Karti4.png";
-import fifth from "../../images/PNG Karti5.png";
-import sixth from "../../images/PNG Karti6.png";
-import seventh from "../../images/PNG Karti7.png";
-import eight from "../../images/PNG Karti8.png";
-import ninth from "../../images/PNG Karti9.png";
-import tenth from "../../images/PNG Karti10.png";
-import eleventh from "../../images/PNG Karti11.png";
-import twelveth from "../../images/PNG Karti12.png";
-import thirtheenth from "../../images/PNG Karti13.png";
-import fortheenth from "../../images/PNG Karti14.png";
+import first from "../../images/PNG Karti.1.png";
+import second from "../../images/PNG Karti.2.png";
+import third from "../../images/PNG Karti.3.png";
+import forth from "../../images/PNG Karti.4.png";
+import fifth from "../../images/PNG Karti.5.png";
+import sixth from "../../images/PNG Karti.6.png";
+import seventh from "../../images/PNG Karti.7.png";
+import eight from "../../images/PNG Karti.8.png";
+import ninth from "../../images/PNG Karti.9.png";
+import tenth from "../../images/PNG Karti.10.png";
+import eleventh from "../../images/PNG Karti.11.png";
+import twelveth from "../../images/PNG Karti.12.png";
+import thirtheenth from "../../images/PNG Karti.13.png";
+import fortheenth from "../../images/PNG Karti.14.png";
 
 
 import hera from '../../images/map/hera.png';

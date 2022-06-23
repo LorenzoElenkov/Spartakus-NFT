@@ -1,8 +1,8 @@
 import React, { useState, useRef, useEffect } from "react";
 import styled from "styled-components";
 
-import informationImage from "../../images/motiv22.png";
-import informationHelmet2 from "../../images/shlem100.png";
+import informationHelmet2 from "../../images/shlem101.png";
+import informationHelmet3 from "../../images/shlem1001.png";
 import discordLogo from "../../images/Information/discord.png";
 import logoShlem from "../../images/shlemLoo.png";
 import logo from "../../images/logo.svg";
@@ -10,6 +10,9 @@ import soundON from "../../images/soundON.png";
 import soundONW from "../../images/soundONWhite.png";
 import soundOFF from "../../images/soundOFF.png";
 import soundOFFW from "../../images/soundOFFWhite.png";
+
+import krug from "../../images/krugche.png";
+import circleLogo from "../../images/circleLogo.png";
 
 const StyledMusic = styled.div`
   position: relative;
@@ -20,8 +23,8 @@ const StyledMusic = styled.div`
   z-index: 2;
   overflow: hidden;
 
-  @media screen and (max-width: 768px){
-      position: absolute;
+  @media screen and (max-width: 768px) {
+    position: absolute;
   }
 `;
 
@@ -115,29 +118,15 @@ const StyledBlueBG = styled.div`
   }
 `;
 
-const StyledInformation = styled.img`
-  height: 100vh;
+const StyledHelmet2 = styled.img`
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
-  left: ${(props) => (props.page === 1 ? "3vw" : "-110vw")};
-  transition: left 0.5s ease-in-out;
-
-  @media screen and (max-width: 768px) {
-    display: none;
-  }
-`;
-
-const StyledHelmet = styled.img`
-  position: absolute;
-  top: ${(props) => (props.page === 1 ? "50%" : "-110vh")};
-  left: 49%;
-  transform-origin: 50% 50%;
+  left: ${(props) => (props.page === 1 ? "calc(100% - 100px)" : "110vw")};
   transform: translateX(-50%) translateY(-50%);
-  height: 80%;
+  height: 90vh;
   z-index: 1;
   opacity: ${(props) => (props.page === 1 ? "1" : "0")};
-  transition: top 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
 
   @media screen and (max-width: 320px) {
     position: absolute;
@@ -151,7 +140,37 @@ const StyledHelmet = styled.img`
     top: 30px;
     left: 0;
     transform: none;
+  }
+  @media screen and (min-width: 376px) and (max-width: 428px) {
+    height: 400px;
+    transform: none;
+    top: 30px;
+    left: 0;
+  }
+`;
 
+const StyledHelmet = styled.img`
+  position: absolute;
+  top: 32%;
+  left: ${(props) => (props.page === 1 ? "80px" : "-110vw")};
+  transform: translateX(-50%) translateY(-50%);
+  height: 125vh;
+  z-index: 0;
+  opacity: ${(props) => (props.page === 1 ? "1" : "0")};
+  transition: all 0.4s ease-in-out;
+
+  @media screen and (max-width: 320px) {
+    position: absolute;
+    height: 300px;
+    top: 30px;
+    left: 0;
+    transform: none;
+  }
+  @media screen and (min-width: 321px) and (max-width: 375px) {
+    height: 350px;
+    top: 30px;
+    left: 0;
+    transform: none;
   }
   @media screen and (min-width: 376px) and (max-width: 428px) {
     height: 400px;
@@ -187,9 +206,44 @@ const StyledCPTH = styled.div`
 `;
 
 const StyledHOO = styled.div`
-  width: 55%;
-  justify-self: center;
+  width: 50%;
   z-index: 9000;
+  position: absolute;
+  top: ${props => props.page === 1 ? '50%' : '-110vh'};
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  transition: 0.5s top ease-in-out;
+
+  .circle {
+    background-image: url(${krug});
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    height: 45vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .circleLogo {
+      margin-top: 100px;
+      width: 70%;
+    }
+
+    .circleText {
+      font-size: 1.2vw;
+      color: white;
+      font-family: "Medium";
+      font-weight: 800;
+      letter-spacing: 1px;
+      line-height: normal;
+      width: 70%;
+      text-align: center;
+    }
+
+    a {
+
+    }
+  }
   @font-face {
     font-family: "Magh";
     src: url("./fonts/Maghfirea.otf");
@@ -222,9 +276,9 @@ const StyledHOO = styled.div`
   }
 
   .discordButton {
+    margin-top: 30px;
     justify-self: center;
     align-self: center;
-    transform: translateX(6vw) translateY(1vw);
     height: 5vw;
     width: 18vw;
     display: grid;
@@ -451,7 +505,7 @@ const Information = ({ currentPage, onLinkClick, images, music, volume }) => {
   };
 
   useEffect(() => {
-    discordRef.current.addEventListener("mouseenter", () => {
+    discordRef.current?.addEventListener("mouseenter", () => {
       discordSound.currentTime = 0;
       discordSound.play();
     });
@@ -463,84 +517,67 @@ const Information = ({ currentPage, onLinkClick, images, music, volume }) => {
 
   return (
     <>
-    {window.outerWidth > 428 && <StyledMusic>
-        <StyledMusicContainer page={currentPage} volumeBG={volume}>
-          <span>Music</span>
-          {volume !== 0 && (
-            <img
-              className="volumeOn"
-              src={
-                currentPage === 1 ||
-                currentPage === 4 ||
-                currentPage === 8 ||
-                currentPage === 9
-                  ? soundON
-                  : soundONW
-              }
-              alt=""
-              onClick={() => changeVolume(0.05)}
-            />
-          )}
-          {volume === 0 && (
-            <img
-              className="volumeOff"
-              src={
-                currentPage === 1 ||
-                currentPage === 4 ||
-                currentPage === 8 ||
-                currentPage === 9
-                  ? soundOFF
-                  : soundOFFW
-              }
-              alt=""
-              onClick={() => changeVolume(0.05)}
-            />
-          )}
-          <div />
-        </StyledMusicContainer>
-      </StyledMusic>}
-      {window.outerWidth > 428 && <StyledLogo onClick={() => onLinkClick(1)} page={currentPage}>
-        <img src={logoShlem} alt="helmet" className="logoShlem" />
-        <img src={logo} alt="heroes of olympus" className="logo" />
-      </StyledLogo>}
-      <StyledWhiteBG page={currentPage}>
-        <div>
-          <StyledCPTH>
-            <span className="titleCollection">Collection</span>
-            <span className="textCollection">10 878 heroes</span>
-          </StyledCPTH>
-          <StyledCPTH>
-            <span className="titleCollection">Price</span>
-            <span className="textCollection">To be declared</span>
-          </StyledCPTH>
-          <StyledCPTH>
-            <span className="titleCollection">Tribes</span>
-            <span className="textCollection">
-              There are 14 tribes <br /> with one God to lead
-            </span>
-          </StyledCPTH>
-          <StyledCPTH>
-            <span className="titleCollection">Heroes</span>
-            <span className="textCollection">777 in each tribe</span>
-          </StyledCPTH>
-        </div>
-      </StyledWhiteBG>
-      <StyledInformation
-        page={currentPage}
-        src={informationImage}
-        alt="information"
-        onLoad={addImageLoaded}
-      />
+      {window.outerWidth > 428 && (
+        <StyledMusic>
+          <StyledMusicContainer page={currentPage} volumeBG={volume}>
+            <span>Music</span>
+            {volume !== 0 && (
+              <img
+                className="volumeOn"
+                src={
+                  currentPage === 1 ||
+                  currentPage === 4 ||
+                  currentPage === 8 ||
+                  currentPage === 9
+                    ? soundON
+                    : soundONW
+                }
+                alt=""
+                onClick={() => changeVolume(0.05)}
+              />
+            )}
+            {volume === 0 && (
+              <img
+                className="volumeOff"
+                src={
+                  currentPage === 1 ||
+                  currentPage === 4 ||
+                  currentPage === 8 ||
+                  currentPage === 9
+                    ? soundOFF
+                    : soundOFFW
+                }
+                alt=""
+                onClick={() => changeVolume(0.05)}
+              />
+            )}
+            <div />
+          </StyledMusicContainer>
+        </StyledMusic>
+      )}
+      {window.outerWidth > 428 && (
+        <StyledLogo onClick={() => onLinkClick(1)} page={currentPage}>
+          <img src={logoShlem} alt="helmet" className="logoShlem" />
+          <img src={logo} alt="heroes of olympus" className="logo" />
+        </StyledLogo>
+      )}
+      <StyledWhiteBG page={currentPage}></StyledWhiteBG>
       <StyledHelmet
         page={currentPage}
         src={informationHelmet2}
         alt="helmet"
         onLoad={addImageLoaded}
       />
-      <StyledBlueBG page={currentPage}>
-        <StyledHOO>
-          <span className="titleBlue">Heroes of Olympus</span>
-          <span className="textBlue">
+      <StyledHelmet2
+        page={currentPage}
+        src={informationHelmet3}
+        alt="helmet2"
+        onLoad={addImageLoaded}
+      />
+      <StyledHOO page={currentPage}>
+        <div alt="Circle containing main collection information" className="circle">
+          <img src={circleLogo} alt="Website logo in circle" className="circleLogo" />
+          <span className="circleText">
             Collection of 10,878 ultra-realistic 3D heroes, sealed in the Cursed
             Chests of Chaos, on the Solana blockchain! Ancient Greece is about
             to be rebuilt in the Metaverse. Join the Battle of the Gods!
@@ -555,8 +592,10 @@ const Information = ({ currentPage, onLinkClick, images, music, volume }) => {
             <span className="discordText">Join our Discord</span>
             <img className="discordLogo" src={discordLogo} alt="" />
           </a>
-        </StyledHOO>
-      </StyledBlueBG>
+        </div>
+        
+      </StyledHOO>
+      <StyledBlueBG page={currentPage}/>
     </>
   );
 };
