@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 import informationHelmet2 from "../../images/shlem101.png";
 import informationHelmet3 from "../../images/shlem1001.png";
+import informationHelmetMobile from "../../images/shlem100.png";
 import discordLogo from "../../images/Information/discord.png";
 import logoShlem from "../../images/shlemLoo.png";
 import logo from "../../images/logo.svg";
@@ -121,62 +122,46 @@ const StyledBlueBG = styled.div`
 const StyledHelmet2 = styled.img`
   position: absolute;
   top: 50%;
-  left: ${(props) => (props.page === 1 ? "calc(100% - 100px)" : "110vw")};
+  left: ${(props) => (props.page === 1 ? "calc(100% - 7vw)" : "110vw")};
   transform: translateX(-50%) translateY(-50%);
   height: 90vh;
   z-index: 1;
   opacity: ${(props) => (props.page === 1 ? "1" : "0")};
   transition: all 0.4s ease-in-out;
 
-  @media screen and (max-width: 320px) {
-    position: absolute;
-    height: 300px;
-    top: 30px;
-    left: 0;
-    transform: none;
+  @media screen and (max-width: 428px) {
+    display: none;
   }
-  @media screen and (min-width: 321px) and (max-width: 375px) {
-    height: 350px;
-    top: 30px;
-    left: 0;
-    transform: none;
-  }
-  @media screen and (min-width: 376px) and (max-width: 428px) {
-    height: 400px;
-    transform: none;
-    top: 30px;
-    left: 0;
+`;
+
+const StyledHelmetMobile = styled.img`
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  height: 80vw;
+  z-index: 1;
+  display: block;
+  @media screen and (min-width: 429px) {
+    display: none;
   }
 `;
 
 const StyledHelmet = styled.img`
   position: absolute;
   top: 32%;
-  left: ${(props) => (props.page === 1 ? "80px" : "-110vw")};
+  left: ${(props) => (props.page === 1 ? "calc(0% + 5vw)" : "-110vw")};
   transform: translateX(-50%) translateY(-50%);
   height: 125vh;
   z-index: 0;
   opacity: ${(props) => (props.page === 1 ? "1" : "0")};
   transition: all 0.4s ease-in-out;
 
-  @media screen and (max-width: 320px) {
-    position: absolute;
-    height: 300px;
-    top: 30px;
-    left: 0;
-    transform: none;
-  }
-  @media screen and (min-width: 321px) and (max-width: 375px) {
-    height: 350px;
-    top: 30px;
-    left: 0;
-    transform: none;
-  }
-  @media screen and (min-width: 376px) and (max-width: 428px) {
+  @media screen and (max-width: 428px) {
+    left: 50%;
+    z-index: 1;
     height: 400px;
-    transform: none;
-    top: 30px;
-    left: 0;
+    display: none;
   }
 `;
 
@@ -209,74 +194,54 @@ const StyledHOO = styled.div`
   width: 50%;
   z-index: 9000;
   position: absolute;
-  top: ${props => props.page === 1 ? '50%' : '-110vh'};
+  top: ${(props) => (props.page === 1 ? "50%" : "-110vh")};
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
   transition: 0.5s top ease-in-out;
-
+  display: grid;
   .circle {
     background-image: url(${krug});
     background-size: contain;
     background-repeat: no-repeat;
     background-position: 50%;
     height: 45vw;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    grid-row: 1/1;
+    grid-column: 1/1;
+  }
 
-    .circleLogo {
-      margin-top: 100px;
-      width: 70%;
-    }
+  .circleLogo {
+    width: 65%;
+    grid-row: 1/1;
+    grid-column: 1/1;
+    justify-self: center;
+    align-self: center;
+    margin-top: -15vw;
+  }
 
-    .circleText {
-      font-size: 1.2vw;
-      color: white;
-      font-family: "Medium";
-      font-weight: 800;
-      letter-spacing: 1px;
-      line-height: normal;
-      width: 70%;
-      text-align: center;
-    }
-
-    a {
-
-    }
+  .circleText {
+    justify-self: center;
+    align-self: center;
+    margin-top: 6.5vw;
+    font-size: 1.2vw;
+    color: white;
+    font-family: "Medium";
+    font-weight: 800;
+    letter-spacing: 1px;
+    line-height: normal;
+    width: 70%;
+    text-align: center;
+    grid-row: 1/1;
+    grid-column: 1/1;
   }
   @font-face {
     font-family: "Magh";
     src: url("./fonts/Maghfirea.otf");
   }
 
-  .titleBlue {
-    font-family: "Magh";
-    font-size: 4vw;
-    letter-spacing: 6px;
-    color: white;
-    display: block;
-    transform: translateX(6vw) translateY(-4vw);
-    line-height: 4vw;
-    font-weight: 700;
-    align-self: flex-start;
-  }
-
-  .textBlue {
-    font-size: 1vw;
-    color: white;
-    justify-self: center;
-    align-self: center;
-    display: block;
-    font-family: "Medium";
-    font-weight: 800;
-    transform: translateX(6vw) translateY(-2vw) scaleY(0.9);
-    letter-spacing: 1px;
-    width: 85%;
-    line-height: 1.4vw;
-  }
-
   .discordButton {
-    margin-top: 30px;
+    grid-row: 1/1;
+    grid-column: 1/1;
+    margin-top: 23vw;
     justify-self: center;
     align-self: center;
     height: 5vw;
@@ -310,7 +275,7 @@ const StyledHOO = styled.div`
 
   .discordLogo {
     padding-right: 10px;
-    width: 90%;
+    width: 85%;
     align-self: center;
     justify-self: end;
     filter: invert(1);
@@ -322,29 +287,18 @@ const StyledHOO = styled.div`
     margin-bottom: 30px;
     display: flex;
     flex-direction: column;
-    .titleBlue {
-      font-family: "Magh";
-      font-size: 11vw;
-      letter-spacing: 2px;
-      justify-self: center;
-      align-self: center;
-      transform: none;
-      margin-bottom: 30px;
-    }
 
-    .textBlue {
-      font-size: 3.6vw;
-      color: white;
-      font-family: "Medium";
-      font-weight: 800;
-      letter-spacing: 1px;
-      line-height: normal;
+    .circle {
+      display: none;
+    }
+    .circleLogo {
+      margin-top: 40vh;
+    }
+    .circleText {
+      margin-top: 2vh;
+      font-size: 3.5vw;
       width: 90%;
-      text-align: center;
-      margin-top: 10px;
-      transform: none;
     }
-
     .discordButton {
       height: 50px;
       width: 220px;
@@ -373,28 +327,17 @@ const StyledHOO = styled.div`
     margin-bottom: 30px;
     display: flex;
     flex-direction: column;
-    .titleBlue {
-      font-family: "Magh";
-      font-size: 11vw;
-      letter-spacing: 2px;
-      align-self: center;
-      transform: none;
-      margin-bottom: 30px;
+    .circle {
+      display: none;
     }
-
-    .textBlue {
-      font-size: 3.6vw;
-      color: white;
-      font-family: "Medium";
-      font-weight: 800;
-      letter-spacing: 1px;
-      line-height: normal;
+    .circleLogo {
+      margin-top: 40vh;
+    }
+    .circleText {
+      margin-top: 2vh;
+      font-size: 3.5vw;
       width: 90%;
-      text-align: center;
-      margin-top: 10px;
-      transform: none;
     }
-
     .discordButton {
       height: 50px;
       width: 220px;
@@ -423,27 +366,16 @@ const StyledHOO = styled.div`
     margin-bottom: 30px;
     display: flex;
     flex-direction: column;
-    .titleBlue {
-      font-family: "Magh";
-      font-size: 11vw;
-      letter-spacing: 2px;
-      justify-self: center;
-      align-self: center;
-      transform: none;
-      margin-bottom: 30px;
+    .circle {
+      display: none;
     }
-
-    .textBlue {
-      font-size: 3.6vw;
-      color: white;
-      font-family: "Medium";
-      font-weight: 800;
-      letter-spacing: 1px;
-      line-height: normal;
+    .circleLogo {
+      margin-top: 40vh;
+    }
+    .circleText {
+      margin-top: 2vh;
+      font-size: 3.5vw;
       width: 90%;
-      text-align: center;
-      margin-top: 10px;
-      transform: none;
     }
 
     .discordButton {
@@ -575,27 +507,33 @@ const Information = ({ currentPage, onLinkClick, images, music, volume }) => {
         onLoad={addImageLoaded}
       />
       <StyledHOO page={currentPage}>
-        <div alt="Circle containing main collection information" className="circle">
-          <img src={circleLogo} alt="Website logo in circle" className="circleLogo" />
-          <span className="circleText">
-            Collection of 10,878 ultra-realistic 3D heroes, sealed in the Cursed
-            Chests of Chaos, on the Solana blockchain! Ancient Greece is about
-            to be rebuilt in the Metaverse. Join the Battle of the Gods!
-          </span>
-          <a
-            className="discordButton"
-            href="https://discord.com/invite/XHPyntDaF4"
-            target="_blank"
-            rel="noreferrer"
-            ref={discordRef}
-          >
-            <span className="discordText">Join our Discord</span>
-            <img className="discordLogo" src={discordLogo} alt="" />
-          </a>
-        </div>
-        
+        <StyledHelmetMobile src={informationHelmetMobile} alt='helmet on mobile' onLoad={addImageLoaded}/>
+        <div
+          alt="Circle containing main collection information"
+          className="circle"
+        />
+        <img
+          src={circleLogo}
+          alt="Website logo in circle"
+          className="circleLogo"
+        />
+        <span className="circleText">
+          Collection of 10,878 ultra-realistic 3D heroes, sealed in the Cursed
+          Chests of Chaos, on the Solana blockchain! Ancient Greece is about to
+          be rebuilt in the Metaverse. Join the Battle of the Gods!
+        </span>
+        <a
+          className="discordButton"
+          href="https://discord.com/invite/XHPyntDaF4"
+          target="_blank"
+          rel="noreferrer"
+          ref={discordRef}
+        >
+          <span className="discordText">Join our Discord</span>
+          <img className="discordLogo" src={discordLogo} alt="" />
+        </a>
       </StyledHOO>
-      <StyledBlueBG page={currentPage}/>
+      <StyledBlueBG page={currentPage} />
     </>
   );
 };

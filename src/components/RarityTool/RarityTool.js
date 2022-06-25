@@ -51,6 +51,10 @@ const RarityTool = (props) => {
                     <h2>ID</h2>
                 </div>
                 <input type="number" className='idInput' onKeyDown={(e) => e.code >= 48 && e.code <= 57} value={chosenNumber} onChange={(e) => handleChosenNumber(e.target.value)} min='0' max='10877' pattern="[0-9]+" disabled={true}/>
+                <div className='bg'>
+                    <h2>Ranking</h2>
+                </div>
+                <input type="number" className='idInput' onKeyDown={(e) => e.code >= 48 && e.code <= 57} value={chosenNumber} onChange={(e) => handleChosenNumber(e.target.value)} min='0' max='10877' pattern="[0-9]+" disabled={true}/>
                 {/* <label>Rank</label>
                 <input type="number" className='rankInput' /> */}
             </div>
@@ -119,13 +123,13 @@ const StyledContainer = styled.div`
         margin-left: 60px;
         grid-column: 1/1;
         margin-top: 30px;
-        font-size: 3rem;
+        font-size: 2.2rem;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         text-align: start;
         .second {
-            font-size: 2rem;
+            font-size: 1.6rem;
             color: gray;
         }
     }
@@ -135,22 +139,25 @@ const StyledContainer = styled.div`
         justify-self: end;
         display: flex;
         height: 40px;
+        .bg:nth-child(3) {
+            margin-left: 10px;
+        }
         .bg {
             background-color: #303480;
             display: flex;
         }
         h2 {
-            font-size: 2rem;
+            font-size: 1.6rem;
             padding: 0 20px;
             align-self: center;
         }
 
         input {
             padding: 0 0 2px 5px;
-            width: 150px;
+            width: 120px;
             margin-left: 0px;
             border: none;
-            font-size: 2rem;
+            font-size: 1.6rem;
             
         }
 

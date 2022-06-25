@@ -14,10 +14,28 @@ const StyledRoadmapContainer = styled.div`
   height: 100vh;
   background: #0f1026;
   transition: top 0.5s ease-in-out;
+  h5 {
+    display: none;
+  }
+
   @media screen and (max-width: 768px) {
     position: relative;
     top: 0;
     height: max-content;
+    padding: 50px 0;
+    h5 {
+      margin-top: 0;
+      text-align: center;
+      display: block;
+      font-size: 15vw;
+      color: white;
+      font-family: 'Magh';
+      margin-bottom: 0;
+      color: #fff;
+      letter-spacing: 8px;
+      text-shadow: 0 0 3px #f2cb05, 0 0 3px #f2cb05, 0 0 3px #f2cb05, 0 0 3px #f2cb05,
+        0 0 3px #f2cb05, 0 0 3px #f2cb05, 0 0 3px #f2cb05;
+    }
   }
 `;
 
@@ -317,52 +335,72 @@ const Roadmap = ({ currentPage, images }) => {
   };
   return (
     <StyledRoadmapContainer page={currentPage}>
+        <h5>Roadmap</h5>
       <StyledCorousel>
-            <StyledPhase>
-                <span className='number'>1</span>
-                <span className='title'>Phase I</span>
-                <span className='subtitle'>THE MOST EPIC REVEAL IN THE NFT SPACE</span>
-                <span className='quote'>- Heroes of Olympus</span>
-                <ul className='unorderedList'>
-                    <li className='unordered1none'>1. Tribe Reveal</li>
-                    <li className='unordered1none'>2. Class Reveal</li>
-                    <li className='unordered1none'>3. Unleashing the "HEROES"</li>
-                    <li className='unordered1'>Rarity Scale</li>
-                    <li className='unordered1'>FULL COPYRIGHT ON YOUR "HERO"</li>
-                    <li className='unordered1'>TRIBE SERVERS WILL BE UNLOCKED FOR HOLDERS</li>
-                    <li className='unordered1'>30% of the royalties will go to the community</li>
-                    <li className='unordered1'>Everything about their distribution will be decided <br />
-                        with a poll in the private community server
-                    </li>
-                </ul>
-            </StyledPhase>
-            <StyledPhase>
-                <span className='number'>2</span>
-                <span className='title'>Phase II</span>
-                <span className='subtitle'>Establishment of the Heroes of Olympus' DAO and token</span>
-                <span className='quote'>- Agora Dao and $HROM</span>
-                <ul className='unorderedList'>
-                    <li className='unordered1'>Exclusive Airdrops every week</li>
-                    <li className='unordered1none'>- Each "HERO" in your wallet will grant you one AIRDROP piece</li>
-                    <li className='unordered1none'>- Each Airdrop will be 1/4 of an ancient puzzle</li>
-                    <li className='unordered1none'>- Collect all 4 pieces to redeem your mystery reward</li>
-                    <li className='unordered1'>Introduction to $HROM token</li>
-                    <li className='unordered1'>Establishment of AgoraDAO</li>
-                    <li className='unordered1'>The development of our P2E game <br /> "The Ancient Greek War"</li>
-                </ul>
-            </StyledPhase>
-            <StyledPhase>
-                <span className='number'>3</span>
-                <span className='title'>Phase III</span>
-                <span className='subtitle'>THE WAR BEGINS</span>
-                <span className='quote'>- ATHENA</span>
-                <ul className='unorderedList'>
-                    <li className='unordered1'>Launching our P2E Game <br /> - 'The War for Ancient Greece'</li>
-                    <li className='unordered1'>Expansion collection teasers</li>
-                </ul>
-            </StyledPhase>
-            <img src={shoulder} alt='' onLoad={addImageLoaded}/>
-        </StyledCorousel>
+        <StyledPhase>
+          <span className="number">1</span>
+          <span className="title">Phase I</span>
+          <span className="subtitle">
+            THE MOST EPIC REVEAL IN THE NFT SPACE
+          </span>
+          <span className="quote">- Heroes of Olympus</span>
+          <ul className="unorderedList">
+            <li className="unordered1none">1. Tribe Reveal</li>
+            <li className="unordered1none">2. Class Reveal</li>
+            <li className="unordered1none">3. Unleashing the "HEROES"</li>
+            <li className="unordered1">Rarity Scale</li>
+            <li className="unordered1">FULL COPYRIGHT ON YOUR "HERO"</li>
+            <li className="unordered1">
+              TRIBE SERVERS WILL BE UNLOCKED FOR HOLDERS
+            </li>
+            <li className="unordered1">
+              30% of the royalties will go to the community
+            </li>
+            <li className="unordered1">
+              Everything about their distribution will be decided <br />
+              with a poll in the private community server
+            </li>
+          </ul>
+        </StyledPhase>
+        <StyledPhase>
+          <span className="number">2</span>
+          <span className="title">Phase II</span>
+          <span className="subtitle">
+            Establishment of the Heroes of Olympus' DAO and token
+          </span>
+          <span className="quote">- Agora Dao and $HROM</span>
+          <ul className="unorderedList">
+            <li className="unordered1">Exclusive Airdrops every week</li>
+            <li className="unordered1none">
+              - Each "HERO" in your wallet will grant you one AIRDROP piece
+            </li>
+            <li className="unordered1none">
+              - Each Airdrop will be 1/4 of an ancient puzzle
+            </li>
+            <li className="unordered1none">
+              - Collect all 4 pieces to redeem your mystery reward
+            </li>
+            <li className="unordered1">Introduction to $HROM token</li>
+            <li className="unordered1">Establishment of AgoraDAO</li>
+            <li className="unordered1">
+              The development of our P2E game <br /> "The Ancient Greek War"
+            </li>
+          </ul>
+        </StyledPhase>
+        <StyledPhase>
+          <span className="number">3</span>
+          <span className="title">Phase III</span>
+          <span className="subtitle">THE WAR BEGINS</span>
+          <span className="quote">- ATHENA</span>
+          <ul className="unorderedList">
+            <li className="unordered1">
+              Launching our P2E Game <br /> - 'The War for Ancient Greece'
+            </li>
+            <li className="unordered1">Expansion collection teasers</li>
+          </ul>
+        </StyledPhase>
+        <img src={shoulder} alt="" onLoad={addImageLoaded} />
+      </StyledCorousel>
     </StyledRoadmapContainer>
   );
 };

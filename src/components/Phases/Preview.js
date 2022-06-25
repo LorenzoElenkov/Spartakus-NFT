@@ -84,7 +84,7 @@ const StyledContainer = styled.div`
         }
 
         .slider img {
-            height: 200px;
+            height: 65vw;
             transform: translateY(50px);
         }
     }
@@ -102,18 +102,18 @@ const StyledContainer = styled.div`
         }
 
         .slider img {
-            height: 260px;
+            height: 70vw;
             transform: translateY(50px);
         }
 
     }
     @media screen and (min-width: 376px) and (max-width: 428px) {
         .tridentImg {
-            width: 60px;
+            width: 100px;
         }
 
         .previewText {
-            font-size: 2.5rem;
+            font-size: 4rem;
         }
 
         .slider {
@@ -121,7 +121,7 @@ const StyledContainer = styled.div`
         }
 
         .slider img {
-            height: 300px;
+            height: 70vw;
             transform: translateY(50px);
         }
     }

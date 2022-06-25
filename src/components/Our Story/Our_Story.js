@@ -5,7 +5,7 @@ import styled from "styled-components";
 import theHeader from "../../images/Our Story/Our Story.png";
 import helmet from "../../images/shlem201.png";
 import lines from "../../images/Our Story/Lines.png";
-
+import arka from "../../images/arka.png";
 
 const StyledHelmet = styled.img`
   position: absolute;
@@ -47,6 +47,7 @@ const StyledWhiteBG = styled.div`
     height: 45vh;
     display: flex;
     flex-direction: column;
+    margin-bottom: 75px;
     .motiv {
     transform: rotate(90deg) translateY(-42.3%);
     height: 100vw;
@@ -63,6 +64,7 @@ const StyledWhiteBG = styled.div`
     height: 45vh;
     display: flex;
     flex-direction: column;
+    margin-bottom: 75px;
     .motiv {
     transform: rotate(90deg) translateY(-43.3%);
     height: 100vw;
@@ -79,6 +81,7 @@ const StyledWhiteBG = styled.div`
     height: max-content;
     display: flex;
     flex-direction: column;
+    margin-bottom: 75px;
     .motiv {
     transform: rotate(90deg) translateY(-44%);
     height: 100vw;
@@ -269,6 +272,7 @@ const Lore = ({ currentPage, images }) => {
       </StyledBlueBG>
       <StyledHelmet src={helmet} alt="" page={currentPage} onLoad={addImageLoaded}/>
       <StyledWhiteBG page={currentPage}>
+      <img src={arka} alt='motiv' className="motiv"/>
         <StyledWhiteLines src={lines} onLoad={addImageLoaded}/>
         <StyledWhiteSecondaryText>
             The king of the Earth had to be the worthiest among

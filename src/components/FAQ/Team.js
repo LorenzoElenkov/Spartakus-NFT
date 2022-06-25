@@ -240,6 +240,7 @@ const StyledContainer = styled.div`
         .teamContainer {
             display: flex;
             flex-direction: column;
+            /* overflow-x: scroll; */
             gap: 10px;
             padding-top: 20px;
         }

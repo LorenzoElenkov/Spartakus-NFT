@@ -27,7 +27,7 @@ const StyledApp = styled.div`
   display: grid;
   grid-template-columns: 100vw;
   grid-template-rows: repeat(auto-fill, 100vh);
-
+  overflow-x: hidden;
   @media screen and (max-width: 765px) {
     display: block;
   }
@@ -77,8 +77,8 @@ const App = () => {
 
   const changeImagesLoaded = () => {
     imagesLoaded.current++;
-    if (imagesLoaded.current === 35) {
-      setImagesLoadedPerc(35);
+    if (imagesLoaded.current === 36) {
+      setImagesLoadedPerc(36);
     }
   };
 
@@ -99,7 +99,6 @@ const App = () => {
         }
       }
     }
-
       if (scrollCount.current > 20 && moveNext === true && currentPage < 9 && window.outerWidth > 429 && isInSite) {
         moveNext = false;
         setCurrentPage(prev => (prev + 1));
@@ -134,8 +133,8 @@ const App = () => {
   const [playMusic] = useSound(bgMusic2, { volume: bgVolume, loop: true });
 
   const handleLoadingClick = () => {
+    // playMusic();
     setIsInSite(true);
-    playMusic();
   };
 
   const handleVolume = (step) => {
@@ -154,11 +153,11 @@ const App = () => {
   return (
     <StyledApp>
       {!isInSite && <Loading clicked={handleLoadingClick} images={imagesLoaded.current}/>}
-      <Countdown currentPage={currentPage}/>
       {window.outerWidth < 429 && <HeaderMobile music={handleVolume} volume={bgVolume}/>}
       <Navigation currentPage={currentPage} onLinkClick={handleLinkClick} onRTClick={(state) => setShowRT(state)}/>
       {showRT && <RarityTool onRTClose={() => setShowRT(false)}/>}
       <Information currentPage={currentPage} onLinkClick={handleLinkClick} images={changeImagesLoaded} music={handleVolume} volume={bgVolume}/>
+      <Countdown currentPage={currentPage}/>
       <OurStory currentPage={currentPage} images={changeImagesLoaded}/>
       <Map currentPage={currentPage} images={changeImagesLoaded}/>
       <Roadmap currentPage={currentPage} images={changeImagesLoaded}/>

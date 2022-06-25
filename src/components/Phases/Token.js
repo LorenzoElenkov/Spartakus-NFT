@@ -14,7 +14,7 @@ const StyledContainer = styled.div`
   background: white;
   display: grid;
   grid-template-columns: 20% 1fr 1fr;
-  grid-template-rows: 1fr 2fr;
+  grid-template-rows: 1fr 1fr;
   row-gap: 1vw;
   transition: top 0.5s ease-in-out;
   overflow: hidden;
@@ -57,7 +57,6 @@ const StyledContainer = styled.div`
     row-gap: 0;
     display: flex;
     flex-direction: column;
-
     .shoulder {
     position: absolute;
     transform: translateX(-30%) translateY(50%);
@@ -67,21 +66,21 @@ const StyledContainer = styled.div`
 
     .title {
         margin-top: 50px;
-        font-size: 4rem;
+        font-size: 15vw;
         width: 100%;
         text-align: center;
       }
     .text {
         font-size: 1.2rem;
         padding: 0 20px;
-        margin-top: 170px;
+        margin-top: 200px;
         text-align: center;
         width: 85%;
     }
 
     .previewImg {
       width: 50%;
-      margin-top: 0;
+      margin-top: 20px;
       position: absolute;
       top: 100px;
       left: 25%;
@@ -104,7 +103,7 @@ const StyledContainer = styled.div`
 
     .title {
         margin-top: 50px;
-        font-size: 4rem;
+        font-size: 16vw;
         width: 100%;
         text-align: center;
       }
@@ -118,7 +117,7 @@ const StyledContainer = styled.div`
 
     .previewImg {
       width: 50%;
-      margin-top: 0;
+      margin-top: 20px;
       position: absolute;
       top: 100px;
       left: 25%;
@@ -141,7 +140,7 @@ const StyledContainer = styled.div`
 
     .title {
         margin-top: 50px;
-        font-size: 4rem;
+        font-size: 18vw;
         width: 100%;
         text-align: center;
       }
@@ -155,7 +154,7 @@ const StyledContainer = styled.div`
 
     .previewImg {
       width: 50%;
-      margin-top: 0;
+      margin-top: 30px;
       position: absolute;
       top: 100px;
       left: 25%;

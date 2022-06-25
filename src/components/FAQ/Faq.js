@@ -33,15 +33,13 @@ const StyledContainer = styled.div`
     @media screen and (max-width: 320px) {
         position: relative;
         left: 0;
-        /* overflow: visible; */
         display: grid;
         padding-bottom: 30px;
-        grid-template-rows: repeat(auto-fill, max-content);
+        grid-template-rows: 5% 10% max-content;
         .title {
             font-size: 2.4rem;
             align-self: end;
         }
-
         .subtext {
             font-size: 1.2rem;
         }
@@ -53,7 +51,7 @@ const StyledContainer = styled.div`
         /* overflow: visible; */
         display: grid;
         padding-bottom: 30px;
-        grid-template-rows: repeat(auto-fill, max-content);
+        grid-template-rows: 5% 10% max-content;
         .title {
             font-size: 2.4rem;
             align-self: end;
@@ -66,15 +64,12 @@ const StyledContainer = styled.div`
     @media screen and (min-width: 376px) and (max-width: 428px) {
         position: relative;
         left: 0;
-        /* overflow: visible; */
         display: grid;
-        padding-bottom: 30px;
-        grid-template-rows: repeat(auto-fill, max-content);
+        grid-template-rows: 5% 10% max-content;
         .title {
             font-size: 2.4rem;
             align-self: end;
         }
-
         .subtext {
             font-size: 1.2rem;
         }
