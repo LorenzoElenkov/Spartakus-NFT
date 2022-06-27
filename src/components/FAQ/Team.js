@@ -8,6 +8,12 @@ import blue from '../../images/222 blue.png';
 import purple from '../../images/222 purple.png';
 import green from '../../images/222 green.png';
 
+import blueAvatar from "../../images/blueAvatar.png";
+import redAvatar from "../../images/redAvatar.png";
+import blackAvatar from "../../images/blackAvatar.png";
+import purpleAvatar from "../../images/purpleAvatar.png";
+import greenAvatar from "../../images/greenAvatar.png";
+
 const StyledContainer = styled.div`
     position: absolute;
     top: ${props => props.page === 8 ? '0' : '-110vh'};
@@ -16,11 +22,11 @@ const StyledContainer = styled.div`
     height: 100vh;
     background: white;
     display: grid;
-    grid-template-rows: 25% 1fr 20%;
+    grid-template-rows: 25% 5% 1fr 20%;
     transition: top 0.5s ease-in-out;
     overflow: hidden;
 
-    .teamTitle {
+    .teamTitle, .secondText {
         color: #0f1026;
         justify-self: center;
         align-self: end;
@@ -28,6 +34,13 @@ const StyledContainer = styled.div`
         font-family: 'Medium';
         letter-spacing: 1px;
         font-size: 1.8vw;
+    }
+
+    .secondText {
+        color: gray;
+        font-size: 1vw;
+        align-self: center;
+        text-align: center;
     }
 
     .teamContainer {
@@ -106,6 +119,13 @@ const StyledContainer = styled.div`
             font-size: 8vw;
         }
 
+        .secondText {
+            font-size: 3.2vw;
+            text-align: center;
+            align-self: center;
+            margin-top: -10px;
+        }
+
         .teamContainer {
             display: flex;
             flex-direction: column;
@@ -174,6 +194,12 @@ const StyledContainer = styled.div`
             font-size: 8vw;
         }
 
+        .secondText {
+            font-size: 3.2vw;
+            text-align: center;
+            margin-top: -20px;
+        }
+
         .teamContainer {
             display: flex;
             flex-direction: column;
@@ -240,6 +266,12 @@ const StyledContainer = styled.div`
             font-size: 8vw;
         }
 
+        .secondText {
+            font-size: 3.2vw;
+            align-self: center;
+            margin-top: -20px;
+        }
+
         .teamContainer {
             display: flex;
             flex-direction: column;
@@ -298,36 +330,37 @@ const Team = ({ currentPage, images }) => {
   return (
     <StyledContainer page={currentPage}>
         <span className='teamTitle'>Meet the Team</span>
+        <span className='secondText'>images below do not represent the collection</span>
         <div className='teamContainer'>
-            <img src={red} alt='' className='img1' onLoad={addImageLoaded}/>
+            <img src={blueAvatar} alt='' className='img1' onLoad={addImageLoaded}/>
             <span className='name1'>
                 Lysandros
             </span>
             <span className='ceo'>
                 Blockchain Developer
             </span>
-            <img src={blue} alt='' className='img2' onLoad={addImageLoaded}/>
+            <img src={redAvatar} alt='' className='img2' onLoad={addImageLoaded}/>
             <span className='name2'>
                 Isidoros
             </span>
             <span className='ceo'>
                 3D Art Designer
             </span>
-            <img src={black} alt='' className='img3' onLoad={addImageLoaded}/>
+            <img src={blackAvatar} alt='' className='img3' onLoad={addImageLoaded}/>
             <span className='name3'>
                 Markos
             </span>
             <span className='ceo'>
                 Marketing Manager
             </span>
-            <img src={green} alt='' className='img4' onLoad={addImageLoaded}/>
+            <img src={purpleAvatar} alt='' className='img4' onLoad={addImageLoaded}/>
             <span className='name4'>
                 Kallinikos
             </span>
             <span className='ceo'>
                 Discord Manager
             </span>
-            <img src={purple} alt='' className='img5' onLoad={addImageLoaded}/>
+            <img src={greenAvatar} alt='' className='img5' onLoad={addImageLoaded}/>
             <span className='name5'>
                 Achilles
             </span>
