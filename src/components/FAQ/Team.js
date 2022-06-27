@@ -108,11 +108,36 @@ const StyledContainer = styled.div`
         height: max-content;
         display: flex;
         flex-direction: column;
-
+        width: 100vw;
+        
         .teamMobileContainer {
             display: flex;
-            flex-direction: column;
-            gap: 5px;
+            gap: 50px;
+            width: 100vw;
+            overflow-x: scroll;
+            scroll-snap-type: x mandatory;
+            background-color: #0f1026;
+            padding: 30px 30px;
+            .teamSingleContainer:last-child {
+                margin-right: 70px;
+            }
+            .teamSingleContainer {
+                display: flex;
+                gap: 10px;
+                flex-direction: column;
+                width: 500px;
+                height: max-content;
+                font-family: 'Medium';
+                img {
+                    width: 50vw;
+                }
+                span:nth-child(2) {
+                    font-size: 5vw;
+                }
+                span:nth-child(3) {
+                    font-size: 4vw;
+                }
+            }
         }
 
 
@@ -191,11 +216,36 @@ const StyledContainer = styled.div`
         height: max-content;
         display: flex;
         flex-direction: column;
-
+        width: 100vw;
+        
         .teamMobileContainer {
             display: flex;
-            flex-direction: column;
-            gap: 5px;
+            gap: 50px;
+            width: 100vw;
+            overflow-x: scroll;
+            scroll-snap-type: x mandatory;
+            background-color: #0f1026;
+            padding: 30px 30px;
+            .teamSingleContainer:last-child {
+                margin-right: 70px;
+            }
+            .teamSingleContainer {
+                display: flex;
+                gap: 10px;
+                flex-direction: column;
+                width: 500px;
+                height: max-content;
+                font-family: 'Medium';
+                img {
+                    width: 50vw;
+                }
+                span:nth-child(2) {
+                    font-size: 5vw;
+                }
+                span:nth-child(3) {
+                    font-size: 4vw;
+                }
+            }
         }
 
         .teamTitle {
