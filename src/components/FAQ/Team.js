@@ -100,9 +100,10 @@ const StyledContainer = styled.div`
             margin-top: 50px;
             align-self: center;
             margin-bottom: 5vh;
-            font-family: 'Medium';
-            letter-spacing: 1px;
-            font-size: 2rem;
+            font-family: 'Magh';
+            font-weight: 900;
+            letter-spacing: 3px;
+            font-size: 8vw;
         }
 
         .teamContainer {
@@ -167,9 +168,10 @@ const StyledContainer = styled.div`
             margin-top: 50px;
             align-self: center;
             margin-bottom: 5vh;
-            font-family: 'Medium';
-            letter-spacing: 1px;
-            font-size: 2rem;
+            font-family: 'Magh';
+            letter-spacing: 3px;
+            font-weight: 900;
+            font-size: 8vw;
         }
 
         .teamContainer {
@@ -232,9 +234,10 @@ const StyledContainer = styled.div`
             margin-top: 50px;
             align-self: center;
             margin-bottom: 5vh;
-            font-family: 'Medium';
-            letter-spacing: 1px;
-            font-size: 2rem;
+            font-family: 'Magh';
+            font-weight: 900;
+            letter-spacing: 3px;
+            font-size: 8vw;
         }
 
         .teamContainer {

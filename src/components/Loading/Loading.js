@@ -147,7 +147,7 @@ const Loading = ({ clicked, images }) => {
 
     const [hasLoaded, setHasLoaded] = useState(false);
     useEffect(() => {
-        if (images === 36) {
+        if (images >= 30) {
             setTimeout(() => {
                 setHasLoaded(true);
             }, 2100);

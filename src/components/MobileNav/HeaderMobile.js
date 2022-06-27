@@ -104,7 +104,9 @@ const StyledMobileNavigation = styled.nav`
         border-radius: 50%;
         font-size: 2rem;
         color: white;
-        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     & > .links {

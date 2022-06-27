@@ -36,6 +36,7 @@ const StyledContainer = styled.div`
         display: grid;
         padding-bottom: 30px;
         grid-template-rows: 5% 10% max-content;
+        margin-top: 50px;
         .title {
             font-size: 2.4rem;
             align-self: end;
@@ -48,12 +49,13 @@ const StyledContainer = styled.div`
     @media screen and (min-width: 321px) and (max-width: 375px) {
         position: relative;
         left: 0;
-        /* overflow: visible; */
         display: grid;
         padding-bottom: 30px;
         grid-template-rows: 5% 10% max-content;
+        margin-top: 100px;
+
         .title {
-            font-size: 2.4rem;
+            font-size: 2.6rem;
             align-self: end;
         }
 
@@ -66,8 +68,9 @@ const StyledContainer = styled.div`
         left: 0;
         display: grid;
         grid-template-rows: 5% 10% max-content;
+        margin-top: 50px;
         .title {
-            font-size: 2.4rem;
+            font-size: 2.8rem;
             align-self: end;
         }
         .subtext {
@@ -145,7 +148,7 @@ const StyledAccordion = styled.div`
             grid-template-rows: repeat(autofill, 1fr);
         }
         div > span {
-            font-size: 2vh;
+            font-size: 4vw;
             text-align: left;
             display: block;
             font-family: 'Medium';
@@ -176,7 +179,7 @@ const StyledAccordion = styled.div`
             grid-template-rows: repeat(autofill, 1fr);
         }
         div > span {
-            font-size: 2vh;
+            font-size: 4vw;
             text-align: left;
             display: block;
             font-family: 'Medium';
@@ -206,7 +209,7 @@ const StyledAccordion = styled.div`
             grid-template-rows: repeat(autofill, 1fr);
         }
         div > span {
-            font-size: 2vh;
+            font-size: 4vw;
             text-align: left;
             display: block;
             font-family: 'Medium';

@@ -18,21 +18,20 @@ import twelveth from "../../images/PNG Karti.12.png";
 import thirtheenth from "../../images/PNG Karti.13.png";
 import fortheenth from "../../images/PNG Karti.14.png";
 
-
-import hera from '../../images/map/hera.png';
-import zeus from '../../images/map/lightning.png';
-import aphro from '../../images/map/aphrodite.png';
-import artemis from '../../images/map/artemis.png';
-import heph from '../../images/map/hephaestus.png';
-import ares from '../../images/map/ares.png';
-import apollon from '../../images/map/apollo.png';
-import hermes from '../../images/map/hermes.png';
-import deimos from '../../images/map/hades.png';
-import athena from '../../images/map/athena.png';
-import nyx from '../../images/map/persephone.png';
-import thanatos from '../../images/map/titan.png';
-import hades from '../../images/map/cerberus.png';
-import poseidon from '../../images/map/trident.png';
+import hera from "../../images/map/hera.png";
+import zeus from "../../images/map/lightning.png";
+import aphro from "../../images/map/aphrodite.png";
+import artemis from "../../images/map/artemis.png";
+import heph from "../../images/map/hephaestus.png";
+import ares from "../../images/map/ares.png";
+import apollon from "../../images/map/apollo.png";
+import hermes from "../../images/map/hermes.png";
+import deimos from "../../images/map/hades.png";
+import athena from "../../images/map/athena.png";
+import nyx from "../../images/map/persephone.png";
+import thanatos from "../../images/map/titan.png";
+import hades from "../../images/map/cerberus.png";
+import poseidon from "../../images/map/trident.png";
 
 const StyledMapContainer = styled.div`
   @font-face {
@@ -53,6 +52,11 @@ const StyledMapContainer = styled.div`
   @media screen and (max-width: 768px) {
     position: relative;
     left: 0;
+    display: flex;
+    flex-direction: column;
+    overflow-x: scroll;
+    width: max-content;
+    height: max-content;
   }
 `;
 
@@ -67,7 +71,6 @@ const StyledMapWrapper = styled.div`
 
 const StyledMap = styled.img`
   height: 100%;
-  /* background-color: rgba(0, 255, 0, 0.2); */
 `;
 
 const StyledMapText = styled.span`
@@ -80,7 +83,7 @@ const StyledMapText = styled.span`
   row-gap: 40px;
   .areaTitle {
     font-family: "Magh";
-    font-size: ${props => props.clicked === 0 ? '4vw' : '6vw'};
+    font-size: ${(props) => (props.clicked === 0 ? "4vw" : "6vw")};
     letter-spacing: 4px;
     text-align: center;
     color: #f2911b;
@@ -97,10 +100,10 @@ const StyledMapText = styled.span`
     letter-spacing: 0.7px;
     text-align: center;
     /* grid-row: 4/4; */
-    grid-row: ${props => props.clicked !== 0 ? '4/4' : '3/3'};
+    grid-row: ${(props) => (props.clicked !== 0 ? "4/4" : "3/3")};
     grid-column: 1/1;
     z-index: 1;
-    /* margin-top: ${props => props.clicked === 0 ? '50px' : '0px'}; */
+    /* margin-top: ${(props) => (props.clicked === 0 ? "50px" : "0px")}; */
   }
 
   .areaHint {
@@ -114,9 +117,9 @@ const StyledMapText = styled.span`
     width: max-content;
     height: max-content;
     justify-self: center;
-    grid-row: ${props => props.clicked !== 0 ? '5/5' : '4/4'};
+    grid-row: ${(props) => (props.clicked !== 0 ? "5/5" : "4/4")};
     grid-column: 1/1;
-    margin-top: ${props => props.clicked === 0 ? '30px' : '0px'};
+    margin-top: ${(props) => (props.clicked === 0 ? "30px" : "0px")};
     animation: hintAnimate 3s infinite;
   }
 
@@ -184,7 +187,6 @@ const StyledMapPointers = styled.div`
     color: white;
     background: transparent;
     transition: transform 0.35s;
-
   }
   .three {
     position: absolute;
@@ -198,7 +200,6 @@ const StyledMapPointers = styled.div`
     color: white;
     background: transparent;
     transition: transform 0.35s;
-
   }
   .four {
     position: absolute;
@@ -212,7 +213,6 @@ const StyledMapPointers = styled.div`
     color: white;
     background: transparent;
     transition: transform 0.35s;
-
   }
   .five {
     position: absolute;
@@ -226,7 +226,6 @@ const StyledMapPointers = styled.div`
     color: white;
     background: transparent;
     transition: transform 0.35s;
-
   }
   .six {
     position: absolute;
@@ -240,7 +239,6 @@ const StyledMapPointers = styled.div`
     color: white;
     background: transparent;
     transition: transform 0.35s;
-
   }
   .seven {
     position: absolute;
@@ -254,7 +252,6 @@ const StyledMapPointers = styled.div`
     color: white;
     background: transparent;
     transition: transform 0.35s;
-
   }
   .eight {
     position: absolute;
@@ -268,7 +265,6 @@ const StyledMapPointers = styled.div`
     color: white;
     background: transparent;
     transition: transform 0.35s;
-
   }
   .twelve {
     position: absolute;
@@ -282,7 +278,6 @@ const StyledMapPointers = styled.div`
     color: white;
     background: transparent;
     transition: transform 0.35s;
-
   }
   .eleven {
     position: absolute;
@@ -296,7 +291,6 @@ const StyledMapPointers = styled.div`
     color: white;
     background: transparent;
     transition: transform 0.35s;
-
   }
   .thirtheen {
     position: absolute;
@@ -310,7 +304,6 @@ const StyledMapPointers = styled.div`
     color: white;
     background: transparent;
     transition: transform 0.35s;
-
   }
   .fourteen {
     position: absolute;
@@ -324,7 +317,6 @@ const StyledMapPointers = styled.div`
     color: white;
     background: transparent;
     transition: transform 0.35s;
-
   }
   .ten {
     position: absolute;
@@ -338,7 +330,6 @@ const StyledMapPointers = styled.div`
     color: white;
     background: transparent;
     transition: transform 0.35s;
-
   }
   .nine {
     position: absolute;
@@ -374,8 +365,82 @@ const StyledMapPointers = styled.div`
     transform: scale(1.2);
   }
 `;
-const Map = ({ currentPage, images }) => {
 
+const StyledTitleMobile = styled.h3`
+  align-self: center;
+  font-size: 10vw;
+  font-family: 'Magh';
+  letter-spacing: 2px;
+  text-align: center;
+  color: #000;
+`;
+
+const StyledMapMobile = styled.div`
+  display: flex;
+  gap: 100px;
+  width: 100vw;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  margin-bottom: 20vh;
+  .mapWrapper {
+    height: 190vw;
+    justify-self: center;
+    scroll-snap-align: start;
+    position: relative;
+    width: 100%;
+  }
+  .map {
+    width: 100vw;
+  }
+
+  .mapText {
+    position: absolute;
+    top: 78%;
+    left: 50%;
+    width: 80%;
+    transform: translateX(-50%) translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 10px;
+    font-family: 'Medium';
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+
+    .mapTextTitle {
+      font-size: 8vw;
+    }
+    .mapTextText {
+      font-size: 4vw;
+      text-align: justify;
+    }
+  }
+`;
+
+const StyledSwipeHintMobile = styled.div`
+  font-size: 4vw;
+  font-family: 'Medium';
+  align-self: center;
+  margin-bottom: 5vh;
+  animation: hintAnimate 3s infinite;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  width: 90%;
+  text-align: center;
+  @keyframes hintAnimate {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+`;
+
+
+const Map = ({ currentPage, images }) => {
   const addImageLoaded = () => {
     images();
   };
@@ -386,103 +451,239 @@ const Map = ({ currentPage, images }) => {
   }
   return (
     <StyledMapContainer page={currentPage}>
-      <StyledMapWrapper>
-      <StyledMap
-        src={
-          clickedArea === 0
-            ? fullMap
-            : clickedArea === 1
-            ? first
-            : clickedArea === 2
-            ? second
-            : clickedArea === 3
-            ? third
-            : clickedArea === 4
-            ? forth
-            : clickedArea === 5
-            ? fifth
-            : clickedArea === 6
-            ? sixth
-            : clickedArea === 7
-            ? seventh
-            : clickedArea === 8
-            ? eight
-            : clickedArea === 9
-            ? ninth
-            : clickedArea === 10
-            ? tenth
-            : clickedArea === 11
-            ? eleventh
-            : clickedArea === 12
-            ? twelveth
-            : clickedArea === 13
-            ? thirtheenth
-            : fortheenth
-        }
-        clicked={clickedArea}
-        onLoad={addImageLoaded}
-      ></StyledMap>
-      <StyledMapPointers>
-        <button className="fourteen" alt="" onClick={() => setClickedArea(14)}>
-          14
-        </button>
-        <button className="thirtheen" alt="" onClick={() => setClickedArea(13)}>
-          13
-        </button>
-        <button className="twelve" alt="" onClick={() => setClickedArea(12)}>
-          12
-        </button>
-        <button className="eleven" alt="" onClick={() => setClickedArea(11)}>
-          11
-        </button>
-        <button className="ten" alt="" onClick={() => setClickedArea(10)}>
-          10
-        </button>
-        <button className="nine" alt="" onClick={() => setClickedArea(9)}>
-          9
-        </button>
-        <button className="eight" alt="" onClick={() => setClickedArea(8)}>
-          8
-        </button>
-        <button className="seven" alt="" onClick={() => setClickedArea(7)}>
-          7
-        </button>
-        <button className="six" alt="" onClick={() => setClickedArea(6)}>
-          6
-        </button>
-        <button className="five" alt="" onClick={() => setClickedArea(5)}>
-          5
-        </button>
-        <button className="four" alt="" onClick={() => setClickedArea(4)}>
-          4
-        </button>
-        <button className="three" alt="" onClick={() => setClickedArea(3)}>
-          3
-        </button>
-        <button className="two" alt="" onClick={() => setClickedArea(2)}>
-          2
-        </button>
-        <button className="one" alt="" onClick={() => setClickedArea(1)}>
-          1
-        </button>
-      </StyledMapPointers>
-      </StyledMapWrapper>
+      {window.outerWidth > 428 && (<>
+        <StyledMapWrapper>
+          <StyledMap
+            src={
+              clickedArea === 0
+                ? fullMap
+                : clickedArea === 1
+                ? first
+                : clickedArea === 2
+                ? second
+                : clickedArea === 3
+                ? third
+                : clickedArea === 4
+                ? forth
+                : clickedArea === 5
+                ? fifth
+                : clickedArea === 6
+                ? sixth
+                : clickedArea === 7
+                ? seventh
+                : clickedArea === 8
+                ? eight
+                : clickedArea === 9
+                ? ninth
+                : clickedArea === 10
+                ? tenth
+                : clickedArea === 11
+                ? eleventh
+                : clickedArea === 12
+                ? twelveth
+                : clickedArea === 13
+                ? thirtheenth
+                : fortheenth
+            }
+            clicked={clickedArea}
+            onLoad={addImageLoaded}
+          ></StyledMap>
+          <StyledMapPointers>
+            <button
+              className="fourteen"
+              alt=""
+              onClick={() => setClickedArea(14)}
+            >
+              14
+            </button>
+            <button
+              className="thirtheen"
+              alt=""
+              onClick={() => setClickedArea(13)}
+            >
+              13
+            </button>
+            <button
+              className="twelve"
+              alt=""
+              onClick={() => setClickedArea(12)}
+            >
+              12
+            </button>
+            <button
+              className="eleven"
+              alt=""
+              onClick={() => setClickedArea(11)}
+            >
+              11
+            </button>
+            <button className="ten" alt="" onClick={() => setClickedArea(10)}>
+              10
+            </button>
+            <button className="nine" alt="" onClick={() => setClickedArea(9)}>
+              9
+            </button>
+            <button className="eight" alt="" onClick={() => setClickedArea(8)}>
+              8
+            </button>
+            <button className="seven" alt="" onClick={() => setClickedArea(7)}>
+              7
+            </button>
+            <button className="six" alt="" onClick={() => setClickedArea(6)}>
+              6
+            </button>
+            <button className="five" alt="" onClick={() => setClickedArea(5)}>
+              5
+            </button>
+            <button className="four" alt="" onClick={() => setClickedArea(4)}>
+              4
+            </button>
+            <button className="three" alt="" onClick={() => setClickedArea(3)}>
+              3
+            </button>
+            <button className="two" alt="" onClick={() => setClickedArea(2)}>
+              2
+            </button>
+            <button className="one" alt="" onClick={() => setClickedArea(1)}>
+              1
+            </button>
+          </StyledMapPointers>
+        </StyledMapWrapper>
       <StyledMapText clicked={clickedArea}>
         <span className="areaTitle">
-          {clickedArea === 0
-            ? <span>The map of Ancient Greece</span>
-            : <span>{areasNames[clickedArea]?.name}</span>}
+          {clickedArea === 0 ? (
+            <span>The map of Ancient Greece</span>
+          ) : (
+            <span>{areasNames[clickedArea]?.name}</span>
+          )}
         </span>
-        {clickedArea !== 0 && <img src={areasNames[clickedArea].icon} alt='' className='areaIcon' onLoad={addImageLoaded} draggable={false} onContextMenu={(e) => e.preventDefault()}/>}
+        {clickedArea !== 0 && (
+          <img
+            src={areasNames[clickedArea].icon}
+            alt=""
+            className="areaIcon"
+            onLoad={addImageLoaded}
+            draggable={false}
+            onContextMenu={(e) => e.preventDefault()}
+          />
+        )}
         <span className="areaText">
           {clickedArea === 0
             ? "This is the zone of the warfare between the divine tribes. Almighty Chaos has divided the land equally among the 14 Gods and their corresponding tribes.\n\nThe main goal of each God is to capture all of the areas and become the ruler of Ancient Greece! This could be done only when he defeats each tribe separately."
-            : areasText[clickedArea-1].text}
+            : areasText[clickedArea - 1].text}
         </span>
         <span className="areaHint">
           Click an area on the map to find out more!
         </span>
-      </StyledMapText>
+      </StyledMapText></>
+      )}
+      {window.outerWidth < 429 && <>
+      <StyledTitleMobile>The map of <br/>Ancient Greece</StyledTitleMobile>
+      <StyledSwipeHintMobile>Swipe left to see each territory</StyledSwipeHintMobile>
+      <StyledMapMobile>
+        <div className="mapWrapper">
+          <img className="map" src={fullMap} alt='Entire map of Greece'/>
+        </div>
+        <div className="mapWrapper">
+          <img className="map" src={first} alt='Entire map of Greece'/>
+          <div className="mapText">
+            <span className="mapTextTitle">{areasNames[1]?.name}</span>
+            <span className="mapTextText">{areasText[0].text}</span>
+          </div>
+        </div>
+        <div className="mapWrapper">
+          <img className="map" src={second} alt='Entire map of Greece'/>
+          <div className="mapText">
+            <span className="mapTextTitle">{areasNames[2]?.name}</span>
+            <span className="mapTextText">{areasText[1].text}</span>
+          </div>
+        </div>
+        <div className="mapWrapper">
+          <img className="map" src={third} alt='Entire map of Greece'/>
+          <div className="mapText">
+            <span className="mapTextTitle">{areasNames[3]?.name}</span>
+            <span className="mapTextText">{areasText[2].text}</span>
+          </div>
+        </div>
+        <div className="mapWrapper">
+          <img className="map" src={forth} alt='Entire map of Greece'/>
+          <div className="mapText">
+            <span className="mapTextTitle">{areasNames[4]?.name}</span>
+            <span className="mapTextText">{areasText[3].text}</span>
+          </div>
+        </div>
+        <div className="mapWrapper">
+          <img className="map" src={fifth} alt='Entire map of Greece'/>
+          <div className="mapText">
+            <span className="mapTextTitle">{areasNames[5]?.name}</span>
+            <span className="mapTextText">{areasText[4].text}</span>
+          </div>
+        </div>
+        <div className="mapWrapper">
+          <img className="map" src={sixth} alt='Entire map of Greece'/>
+          <div className="mapText">
+            <span className="mapTextTitle">{areasNames[6]?.name}</span>
+            <span className="mapTextText">{areasText[5].text}</span>
+          </div>
+        </div>
+        <div className="mapWrapper">
+          <img className="map" src={seventh} alt='Entire map of Greece'/>
+          <div className="mapText">
+            <span className="mapTextTitle">{areasNames[7]?.name}</span>
+            <span className="mapTextText">{areasText[6].text}</span>
+          </div>
+        </div>
+        <div className="mapWrapper">
+          <img className="map" src={eight} alt='Entire map of Greece'/>
+          <div className="mapText">
+            <span className="mapTextTitle">{areasNames[8]?.name}</span>
+            <span className="mapTextText">{areasText[7].text}</span>
+          </div>
+        </div>
+        <div className="mapWrapper">
+          <img className="map" src={ninth} alt='Entire map of Greece'/>
+          <div className="mapText">
+            <span className="mapTextTitle">{areasNames[9]?.name}</span>
+            <span className="mapTextText">{areasText[8].text}</span>
+          </div>
+        </div>
+        <div className="mapWrapper">
+          <img className="map" src={tenth} alt='Entire map of Greece'/>
+          <div className="mapText">
+            <span className="mapTextTitle">{areasNames[10]?.name}</span>
+            <span className="mapTextText">{areasText[9].text}</span>
+          </div>
+        </div>
+        <div className="mapWrapper">
+          <img className="map" src={eleventh} alt='Entire map of Greece'/>
+          <div className="mapText">
+            <span className="mapTextTitle">{areasNames[11]?.name}</span>
+            <span className="mapTextText">{areasText[10].text}</span>
+          </div>
+        </div>
+        <div className="mapWrapper">
+          <img className="map" src={twelveth} alt='Entire map of Greece'/>
+          <div className="mapText">
+            <span className="mapTextTitle">{areasNames[12]?.name}</span>
+            <span className="mapTextText">{areasText[11].text}</span>
+          </div>
+        </div>
+        <div className="mapWrapper">
+          <img className="map" src={thirtheenth} alt='Entire map of Greece'/>
+          <div className="mapText">
+            <span className="mapTextTitle">{areasNames[13]?.name}</span>
+            <span className="mapTextText">{areasText[12].text}</span>
+          </div>
+        </div>
+        <div className="mapWrapper">
+          <img className="map" src={fortheenth} alt='Entire map of Greece'/>
+          <div className="mapText">
+            <span className="mapTextTitle">{areasNames[14]?.name}</span>
+            <span className="mapTextText">{areasText[13].text}</span>
+          </div>
+        </div>
+      </StyledMapMobile></>
+      }
     </StyledMapContainer>
   );
 };
@@ -490,36 +691,64 @@ const Map = ({ currentPage, images }) => {
 export default Map;
 
 const areasNames = [
-  {name: ''},
-  {name: 'Hera', icon: hera},
-  {name: 'Zeus', icon: zeus},
-  {name: 'Aphrodite', icon: aphro},
-  {name: 'Artemis', icon: artemis},
-  {name: 'Hephaestus', icon: heph},
-  {name: 'Ares', icon: ares},
-  {name: 'Apollon', icon: apollon},
-  {name: 'Hermes', icon: hermes},
-  {name: 'Deimos', icon: deimos},
-  {name: 'Athena', icon: athena},
-  {name: 'Nyx', icon: nyx},
-  {name: 'Thanatos', icon: thanatos},
-  {name: 'Hades', icon: hades},
-  {name: 'Poseidon', icon: poseidon},
+  { name: "" },
+  { name: "Hera", icon: hera },
+  { name: "Zeus", icon: zeus },
+  { name: "Aphrodite", icon: aphro },
+  { name: "Artemis", icon: artemis },
+  { name: "Hephaestus", icon: heph },
+  { name: "Ares", icon: ares },
+  { name: "Apollon", icon: apollon },
+  { name: "Hermes", icon: hermes },
+  { name: "Deimos", icon: deimos },
+  { name: "Athena", icon: athena },
+  { name: "Nyx", icon: nyx },
+  { name: "Thanatos", icon: thanatos },
+  { name: "Hades", icon: hades },
+  { name: "Poseidon", icon: poseidon },
 ];
 
 const areasText = [
-  {text: "The Land, where family and childbirth are the cornerstones of everything. Hera’s kingdom is right next to her husband’s (Zeus) land. That, however, does not mean that this place is safe from war"},
-  {text: "The Land, where the one and only God of thunder reigns. It is the biggest realm in Ancient Greece. Its unique weather is dictated by the mood of the mighty Zeus"},
-  {text: "The Land, where love is everywhere. The populace of this place is Hedonistic and Decadent. Nature—is almost as beautiful as the one in Elysium"},
-  {text: "The Land, where nature is at its finest and wildlife is everywhere. Hunting is a religious activity here, and the locals worship the Land as if it is a deity. For Mother nature which feeds mankind with livestock and fertile Land, is worthy of the utmost respect"},
-  {text: "The Land, where blacksmiths live and work. Weapons of the finest quality are produced here, bathed in the blood, sweat, and tears of the most talented craftsmen"},
-  {text: "The Land, where the best warriors of Greece complete their training. Here the special ones are chosen by the God of war to polish their skills to become unstoppable. The conditions here are rough, creating the best training for the most esteemed warriors of Greece"},
-  {text: "The Land, where music is in the air. Rich in herbs, this place is where the cultivation and preparation of different remedies is at its finest. The magnificent God Apollon reigns in these lands"},
-  {text: "The Land of wittiness, where everyone is sharp as a whip and cunning as a fox. The ruler here, Hermes, is the fastest God alive. His manipulative skills are his strongest weapon in battle. The army of Hermes is comprised of thieves and other low lives who make sure to leave the bodies of their defeated enemies without a single penny"},
-  {text: "The son of Ares, Deimos, is the most dreadful of the gods. Fear and horror rule over his realm. Only a handful can survive the inhospitable conditions of these lands. The strongest power of Deimos’s men is their ability to instill panic into their enemies"},
-  {text: "The Land of wisdom, where philosophy is respected the most. Here, Every issue is solved through lengthy and tedious discussions. However, Military prowess is as valued as knowledge. Athena’s most precious weapon is her sharp mind, making her a strong contender."},
-  {text: "The Land of lost souls and shadows, where Nyx, the first Goddess, reigns. Even the almighty Zeus fears the power of this deity, which is why her territory is so distant from the Land of thunders. The power of Nyx culminates during the night, which is why her kingdom is dark and covered with shadows."},
-  {text: "The Land of death, where horror permeates everything and the sun never rises. Fear is all one could feel when entering this dark place. Thanatos, the God of death, decides the destiny of those brave enough to step here."},
-  {text: "The Underworld on Earth, where the souls of the dead roam. Its extreme climate can make survival an almost impossible task for anyone. Of course, with one minor exception. Hades, the sovereign of the underworld- thrives in such conditions. Adding up to the inhospitality of the underworld is its guardian Cerberus, a three-headed beast whose name alone instills fear in every warrior."},
-  {text: "The Land of waves and home of many terrifying sea creatures. Surrounded by water, this island is where Poseidon is strongest. Separated miles from the Greek mainland, the realm of Poseidon is an almost impregnable fortress."},
-]
+  {
+    text: "The Land, where family and childbirth are the cornerstones of everything. Hera’s kingdom is right next to her husband’s (Zeus) land. That, however, does not mean that this place is safe from war",
+  },
+  {
+    text: "The Land, where the one and only God of thunder reigns. It is the biggest realm in Ancient Greece. Its unique weather is dictated by the mood of the mighty Zeus",
+  },
+  {
+    text: "The Land, where love is everywhere. The populace of this place is Hedonistic and Decadent. Nature—is almost as beautiful as the one in Elysium",
+  },
+  {
+    text: "The Land, where nature is at its finest and wildlife is everywhere. Hunting is a religious activity here, and the locals worship the Land as if it is a deity. For Mother nature which feeds mankind with livestock and fertile Land, is worthy of the utmost respect",
+  },
+  {
+    text: "The Land, where blacksmiths live and work. Weapons of the finest quality are produced here, bathed in the blood, sweat, and tears of the most talented craftsmen",
+  },
+  {
+    text: "The Land, where the best warriors of Greece complete their training. Here the special ones are chosen by the God of war to polish their skills to become unstoppable. The conditions here are rough, creating the best training for the most esteemed warriors of Greece",
+  },
+  {
+    text: "The Land, where music is in the air. Rich in herbs, this place is where the cultivation and preparation of different remedies is at its finest. The magnificent God Apollon reigns in these lands",
+  },
+  {
+    text: "The Land of wittiness, where everyone is sharp as a whip and cunning as a fox. The ruler here, Hermes, is the fastest God alive. His manipulative skills are his strongest weapon in battle. The army of Hermes is comprised of thieves and other low lives who make sure to leave the bodies of their defeated enemies without a single penny",
+  },
+  {
+    text: "The son of Ares, Deimos, is the most dreadful of the gods. Fear and horror rule over his realm. Only a handful can survive the inhospitable conditions of these lands. The strongest power of Deimos’s men is their ability to instill panic into their enemies",
+  },
+  {
+    text: "The Land of wisdom, where philosophy is respected the most. Here, Every issue is solved through lengthy and tedious discussions. However, Military prowess is as valued as knowledge. Athena’s most precious weapon is her sharp mind, making her a strong contender.",
+  },
+  {
+    text: "The Land of lost souls and shadows, where Nyx, the first Goddess, reigns. Even the almighty Zeus fears the power of this deity, which is why her territory is so distant from the Land of thunders. The power of Nyx culminates during the night, which is why her kingdom is dark and covered with shadows.",
+  },
+  {
+    text: "The Land of death, where horror permeates everything and the sun never rises. Fear is all one could feel when entering this dark place. Thanatos, the God of death, decides the destiny of those brave enough to step here.",
+  },
+  {
+    text: "The Underworld on Earth, where the souls of the dead roam. Its extreme climate can make survival an almost impossible task for anyone. Of course, with one minor exception. Hades, the sovereign of the underworld- thrives in such conditions. Adding up to the inhospitality of the underworld is its guardian Cerberus, a three-headed beast whose name alone instills fear in every warrior.",
+  },
+  {
+    text: "The Land of waves and home of many terrifying sea creatures. Surrounded by water, this island is where Poseidon is strongest. Separated miles from the Greek mainland, the realm of Poseidon is an almost impregnable fortress.",
+  },
+];

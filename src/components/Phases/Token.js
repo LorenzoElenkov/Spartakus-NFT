@@ -14,11 +14,10 @@ const StyledContainer = styled.div`
   background: white;
   display: grid;
   grid-template-columns: 20% 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 1fr 2fr;
   row-gap: 1vw;
   transition: top 0.5s ease-in-out;
   overflow: hidden;
-
   .shoulder {
     position: absolute;
     transform: translateX(-30%) translateY(43vh);
@@ -48,7 +47,7 @@ const StyledContainer = styled.div`
     grid-column: 3/3;
     grid-row: 2/2;
     width: 80%;
-    margin-top: -25%;
+    margin-top: -15%;
   }
   @media screen and (max-width: 320px) {
     position: relative;
