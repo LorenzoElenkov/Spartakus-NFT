@@ -109,6 +109,14 @@ const StyledContainer = styled.div`
         display: flex;
         flex-direction: column;
 
+        .teamMobileContainer {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+
+
         .teamTitle {
             margin-top: 50px;
             align-self: center;
@@ -184,6 +192,12 @@ const StyledContainer = styled.div`
         display: flex;
         flex-direction: column;
 
+        .teamMobileContainer {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
         .teamTitle {
             margin-top: 50px;
             align-self: center;
@@ -255,6 +269,38 @@ const StyledContainer = styled.div`
         height: max-content;
         display: flex;
         flex-direction: column;
+        width: 100vw;
+        
+        .teamMobileContainer {
+            display: flex;
+            gap: 50px;
+            width: 100vw;
+            overflow-x: scroll;
+            scroll-snap-type: x mandatory;
+            background-color: #0f1026;
+            padding: 30px 30px;
+            .teamSingleContainer:last-child {
+                margin-right: 70px;
+            }
+            .teamSingleContainer {
+                display: flex;
+                gap: 10px;
+                flex-direction: column;
+                width: 500px;
+                height: max-content;
+                font-family: 'Medium';
+                img {
+                    width: 50vw;
+                }
+                span:nth-child(2) {
+                    font-size: 5vw;
+                }
+                span:nth-child(3) {
+                    font-size: 4vw;
+                }
+            }
+        }
+
 
         .teamTitle {
             margin-top: 50px;
@@ -272,38 +318,26 @@ const StyledContainer = styled.div`
             margin-top: -20px;
         }
 
-        .teamContainer {
-            display: flex;
-            flex-direction: column;
-            /* overflow-x: scroll; */
-            gap: 10px;
-            padding-top: 20px;
-        }
 
         .teamContainer span {
             font-size: 1.5rem;
         }
 
         .img1, .img2, .img3, .img4, .img5 {
-            grid-row: 1/1;
             justify-self: center;
             align-self: center;
-            width: 50%;
         }
 
         .name1, .name2, .name3, .name4, .name5 {
             color: white;
-            grid-row: 2/2;
             justify-self: center;
             align-self: center;
         }
 
         .ceo {
-            grid-row: 3/3;
             justify-self: center;
             color: #f2cb05;
             align-self: center;
-            margin-bottom: 40px;
         }
 
         .still {
@@ -331,7 +365,7 @@ const Team = ({ currentPage, images }) => {
     <StyledContainer page={currentPage}>
         <span className='teamTitle'>Meet the Team</span>
         <span className='secondText'>images below do not represent the collection</span>
-        <div className='teamContainer'>
+        {window.outerWidth > 428 ? <div className='teamContainer'>
             <img src={blueAvatar} alt='' className='img1' onLoad={addImageLoaded}/>
             <span className='name1'>
                 Lysandros
@@ -367,7 +401,55 @@ const Team = ({ currentPage, images }) => {
             <span className='ceo'>
                 Founder
             </span>
+        </div> : 
+        <div className='teamMobileContainer'>
+            <div className='teamSingleContainer'>
+                <img src={blueAvatar} alt='' className='img1' onLoad={addImageLoaded}/>
+                <span className='name1'>
+                    Lysandros
+                </span>
+                <span className='ceo'>
+                    Blockchain Developer
+                </span>
+            </div>
+            <div className='teamSingleContainer'>
+                <img src={redAvatar} alt='' className='img2' onLoad={addImageLoaded}/>
+                <span className='name2'>
+                    Isidoros
+                </span>
+                <span className='ceo'>
+                    3D Art Designer
+                </span>
+            </div>
+            <div className='teamSingleContainer'>
+                <img src={blackAvatar} alt='' className='img3' onLoad={addImageLoaded}/>
+                <span className='name3'>
+                    Markos
+                </span>
+                <span className='ceo'>
+                    Marketing Manager
+                </span>
+            </div>
+            <div className='teamSingleContainer'>
+                <img src={purpleAvatar} alt='' className='img4' onLoad={addImageLoaded}/>
+                <span className='name4'>
+                    Kallinikos
+                </span>
+                <span className='ceo'>
+                    Discord Manager
+                </span>
+            </div>
+            <div className='teamSingleContainer'>
+                <img src={greenAvatar} alt='' className='img5' onLoad={addImageLoaded}/>
+                <span className='name5'>
+                    Achilles
+                </span>
+                <span className='ceo'>
+                    Founder
+                </span>
+            </div>
         </div>
+        }
         <span className='dropEmail'>
             <span className='still'>
                 Still have questions?
