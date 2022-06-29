@@ -62,6 +62,8 @@ const StyledLoadingContainer = styled.div`
         button {
             font-size: 2rem;
             padding: 5px 15px;
+            color: #0f1026;
+
         }
     }
 
@@ -77,6 +79,8 @@ const StyledLoadingContainer = styled.div`
         button {
             font-size: 2.5rem;
             padding: 5px 15px;
+            color: #0f1026;
+
         }
     }
 
@@ -92,7 +96,7 @@ const StyledLoadingContainer = styled.div`
         button {
             font-size: 2.8rem;
             padding: 5px 15px;
-            color: black;
+            color: #0f1026;
         }
     }
 `;
