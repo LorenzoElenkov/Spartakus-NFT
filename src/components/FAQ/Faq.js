@@ -12,6 +12,7 @@ const StyledContainer = styled.div`
     display: grid;
     grid-template-rows: 20% 10% max-content;
     overflow: hidden;
+    margin-top: 20px;
     .title {
         font-family: 'Magh';
         font-size: 4.2vh;
@@ -53,7 +54,7 @@ const StyledContainer = styled.div`
         padding-bottom: 30px;
         grid-template-rows: 5% 10% max-content;
         padding-top: 70px;
-
+        margin-top: 20px;
         .title {
             font-size: 2.6rem;
             align-self: end;
@@ -69,6 +70,7 @@ const StyledContainer = styled.div`
         display: grid;
         grid-template-rows: 5% 10% max-content;
         padding-top: 70px;
+        margin-top: 20px;
         .title {
             font-size: 2.8rem;
             align-self: end;
