@@ -14,7 +14,7 @@ const StyledContainer = styled.div`
   background: white;
   display: grid;
   grid-template-columns: 20% 1fr 1fr;
-  grid-template-rows: 1fr 2fr;
+  grid-template-rows: 1fr max-content;
   row-gap: 1vw;
   transition: top 0.5s ease-in-out;
   overflow: hidden;
