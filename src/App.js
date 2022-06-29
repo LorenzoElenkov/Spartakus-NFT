@@ -133,7 +133,7 @@ const App = () => {
   const [playMusic] = useSound(bgMusic2, { volume: bgVolume, loop: true });
 
   const handleLoadingClick = () => {
-    // playMusic();
+    playMusic();
     setIsInSite(true);
   };
 
