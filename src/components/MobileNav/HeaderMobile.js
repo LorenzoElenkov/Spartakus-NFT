@@ -132,6 +132,7 @@ const StyledMobileNavigation = styled.nav`
         border: none;
         font-family: 'Medium';
         padding: 10px 0;
+        color: black;
     }
 
     & > .socials {

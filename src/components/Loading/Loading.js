@@ -113,7 +113,7 @@ const StyledProgressBar = styled.div`
         top: 0;
         left: ${props => (props.images - 100) + '%'};
         background: #5863f1;
-        ${props => props.images === 36 && animationPlay};
+        ${props => props.images >= 36 && animationPlay};
         animation-fill-mode: forwards;
         -webkit-animation-fill-mode: forwards;
     }
@@ -147,7 +147,7 @@ const Loading = ({ clicked, images }) => {
 
     const [hasLoaded, setHasLoaded] = useState(false);
     useEffect(() => {
-        if (images >= 30) {
+        if (images >= 36) {
             setTimeout(() => {
                 setHasLoaded(true);
             }, 2100);
