@@ -36,7 +36,7 @@ const StyledContainer = styled.div`
         display: grid;
         padding-bottom: 30px;
         grid-template-rows: 5% 10% max-content;
-        margin-top: 50px;
+        padding-top: 70px;
         .title {
             font-size: 2.4rem;
             align-self: end;
@@ -52,7 +52,7 @@ const StyledContainer = styled.div`
         display: grid;
         padding-bottom: 30px;
         grid-template-rows: 5% 10% max-content;
-        margin-top: 100px;
+        padding-top: 70px;
 
         .title {
             font-size: 2.6rem;
@@ -68,7 +68,7 @@ const StyledContainer = styled.div`
         left: 0;
         display: grid;
         grid-template-rows: 5% 10% max-content;
-        margin-top: 50px;
+        padding-top: 70px;
         .title {
             font-size: 2.8rem;
             align-self: end;
@@ -229,11 +229,11 @@ const StyledAccordion = styled.div`
     }
 `;
 
-const Faq = ({ currentPage }) => {
+const Faq = ({forwardedRef, currentPage }) => {
 
     const [question, setQuestion] = useState(0);
   return (
-    <StyledContainer page={currentPage}>
+    <StyledContainer page={currentPage} ref={forwardedRef}>
         <span className='title'>Frequently Asked Questions</span>
         <span className='subtext'>Have questions? We're here to help.</span>
         <StyledAccordion>

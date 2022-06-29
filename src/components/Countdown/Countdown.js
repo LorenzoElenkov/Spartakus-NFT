@@ -58,7 +58,7 @@ const StyledCountdownContainer = styled.div`
     width: 100%;
     height: max-content;
     padding: 20px 0;
-    z-index: 9999;
+    z-index: 5555;
     top: 0;
     left: 0;
     grid-template-columns: repeat(4, 1fr);

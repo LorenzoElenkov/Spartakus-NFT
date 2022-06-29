@@ -149,21 +149,25 @@ const App = () => {
     }
   };
 
+  const infoRef = useRef(null);
+  const loreRef = useRef(null);
+  const roadmapRef = useRef(null);
+  const faqRef = useRef(null);
 
   return (
     <StyledApp>
       {!isInSite && <Loading clicked={handleLoadingClick} images={imagesLoaded.current}/>}
-      {window.outerWidth < 429 && <HeaderMobile music={handleVolume} volume={bgVolume}/>}
+      {window.outerWidth < 429 && <HeaderMobile music={handleVolume} volume={bgVolume} info={infoRef} lore={loreRef} roadmap={roadmapRef} faq={faqRef} showRT={() => setShowRT(true)}/>}
       <Navigation currentPage={currentPage} onLinkClick={handleLinkClick} onRTClick={(state) => setShowRT(state)}/>
       {showRT && <RarityTool onRTClose={() => setShowRT(false)}/>}
-      <Information currentPage={currentPage} onLinkClick={handleLinkClick} images={changeImagesLoaded} music={handleVolume} volume={bgVolume}/>
+      <Information forwardedRef={infoRef} currentPage={currentPage} onLinkClick={handleLinkClick} images={changeImagesLoaded} music={handleVolume} volume={bgVolume}/>
       <Countdown currentPage={currentPage}/>
-      <OurStory currentPage={currentPage} images={changeImagesLoaded}/>
+      <OurStory forwardedRef={loreRef} currentPage={currentPage} images={changeImagesLoaded}/>
       <Map currentPage={currentPage} images={changeImagesLoaded}/>
-      <Roadmap currentPage={currentPage} images={changeImagesLoaded}/>
+      <Roadmap forwardedRef={roadmapRef} currentPage={currentPage} images={changeImagesLoaded}/>
       <Preview currentPage={currentPage} images={changeImagesLoaded}/>
       <Token currentPage={currentPage} images={changeImagesLoaded}/>
-      <Faq currentPage={currentPage} images={changeImagesLoaded}/>
+      <Faq forwardedRef={faqRef} currentPage={currentPage} images={changeImagesLoaded}/>
       <Team currentPage={currentPage} images={changeImagesLoaded}/>
       <Footer currentPage={currentPage} onLinkClick={handleLinkClick} images={changeImagesLoaded}/>
     </StyledApp>

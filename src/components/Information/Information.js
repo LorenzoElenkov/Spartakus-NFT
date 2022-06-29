@@ -425,7 +425,7 @@ const StyledLogo = styled.a`
   }
 `;
 
-const Information = ({ currentPage, onLinkClick, images, music, volume }) => {
+const Information = ({forwardedRef, currentPage, onLinkClick, images, music, volume }) => {
   const discordSound = new Audio("./discordSound.wav");
   discordSound.volume = 0.35;
 
@@ -507,7 +507,7 @@ const Information = ({ currentPage, onLinkClick, images, music, volume }) => {
         onLoad={addImageLoaded}
       />
       <StyledHOO page={currentPage}>
-        <StyledHelmetMobile src={informationHelmetMobile} alt='helmet on mobile' onLoad={addImageLoaded}/>
+        <StyledHelmetMobile src={informationHelmetMobile} alt='helmet on mobile' onLoad={addImageLoaded} ref={forwardedRef}/>
         <div
           alt="Circle containing main collection information"
           className="circle"

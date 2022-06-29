@@ -49,6 +49,7 @@ const StyledMapContainer = styled.div`
   grid-template-rows: 100vh;
   transition: left 0.5s ease-in-out;
   overflow: hidden;
+
   @media screen and (max-width: 768px) {
     position: relative;
     left: 0;

@@ -18,11 +18,12 @@ const StyledRoadmapContainer = styled.div`
     display: none;
   }
 
+
   @media screen and (max-width: 768px) {
     position: relative;
     top: 0;
     height: max-content;
-    padding: 50px 0;
+    padding: 70px 0 50px 0;
     h5 {
       margin-top: 0;
       text-align: center;
@@ -329,12 +330,12 @@ const StyledPhase = styled.div`
   }
 `;
 
-const Roadmap = ({ currentPage, images }) => {
+const Roadmap = ({forwardedRef, currentPage, images }) => {
   const addImageLoaded = () => {
     images();
   };
   return (
-    <StyledRoadmapContainer page={currentPage}>
+    <StyledRoadmapContainer page={currentPage} ref={forwardedRef}>
         <h5>Roadmap</h5>
       <StyledCorousel>
         <StyledPhase>

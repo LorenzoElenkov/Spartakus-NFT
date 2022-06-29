@@ -8,8 +8,10 @@ import shlemBG from '../../images/shlem200.png';
 import instagram2 from '../../images/instagram3.svg';
 import twitter2 from '../../images/twitter3.svg';
 import discord2 from '../../images/discord3.svg';
+import litepaper from '../../images/litepaper.pdf';
 
-const HeaderMobile = ({ music, volume }) => {
+
+const HeaderMobile = ({ music, volume, info, lore, roadmap, faq, showRT }) => {
 
     const [isMenuOn, setIsMenuOn] = useState(false);
 
@@ -21,7 +23,6 @@ const HeaderMobile = ({ music, volume }) => {
         music(step);
     };
 
-    console.log(volume);
 
   return (
       <>{window.outerWidth < 429 && <>
@@ -32,10 +33,12 @@ const HeaderMobile = ({ music, volume }) => {
             <button className='closeMenu' onClick={openMenuHandler}>X</button>
         </div>
         <div className='links'>
-            <button>Home</button>
-            <button>Lore</button>
-            <button>Roadmap</button>
-            <button>FAQ</button>
+            <button onClick={() => {openMenuHandler(); info.current.scrollIntoView({ behavior: 'smooth'})}}>Home</button>
+            <button onClick={() => {openMenuHandler(); lore.current.scrollIntoView({ behavior: 'smooth' })}}>Lore</button>
+            <button onClick={() => {openMenuHandler(); roadmap.current.scrollIntoView({ behavior: 'smooth'})}}>Roadmap</button>
+            <button onClick={() => {openMenuHandler(); showRT()}}>Rarity Tool</button>
+            <a className='rarityTool' alt='litepaper' href={litepaper} target="_blank" rel="noreferrer">Litepaper</a>
+            <button onClick={() => {openMenuHandler(); faq.current.scrollIntoView({ behavior: 'smooth'})}}>FAQ</button>
         </div>
         <div className='musicControl'>
             <div className='musicBut' onClick={() => changeVolume(0.05)}>Music {Math.floor(volume / 0.2 * 100)}%</div>
@@ -68,7 +71,7 @@ const StyledMobileNavigation = styled.nav`
     width: 100%;
     height: 100%;
     transition: top 0.5s ease-in-out;
-    z-index: 9999;
+    z-index: 10000;
     background: white;
     display: flex;
     flex-direction: column;
@@ -112,7 +115,15 @@ const StyledMobileNavigation = styled.nav`
     & > .links {
         display: flex;
         flex-direction: column;
-        gap: 40px;
+        gap: 15px;
+    }
+
+    & > .links > a {
+        font-size: 2rem;
+        text-decoration: none;
+        font-family: 'Medium';
+        text-align: center;
+        color: black;
     }
 
     & > .links > button {
@@ -167,7 +178,7 @@ const StyledMobileNavigation = styled.nav`
         height: 50px;
         } 
         & > .links {
-            gap: 40px;
+            gap: 25px;
         }
         & > .links > button {
         font-size: 2rem;
@@ -187,7 +198,7 @@ const StyledMobileNavigation = styled.nav`
         font-size: 2.5rem;
         }
         & > .links {
-            gap: 50px;
+            gap: 35px;
         }
         & > .links > button {
         font-size: 2.2rem;
