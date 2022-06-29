@@ -92,6 +92,7 @@ const StyledLoadingContainer = styled.div`
         button {
             font-size: 2.8rem;
             padding: 5px 15px;
+            color: black;
         }
     }
 `;
