@@ -14,7 +14,7 @@ const StyledContainer = styled.div`
   background: white;
   display: grid;
   grid-template-columns: 20% 1fr 1fr;
-  grid-template-rows: 1fr max-content;
+  grid-template-rows: 1fr 2fr;
   row-gap: 1vw;
   transition: top 0.5s ease-in-out;
   overflow: hidden;
@@ -53,6 +53,7 @@ const StyledContainer = styled.div`
     position: relative;
     left: 0;
     top: 0;
+    height: max-content;
     row-gap: 0;
     display: flex;
     flex-direction: column;
@@ -87,6 +88,7 @@ const StyledContainer = styled.div`
   }
   @media screen and (min-width: 321px) and (max-width: 375px) {
     position: relative;
+    height: max-content;
     left: 0;
     top: 0;
     row-gap: 0;
@@ -125,6 +127,7 @@ const StyledContainer = styled.div`
   }
   @media screen and (min-width: 376px) and (max-width: 428px) {
     position: relative;
+    height: max-content;
     left: 0;
     top: 0;
     row-gap: 0;
