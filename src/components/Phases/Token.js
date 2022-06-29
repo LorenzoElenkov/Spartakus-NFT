@@ -94,7 +94,6 @@ const StyledContainer = styled.div`
     row-gap: 0;
     display: flex;
     flex-direction: column;
-    background-color: red;
 
     .shoulder {
     position: absolute;
@@ -133,7 +132,6 @@ const StyledContainer = styled.div`
     row-gap: 0;
     display: flex;
     flex-direction: column;
-    background-color: red;
     .shoulder {
     position: absolute;
     transform: translateX(-30%) translateY(50%);
