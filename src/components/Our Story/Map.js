@@ -38,9 +38,9 @@ const StyledMapContainer = styled.div`
     font-family: "Magh";
     src: url("./fonts/Maghfirea.otf");
   }
-  position: absolute;
-  top: 0;
-  left: ${(props) => (props.page === 3 ? "0" : "-110vw")};
+  /* position: absolute; */
+  /* top: 0; */
+  /* left: ${(props) => (props.page === 3 ? "0" : "-110vw")}; */
   width: 100vw;
   height: 100vh;
   background: white;
@@ -447,9 +447,11 @@ const Map = ({ currentPage, images }) => {
   };
 
   const [clickedArea, setClickedArea] = useState(0);
-  if (currentPage !== 3 && clickedArea !== 0) {
-    setClickedArea(0);
-  }
+  // if (currentPage !== 3 && clickedArea !== 0) {
+  //   setClickedArea(0);
+  // }
+
+  console.log(clickedArea);
   return (
     <StyledMapContainer page={currentPage}>
       {window.outerWidth > 428 && (<>

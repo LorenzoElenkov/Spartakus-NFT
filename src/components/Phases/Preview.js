@@ -28,17 +28,13 @@ import t from '../../images/Sneak peek 20.png';
 import Slider from 'infinite-react-carousel/lib/carousel/slider';
 
 const StyledContainer = styled.div`
-    position: absolute;
-    top: 0;
-    left: ${props => props.page === 5 ? '0' : '-110vw'};
     width: 100vw;
     height: 100vh;
     background: white;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 20% 5% 5% 5% 1fr;
-    transition: left 0.5s ease-in-out;
-
+    
 
     .tridentImg {
         width: 5%;
@@ -57,7 +53,6 @@ const StyledContainer = styled.div`
 
     .slider {
         grid-row: 5/5;
-        display: ${props => props.page === 5 ? 'block' : 'none'};
         z-index: 1;
     }
 
@@ -76,7 +71,7 @@ const StyledContainer = styled.div`
         }
 
         .previewText {
-            font-size: 2.5rem;
+            font-size: 3.2rem;
         }
 
         .slider {
@@ -94,7 +89,7 @@ const StyledContainer = styled.div`
         }
 
         .previewText {
-            font-size: 2.8rem;
+            font-size: 3.5rem;
         }
 
         .slider {

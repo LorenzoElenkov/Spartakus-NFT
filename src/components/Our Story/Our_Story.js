@@ -8,14 +8,12 @@ import lines from "../../images/Our Story/Lines.png";
 import arka from "../../images/arka.png";
 
 const StyledHelmet = styled.img`
-  position: absolute;
-  top: 50%;
-  left: ${(props) => (props.page === 2 ? "50%" : "-100%")};
-  transform-origin: 50% 50%;
-  transform: translateX(-52%) translateY(-50%);
-  height: 85%;
-  opacity: ${(props) => (props.page === 2 ? "1" : "0")};
-  transition: left 0.4s ease-in-out;
+  grid-column: 2/4;
+  grid-row: 1/1;
+  height: 50vw;
+  margin-left: -3.5%;
+  justify-self: center;
+  align-self: center;
   z-index: 1;
   @media screen and (max-width: 768px) {
     display: none;
@@ -23,95 +21,57 @@ const StyledHelmet = styled.img`
 `;
 
 const StyledWhiteBG = styled.div`
-  position: absolute;
-  top: ${(props) => (props.page === 2 ? "0" : "-100%")};
-  left: 50%;
-  width: 50%;
-  height: 100%;
+  grid-column: 3/5;
+  grid-row: 1/1;
   background: white;
-  transition: 0.5s top ease-in-out;
   display: grid;
   grid-template-columns: 26% 74%;
   grid-template-rows: repeat(8, 1fr);
-  /* overflow: hidden; */
-
-  .motiv {
-    display: none;
-  }
+  height: 100vh;
 
   @media screen and (max-width: 320px) {
-    position: relative;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 45vh;
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 75px;
-    .motiv {
-      transform: rotate(90deg) translateY(-42.3%);
-      height: 100vw;
-      width: 50px;
-      display: block;
-      margin-top: -130px;
-    }
-  }
-  @media screen and (min-width: 321px) and (max-width: 375px) {
-    position: relative;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 45vh;
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 75px;
-    .motiv {
-      transform: rotate(90deg) translateY(-43.3%);
-      height: 100vw;
-      width: 50px;
-      display: block;
-      margin-top: -130px;
-    }
-  }
-  @media screen and (min-width: 376px) and (max-width: 428px) {
-    position: relative;
-    top: 0;
-    left: 0;
-    width: 100vw;
     height: max-content;
     display: flex;
     flex-direction: column;
     margin-bottom: 75px;
-    .motiv {
-      transform: rotate(90deg) translateY(-44%);
-      height: 100vw;
-      width: 50px;
-      display: block;
-      margin-top: -130px;
-    }
+    grid-column: 1/1;
+    grid-row: 3/3;
+  }
+  @media screen and (min-width: 321px) and (max-width: 375px) {
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 75px;
+    grid-column: 1/1;
+    grid-row: 3/3;
+  }
+  @media screen and (min-width: 376px) and (max-width: 428px) {
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 75px;
+    grid-column: 1/1;
+    grid-row: 3/3;
   }
 `;
 
 const StyledBlueBG = styled.div`
-  position: absolute;
-  top: 0;
-  left: ${(props) => (props.page === 2 ? "0" : "-100%")};
-  width: 50%;
-  height: 100%;
+  grid-column: 1/3;
+  grid-row: 1/1;
   background: #0f1026;
-  transition: 0.5s left ease-in-out;
   display: grid;
   grid-template-columns: 7.5% 85% 7.5%;
   grid-template-rows: repeat(8, 1fr);
   overflow: hidden;
-
+  height: 100vh;
   .blankRef {
     width: 100%;
     height: 100px;
   }
 
   @media screen and (max-width: 428px) {
-    position: relative;
+    grid-column: 1/1;
+    grid-row: 1/1;
     display: flex;
     flex-direction: column;
     top: 0;
@@ -119,6 +79,7 @@ const StyledBlueBG = styled.div`
     width: 100vw;
     height: 55vh;
     background: white;
+    height: max-content;
   }
 `;
 
@@ -129,32 +90,29 @@ const StyledHeader = styled.img`
   align-self: end;
   padding-top: 5vh;
   @media screen and (max-width: 320px) {
-    margin-top: 50px;
     height: 300px;
     top: 35%;
     filter: invert(1);
-    width: 160px;
-    height: 45px;
+    width: 200px;
+    height: 55px;
     padding-top: 0;
     align-self: center;
   }
   @media screen and (min-width: 321px) and (max-width: 375px) {
-    margin-top: 50px;
     height: 300px;
     top: 35%;
     filter: invert(1);
-    width: 160px;
-    height: 45px;
+    width: 220px;
+    height: 60px;
     padding-top: 0;
     align-self: center;
   }
   @media screen and (min-width: 376px) and (max-width: 428px) {
-    margin-top: 50px;
     height: 300px;
     top: 35%;
     filter: invert(1);
-    width: 160px;
-    height: 45px;
+    width: 220px;
+    height: 60px;
     padding-top: 0;
     align-self: center;
   }
@@ -177,8 +135,8 @@ const StyledHeaderText = styled.span`
     padding-left: 20px;
     padding-right: 20px;
     width: calc(100% - 40px);
-    font-size: 0.9rem;
-    margin-top: 10px;
+    font-size: 1.3rem;
+    margin-top: 30px;
   }
   @media screen and (min-width: 321px) and (max-width: 375px) {
     color: #0f1026;
@@ -187,8 +145,8 @@ const StyledHeaderText = styled.span`
     padding-left: 20px;
     padding-right: 20px;
     width: calc(100% - 40px);
-    font-size: 1.1rem;
-    margin-top: 10px;
+    font-size: 1.3rem;
+    margin-top: 30px;
   }
   @media screen and (min-width: 376px) and (max-width: 428px) {
     color: #0f1026;
@@ -198,7 +156,7 @@ const StyledHeaderText = styled.span`
     padding-right: 20px;
     width: calc(100% - 40px);
     font-size: 1.3rem;
-    margin-top: 10px;
+    margin-top: 30px;
   }
 `;
 
@@ -223,29 +181,50 @@ const StyledWhiteSecondaryText = styled.span`
   width: 78%;
   margin-top: -5vw;
   @media screen and (max-width: 320px) {
-    font-size: 0.9rem;
+    font-size: 1.3rem;
     width: calc(100% - 40px);
     padding: 0 20px;
-    margin-top: -120px;
+    margin-top: -150px;
     grid-row: 1/1;
     grid-column: 1/1;
   }
   @media screen and (min-width: 321px) and (max-width: 375px) {
-    font-size: 1rem;
+    font-size: 1.3rem;
     width: calc(100% - 40px);
     padding: 0 20px;
-    margin-top: -130px;
+    margin-top: -175px;
     grid-row: 1/1;
     grid-column: 1/1;
   }
   @media screen and (min-width: 376px) and (max-width: 428px) {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     width: calc(100% - 40px);
     padding: 0 20px;
-    margin-top: -120px;
+    margin-top: -200px;
     grid-row: 1/1;
     grid-column: 1/1;
   }
+`;
+
+const StyledStoryContainer = styled.div`
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  @media screen and (max-width: 428px) {
+    grid-template-columns: 1fr max-content 1fr;
+    height: max-content;
+
+    .motiv {
+      transform: rotate(90deg) translateY(-40.5%);
+      margin-top: -50%;
+      height: 120vw;
+      width: 50px;
+      grid-row: 2/2;
+      grid-column: 1/1;
+    }
+  }
+
 `;
 
 const Lore = ({ forwardedRef, currentPage, images }) => {
@@ -253,12 +232,12 @@ const Lore = ({ forwardedRef, currentPage, images }) => {
     images();
   };
   return (
-    <>
+    <StyledStoryContainer>
       <StyledBlueBG page={currentPage}>
         {window.outerWidth < 429 && (
           <div className="blankRef" ref={forwardedRef} />
         )}
-        <StyledHeader src={theHeader}/>
+        <StyledHeader src={theHeader} />
         <StyledHeaderText>
           In the beginning, only the eternal and omnipotent Chaos existed.
           Everything originated from it- light, darkness, the planets, the
@@ -281,8 +260,9 @@ const Lore = ({ forwardedRef, currentPage, images }) => {
         page={currentPage}
         onLoad={addImageLoaded}
       />
+      <img src={arka} alt="motiv" className="motiv" />
+
       <StyledWhiteBG page={currentPage}>
-        <img src={arka} alt="motiv" className="motiv" />
         <StyledWhiteLines src={lines} onLoad={addImageLoaded} />
         <StyledWhiteSecondaryText>
           The king of the Earth had to be the worthiest among the Olympians and
@@ -297,7 +277,7 @@ const Lore = ({ forwardedRef, currentPage, images }) => {
           finally come. Become one of the HEROES and the battle over Earth.
         </StyledWhiteSecondaryText>
       </StyledWhiteBG>
-    </>
+    </StyledStoryContainer>
   );
 };
 

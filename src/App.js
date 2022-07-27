@@ -22,11 +22,9 @@ import RarityTool from './components/RarityTool/RarityTool';
 const StyledApp = styled.div`
   position: relative;
   width: 100vw;
-  height: 100vh;
 
   display: grid;
-  grid-template-columns: 100vw;
-  grid-template-rows: repeat(auto-fill, 100vh);
+  grid-template-columns: 1fr;
   overflow-x: hidden;
   @media screen and (max-width: 765px) {
     display: block;
@@ -83,47 +81,47 @@ const App = () => {
   };
 
 
-  const trackScroll = (e) => {
-    e.preventDefault();
-    if (moveNext === true) {
-      let delta = Math.sign(e.deltaY);
-      if (currentPage === 1 && delta < 0) {
-        scrollCount.current = 0;
-      } else if (currentPage === 9 && delta > 0) {
-        scrollCount.current = 0;
-      } else {
-        if (e.deltaY % Math.floor(e.deltaY) !== 0 || (e.deltaY % 19 === 0) || (e.wheelDeltaY % 54 === 0) || (e.deltaY % 125 === 0) || (e.deltaY % 3 === 0)) {
-          scrollCount.current += delta*5 + 0.1;
-        } else {
-          scrollCount.current += delta;
-        }
-      }
-    }
-      if (scrollCount.current > 20 && moveNext === true && currentPage < 9 && window.outerWidth > 429) {
-        moveNext = false;
-        setCurrentPage(prev => (prev + 1));
-        snd.play();
+  // const trackScroll = (e) => {
+  //   e.preventDefault();
+  //   if (moveNext === true) {
+  //     let delta = Math.sign(e.deltaY);
+  //     if (currentPage === 1 && delta < 0) {
+  //       scrollCount.current = 0;
+  //     } else if (currentPage === 9 && delta > 0) {
+  //       scrollCount.current = 0;
+  //     } else {
+  //       if (e.deltaY % Math.floor(e.deltaY) !== 0 || (e.deltaY % 19 === 0) || (e.wheelDeltaY % 54 === 0) || (e.deltaY % 125 === 0) || (e.deltaY % 3 === 0)) {
+  //         scrollCount.current += delta*5 + 0.1;
+  //       } else {
+  //         scrollCount.current += delta;
+  //       }
+  //     }
+  //   }
+  //     if (scrollCount.current > 20 && moveNext === true && currentPage < 9 && window.outerWidth > 429) {
+  //       moveNext = false;
+  //       setCurrentPage(prev => (prev + 1));
+  //       snd.play();
         
-      } else if (scrollCount.current < -20 && moveNext === true && currentPage > 1 && window.outerWidth > 429) {
-        moveNext = false;
-        setCurrentPage(prev => (prev - 1));
-        snd.play();
-      }
-  };
+  //     } else if (scrollCount.current < -20 && moveNext === true && currentPage > 1 && window.outerWidth > 429) {
+  //       moveNext = false;
+  //       setCurrentPage(prev => (prev - 1));
+  //       snd.play();
+  //     }
+  // };
 
-  useEffect(() => {
-    scrollCount.current = 0;
-    const move = setTimeout(() => {
-      moveNext = true;
-      scrollCount.current = 0;
-      window.addEventListener('wheel', trackScroll);
-    }, 3000);
-    return () => {
-      window.removeEventListener('wheel', trackScroll);
-      scrollCount.current = 0;
-      clearTimeout(move);
-    }
-  },[currentPage])
+  // useEffect(() => {
+  //   scrollCount.current = 0;
+  //   const move = setTimeout(() => {
+  //     moveNext = true;
+  //     scrollCount.current = 0;
+  //     window.addEventListener('wheel', trackScroll);
+  //   }, 3000);
+  //   return () => {
+  //     window.removeEventListener('wheel', trackScroll);
+  //     scrollCount.current = 0;
+  //     clearTimeout(move);
+  //   }
+  // },[currentPage])
   
   const handleLinkClick = (link) => {
     setCurrentPage(link);

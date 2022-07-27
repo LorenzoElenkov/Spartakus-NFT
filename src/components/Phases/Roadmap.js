@@ -7,9 +7,6 @@ import shoulder from "../../images/roadmpa/shoulder1.png";
 import { Slider } from "infinite-react-carousel/lib";
 
 const StyledRoadmapContainer = styled.div`
-  position: absolute;
-  top: ${(props) => (props.page === 4 ? "0" : "-110vh")};
-  left: 0;
   width: 100vw;
   height: 100vh;
   background: #0f1026;
@@ -52,9 +49,8 @@ const StyledCorousel = styled.div`
   overflow: hidden;
   img {
     position: absolute;
-    top: 60%;
+    top: 55%;
     left: 80%;
-    height: 40vh;
   }
   @media screen and (max-width: 768px) {
     display: block;
@@ -157,7 +153,7 @@ const StyledPhase = styled.div`
   @media screen and (max-width: 320px) {
     margin-top: 30px;
     .number {
-      font-size: 7rem;
+      font-size: 9rem;
       color: white;
       text-shadow: 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff,
         0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff;
@@ -176,7 +172,7 @@ const StyledPhase = styled.div`
       grid-row: 2/2;
       color: white;
       font-family: "Medium";
-      font-size: 1.2rem;
+      font-size: 1.4rem;
       font-weight: 800;
       border-top: 2px solid #f2cb05;
       padding-top: 1.5vw;
@@ -187,7 +183,7 @@ const StyledPhase = styled.div`
       grid-column: 2/2;
       grid-row: 3/3;
       color: white;
-      font-size: 1rem;
+      font-size: 1.2rem;
       margin-top: 0.5vw;
       margin-bottom: 30px;
       font-family: "Medium";
@@ -198,7 +194,7 @@ const StyledPhase = styled.div`
       grid-row: 4/4;
       color: white;
       display: grid;
-      font-size: 1.2rem;
+      font-size: 1.4rem;
       row-gap: 1vw;
       height: 100%;
       width: 80%;
@@ -212,7 +208,7 @@ const StyledPhase = styled.div`
   @media screen and (min-width: 321px) and (max-width: 375px) {
     margin-top: 30px;
     .number {
-      font-size: 7rem;
+      font-size: 10rem;
       color: white;
       text-shadow: 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff,
         0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff;
@@ -223,7 +219,7 @@ const StyledPhase = styled.div`
     }
 
     .title {
-      font-size: 4rem;
+      font-size: 5rem;
     }
 
     .subtitle {
@@ -231,7 +227,7 @@ const StyledPhase = styled.div`
       grid-row: 2/2;
       color: white;
       font-family: "Medium";
-      font-size: 1.2rem;
+      font-size: 1.45rem;
       font-weight: 800;
       border-top: 2px solid #f2cb05;
       padding-top: 1.5vw;
@@ -242,7 +238,7 @@ const StyledPhase = styled.div`
       grid-column: 2/2;
       grid-row: 3/3;
       color: white;
-      font-size: 1rem;
+      font-size: 1.2rem;
       margin-top: 0.5vw;
       margin-bottom: 30px;
       font-family: "Medium";
@@ -253,7 +249,7 @@ const StyledPhase = styled.div`
       grid-row: 4/4;
       color: white;
       display: grid;
-      font-size: 1.2rem;
+      font-size: 1.5rem;
       row-gap: 1vw;
       height: 100%;
       width: 80%;
@@ -267,7 +263,7 @@ const StyledPhase = styled.div`
   @media screen and (min-width: 376px) and (max-width: 428px) {
     margin-top: 30px;
     .number {
-      font-size: 7rem;
+      font-size: 10rem;
       color: white;
       text-shadow: 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff,
         0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff;
@@ -278,7 +274,7 @@ const StyledPhase = styled.div`
     }
 
     .title {
-      font-size: 4rem;
+      font-size: 5rem;
     }
 
     .subtitle {
@@ -286,7 +282,7 @@ const StyledPhase = styled.div`
       grid-row: 2/2;
       color: white;
       font-family: "Medium";
-      font-size: 1.2rem;
+      font-size: 1.5rem;
       font-weight: 800;
       border-top: 2px solid #f2cb05;
       padding-top: 1.5vw;
@@ -297,7 +293,7 @@ const StyledPhase = styled.div`
       grid-column: 2/2;
       grid-row: 3/3;
       color: white;
-      font-size: 1rem;
+      font-size: 1.2rem;
       margin-top: 0.5vw;
       margin-bottom: 30px;
       font-family: "Medium";
@@ -308,7 +304,7 @@ const StyledPhase = styled.div`
       grid-row: 4/4;
       color: white;
       display: grid;
-      font-size: 1.2rem;
+      font-size: 1.5rem;
       row-gap: 1vw;
       height: 100%;
       width: 80%;
@@ -346,6 +342,7 @@ const Roadmap = ({forwardedRef, currentPage, images }) => {
           </span>
           <span className="quote">- Heroes of Olympus</span>
           <ul className="unorderedList">
+            <li className="unordered1">Introduction of our staking system and $HROM token</li>
             <li className="unordered1none">1. Tribe Reveal</li>
             <li className="unordered1none">2. Class Reveal</li>
             <li className="unordered1none">3. Unleashing the "HEROES"</li>
@@ -367,10 +364,11 @@ const Roadmap = ({forwardedRef, currentPage, images }) => {
           <span className="number">2</span>
           <span className="title">Phase II</span>
           <span className="subtitle">
-            Establishment of the Heroes of Olympus' DAO and token
+            DEVELOPMENT AND LAUNCH OF OUR P2E GAME "The Ancient Greek War"
           </span>
           <span className="quote">- Agora Dao and $HROM</span>
           <ul className="unorderedList">
+            <li className="unordered1">Starting the development of "The Ancient Greek War"</li>
             <li className="unordered1">Exclusive Airdrops every week</li>
             <li className="unordered1none">
               - Each "HERO" in your wallet will grant you one AIRDROP piece
@@ -381,21 +379,16 @@ const Roadmap = ({forwardedRef, currentPage, images }) => {
             <li className="unordered1none">
               - Collect all 4 pieces to redeem your mystery reward
             </li>
-            <li className="unordered1">Introduction to $HROM token</li>
-            <li className="unordered1">Establishment of AgoraDAO</li>
-            <li className="unordered1">
-              The development of our P2E game <br /> "The Ancient Greek War"
-            </li>
           </ul>
         </StyledPhase>
         <StyledPhase>
           <span className="number">3</span>
           <span className="title">Phase III</span>
-          <span className="subtitle">THE WAR BEGINS</span>
+          <span className="subtitle">LAUNCH OF OUR P2E GAME "The Ancient Greek War"</span>
           <span className="quote">- ATHENA</span>
           <ul className="unorderedList">
             <li className="unordered1">
-              Launching our P2E Game <br /> - 'The War for Ancient Greece'
+              Establishment of "AgoraDAO"
             </li>
             <li className="unordered1">Expansion collection teasers</li>
           </ul>

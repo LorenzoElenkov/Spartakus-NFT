@@ -13,6 +13,16 @@ const StyledCountdownContainer = styled.div`
   background-color: ${(props) =>
     props.page === 1 ? "rgba(255, 255, 255, 0.75)" : "transparent"};
 
+  .spanTBA {
+    font-size: 1.6vw;
+    grid-column: 1/5;
+    font-family: "Magh";
+    font-weight: 600;
+    justify-self: center;
+    letter-spacing: 2px;
+    padding: 5px 0;
+
+  }
   .spanCount {
     font-size: 1.5vw;
     font-family: "Magh";
@@ -53,6 +63,18 @@ const StyledCountdownContainer = styled.div`
     font-weight: 700;
   }
 
+  @media screen and (max-width: 320px) {
+    .spanTBA {
+      font-size: 2.5rem;
+    }
+  }
+
+  @media screen and (min-width: 321px) and (max-width: 428px) {
+    .spanTBA {
+      font-size: 3rem;
+    }
+  }
+
   @media screen and (max-width: 428px) {
     position: relative;
     width: 100%;
@@ -63,6 +85,7 @@ const StyledCountdownContainer = styled.div`
     left: 0;
     grid-template-columns: repeat(4, 1fr);
 
+    
     .spanCount {
       font-size: 8vw;
       font-family: "Magh";
@@ -128,14 +151,15 @@ const Countdown = ({ currentPage }) => {
   return (
     <StyledCountdownContainer page={currentPage}>
       <span className="spanHeader">WHITELIST SALE IN</span>
-      <span className="spanTitle">DAYS</span>
+      {/* <span className="spanTitle">DAYS</span>
       <span className="spanTitle">HOURS</span>
       <span className="spanTitle">MINUTES</span>
       <span className="spanTitle">SECONDS</span>
       <span className="spanCount">{days}</span>
       <span className="spanCount">{hours > 9 ? hours : `0${hours}`}</span>
       <span className="spanCount">{minutes > 9 ? minutes : `0${minutes}`}</span>
-      <span className="spanCount">{seconds > 9 ? seconds : `0${seconds}`}</span>
+      <span className="spanCount">{seconds > 9 ? seconds : `0${seconds}`}</span> */}
+      <span className="spanTBA">TO BE ANNOUNCED</span>
     </StyledCountdownContainer>
   );
 };

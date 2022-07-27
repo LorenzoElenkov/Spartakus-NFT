@@ -3,11 +3,8 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 
 const StyledContainer = styled.div`
-    position: absolute;
-    top: 0;
-    left: ${props => props.page === 7 ? '0' : '-110vw'};
     width: 100%;
-    height: 100%;
+    height: 100vh;
     transition: left 0.5s ease-in-out;
     display: grid;
     grid-template-rows: 20% 10% max-content;

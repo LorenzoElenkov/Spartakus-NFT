@@ -16,14 +16,20 @@ import krug from "../../images/krugche.png";
 import circleLogo from "../../images/circleLogo.png";
 
 const StyledMusic = styled.div`
-  position: relative;
+  /* position: relative;
   top: 0;
   width: 200px;
   left: calc(100% - 200px);
   height: 100%;
   z-index: 2;
-  overflow: hidden;
+  overflow: hidden; */
 
+  position: fixed;
+  top: calc(50% - 50px);
+  left: calc(100% - 200px);
+  height: 50px;
+  width: 200px;
+  z-index: 10000;
   @media screen and (max-width: 768px) {
     position: absolute;
   }
@@ -36,10 +42,8 @@ const StyledMusicContainer = styled.div`
   height: 80px;
   top: calc(50% - 40px);
   left: calc(100% - 28px);
-  background-color: ${(props) =>
-    props.page === 1 || props.page === 4 || props.page === 8 || props.page === 9
-      ? "white"
-      : "rgba(15,16,38,255)"};
+  border: 1px solid black;
+  background-color: white;
   border-top-left-radius: 15px;
   border-bottom-left-radius: 15px;
   transition: all 0.3s ease-in-out;
@@ -84,78 +88,53 @@ const StyledMusicContainer = styled.div`
 `;
 
 const StyledWhiteBG = styled.div`
-  position: absolute;
-  top: 0;
-  left: ${(props) => (props.page === 1 ? "0" : "-110vw")};
-  width: 50vw;
-  height: 100vh;
   background-color: white;
-  display: grid;
-  justify-content: center;
-  align-items: center;
-  transition: left 0.5s ease-in-out;
-  overflow: hidden;
+  grid-column: 1/3;
+  grid-row: 1/1;
   @media screen and (max-width: 768px) {
     display: none;
   }
 `;
 
 const StyledBlueBG = styled.div`
-  position: absolute;
-  top: ${(props) => (props.page === 1 ? "0" : "-110vh")};
-  left: 50%;
-  width: 50vw;
-  height: 100vh;
   background-color: rgba(15, 16, 38, 255);
-  display: grid;
-  justify-content: center;
+  grid-column: 3/5;
+  grid-row: 1/1;
+  display: flex;
   align-items: center;
-  transition: top 0.5s ease-in-out;
-  overflow: hidden;
   @media screen and (max-width: 768px) {
-    position: relative;
-    width: 100vw;
-    left: 0;
+    grid-column: 1/1;
+    grid-row: 1/1;
   }
 `;
 
 const StyledHelmet2 = styled.img`
-  position: absolute;
-  top: 50%;
-  left: ${(props) => (props.page === 1 ? "calc(100% - 7vw)" : "110vw")};
-  transform: translateX(-50%) translateY(-50%);
-  height: 90vh;
+  height: 85vh;
   z-index: 1;
-  opacity: ${(props) => (props.page === 1 ? "1" : "0")};
-  transition: all 0.4s ease-in-out;
-
+  margin-left: 50%;
+  margin-top: 10%;
   @media screen and (max-width: 428px) {
     display: none;
   }
 `;
 
 const StyledHelmetMobile = styled.img`
-  position: absolute;
-  top: 20%;
-  left: 50%;
-  transform: translateX(-50%) translateY(-50%);
-  height: 80vw;
+  width: 85vw;
   z-index: 1;
-  display: block;
+  grid-row: 1/1;
+  grid-column: 1/1;
+  align-self: center;
+  justify-self: center;
   @media screen and (min-width: 429px) {
     display: none;
   }
 `;
 
 const StyledHelmet = styled.img`
-  position: absolute;
-  top: 32%;
-  left: ${(props) => (props.page === 1 ? "calc(0% + 5vw)" : "-110vw")};
-  transform: translateX(-50%) translateY(-50%);
-  height: 125vh;
+  height: 120vh;
+  margin-top: -22.5vh;
+  margin-left: -22.5vw;
   z-index: 0;
-  opacity: ${(props) => (props.page === 1 ? "1" : "0")};
-  transition: all 0.4s ease-in-out;
 
   @media screen and (max-width: 428px) {
     left: 50%;
@@ -191,20 +170,15 @@ const StyledCPTH = styled.div`
 `;
 
 const StyledHOO = styled.div`
-  width: 50%;
   z-index: 9000;
-  position: absolute;
-  top: ${(props) => (props.page === 1 ? "50%" : "-110vh")};
-  left: 50%;
-  transform: translateX(-50%) translateY(-50%);
-  transition: 0.5s top ease-in-out;
+  grid-column: 2/4;
+  grid-row: 1/1;
   display: grid;
   .circle {
     background-image: url(${krug});
     background-size: contain;
     background-repeat: no-repeat;
     background-position: 50%;
-    height: 45vw;
     grid-row: 1/1;
     grid-column: 1/1;
   }
@@ -287,12 +261,13 @@ const StyledHOO = styled.div`
     margin-bottom: 30px;
     display: flex;
     flex-direction: column;
-
+    grid-column: 1/1;
+    grid-row: 2/2;
     .circle {
       display: none;
     }
     .circleLogo {
-      margin-top: 40vh;
+      /* margin-top: 40vh; */
     }
     .circleText {
       margin-top: 2vh;
@@ -327,11 +302,13 @@ const StyledHOO = styled.div`
     margin-bottom: 30px;
     display: flex;
     flex-direction: column;
+    grid-column: 1/1;
+    grid-row: 2/2;
     .circle {
       display: none;
     }
     .circleLogo {
-      margin-top: 40vh;
+      /* margin-top: 40vh; */
     }
     .circleText {
       margin-top: 2vh;
@@ -366,11 +343,13 @@ const StyledHOO = styled.div`
     margin-bottom: 30px;
     display: flex;
     flex-direction: column;
+    grid-column: 1/1;
+    grid-row: 2/2;
     .circle {
       display: none;
     }
     .circleLogo {
-      margin-top: 40vh;
+      /* margin-top: 40vh; */
     }
     .circleText {
       margin-top: 2vh;
@@ -425,7 +404,26 @@ const StyledLogo = styled.a`
   }
 `;
 
-const Information = ({forwardedRef, currentPage, onLinkClick, images, music, volume }) => {
+const StyledInformationContainer = styled.div`
+  grid-column: 1/2;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  height: 100vh;
+  @media screen and (max-width: 429px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    background-color: rgba(15, 16, 38, 255);
+  }
+`;
+
+const Information = ({
+  forwardedRef,
+  currentPage,
+  onLinkClick,
+  images,
+  music,
+  volume,
+}) => {
   const discordSound = new Audio("./discordSound.wav");
   discordSound.volume = 0.35;
 
@@ -493,47 +491,56 @@ const Information = ({forwardedRef, currentPage, onLinkClick, images, music, vol
           <img src={logo} alt="heroes of olympus" className="logo" />
         </StyledLogo>
       )}
-      <StyledWhiteBG page={currentPage}></StyledWhiteBG>
-      <StyledHelmet
-        page={currentPage}
-        src={informationHelmet2}
-        alt="helmet"
-        onLoad={addImageLoaded}
-      />
-      <StyledHelmet2
-        page={currentPage}
-        src={informationHelmet3}
-        alt="helmet2"
-        onLoad={addImageLoaded}
-      />
-      <StyledHOO page={currentPage}>
-        <StyledHelmetMobile src={informationHelmetMobile} alt='helmet on mobile' onLoad={addImageLoaded} ref={forwardedRef}/>
-        <div
-          alt="Circle containing main collection information"
-          className="circle"
+      <StyledInformationContainer>
+        <StyledWhiteBG page={currentPage}>
+          <StyledHelmet
+            page={currentPage}
+            src={informationHelmet2}
+            alt="helmet"
+            onLoad={addImageLoaded}
+          />
+        </StyledWhiteBG>
+        <StyledHelmetMobile
+          src={informationHelmetMobile}
+          alt="helmet on mobile"
+          onLoad={addImageLoaded}
+          ref={forwardedRef}
         />
-        <img
-          src={circleLogo}
-          alt="Website logo in circle"
-          className="circleLogo"
-        />
-        <span className="circleText">
-          Collection of 10,878 ultra-realistic 3D heroes, sealed in the Cursed
-          Chests of Chaos, on the Solana blockchain! Ancient Greece is about to
-          be rebuilt in the Metaverse. Join the Battle of the Gods!
-        </span>
-        <a
-          className="discordButton"
-          href="https://discord.com/invite/XHPyntDaF4"
-          target="_blank"
-          rel="noreferrer"
-          ref={discordRef}
-        >
-          <span className="discordText">Join our Discord</span>
-          <img className="discordLogo" src={discordLogo} alt="" />
-        </a>
-      </StyledHOO>
-      <StyledBlueBG page={currentPage} />
+        <StyledHOO page={currentPage}>
+          <div
+            alt="Circle containing main collection information"
+            className="circle"
+          />
+          <img
+            src={circleLogo}
+            alt="Website logo in circle"
+            className="circleLogo"
+          />
+          <span className="circleText">
+            Collection of ultra-realistic 3D heroes, sealed in the Cursed Chests
+            of Chaos, on the Solana blockchain! Ancient Greece is about to be
+            rebuilt in the Metaverse. Join the Battle of the Gods!
+          </span>
+          <a
+            className="discordButton"
+            href="https://discord.com/invite/XHPyntDaF4"
+            target="_blank"
+            rel="noreferrer"
+            ref={discordRef}
+          >
+            <span className="discordText">Join our Discord</span>
+            <img className="discordLogo" src={discordLogo} alt="" />
+          </a>
+        </StyledHOO>
+        <StyledBlueBG page={currentPage}>
+          <StyledHelmet2
+            page={currentPage}
+            src={informationHelmet3}
+            alt="helmet2"
+            onLoad={addImageLoaded}
+          />
+        </StyledBlueBG>
+      </StyledInformationContainer>
     </>
   );
 };

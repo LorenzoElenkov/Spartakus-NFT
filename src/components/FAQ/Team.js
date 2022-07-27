@@ -15,9 +15,9 @@ import purpleAvatar from "../../images/purpleAvatar.png";
 import greenAvatar from "../../images/greenAvatar.png";
 
 const StyledContainer = styled.div`
-  position: absolute;
-  top: ${(props) => (props.page === 8 ? "0" : "-110vh")};
-  left: 0;
+  /* position: absolute; */
+  /* top: ${(props) => (props.page === 8 ? "0" : "-110vh")}; */
+  /* left: 0; */
   width: 100vw;
   height: 100vh;
   background: white;

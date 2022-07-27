@@ -6,9 +6,6 @@ import shoulder from "../../images/shlem998.png";
 import tokenImg from '../../images/Coin.gif';
 
 const StyledContainer = styled.div`
-  position: absolute;
-  top: ${(props) => (props.page === 6 ? "0" : "-110vh")};
-  left: 0;
   width: 100vw;
   height: 100vh;
   background: white;
@@ -21,7 +18,7 @@ const StyledContainer = styled.div`
   .shoulder {
     position: absolute;
     transform: translateX(-30%) translateY(43vh);
-    height: 57%;
+    height: 30vw;
   }
 
   .title {
@@ -71,7 +68,7 @@ const StyledContainer = styled.div`
         text-align: center;
       }
     .text {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
         padding: 0 20px;
         margin-top: 200px;
         text-align: center;

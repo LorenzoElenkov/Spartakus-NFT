@@ -6,9 +6,9 @@ import logo from "../../images/footerLogo1.png";
 import { Timeline } from "react-twitter-widgets";
 
 const StyledLightBlue = styled.div`
-  position: absolute;
-  top: 0;
-  left: ${(props) => (props.page === 9 ? "0" : "-110vw")};
+  /* position: absolute; */
+  /* top: 0; */
+  /* left: ${(props) => (props.page === 9 ? "0" : "-110vw")}; */
   width: 50%;
   height: 100%;
   background: #161b54;
@@ -113,9 +113,6 @@ const StyledLightBlue = styled.div`
 `;
 
 const StyledDarkBlue = styled.div`
-  position: absolute;
-  top: ${(props) => (props.page === 9 ? "0" : "-110vh")};
-  left: 50%;
   width: 50%;
   height: 100%;
   background: #111336;
@@ -215,9 +212,18 @@ const Footer = ({ currentPage, onLinkClick, images }) => {
   const addImageLoaded = () => {
     images();
   };
+  const StyledContactContainer = styled.div`
+  width: 100vw;
+  height: 100vh;
+  display: flex;
 
+  @media screen and (max-width: 428px) {
+    flex-direction: column;
+    height: max-content;
+  }
+`;
   return (
-    <>
+    <StyledContactContainer>
       <StyledLightBlue page={currentPage}>
         <img src={logo} alt="" onLoad={addImageLoaded}/>
         <ul>
@@ -234,7 +240,7 @@ const Footer = ({ currentPage, onLinkClick, images }) => {
             <Timeline dataSource={{ sourceType: "profile", screenName:'Heroes_Olympus_'}} options={{chrome: 'noheader, nofooter', height: 300, width: 500}}></Timeline>
         </div>
       </StyledDarkBlue>
-    </>
+    </StyledContactContainer>
   );
 };
 
