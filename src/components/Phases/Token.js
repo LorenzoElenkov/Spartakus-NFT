@@ -15,6 +15,7 @@ const StyledContainer = styled.div`
   row-gap: 1vw;
   transition: top 0.5s ease-in-out;
   overflow: hidden;
+  position: relative;
   .shoulder {
     position: absolute;
     transform: translateX(-30%) translateY(43vh);
