@@ -97,12 +97,7 @@ const StyledWhiteBG = styled.div`
 `;
 
 const StyledBlueBG = styled.div`
-  background: linear-gradient(
-    to bottom,
-    rgba(15, 16, 38, 255) 50%,
-    rgba(15, 16, 38, 255) 85%,
-    white 100%
-  );
+  background: rgba(15, 16, 38, 255);
   grid-column: 3/5;
   grid-row: 1/1;
   display: flex;
@@ -118,7 +113,7 @@ const StyledHelmet2 = styled.img`
   height: 85vh;
   z-index: 1;
   margin-left: 50%;
-  margin-top: -15%;
+  margin-top: 5%;
   @media screen and (max-width: 428px) {
     display: none;
   }
@@ -180,7 +175,6 @@ const StyledHOO = styled.div`
   grid-column: 2/4;
   grid-row: 1/1;
   display: grid;
-  margin-top: -20vh;
   .circle {
     background-image: url(${krug});
     background-size: contain;
@@ -419,9 +413,8 @@ const StyledInformationContainer = styled.div`
   grid-column: 1/2;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  height: 120vh;
+  height: 100vh;
   @media screen and (max-width: 429px) {
-    height: 100vh;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
     background-color: rgba(15, 16, 38, 255);

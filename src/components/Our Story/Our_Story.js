@@ -58,7 +58,7 @@ const StyledWhiteBG = styled.div`
 const StyledBlueBG = styled.div`
   grid-column: 1/3;
   grid-row: 1/1;
-  background: linear-gradient(to top, white, rgba(15, 16, 38, 255) 10%, rgba(15, 16, 38, 255) 50%, rgba(15, 16, 38, 255) 85%, white 100%);
+  background: rgba(15, 16, 38, 255);
   display: grid;
   grid-template-columns: 7.5% 85% 7.5%;
   grid-template-rows: repeat(8, 1fr);

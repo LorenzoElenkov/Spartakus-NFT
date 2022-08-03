@@ -437,7 +437,7 @@ const StyledContainer = styled.div`
 `;
 
 const StyledBackdrop = styled.div`
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100vw;

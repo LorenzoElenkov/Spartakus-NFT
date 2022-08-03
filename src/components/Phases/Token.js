@@ -10,7 +10,7 @@ const StyledContainer = styled.div`
   height: max-content;
   background: white;
   display: grid;
-  grid-template-columns: 20% 1fr 1fr;
+  grid-template-columns: 15% 1fr 1fr;
   grid-template-rows: 1fr 4fr;
   row-gap: 1vw;
   transition: top 0.5s ease-in-out;
@@ -30,6 +30,7 @@ const StyledContainer = styled.div`
     grid-column: 2/2;
     align-self: end;
     letter-spacing: 1px;
+    margin-left: 18%;
   }
   .text {
     grid-column: 2/2;
@@ -39,6 +40,7 @@ const StyledContainer = styled.div`
     white-space: pre-line;
     width: 80%;
     letter-spacing: 1px;
+    margin-left: 18%;
   }
 
   .previewImg {
@@ -67,6 +69,7 @@ const StyledContainer = styled.div`
       font-size: 15vw;
       width: 100%;
       text-align: center;
+      margin-left: 0;
     }
     .text {
       font-size: 1.3rem;
@@ -74,6 +77,7 @@ const StyledContainer = styled.div`
       margin-top: 200px;
       text-align: center;
       width: 85%;
+      margin-left: 0;
     }
 
     .previewImg {
@@ -105,6 +109,7 @@ const StyledContainer = styled.div`
       font-size: 16vw;
       width: 100%;
       text-align: center;
+      margin-left: 0;
     }
     .text {
       font-size: 1.5rem;
@@ -112,6 +117,7 @@ const StyledContainer = styled.div`
       margin-top: 220px;
       text-align: center;
       width: 85%;
+      margin-left: 0;
     }
 
     .previewImg {
@@ -142,6 +148,7 @@ const StyledContainer = styled.div`
       font-size: 18vw;
       width: 100%;
       text-align: center;
+      margin-left: 0;
     }
     .text {
       font-size: 1.5rem;
@@ -149,6 +156,7 @@ const StyledContainer = styled.div`
       margin-top: 220px;
       text-align: center;
       width: 85%;
+      margin-left: 0;
     }
 
     .previewImg {
