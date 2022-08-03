@@ -136,13 +136,13 @@ const slidesToShowFn = () => {
 }
 
 
-const Preview = ({ currentPage, images }) => {
+const Preview = ({forwardedRef, currentPage, images }) => {
     const addImageLoaded = () => {
         images();
     };
 
   return (
-    <StyledContainer page={currentPage}>
+    <StyledContainer page={currentPage} ref={forwardedRef}>
         <img src={trident} alt='' className='tridentImg' onLoad={addImageLoaded}/>
         <span className='previewText'>Preview our Collection</span>
         <Slider slidesToShow={slidesToShowFn()} className='slider' centerMode={true} centerPadding={50} autoplay={true} pauseOnHover={true} autoplaySpeed={2000} page={currentPage} arrows={false}>

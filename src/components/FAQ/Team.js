@@ -425,12 +425,12 @@ const StyledContainer = styled.div`
     }
   }
 `;
-const Team = ({ currentPage, images }) => {
+const Team = ({ forwardedRef, currentPage, images }) => {
   const addImageLoaded = () => {
     images();
   };
   return (
-    <StyledContainer page={currentPage}>
+    <StyledContainer page={currentPage} ref={forwardedRef}>
       <span className="teamTitle">Meet the Team</span>
       <span className="secondText">
         images below do not represent the collection

@@ -7,15 +7,10 @@ import shoulder from "../../images/roadmpa/shoulder1.png";
 import { Slider } from "infinite-react-carousel/lib";
 
 const StyledRoadmapContainer = styled.div`
-  width: 100vw;
-  height: 100vh;
   background: #0f1026;
-  transition: top 0.5s ease-in-out;
   h5 {
     display: none;
   }
-
-
   @media screen and (max-width: 768px) {
     position: relative;
     top: 0;
@@ -40,16 +35,17 @@ const StyledRoadmapContainer = styled.div`
 const StyledCorousel = styled.div`
   padding: 0 0 0 5vw;
   width: 95vw;
-  height: 100%;
+  height: max-content;
   display: grid;
   grid-template-columns: repeat(3, 29.5%);
-  grid-template-rows: 15% 65% 20%;
+  /* grid-template-rows: 15% 65% 20%; */
   column-gap: 5vw;
   position: relative;
-  overflow: hidden;
+  overflow-x: hidden;
   img {
+    width: 25%;
     position: absolute;
-    top: 55%;
+    top: 45%;
     left: 80%;
   }
   @media screen and (max-width: 768px) {
@@ -65,7 +61,8 @@ const StyledPhase = styled.div`
   grid-template-columns: max-content 1fr;
   grid-template-rows: repeat(7, max-content);
   grid-row: 2/2;
-
+  height: max-content;
+  padding: 50px 0;
   .number {
     font-size: 10vw;
     color: white;
@@ -152,6 +149,7 @@ const StyledPhase = styled.div`
 
   @media screen and (max-width: 320px) {
     margin-top: 30px;
+    padding: 0;
     .number {
       font-size: 9rem;
       color: white;
@@ -207,6 +205,7 @@ const StyledPhase = styled.div`
   }
   @media screen and (min-width: 321px) and (max-width: 375px) {
     margin-top: 30px;
+    padding: 0;
     .number {
       font-size: 10rem;
       color: white;
@@ -262,6 +261,7 @@ const StyledPhase = styled.div`
   }
   @media screen and (min-width: 376px) and (max-width: 428px) {
     margin-top: 30px;
+    padding: 0;
     .number {
       font-size: 10rem;
       color: white;
@@ -343,6 +343,7 @@ const Roadmap = ({forwardedRef, currentPage, images }) => {
           <span className="quote">- Heroes of Olympus</span>
           <ul className="unorderedList">
             <li className="unordered1">Introduction of our staking system and $HROM token</li>
+            <li className="unordered1none">- Launch of our loot box marketplace</li>
             <li className="unordered1none">1. Tribe Reveal</li>
             <li className="unordered1none">2. Class Reveal</li>
             <li className="unordered1none">3. Unleashing the "HEROES"</li>
@@ -351,7 +352,7 @@ const Roadmap = ({forwardedRef, currentPage, images }) => {
             <li className="unordered1">
               TRIBE SERVERS WILL BE UNLOCKED FOR HOLDERS
             </li>
-            <li className="unordered1">
+            <li className="unordered1">bvcb
               30% of the royalties will go to the community
             </li>
             <li className="unordered1">

@@ -97,12 +97,18 @@ const StyledWhiteBG = styled.div`
 `;
 
 const StyledBlueBG = styled.div`
-  background-color: rgba(15, 16, 38, 255);
+  background: linear-gradient(
+    to bottom,
+    rgba(15, 16, 38, 255) 50%,
+    rgba(15, 16, 38, 255) 85%,
+    white 100%
+  );
   grid-column: 3/5;
   grid-row: 1/1;
   display: flex;
   align-items: center;
   @media screen and (max-width: 768px) {
+    background: rgba(15, 16, 38, 255);
     grid-column: 1/1;
     grid-row: 1/1;
   }
@@ -112,7 +118,7 @@ const StyledHelmet2 = styled.img`
   height: 85vh;
   z-index: 1;
   margin-left: 50%;
-  margin-top: 10%;
+  margin-top: -15%;
   @media screen and (max-width: 428px) {
     display: none;
   }
@@ -174,6 +180,7 @@ const StyledHOO = styled.div`
   grid-column: 2/4;
   grid-row: 1/1;
   display: grid;
+  margin-top: -20vh;
   .circle {
     background-image: url(${krug});
     background-size: contain;
@@ -202,7 +209,7 @@ const StyledHOO = styled.div`
     font-weight: 800;
     letter-spacing: 1px;
     line-height: normal;
-    width: 70%;
+    width: 65%;
     text-align: center;
     grid-row: 1/1;
     grid-column: 1/1;
@@ -408,7 +415,7 @@ const StyledInformationContainer = styled.div`
   grid-column: 1/2;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  height: 100vh;
+  height: 120vh;
   @media screen and (max-width: 429px) {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
@@ -491,7 +498,7 @@ const Information = ({
           <img src={logo} alt="heroes of olympus" className="logo" />
         </StyledLogo>
       )}
-      <StyledInformationContainer>
+      <StyledInformationContainer ref={forwardedRef}>
         <StyledWhiteBG page={currentPage}>
           <StyledHelmet
             page={currentPage}

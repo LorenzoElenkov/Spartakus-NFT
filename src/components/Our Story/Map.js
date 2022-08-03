@@ -41,15 +41,11 @@ const StyledMapContainer = styled.div`
   /* position: absolute; */
   /* top: 0; */
   /* left: ${(props) => (props.page === 3 ? "0" : "-110vw")}; */
-  width: 100vw;
-  height: 100vh;
   background: white;
   display: grid;
   grid-template-columns: 50% 50%;
-  grid-template-rows: 100vh;
-  transition: left 0.5s ease-in-out;
-  overflow: hidden;
-
+  height: 120vh;
+  overflow-y: hidden;
   @media screen and (max-width: 768px) {
     position: relative;
     left: 0;
@@ -63,7 +59,7 @@ const StyledMapContainer = styled.div`
 
 const StyledMapWrapper = styled.div`
   margin-top: 10%;
-  height: 86%;
+  height: 45%;
   justify-self: end;
   grid-row: 1/1;
   grid-column: 1/1;
@@ -75,12 +71,12 @@ const StyledMap = styled.img`
 `;
 
 const StyledMapText = styled.span`
-  align-self: center;
+  margin-top: 200px;
   justify-self: center;
   display: grid;
   grid-template-rows: 1fr 1fr 1.5fr 1fr;
   width: 55%;
-  height: 60%;
+  height: 30%;
   row-gap: 40px;
   .areaTitle {
     font-family: "Magh";
@@ -104,6 +100,7 @@ const StyledMapText = styled.span`
     grid-row: ${(props) => (props.clicked !== 0 ? "4/4" : "3/3")};
     grid-column: 1/1;
     z-index: 1;
+
     /* margin-top: ${(props) => (props.clicked === 0 ? "50px" : "0px")}; */
   }
 
@@ -122,6 +119,7 @@ const StyledMapText = styled.span`
     grid-column: 1/1;
     margin-top: ${(props) => (props.clicked === 0 ? "30px" : "0px")};
     animation: hintAnimate 3s infinite;
+
   }
 
   .areaIcon {
@@ -441,7 +439,7 @@ const StyledSwipeHintMobile = styled.div`
 `;
 
 
-const Map = ({ currentPage, images }) => {
+const Map = ({forwardedRef, currentPage, images }) => {
   const addImageLoaded = () => {
     images();
   };
@@ -453,7 +451,7 @@ const Map = ({ currentPage, images }) => {
 
   console.log(clickedArea);
   return (
-    <StyledMapContainer page={currentPage}>
+    <StyledMapContainer page={currentPage} ref={forwardedRef}>
       {window.outerWidth > 428 && (<>
         <StyledMapWrapper>
           <StyledMap

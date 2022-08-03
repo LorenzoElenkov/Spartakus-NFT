@@ -258,7 +258,7 @@ const Faq = ({forwardedRef, currentPage }) => {
                         }}}>
                     Q: How many Heroes will be available?
                     <span className={question === 2 ? 'accordionAnswer2 active' : 'accordionAnswer2'}>
-                    A: The whole collection will be made of 10,878 Heroes. <br /> There will be 14 tribes, each one will contain 777 Heroes, with one GOD to lead them.
+                    A: TBD.
                 </span>
                 </span>
             </div>
@@ -273,12 +273,12 @@ const Faq = ({forwardedRef, currentPage }) => {
                     <span className={question === 3 ? 'accordionAnswer3 active' : 'accordionAnswer3'}>
                     A: Yes. There will be 6 class rarities. <br /> Each tribe will contain: <br />
                     <ul>
-                        <li>Warrior (366)</li>
-                        <li>Hoplite (222)</li>
-                        <li>Archer (111)</li>
-                        <li>Mage (55)</li>
-                        <li>Champion (22)</li>
-                        <li>GOD (1)</li>
+                        <li>Warrior</li>
+                        <li>Hoplite</li>
+                        <li>Archer</li>
+                        <li>Mage</li>
+                        <li>Champion</li>
+                        <li>GOD</li>
                     </ul>
                 </span>
                 </span>
@@ -292,7 +292,7 @@ const Faq = ({forwardedRef, currentPage }) => {
                         }}}>
                     Q: How can I get whitelisted? How many spots there will be?
                     <span className={question === 4 ? 'accordionAnswer4 active' : 'accordionAnswer4'}>
-                    A: Whitelist spots will be given in both our Discord and Twitter for community contributors and giveaway winners. <br /> There will be 3,000 WL spots.
+                    A: Whitelist spots will be given in both our Discord and Twitter for community contributors and giveaway winners.
                 </span>
                 </span>
             </div>
@@ -305,7 +305,7 @@ const Faq = ({forwardedRef, currentPage }) => {
                         }}}>
                     Q: What is the mint price?
                     <span className={question === 5 ? 'accordionAnswer1 active' : 'accordionAnswer1'}>
-                    A: The mint price is still to be declared.
+                    A: TBD.
                 </span>
                 </span>
             </div>
@@ -318,7 +318,7 @@ const Faq = ({forwardedRef, currentPage }) => {
                         }}}>
                     Q: When is the mint date?
                     <span className={question === 6 ? 'accordionAnswer6 active' : 'accordionAnswer6'}>
-                    A: The mint will be at the mid of August '22 with no exact date, for now.
+                    A: The mint will be late August '22 with no exact date, for now.
                 </span>
                 </span>
             </div>

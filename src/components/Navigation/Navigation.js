@@ -13,10 +13,10 @@ import litepaper from '../../images/litepaper.pdf';
 
 const SocialBar = styled.div`
     position: absolute;
-    width: 30vw;
+    width: 15vw;
     height: 75px;
     top: calc(100vh - 80px);
-    left: 69vw;
+    left: 84vw;
     z-index: 9998;
     display: flex;
     flex-direction: row;
@@ -125,9 +125,9 @@ const NavigationBar = styled.nav`
             border-bottom: 1px solid black;
         }
 
-        .active {
+        /* .active {
             border-top: 7px solid ${props => props.page === 1 || props.page === 4 || props.page === 9 ? 'white' : '#0f1026'};;
-        }
+        } */
 
         .innerLorePointer {
             width: 100%;
@@ -157,7 +157,7 @@ const NavigationBar = styled.nav`
     `;
 
 
-const Navigation = ({ currentPage, onLinkClick, onRTClick }) => {
+const Navigation = ({ currentPage, onLinkClick, onRTClick, info, lore, roadmap, faq, map, preview, token, team, footer }) => {
 
     const snd = new Audio('./clicksound.wav');
 
@@ -167,24 +167,25 @@ const Navigation = ({ currentPage, onLinkClick, onRTClick }) => {
 
   return (
       <>{window.outerWidth > 428 && <NavigationBar page={currentPage}>
-        <button className={currentPage === 1 ? 'homeBut active' : 'homeBut'} onClick={() => {onLinkClick(1); snd.play()}}>Home</button>
+        {/* <button className={currentPage === 1 ? 'homeBut active' : 'homeBut'} onClick={() => {onLinkClick(1); snd.play()}}>Home</button> */}
+        <button className={currentPage === 1 ? 'homeBut active' : 'homeBut'} onClick={() => {info.current.scrollIntoView({ behavior: 'smooth'}); snd.play()}}>Home</button>
         <button className={currentPage >= 2 && currentPage <= 3 ? 'loreBut active' : 'loreBut'}>
             Lore
             <div className='invisibleSpace'/>
             <div className='innerMenuLore' page={currentPage}>
                 <span className='innerLorePointer'>\/</span>
-                <button page={currentPage} onClick={() => {onLinkClick(2); snd.play()}}>Story</button>
-                <button page={currentPage} onClick={() => {onLinkClick(3); snd.play()}}>Ancient Map</button>
+                <button page={currentPage} onClick={() => {lore.current.scrollIntoView({ behavior: 'smooth'}); snd.play()}}>Story</button>
+                <button page={currentPage} onClick={() => {map.current.scrollIntoView({ behavior: 'smooth'}); snd.play()}}>Ancient Map</button>
             </div>
         </button>
-        <button className={currentPage > 3 && currentPage <= 6? 'roadmapBut active' : 'roadmapBut'}>
+        <button className={currentPage > 3 && currentPage <= 6 ? 'roadmapBut active' : 'roadmapBut'}>
             Roadmap
             <div className='invisibleSpace'/>
             <div className='innerMenuRoadmap' page={currentPage}>
                 <span className='innerLorePointer'>\/</span>
-                <button page={currentPage} onClick={() => {onLinkClick(4); snd.play()}}>Roadmap</button>
-                <button page={currentPage} onClick={() => {onLinkClick(5); snd.play()}}>The Collection</button>
-                <button page={currentPage} onClick={() => {onLinkClick(6); snd.play()}}>Token</button>
+                <button page={currentPage} onClick={() => {roadmap.current.scrollIntoView({ behavior: 'smooth'}); snd.play()}}>Roadmap</button>
+                <button page={currentPage} onClick={() => {preview.current.scrollIntoView({ behavior: 'smooth'}); snd.play()}}>The Collection</button>
+                <button page={currentPage} onClick={() => {token.current.scrollIntoView({ behavior: 'smooth'}); snd.play()}}>Token</button>
             </div>
         </button>
         <button className='rarityTool' onClick={() => onRT(true)}>Rarity</button>
@@ -194,16 +195,15 @@ const Navigation = ({ currentPage, onLinkClick, onRTClick }) => {
             <div className='invisibleSpace'/>
             <div className='innerMenuFaq' page={currentPage}>
                 <span className='innerLorePointer'>\/</span>
-                <button page={currentPage} onClick={() => {onLinkClick(7); snd.play()}}>FAQ</button>
-                <button page={currentPage} onClick={() => {onLinkClick(8); snd.play()}}>Our Team</button>
-                <button page={currentPage} onClick={() => {onLinkClick(9); snd.play()}}>Contact</button>
+                <button page={currentPage} onClick={() => {faq.current.scrollIntoView({ behavior: 'smooth'}); snd.play()}}>FAQ</button>
+                <button page={currentPage} onClick={() => {team.current.scrollIntoView({ behavior: 'smooth'}); snd.play()}}>Our Team</button>
+                <button page={currentPage} onClick={() => {footer.current.scrollIntoView({ behavior: 'smooth'}); snd.play()}}>Contact</button>
             </div>
         </button>
         </NavigationBar>}
         
 
         <SocialBar>
-            <a className='instagram' href='https://www.instagram.com/heroesofolympus_nft/' target='_blank' rel='noreferrer'><img src={currentPage === 1 || currentPage === 4 || currentPage === 9 ? instagram2 : instagram} alt=''/></a>
             <a className='twitter' href='https://twitter.com/Heroes_Olympus_' target='_blank' rel='noreferrer'><img src={currentPage === 1 || currentPage === 4 || currentPage === 9 ? twitter2 : twitter} alt=''/></a>
             <a className='discord' href='https://discord.gg/XHPyntDaF4' target='_blank' rel='noreferrer'><img src={currentPage === 1 || currentPage === 4 || currentPage === 9 ? discord2 : discord} alt=''/></a>
         </SocialBar>

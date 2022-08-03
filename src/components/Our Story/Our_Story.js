@@ -10,8 +10,8 @@ import arka from "../../images/arka.png";
 const StyledHelmet = styled.img`
   grid-column: 2/4;
   grid-row: 1/1;
-  height: 50vw;
-  margin-left: -3.5%;
+  height: 500px;
+  margin-left: -2.8%;
   justify-self: center;
   align-self: center;
   z-index: 1;
@@ -58,7 +58,7 @@ const StyledWhiteBG = styled.div`
 const StyledBlueBG = styled.div`
   grid-column: 1/3;
   grid-row: 1/1;
-  background: #0f1026;
+  background: linear-gradient(to top, white, rgba(15, 16, 38, 255) 10%, rgba(15, 16, 38, 255) 50%, rgba(15, 16, 38, 255) 85%, white 100%);
   display: grid;
   grid-template-columns: 7.5% 85% 7.5%;
   grid-template-rows: repeat(8, 1fr);
@@ -211,6 +211,11 @@ const StyledStoryContainer = styled.div`
   height: 100vh;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+
+  .motiv {
+    display: none;
+  }
+
   @media screen and (max-width: 428px) {
     grid-template-columns: 1fr max-content 1fr;
     height: max-content;
@@ -222,6 +227,7 @@ const StyledStoryContainer = styled.div`
       width: 50px;
       grid-row: 2/2;
       grid-column: 1/1;
+      display: block;
     }
   }
 
@@ -232,7 +238,7 @@ const Lore = ({ forwardedRef, currentPage, images }) => {
     images();
   };
   return (
-    <StyledStoryContainer>
+    <StyledStoryContainer ref={forwardedRef}>
       <StyledBlueBG page={currentPage}>
         {window.outerWidth < 429 && (
           <div className="blankRef" ref={forwardedRef} />
@@ -260,8 +266,7 @@ const Lore = ({ forwardedRef, currentPage, images }) => {
         page={currentPage}
         onLoad={addImageLoaded}
       />
-      <img src={arka} alt="motiv" className="motiv" />
-
+      {window.outerWidth < 428 && <img src={arka} alt="motiv" className="motiv" />}
       <StyledWhiteBG page={currentPage}>
         <StyledWhiteLines src={lines} onLoad={addImageLoaded} />
         <StyledWhiteSecondaryText>
@@ -269,7 +274,7 @@ const Lore = ({ forwardedRef, currentPage, images }) => {
           so the competition had to be fair. Chaos chose 14 of the most
           ambitious Gods and created a set of rules for the inevitable war that
           was to come. Every participating God had the right to command an army
-          of 777 heroes.
+          of equal numbers.
           <br /> <br />
           Chaos determined that it was only fitting for the war over the rule of
           Earth to take place on it. The Gods and their Champions were now

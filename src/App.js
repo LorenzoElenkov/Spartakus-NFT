@@ -152,22 +152,28 @@ const App = () => {
   const roadmapRef = useRef(null);
   const faqRef = useRef(null);
 
+  const mapRef = useRef(null);
+  const previewRef = useRef(null);
+  const tokenRef = useRef(null);
+  const teamRef = useRef(null);
+  const footerRef = useRef(null);
+
   return (
     <StyledApp>
       {!isInSite && <Loading clicked={handleLoadingClick} images={imagesLoaded.current}/>}
-      {window.outerWidth < 429 && <HeaderMobile music={handleVolume} volume={bgVolume} info={infoRef} lore={loreRef} roadmap={roadmapRef} faq={faqRef} showRT={() => setShowRT(true)}/>}
-      <Navigation currentPage={currentPage} onLinkClick={handleLinkClick} onRTClick={(state) => setShowRT(state)}/>
+      {window.outerWidth < 429 && <HeaderMobile music={handleVolume} volume={bgVolume} info={infoRef} lore={loreRef} roadmap={roadmapRef} faq={faqRef} map={mapRef} preview={previewRef} token={tokenRef} team={teamRef} footer={footerRef} showRT={() => setShowRT(true)}/>}
+      <Navigation currentPage={currentPage} onLinkClick={handleLinkClick} onRTClick={(state) => setShowRT(state)} info={infoRef} lore={loreRef} roadmap={roadmapRef} faq={faqRef} map={mapRef} preview={previewRef} token={tokenRef} team={teamRef} footer={footerRef} />
       {showRT && <RarityTool onRTClose={() => setShowRT(false)}/>}
       <Information forwardedRef={infoRef} currentPage={currentPage} onLinkClick={handleLinkClick} images={changeImagesLoaded} music={handleVolume} volume={bgVolume}/>
       <Countdown currentPage={currentPage}/>
       <OurStory forwardedRef={loreRef} currentPage={currentPage} images={changeImagesLoaded}/>
-      <Map currentPage={currentPage} images={changeImagesLoaded}/>
+      <Map currentPage={currentPage} images={changeImagesLoaded} forwardedRef={mapRef}/>
       <Roadmap forwardedRef={roadmapRef} currentPage={currentPage} images={changeImagesLoaded}/>
-      <Preview currentPage={currentPage} images={changeImagesLoaded}/>
-      <Token currentPage={currentPage} images={changeImagesLoaded}/>
+      <Preview currentPage={currentPage} images={changeImagesLoaded} forwardedRef={previewRef}/>
+      <Token currentPage={currentPage} images={changeImagesLoaded} forwardedRef={tokenRef}/>
       <Faq forwardedRef={faqRef} currentPage={currentPage} images={changeImagesLoaded}/>
-      <Team currentPage={currentPage} images={changeImagesLoaded}/>
-      <Footer currentPage={currentPage} onLinkClick={handleLinkClick} images={changeImagesLoaded}/>
+      <Team currentPage={currentPage} images={changeImagesLoaded} forwardedRef={teamRef} />
+      <Footer currentPage={currentPage} onLinkClick={handleLinkClick} images={changeImagesLoaded} forwardedRef={footerRef}/>
     </StyledApp>
   )
 }

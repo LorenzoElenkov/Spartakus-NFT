@@ -208,7 +208,7 @@ const StyledDarkBlue = styled.div`
   }
 `;
 
-const Footer = ({ currentPage, onLinkClick, images }) => {
+const Footer = ({ forwardedRef, currentPage, onLinkClick, images }) => {
   const addImageLoaded = () => {
     images();
   };
@@ -223,7 +223,7 @@ const Footer = ({ currentPage, onLinkClick, images }) => {
   }
 `;
   return (
-    <StyledContactContainer>
+    <StyledContactContainer ref={forwardedRef}>
       <StyledLightBlue page={currentPage}>
         <img src={logo} alt="" onLoad={addImageLoaded}/>
         <ul>

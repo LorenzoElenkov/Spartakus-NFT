@@ -3,22 +3,22 @@ import React from "react";
 import styled from "styled-components";
 
 import shoulder from "../../images/shlem998.png";
-import tokenImg from '../../images/Coin.gif';
+import tokenImg from "../../images/Coin.gif";
 
 const StyledContainer = styled.div`
   width: 100vw;
-  height: 100vh;
+  height: max-content;
   background: white;
   display: grid;
   grid-template-columns: 20% 1fr 1fr;
-  grid-template-rows: 1fr 2fr;
+  grid-template-rows: 1fr 4fr;
   row-gap: 1vw;
   transition: top 0.5s ease-in-out;
   overflow: hidden;
   position: relative;
   .shoulder {
     position: absolute;
-    transform: translateX(-30%) translateY(43vh);
+    transform: translateX(-30%) translateY(20%);
     height: 30vw;
   }
 
@@ -32,12 +32,12 @@ const StyledContainer = styled.div`
     letter-spacing: 1px;
   }
   .text {
-      grid-column: 2/2;
-      color: black;
-      font-family: 'Medium';
-      font-size: 1.3vw;
-      white-space: pre-line;
-      width: 80%;
+    grid-column: 2/2;
+    color: black;
+    font-family: "Medium";
+    font-size: 1.3vw;
+    white-space: pre-line;
+    width: 80%;
     letter-spacing: 1px;
   }
 
@@ -56,24 +56,24 @@ const StyledContainer = styled.div`
     display: flex;
     flex-direction: column;
     .shoulder {
-    position: absolute;
-    transform: translateX(-30%) translateY(50%);
-    height: 57%;
-    opacity: 0.3;
+      position: absolute;
+      transform: translateX(-30%) translateY(50%);
+      height: 57%;
+      opacity: 0.3;
     }
 
     .title {
-        margin-top: 50px;
-        font-size: 15vw;
-        width: 100%;
-        text-align: center;
-      }
+      margin-top: 50px;
+      font-size: 15vw;
+      width: 100%;
+      text-align: center;
+    }
     .text {
-        font-size: 1.3rem;
-        padding: 0 20px;
-        margin-top: 200px;
-        text-align: center;
-        width: 85%;
+      font-size: 1.3rem;
+      padding: 0 20px;
+      margin-top: 200px;
+      text-align: center;
+      width: 85%;
     }
 
     .previewImg {
@@ -94,24 +94,24 @@ const StyledContainer = styled.div`
     flex-direction: column;
 
     .shoulder {
-    position: absolute;
-    transform: translateX(-30%) translateY(50%);
-    height: 57%;
-    opacity: 0.3;
+      position: absolute;
+      transform: translateX(-30%) translateY(50%);
+      height: 57%;
+      opacity: 0.3;
     }
 
     .title {
-        margin-top: 50px;
-        font-size: 16vw;
-        width: 100%;
-        text-align: center;
-      }
+      margin-top: 50px;
+      font-size: 16vw;
+      width: 100%;
+      text-align: center;
+    }
     .text {
-        font-size: 1.5rem;
-        padding: 0 20px;
-        margin-top: 220px;
-        text-align: center;
-        width: 85%;
+      font-size: 1.5rem;
+      padding: 0 20px;
+      margin-top: 220px;
+      text-align: center;
+      width: 85%;
     }
 
     .previewImg {
@@ -131,24 +131,24 @@ const StyledContainer = styled.div`
     display: flex;
     flex-direction: column;
     .shoulder {
-    position: absolute;
-    transform: translateX(-30%) translateY(50%);
-    height: 57%;
-    opacity: 0.3;
+      position: absolute;
+      transform: translateX(-30%) translateY(50%);
+      height: 57%;
+      opacity: 0.3;
     }
 
     .title {
-        margin-top: 50px;
-        font-size: 18vw;
-        width: 100%;
-        text-align: center;
-      }
+      margin-top: 50px;
+      font-size: 18vw;
+      width: 100%;
+      text-align: center;
+    }
     .text {
-        font-size: 1.5rem;
-        padding: 0 20px;
-        margin-top: 220px;
-        text-align: center;
-        width: 85%;
+      font-size: 1.5rem;
+      padding: 0 20px;
+      margin-top: 220px;
+      text-align: center;
+      width: 85%;
     }
 
     .previewImg {
@@ -161,24 +161,33 @@ const StyledContainer = styled.div`
   }
 `;
 
-const Token = ({ currentPage, images }) => {
+const Token = ({ forwardedRef, currentPage, images }) => {
   const addImageLoaded = () => {
     images();
   };
   return (
-    <StyledContainer page={currentPage}>
-      <img src={shoulder} alt="" className="shoulder" onLoad={addImageLoaded}/>
+    <StyledContainer page={currentPage} ref={forwardedRef}>
+      <img src={shoulder} alt="" className="shoulder" onLoad={addImageLoaded} />
       <span className="title">$HROM</span>
       <span className="text">
-        $HROM will be the token of our DAO- the 'Agora' Dao and the in-game currency of our play-to-earn game. <br /><br />
+        $HROM will be the token of our DAO- the 'Agora' Dao and the in-game
+        currency of our play-to-earn game. <br />
+        <br />
+        All $HROM holders can spend it in our marketplace for purchasing "Pandora boxes" and other rewards. <br />
+        <br />
         Storing the token will be available in every Solana wallet, for example
-        Phantom. Swapping will mostly be available on Raydium and Saber.<br /> $HROM
-        will be equally distributed among all of the tribes in the strategic
-        game. <br /> <br />The rarity of the “Heroes of Olympus” NFT will determine the
-        amount of $HROM received. The coin will play a major role in the game’s
-        mechanics.
+        Phantom. Swapping will mostly be available on Raydium and Saber.
+        <br /> $HROM will be equally distributed among all of the tribes in the
+        strategic game. <br /> <br />
+        The rarity of the “Heroes of Olympus” NFT will determine the amount of
+        $HROM received. The coin will play a major role in the game’s mechanics.
       </span>
-      <img src={tokenImg} alt='' className='previewImg' onLoad={addImageLoaded}/>
+      <img
+        src={tokenImg}
+        alt=""
+        className="previewImg"
+        onLoad={addImageLoaded}
+      />
     </StyledContainer>
   );
 };
