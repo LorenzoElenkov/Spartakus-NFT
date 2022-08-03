@@ -75,8 +75,8 @@ const App = () => {
 
   const changeImagesLoaded = () => {
     imagesLoaded.current++;
-    if (imagesLoaded.current > 34) {
-      setImagesLoadedPerc(34);
+    if (imagesLoaded.current > 23) {
+      setImagesLoadedPerc(23);
     }
   };
 

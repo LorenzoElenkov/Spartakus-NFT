@@ -4,26 +4,15 @@ import styled from 'styled-components';
 // import previewImg from '../../images/previewIcon.png';
 import trident from '../../images/trident.png';
 
-import a from '../../images/Sneak peak 1.png';
-import b from '../../images/Sneak peek 2.png';
-import c from '../../images/Sneak peek 3.png';
-import d from '../../images/Sneak peek 4.png';
-import e from '../../images/Sneak peek 5.png';
-import f from '../../images/Sneak peek 6.png';
-import g from '../../images/Sneak peek 7.png';
-import h from '../../images/Sneak peek 8.png';
-import j from '../../images/Sneak peek 9.png';
-import i from '../../images/Sneak peek 10.png';
-import k from '../../images/Sneak peek 11.png';
-import l from '../../images/Sneak peek 12.png';
-import m from '../../images/Sneak peek 13.png';
-import n from '../../images/Sneak peek 14.png';
-import o from '../../images/Sneak peek 15.png';
-import p from '../../images/Sneak peek 16.png';
-import q from '../../images/Sneak peek 17.png';
-import r from '../../images/Sneak peek 18.png';
-import s from '../../images/Sneak peek 19.png';
-import t from '../../images/Sneak peek 20.png';
+import a from '../../images/Sneak peek 1.png';
+import b from '../../images/Sneak peek 8.png';
+import c from '../../images/Sneak peek 6.png';
+import d from '../../images/Sneak peek 3.png';
+import e from '../../images/Sneak peek 4.png';
+import f from '../../images/Sneak peek 2.png';
+import g from '../../images/Sneak peek 9.png';
+import h from '../../images/Sneak peek 7.png';
+import j from '../../images/Sneak peek 5.png';
 
 import Slider from 'infinite-react-carousel/lib/carousel/slider';
 
@@ -145,7 +134,7 @@ const Preview = ({forwardedRef, currentPage, images }) => {
     <StyledContainer page={currentPage} ref={forwardedRef}>
         <img src={trident} alt='' className='tridentImg' onLoad={addImageLoaded}/>
         <span className='previewText'>Preview our Collection</span>
-        <Slider slidesToShow={slidesToShowFn()} className='slider' centerMode={true} centerPadding={50} autoplay={true} pauseOnHover={true} autoplaySpeed={2000} page={currentPage} arrows={false}>
+        <Slider slidesToShow={slidesToShowFn()} className='slider' centerMode={true} centerPadding={50} autoplay={true} pauseOnHover={true} autoplaySpeed={3000} page={currentPage} arrows={false}>
             <div>
                 <img src={a} alt='' onLoad={addImageLoaded}/>
             </div>
@@ -173,40 +162,6 @@ const Preview = ({forwardedRef, currentPage, images }) => {
             <div>
                 <img src={j} alt='' onLoad={addImageLoaded}/>
             </div>
-            <div>
-                <img src={i} alt='' onLoad={addImageLoaded}/>
-            </div>
-            <div>
-                <img src={k} alt='' onLoad={addImageLoaded}/>
-            </div>
-            <div>
-                <img src={l} alt='' onLoad={addImageLoaded}/>
-            </div>
-            <div>
-                <img src={m} alt='' onLoad={addImageLoaded}/>
-            </div>
-            <div>
-                <img src={n} alt='' onLoad={addImageLoaded}/>
-            </div>
-            <div>
-                <img src={o} alt='' onLoad={addImageLoaded}/>
-            </div>
-            <div>
-                <img src={p} alt='' onLoad={addImageLoaded}/>
-            </div>
-            <div>
-                <img src={q} alt='' onLoad={addImageLoaded}/>
-            </div>
-            <div>
-                <img src={r} alt='' onLoad={addImageLoaded}/>
-            </div>
-            <div>
-                <img src={s} alt='' onLoad={addImageLoaded}/>
-            </div>
-            <div>
-                <img src={t} alt='' onLoad={addImageLoaded}/>
-            </div>
-            
         </Slider>
     </StyledContainer>
   )
