@@ -44,7 +44,6 @@ const HeaderMobile = ({ music, volume, info, lore, roadmap, faq, showRT }) => {
             <div className='musicBut' onClick={() => changeVolume(0.05)}>Music {Math.floor(volume / 0.2 * 100)}%</div>
         </div>
         <div className='socials'>
-            <a className='instagram' href='https://www.instagram.com/heroesofolympus_nft/' target='_blank' rel='noreferrer'><img src={instagram2} alt=''/></a>
             <a className='twitter' href='https://twitter.com/Heroes_Olympus_' target='_blank' rel='noreferrer'><img src={twitter2} alt=''/></a>
             <a className='discord' href='https://discord.gg/XHPyntDaF4' target='_blank' rel='noreferrer'><img src={discord2} alt=''/></a>
         </div>
