@@ -173,7 +173,7 @@ const App = () => {
       <Token currentPage={currentPage} images={changeImagesLoaded} forwardedRef={tokenRef}/>
       <Faq forwardedRef={faqRef} currentPage={currentPage} images={changeImagesLoaded}/>
       <Team currentPage={currentPage} images={changeImagesLoaded} forwardedRef={teamRef} />
-      <Footer currentPage={currentPage} onLinkClick={handleLinkClick} images={changeImagesLoaded} forwardedRef={footerRef}/>
+      <Footer currentPage={currentPage} onLinkClick={handleLinkClick} images={changeImagesLoaded} forwardedRef={footerRef} info={infoRef} lore={loreRef} roadmap={roadmapRef} faq={faqRef}/>
     </StyledApp>
   )
 }

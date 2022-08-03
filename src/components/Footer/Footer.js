@@ -208,7 +208,7 @@ const StyledDarkBlue = styled.div`
   }
 `;
 
-const Footer = ({ forwardedRef, currentPage, onLinkClick, images }) => {
+const Footer = ({ currentPage, onLinkClick, images, forwardedRef, info, lore, roadmap, faq }) => {
   const addImageLoaded = () => {
     images();
   };
@@ -227,10 +227,10 @@ const Footer = ({ forwardedRef, currentPage, onLinkClick, images }) => {
       <StyledLightBlue page={currentPage}>
         <img src={logo} alt="" onLoad={addImageLoaded}/>
         <ul>
-          <li onClick={() => onLinkClick(1)}>Home</li>
-          <li onClick={() => onLinkClick(2)}>Lore</li>
-          <li onClick={() => onLinkClick(4)}>Roadmap</li>
-          <li onClick={() => onLinkClick(7)}>FAQ</li>
+          <li onClick={() => info.current.scrollIntoView({ behavior: 'smooth'})}>Home</li>
+          <li onClick={() => lore.current.scrollIntoView({ behavior: 'smooth'})}>Lore</li>
+          <li onClick={() => roadmap.current.scrollIntoView({ behavior: 'smooth'})}>Roadmap</li>
+          <li onClick={() => faq.current.scrollIntoView({ behavior: 'smooth'})}>FAQ</li>
           <li>© All Rights Reserved</li>
         </ul>
       </StyledLightBlue>
