@@ -270,6 +270,7 @@ const StyledHOO = styled.div`
     flex-direction: column;
     grid-column: 1/1;
     grid-row: 2/2;
+    margin-top: 0;
     .circle {
       display: none;
     }
@@ -311,6 +312,8 @@ const StyledHOO = styled.div`
     flex-direction: column;
     grid-column: 1/1;
     grid-row: 2/2;
+    margin-top: 0;
+
     .circle {
       display: none;
     }
@@ -352,6 +355,7 @@ const StyledHOO = styled.div`
     flex-direction: column;
     grid-column: 1/1;
     grid-row: 2/2;
+    margin-top: 0;
     .circle {
       display: none;
     }
@@ -417,6 +421,7 @@ const StyledInformationContainer = styled.div`
   grid-template-columns: 1fr 1fr 1fr 1fr;
   height: 120vh;
   @media screen and (max-width: 429px) {
+    height: 100vh;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
     background-color: rgba(15, 16, 38, 255);
