@@ -387,11 +387,11 @@ const StyledHOO = styled.div`
 `;
 
 const StyledLogo = styled.a`
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 13vw;
-  z-index: 1;
+  z-index: 9990;
   background-color: ${(props) =>
     props.page === 2 || props.page === 4 ? "white" : "#0f1026"};
   display: grid;

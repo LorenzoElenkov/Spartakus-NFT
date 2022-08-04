@@ -50,6 +50,16 @@ const StyledApp = styled.div`
     font-family: 'Black';
     src: url('./fonts/Cera-Pro-Black.otf');
   }
+
+  .navigationBackground {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 10vh;
+    background-color: rgba(0,0,0, 0.3);
+    z-index: 9990;
+  }
   
 `;
 
@@ -163,6 +173,7 @@ const App = () => {
       {!isInSite && <Loading clicked={handleLoadingClick} images={imagesLoaded.current}/>}
       {window.outerWidth < 429 && <HeaderMobile music={handleVolume} volume={bgVolume} info={infoRef} lore={loreRef} roadmap={roadmapRef} faq={faqRef} map={mapRef} preview={previewRef} token={tokenRef} team={teamRef} footer={footerRef} showRT={() => setShowRT(true)}/>}
       <Navigation currentPage={currentPage} onLinkClick={handleLinkClick} onRTClick={(state) => setShowRT(state)} info={infoRef} lore={loreRef} roadmap={roadmapRef} faq={faqRef} map={mapRef} preview={previewRef} token={tokenRef} team={teamRef} footer={footerRef} />
+      {window.outerWidth > 428 && <div className='navigationBackground'/>}
       {showRT && <RarityTool onRTClose={() => setShowRT(false)}/>}
       <Information forwardedRef={infoRef} currentPage={currentPage} onLinkClick={handleLinkClick} images={changeImagesLoaded} music={handleVolume} volume={bgVolume}/>
       <Countdown currentPage={currentPage}/>

@@ -32,7 +32,7 @@ const StyledContainer = styled.div`
         position: relative;
         left: 0;
         display: grid;
-        padding-bottom: 30px;
+        padding-bottom: 50px;
         grid-template-rows: 5% 10% max-content;
         padding-top: 70px;
         .title {
@@ -48,10 +48,11 @@ const StyledContainer = styled.div`
         position: relative;
         left: 0;
         display: grid;
-        padding-bottom: 30px;
+        padding-bottom: 50px;
         grid-template-rows: 5% 10% max-content;
         padding-top: 70px;
         margin-top: 20px;
+        height: max-content;
         .title {
             font-size: 2.6rem;
             align-self: end;

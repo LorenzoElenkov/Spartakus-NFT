@@ -3,13 +3,13 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
 const StyledCountdownContainer = styled.div`
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 20vw;
   width: 24vw;
   display: grid;
   grid-template-columns: repeat(4, 6vw);
-  z-index: 5;
+  z-index: 9990;
   background-color: ${(props) =>
     props.page === 1 ? "rgba(255, 255, 255, 0.75)" : "transparent"};
 

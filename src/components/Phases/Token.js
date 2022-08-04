@@ -16,6 +16,7 @@ const StyledContainer = styled.div`
   transition: top 0.5s ease-in-out;
   overflow: hidden;
   position: relative;
+  padding: 70px 0 50px 0;
   .shoulder {
     position: absolute;
     transform: translateX(-30%) translateY(20%);
@@ -57,6 +58,7 @@ const StyledContainer = styled.div`
     row-gap: 0;
     display: flex;
     flex-direction: column;
+    padding: 0;
     .shoulder {
       position: absolute;
       transform: translateX(-30%) translateY(50%);
@@ -96,7 +98,7 @@ const StyledContainer = styled.div`
     row-gap: 0;
     display: flex;
     flex-direction: column;
-
+    padding: 0;
     .shoulder {
       position: absolute;
       transform: translateX(-30%) translateY(50%);
@@ -136,6 +138,7 @@ const StyledContainer = styled.div`
     row-gap: 0;
     display: flex;
     flex-direction: column;
+    padding: 0;
     .shoulder {
       position: absolute;
       transform: translateX(-30%) translateY(50%);

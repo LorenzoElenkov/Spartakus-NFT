@@ -2,17 +2,11 @@ import React from "react";
 
 import styled from "styled-components";
 
-import black from "../../images/222 black.png";
-import red from "../../images/222 red.png";
-import blue from "../../images/222 blue.png";
-import purple from "../../images/222 purple.png";
-import green from "../../images/222 green.png";
-
-import blueAvatar from "../../images/blueAvatar.png";
-import redAvatar from "../../images/redAvatar.png";
-import blackAvatar from "../../images/blackAvatar.png";
-import purpleAvatar from "../../images/purpleAvatar.png";
-import greenAvatar from "../../images/greenAvatar.png";
+import blueAvatar from "../../images/projector5.webp";
+import redAvatar from "../../images/projector2.webp";
+import blackAvatar from "../../images/projector4.webp";
+import purpleAvatar from "../../images/projector3.webp";
+import greenAvatar from "../../images/projector1.webp";
 
 const StyledContainer = styled.div`
   /* position: absolute; */

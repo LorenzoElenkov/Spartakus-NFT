@@ -49,7 +49,7 @@ const SocialBar = styled.div`
 
 
 const NavigationBar = styled.nav`
-        position: absolute;
+        position: fixed;
         top: 0;
         left: 50vw;
         width: 50vw;

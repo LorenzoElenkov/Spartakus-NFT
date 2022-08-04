@@ -7,6 +7,7 @@ import shoulder from "../../images/roadmpa/shoulder1.png";
 import { Slider } from "infinite-react-carousel/lib";
 
 const StyledRoadmapContainer = styled.div`
+  padding: 70px 0 50px 0;
   background: #0f1026;
   h5 {
     display: none;
