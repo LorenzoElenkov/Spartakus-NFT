@@ -2,27 +2,24 @@ import React from "react";
 
 import styled from "styled-components";
 
-// import blueAvatar from "../../images/projector5.webp";
-// import redAvatar from "../../images/projector2.webp";
-// import blackAvatar from "../../images/projector4.webp";
-// import purpleAvatar from "../../images/projector3.webp";
-// import greenAvatar from "../../images/projector1.webp";
+import blueAvatar from "../../images/projector5.webp";
+import redAvatar from "../../images/projector1.webp";
+import blackAvatar from "../../images/projector4.jpg";
+import purpleAvatar from "../../images/projector3.jpg";
+import greenAvatar from "../../images/projector2.jpg";
 
-import blueAvatar from "../../images/blueAvatar.png";
-import redAvatar from "../../images/redAvatar.png";
-import blackAvatar from "../../images/blackAvatar.png";
-import purpleAvatar from "../../images/purpleAvatar.png";
-import greenAvatar from "../../images/greenAvatar.png";
+// import blueAvatar from "../../images/blueAvatar.png";
+// import redAvatar from "../../images/redAvatar.png";
+// import blackAvatar from "../../images/blackAvatar.png";
+// import purpleAvatar from "../../images/purpleAvatar.png";
+// import greenAvatar from "../../images/greenAvatar.png";
 
 const StyledContainer = styled.div`
-  /* position: absolute; */
-  /* top: ${(props) => (props.page === 8 ? "0" : "-110vh")}; */
-  /* left: 0; */
   width: 100vw;
   height: 100vh;
   background: white;
   display: grid;
-  grid-template-rows: 25% 5% 1fr 20%;
+  grid-template-rows: 25% 1fr 30%;
   transition: top 0.5s ease-in-out;
   overflow: hidden;
 
@@ -51,7 +48,7 @@ const StyledContainer = styled.div`
   }
 
   .teamContainer span {
-    font-size: 1.4vw;
+    font-size: 1.25vw;
     font-family: "Medium";
     letter-spacing: 1px;
   }
@@ -65,8 +62,9 @@ const StyledContainer = styled.div`
     justify-self: center;
     align-self: end;
     background: white;
-    /* border-radius: 50vw; */
-    width: 75%;
+    border-radius: 50%;
+    width: 50%;
+    pointer-events: none;
   }
 
   .name1,
@@ -125,23 +123,26 @@ const StyledContainer = styled.div`
       overflow-x: scroll;
       scroll-snap-type: x mandatory;
       background-color: #0f1026;
-      padding: 30px 0;
+      padding: 30px 0 0 0;
       .teamSingleContainer {
         display: flex;
         gap: 10px;
         flex-direction: column;
         width: 60vw;
-        padding: 10px 30px;
+        padding: 0 30px;
         height: max-content;
         font-family: "Medium";
         img {
-          width: 60vw;
+          width: 30vw;
+          pointer-events: none;
         }
         span:nth-child(2) {
-          font-size: 5vw;
+          font-size: 4vw;
+          text-align: center;
         }
         span:nth-child(3) {
-          font-size: 4vw;
+          font-size: 3.75vw;
+          text-align: center;
         }
       }
     }
@@ -234,23 +235,26 @@ const StyledContainer = styled.div`
       overflow-x: scroll;
       scroll-snap-type: x mandatory;
       background-color: #0f1026;
-      padding: 30px 0;
+      padding: 30px 0 0 0;
       .teamSingleContainer {
         display: flex;
         gap: 10px;
         flex-direction: column;
         width: 60vw;
-        padding: 10px 30px;
+        padding: 0 30px;
         height: max-content;
         font-family: "Medium";
         img {
-          width: 60vw;
+          width: 30vw;
+          pointer-events: none;
         }
         span:nth-child(2) {
-          font-size: 5vw;
+          font-size: 4vw;
+          text-align: center;
         }
         span:nth-child(3) {
-          font-size: 4vw;
+          font-size: 3.5vw;
+          text-align: center;
         }
       }
     }
@@ -347,18 +351,21 @@ const StyledContainer = styled.div`
       .teamSingleContainer {
         display: flex;
         gap: 10px;
-        padding: 10px 30px;
+        padding: 0 30px;
         flex-direction: column;
         width: 60vw;
         font-family: "Medium";
         img {
-          width: 60vw;
+          width: 30vw;
+          pointer-events: none;
         }
         span:nth-child(2) {
-          font-size: 5vw;
+          font-size: 4vw;
+          text-align: center;
         }
         span:nth-child(3) {
-          font-size: 4vw;
+          font-size: 3.5vw;
+          text-align: center;
         }
       }
     }
@@ -432,9 +439,6 @@ const Team = ({ forwardedRef, currentPage, images }) => {
   return (
     <StyledContainer page={currentPage} ref={forwardedRef}>
       <span className="teamTitle">Meet the Team</span>
-      <span className="secondText">
-        images below do not represent the collection
-      </span>
       {window.outerWidth > 428 ? (
         <div className="teamContainer">
           <img
@@ -443,7 +447,7 @@ const Team = ({ forwardedRef, currentPage, images }) => {
             className="img1"
             onLoad={addImageLoaded}
           />
-          <span className="name1">Lysandros</span>
+          <span className="name1">Lucian Matei (Lysandros)</span>
           <span className="ceo">Blockchain Developer</span>
           <img
             src={redAvatar}
@@ -451,7 +455,7 @@ const Team = ({ forwardedRef, currentPage, images }) => {
             className="img2"
             onLoad={addImageLoaded}
           />
-          <span className="name2">Isidoros</span>
+          <span className="name2">Dani Bliznakov (Isidoros)</span>
           <span className="ceo">3D Art Designer</span>
           <img
             src={blackAvatar}
@@ -459,7 +463,7 @@ const Team = ({ forwardedRef, currentPage, images }) => {
             className="img3"
             onLoad={addImageLoaded}
           />
-          <span className="name3">Markos</span>
+          <span className="name3">Martin Georgiev (Markos)</span>
           <span className="ceo">Marketing Manager</span>
           <img
             src={purpleAvatar}
@@ -467,7 +471,7 @@ const Team = ({ forwardedRef, currentPage, images }) => {
             className="img4"
             onLoad={addImageLoaded}
           />
-          <span className="name4">Kallinikos</span>
+          <span className="name4">Mirel Albu (Kallinikos)</span>
           <span className="ceo">Discord Manager</span>
           <img
             src={greenAvatar}
@@ -475,7 +479,7 @@ const Team = ({ forwardedRef, currentPage, images }) => {
             className="img5"
             onLoad={addImageLoaded}
           />
-          <span className="name5">Achilles</span>
+          <span className="name5">Asen Dimitrov (Achilles)</span>
           <span className="ceo">Founder</span>
         </div>
       ) : (
@@ -487,7 +491,7 @@ const Team = ({ forwardedRef, currentPage, images }) => {
               className="img1"
               onLoad={addImageLoaded}
             />
-            <span className="name1">Lysandros</span>
+            <span className="name1">Lucian Matei (Lysandros)</span>
             <span className="ceo">Blockchain Developer</span>
           </div>
           <div className="teamSingleContainer">
@@ -497,7 +501,7 @@ const Team = ({ forwardedRef, currentPage, images }) => {
               className="img2"
               onLoad={addImageLoaded}
             />
-            <span className="name2">Isidoros</span>
+            <span className="name2">Dani Bliznakov (Isidoros)</span>
             <span className="ceo">3D Art Designer</span>
           </div>
           <div className="teamSingleContainer">
@@ -507,7 +511,7 @@ const Team = ({ forwardedRef, currentPage, images }) => {
               className="img3"
               onLoad={addImageLoaded}
             />
-            <span className="name3">Markos</span>
+            <span className="name3">Martin Georgiev (Markos)</span>
             <span className="ceo">Marketing Manager</span>
           </div>
           <div className="teamSingleContainer">
@@ -517,7 +521,7 @@ const Team = ({ forwardedRef, currentPage, images }) => {
               className="img4"
               onLoad={addImageLoaded}
             />
-            <span className="name4">Kallinikos</span>
+            <span className="name4">Mirel Albu (Kallinikos)</span>
             <span className="ceo">Discord Manager</span>
           </div>
           <div className="teamSingleContainer">
@@ -527,7 +531,7 @@ const Team = ({ forwardedRef, currentPage, images }) => {
               className="img5"
               onLoad={addImageLoaded}
             />
-            <span className="name5">Achilles</span>
+            <span className="name5">Asen Dimitrov (Achilles)</span>
             <span className="ceo">Founder</span>
           </div>
         </div>
