@@ -8,12 +8,6 @@ import blackAvatar from "../../images/projector4.jpg";
 import purpleAvatar from "../../images/projector3.jpg";
 import greenAvatar from "../../images/projector2.jpg";
 
-// import blueAvatar from "../../images/blueAvatar.png";
-// import redAvatar from "../../images/redAvatar.png";
-// import blackAvatar from "../../images/blackAvatar.png";
-// import purpleAvatar from "../../images/purpleAvatar.png";
-// import greenAvatar from "../../images/greenAvatar.png";
-
 const StyledContainer = styled.div`
   width: 100vw;
   height: 100vh;
