@@ -2,11 +2,11 @@ import React from "react";
 
 import styled from "styled-components";
 
-import blueAvatar from "../../images/projector5.webp";
-import redAvatar from "../../images/projector1.webp";
-import blackAvatar from "../../images/projector3.jpg";
-import purpleAvatar from "../../images/projector3.jpg";
-import greenAvatar from "../../images/projector2.jpg";
+import blueAvatar from "../../images/team/projector5.webp";
+import redAvatar from "../../images/team/projector1.webp";
+import purpleAvatar from "../../images/team/projector3.jpg";
+import greenAvatar from "../../images/team/projector2.jpg";
+import blackAvatar from "../../images/team/projector4.jpg";
 
 const StyledContainer = styled.div`
   width: 100vw;
