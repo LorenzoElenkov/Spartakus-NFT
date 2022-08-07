@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 import blueAvatar from "../../images/projector5.webp";
 import redAvatar from "../../images/projector1.webp";
-import blackAvatar from "../../images/projector4.jpg";
+import blackAvatar from "../../images/projector3.jpg";
 import purpleAvatar from "../../images/projector3.jpg";
 import greenAvatar from "../../images/projector2.jpg";
 
