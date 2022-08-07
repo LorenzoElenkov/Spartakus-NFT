@@ -4,7 +4,6 @@ import styled from "styled-components";
 
 import trident from "../../images/roadmpa/trident.png";
 import shoulder from "../../images/roadmpa/shoulder1.png";
-import { Slider } from "infinite-react-carousel/lib";
 
 const StyledRoadmapContainer = styled.div`
   padding: 70px 0 50px 0;

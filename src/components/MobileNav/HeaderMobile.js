@@ -3,9 +3,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 
 import shlemLogo from '../../images/shlemLoo.png';
-import shlemLogo2 from '../../images/ShlemSVG.svg';
 import shlemBG from '../../images/shlem200.png';
-import instagram2 from '../../images/instagram3.svg';
 import twitter2 from '../../images/twitter3.svg';
 import discord2 from '../../images/discord3.svg';
 import litepaper from '../../images/litepaper.pdf';

@@ -140,7 +140,7 @@ const Countdown = ({ currentPage }) => {
   diff2 -= hours * 1000 * 60 * 60;
   let minutes = Math.floor(diff2 / 1000 / 60);
   diff2 -= minutes * 1000 * 60;
-  let seconds = Math.floor(diff2 / 1000);
+  // let seconds = Math.floor(diff2 / 1000);
 
   useEffect(() => {
     setTimeout(() => {

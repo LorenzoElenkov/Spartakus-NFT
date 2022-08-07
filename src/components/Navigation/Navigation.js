@@ -2,10 +2,8 @@ import React from 'react';
 
 import styled from 'styled-components';
 
-import instagram from '../../images/instagram3.svg';
 import twitter from '../../images/twitter3.svg';
 import discord from '../../images/discord3.svg';
-import instagram2 from '../../images/instagram4.svg';
 import twitter2 from '../../images/twitter4.svg';
 import discord2 from '../../images/discord4.svg';
 import litepaper from '../../images/litepaper.pdf';

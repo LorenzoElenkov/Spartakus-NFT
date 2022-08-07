@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useRef, useEffect } from "react";
 import styled from "styled-components";
 
 import informationHelmet2 from "../../images/shlem101.png";
@@ -142,31 +142,6 @@ const StyledHelmet = styled.img`
     z-index: 1;
     height: 400px;
     display: none;
-  }
-`;
-
-const StyledCPTH = styled.div`
-  margin-left: -50px;
-  display: flex;
-  flex-direction: column;
-  gap: 13px;
-  margin-top: 50px;
-
-  .titleCollection {
-    font-size: 3.2vmax;
-    color: rgba(73, 115, 242, 255);
-    letter-spacing: 4px;
-    font-family: "Magh";
-    transform: scaleY(0.9);
-    font-weight: 600;
-  }
-
-  .textCollection {
-    font-size: 1vmax;
-    letter-spacing: 0.5px;
-    font-family: "Medium";
-    font-weight: 600;
-    transform: scaleY(0.95);
   }
 `;
 
@@ -433,11 +408,6 @@ const Information = ({
   discordSound.volume = 0.35;
 
   const discordRef = useRef(null);
-  const [inside, setInside] = useState(true);
-
-  const addImageLoaded = () => {
-    images();
-  };
 
   useEffect(() => {
     discordRef.current?.addEventListener("mouseenter", () => {
@@ -502,13 +472,11 @@ const Information = ({
             page={currentPage}
             src={informationHelmet2}
             alt="helmet"
-            onLoad={addImageLoaded}
           />
         </StyledWhiteBG>
         <StyledHelmetMobile
           src={informationHelmetMobile}
           alt="helmet on mobile"
-          onLoad={addImageLoaded}
           ref={forwardedRef}
         />
         <StyledHOO page={currentPage}>
@@ -542,7 +510,6 @@ const Information = ({
             page={currentPage}
             src={informationHelmet3}
             alt="helmet2"
-            onLoad={addImageLoaded}
           />
         </StyledBlueBG>
       </StyledInformationContainer>

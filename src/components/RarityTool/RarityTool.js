@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState } from "react";
 
 import styled from "styled-components";
 import { keyframes } from "styled-components";
@@ -9,13 +9,13 @@ import firstReveal from "../../rarity/First_Reveal2.json";
 const RarityTool = (props) => {
   const backdropRef = useRef(null);
   const [chosenNumber, setChosenNumber] = useState("");
-  const [oldChosen, setOldChosen] = useState(0);
+  // const [oldChosen, setOldChosen] = useState(0);
 
-  useEffect(() => {
-    const changeFlash = setTimeout(() => {
-      setOldChosen(chosenNumber);
-    }, 500);
-  }, [chosenNumber]);
+  // useEffect(() => {
+  //   const changeFlash = setTimeout(() => {
+  //     setOldChosen(chosenNumber);
+  //   }, 500);
+  // }, [chosenNumber]);
 
   const detectClick = (e) => {
     if (e.target === backdropRef.current) {
@@ -57,8 +57,8 @@ const RarityTool = (props) => {
               type="number"
               className="idInput"
               onKeyDown={(e) => e.code >= 48 && e.code <= 57}
-              value={chosenNumber}
-              onChange={(e) => handleChosenNumber(e.target.value)}
+              // value={chosenNumber}
+              // onChange={(e) => handleChosenNumber(e.target.value)}
               min="0"
               max="10877"
               pattern="[0-9]+"

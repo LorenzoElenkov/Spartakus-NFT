@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState, useMemo } from 'react'
+import React, { useRef, useState } from 'react'
 import useSound from 'use-sound';
 import Countdown from './components/Countdown/Countdown';
 import Faq from './components/FAQ/Faq';
@@ -67,29 +67,14 @@ const StyledApp = styled.div`
 
 const App = () => {
   // const [moveNext, setMoveNext] = useState(false);
-  const snd = new Audio('./clicksound.wav');
   // const bgMusic = new Audio('./bgMusic.mp3');
   // bgMusic.loop = true;
   
 
-  let moveNext = false;
-
   const [currentPage, setCurrentPage] = useState(1);
   const [isInSite, setIsInSite] = useState(false);
-  const [imagesLoadedPerc, setImagesLoadedPerc] = useState(0);
   const [showRT, setShowRT] = useState(false);
 
-  let scrollCount = useRef(0);
-  let imagesLoaded = useRef(0);
-
-  
-
-  const changeImagesLoaded = () => {
-    imagesLoaded.current++;
-    if (imagesLoaded.current > 23) {
-      setImagesLoadedPerc(23);
-    }
-  };
 
 
   // const trackScroll = (e) => {
@@ -171,21 +156,21 @@ const App = () => {
 
   return (
     <StyledApp>
-      {!isInSite && <Loading clicked={handleLoadingClick} images={imagesLoaded.current}/>}
+      {!isInSite && <Loading clicked={handleLoadingClick}/>}
       {window.outerWidth < 429 && <HeaderMobile music={handleVolume} volume={bgVolume} info={infoRef} lore={loreRef} roadmap={roadmapRef} faq={faqRef} map={mapRef} preview={previewRef} token={tokenRef} team={teamRef} footer={footerRef} showRT={() => setShowRT(true)}/>}
       <Navigation currentPage={currentPage} onLinkClick={handleLinkClick} onRTClick={(state) => setShowRT(state)} info={infoRef} lore={loreRef} roadmap={roadmapRef} faq={faqRef} map={mapRef} preview={previewRef} token={tokenRef} team={teamRef} footer={footerRef} />
       {window.outerWidth > 428 && <div className='navigationBackground'/>}
       {showRT && <RarityTool onRTClose={() => setShowRT(false)}/>}
-      <Information forwardedRef={infoRef} currentPage={currentPage} onLinkClick={handleLinkClick} images={changeImagesLoaded} music={handleVolume} volume={bgVolume}/>
+      <Information forwardedRef={infoRef} currentPage={currentPage} onLinkClick={handleLinkClick} music={handleVolume} volume={bgVolume}/>
       <Countdown currentPage={currentPage}/>
-      <OurStory forwardedRef={loreRef} currentPage={currentPage} images={changeImagesLoaded}/>
-      <Map currentPage={currentPage} images={changeImagesLoaded} forwardedRef={mapRef}/>
-      <Roadmap forwardedRef={roadmapRef} currentPage={currentPage} images={changeImagesLoaded}/>
-      <Preview currentPage={currentPage} images={changeImagesLoaded} forwardedRef={previewRef}/>
-      <Token currentPage={currentPage} images={changeImagesLoaded} forwardedRef={tokenRef}/>
-      <Faq forwardedRef={faqRef} currentPage={currentPage} images={changeImagesLoaded}/>
-      <Team currentPage={currentPage} images={changeImagesLoaded} forwardedRef={teamRef} />
-      <Footer currentPage={currentPage} onLinkClick={handleLinkClick} images={changeImagesLoaded} forwardedRef={footerRef} info={infoRef} lore={loreRef} roadmap={roadmapRef} faq={faqRef}/>
+      <OurStory forwardedRef={loreRef} currentPage={currentPage}/>
+      <Map currentPage={currentPage} forwardedRef={mapRef}/>
+      <Roadmap forwardedRef={roadmapRef} currentPage={currentPage}/>
+      <Preview currentPage={currentPage} forwardedRef={previewRef}/>
+      <Token currentPage={currentPage} forwardedRef={tokenRef}/>
+      <Faq forwardedRef={faqRef} currentPage={currentPage}/>
+      <Team currentPage={currentPage} forwardedRef={teamRef} />
+      <Footer currentPage={currentPage} onLinkClick={handleLinkClick} forwardedRef={footerRef} info={infoRef} lore={loreRef} roadmap={roadmapRef} faq={faqRef}/>
     </StyledApp>
   )
 }

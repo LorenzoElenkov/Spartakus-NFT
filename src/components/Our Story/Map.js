@@ -442,9 +442,6 @@ const StyledSwipeHintMobile = styled.div`
 
 
 const Map = ({ forwardedRef, currentPage, images }) => {
-  const addImageLoaded = () => {
-    images();
-  };
 
   const [clickedArea, setClickedArea] = useState(0);
   // if (currentPage !== 3 && clickedArea !== 0) {
@@ -489,7 +486,6 @@ const Map = ({ forwardedRef, currentPage, images }) => {
                 : fortheenth
             }
             clicked={clickedArea}
-            onLoad={addImageLoaded}
           ></StyledMap>
           <StyledMapPointers>
             <button
@@ -565,7 +561,6 @@ const Map = ({ forwardedRef, currentPage, images }) => {
             src={areasNames[clickedArea].icon}
             alt=""
             className="areaIcon"
-            onLoad={addImageLoaded}
             draggable={false}
             onContextMenu={(e) => e.preventDefault()}
           />
