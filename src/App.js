@@ -68,8 +68,8 @@ const StyledApp = styled.div`
 const App = () => {
   // const [moveNext, setMoveNext] = useState(false);
   const snd = new Audio('./clicksound.wav');
-  const bgMusic = new Audio('./bgMusic.mp3');
-  bgMusic.loop = true;
+  // const bgMusic = new Audio('./bgMusic.mp3');
+  // bgMusic.loop = true;
   
 
   let moveNext = false;
