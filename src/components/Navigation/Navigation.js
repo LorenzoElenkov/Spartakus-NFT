@@ -53,10 +53,10 @@ const NavigationBar = styled.nav`
         width: 50vw;
         z-index: 9998;
         display: grid;
-        grid-template-columns: 5% repeat(6, 1fr) 5%;
+        grid-template-columns: repeat(7, 1fr) 5%;
         /* column-gap: 5px; */
         .homeBut {
-            grid-column: 2/2;
+            /* grid-column: 2/2; */
         }
 
         a {
@@ -65,10 +65,10 @@ const NavigationBar = styled.nav`
             text-align: center;
         }
 
-        .homeBut, .loreBut, .roadmapBut, .faqBut, .rarityTool {
+        .homeBut, .loreBut, .roadmapBut, .faqBut, .rarityTool, .marketPlace {
             background: transparent;
             border: none;
-            font-size: 1.2vw;
+            font-size: 1.1vw;
             border-top: 7px solid transparent;
             padding-top: 2vh;
             color: ${props => props.page === 1 || props.page === 4 || props.page === 9 ? 'white' : '#0f1026'};
@@ -78,7 +78,7 @@ const NavigationBar = styled.nav`
             transition: color 0.5s ease-in-out, border-top 0.5s ease-in-out;
             position: relative;
         }
-        
+
 
         .loreBut:hover .innerMenuLore, .roadmapBut:hover .innerMenuRoadmap, .faqBut:hover .innerMenuFaq {
             display: grid;
@@ -187,6 +187,7 @@ const Navigation = ({ currentPage, onLinkClick, onRTClick, info, lore, roadmap, 
             </div>
         </button>
         <button className='rarityTool' onClick={() => onRT(true)}>Rarity</button>
+        <a className='marketPlace' alt='litepaper' href={'https://google.com'} target="_blank" rel="noreferrer">Market<br/>place</a>
         <a className='rarityTool' alt='litepaper' href={litepaper} target="_blank" rel="noreferrer">Lite<br/>paper</a>
         <button className={currentPage > 6 ? 'faqBut active' : 'faqBut'}>
             FAQ

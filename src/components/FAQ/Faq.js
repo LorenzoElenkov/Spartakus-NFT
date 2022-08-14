@@ -259,7 +259,7 @@ const Faq = ({forwardedRef, currentPage }) => {
                         }}}>
                     Q: How many Heroes will be available?
                     <span className={question === 2 ? 'accordionAnswer2 active' : 'accordionAnswer2'}>
-                    A: TBD.
+                    A: 3,780.
                 </span>
                 </span>
             </div>
@@ -274,12 +274,12 @@ const Faq = ({forwardedRef, currentPage }) => {
                     <span className={question === 3 ? 'accordionAnswer3 active' : 'accordionAnswer3'}>
                     A: Yes. There will be 6 class rarities. <br /> Each tribe will contain: <br />
                     <ul>
-                        <li>Warrior</li>
-                        <li>Hoplite</li>
-                        <li>Archer</li>
-                        <li>Mage</li>
-                        <li>Champion</li>
-                        <li>GOD</li>
+                        <li>Warrior (95)</li>
+                        <li>Hoplite (75)</li>
+                        <li>Archer (50)</li>
+                        <li>Mage (33)</li>
+                        <li>Champion (17)</li>
+                        <li>God</li>
                     </ul>
                 </span>
                 </span>
@@ -306,7 +306,7 @@ const Faq = ({forwardedRef, currentPage }) => {
                         }}}>
                     Q: What is the mint price?
                     <span className={question === 5 ? 'accordionAnswer1 active' : 'accordionAnswer1'}>
-                    A: TBD.
+                    A: 1.99 SOL.
                 </span>
                 </span>
             </div>
@@ -319,7 +319,7 @@ const Faq = ({forwardedRef, currentPage }) => {
                         }}}>
                     Q: When is the mint date?
                     <span className={question === 6 ? 'accordionAnswer6 active' : 'accordionAnswer6'}>
-                    A: The mint will be late August '22 with no exact date, for now.
+                    A: The mint will be 29 August, 20:00 Central European Time (CET).
                 </span>
                 </span>
             </div>

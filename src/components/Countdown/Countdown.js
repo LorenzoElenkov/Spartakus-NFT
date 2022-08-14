@@ -24,7 +24,7 @@ const StyledCountdownContainer = styled.div`
 
   }
   .spanCount {
-    font-size: 1.5vw;
+    font-size: 1.3vw;
     font-family: "Magh";
     font-weight: 600;
     letter-spacing: 2px;
@@ -38,7 +38,7 @@ const StyledCountdownContainer = styled.div`
 
   .spanTitle {
     font-size: 1vw;
-    margin-top: 1vh;
+    margin-top: 0.5vh;
     justify-self: center;
     color: ${(props) =>
       props.page === 2 || props.page === 4 || props.page === 9
@@ -54,9 +54,9 @@ const StyledCountdownContainer = styled.div`
       props.page === 2 || props.page === 4 ? "white" : "#0f1026"};
     color: ${(props) =>
       props.page === 2 || props.page === 4 ? "#0f1026" : "white"};
-    font-size: 1.5vw;
+    font-size: 1.3vw;
     font-family: "Magh";
-    padding: 1vh 0;
+    padding: 0.5vh 0;
     text-align: center;
     width: 100%;
     transition: all 0.5s ease-in-out;
@@ -129,8 +129,8 @@ const StyledCountdownContainer = styled.div`
 `;
 
 const Countdown = ({ currentPage }) => {
-  // 15 August 2022 00:00:00 GMT+3
-  const releaseDate = 1660510800000;
+  // 29 August 2022 20:00:00 CET
+  const releaseDate = 1661799600000;
   let diff2 = releaseDate - Date.now();
   const [diff, setDiff] = useState(releaseDate - Date.now());
 
@@ -140,7 +140,7 @@ const Countdown = ({ currentPage }) => {
   diff2 -= hours * 1000 * 60 * 60;
   let minutes = Math.floor(diff2 / 1000 / 60);
   diff2 -= minutes * 1000 * 60;
-  // let seconds = Math.floor(diff2 / 1000);
+  let seconds = Math.floor(diff2 / 1000);
 
   useEffect(() => {
     setTimeout(() => {
@@ -151,15 +151,14 @@ const Countdown = ({ currentPage }) => {
   return (
     <StyledCountdownContainer page={currentPage}>
       <span className="spanHeader">WHITELIST SALE IN</span>
-      {/* <span className="spanTitle">DAYS</span>
+      <span className="spanTitle">DAYS</span>
       <span className="spanTitle">HOURS</span>
       <span className="spanTitle">MINUTES</span>
       <span className="spanTitle">SECONDS</span>
       <span className="spanCount">{days}</span>
       <span className="spanCount">{hours > 9 ? hours : `0${hours}`}</span>
       <span className="spanCount">{minutes > 9 ? minutes : `0${minutes}`}</span>
-      <span className="spanCount">{seconds > 9 ? seconds : `0${seconds}`}</span> */}
-      <span className="spanTBA">TO BE ANNOUNCED</span>
+      <span className="spanCount">{seconds > 9 ? seconds : `0${seconds}`}</span>
     </StyledCountdownContainer>
   );
 };

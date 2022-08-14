@@ -116,9 +116,9 @@ const StyledProgressBar = styled.div`
     width: 100%;
     height: 100%;
     top: 0;
-    left: ${(props) => - props.images + "%"};
+    left: -100%;
     background: #5863f1;
-    ${(props) => props.images >= 23 && animationPlay};
+    ${(props) => props.loading === 100 && animationPlay};
     transition: left 2s ease-in-out;
     animation-fill-mode: forwards;
     -webkit-animation-fill-mode: forwards;
@@ -153,16 +153,18 @@ const Loading = ({ clicked, images }) => {
   const [loading, setLoading] = useState(0);
 
   useEffect(() => {
-    setTimeout(() => {
-      setHasLoaded(true);
-    }, 3000);
+    if (loading === 100) {
+      setTimeout(() => {
+        setHasLoaded(true);
+      }, 3000);
+    }
   }, [loading]);
 
   useEffect(() => {
     setTimeout(() => {
-        setLoading(100);
+      setLoading(100);
     }, 500);
-  },[]);
+  }, []);
 
   const readyHandler = () => {
     clicked();
@@ -176,7 +178,7 @@ const Loading = ({ clicked, images }) => {
       ) : (
         <span className="loading">Loading...</span>
       )}
-      <StyledProgressBar images={loading} loaded={hasLoaded}>
+      <StyledProgressBar loading={loading} loaded={hasLoaded}>
         <span className="loadingBar" />
       </StyledProgressBar>
       {hasLoaded && <button onClick={readyHandler}>Visit website</button>}

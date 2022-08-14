@@ -441,7 +441,7 @@ const Team = ({ forwardedRef, currentPage, images }) => {
             className="img1"
             onLoad={addImageLoaded}
           />
-          <span className="name1">Lucian Matei (Lysandros)</span>
+          <span className="name1">Lucian Popov (Lysandros)</span>
           <span className="ceo">Blockchain Developer</span>
           <img
             src={redAvatar}
@@ -449,7 +449,7 @@ const Team = ({ forwardedRef, currentPage, images }) => {
             className="img2"
             onLoad={addImageLoaded}
           />
-          <span className="name2">Dani Bliznakov (Isidoros)</span>
+          <span className="name2">Dani Bliznakov (Andronikos)</span>
           <span className="ceo">3D Art Designer</span>
           <img
             src={blackAvatar}
@@ -465,7 +465,7 @@ const Team = ({ forwardedRef, currentPage, images }) => {
             className="img4"
             onLoad={addImageLoaded}
           />
-          <span className="name4">Mirel Albu (Kallinikos)</span>
+          <span className="name4">Vasil Petrov (Kallinikos)</span>
           <span className="ceo">Discord Manager</span>
           <img
             src={greenAvatar}
@@ -473,7 +473,7 @@ const Team = ({ forwardedRef, currentPage, images }) => {
             className="img5"
             onLoad={addImageLoaded}
           />
-          <span className="name5">Asen Dimitrov (Achilles)</span>
+          <span className="name5">Asen Aleksiev (Achilles)</span>
           <span className="ceo">Founder</span>
         </div>
       ) : (
