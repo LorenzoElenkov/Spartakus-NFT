@@ -9,7 +9,7 @@ import discord2 from '../../images/discord3.svg';
 import litepaper from '../../images/litepaper.pdf';
 
 
-const HeaderMobile = ({ music, volume, info, lore, roadmap, faq, showRT }) => {
+const HeaderMobile = ({ music, volume, info, lore, roadmap, faq, showRT, onMPClick }) => {
 
     const [isMenuOn, setIsMenuOn] = useState(false);
 
@@ -31,12 +31,13 @@ const HeaderMobile = ({ music, volume, info, lore, roadmap, faq, showRT }) => {
             <button className='closeMenu' onClick={openMenuHandler}>X</button>
         </div>
         <div className='links'>
-            <button onClick={() => {openMenuHandler(); info.current.scrollIntoView({ behavior: 'smooth'})}}>Home</button>
-            <button onClick={() => {openMenuHandler(); lore.current.scrollIntoView({ behavior: 'smooth' })}}>Lore</button>
-            <button onClick={() => {openMenuHandler(); roadmap.current.scrollIntoView({ behavior: 'smooth'})}}>Roadmap</button>
-            <button onClick={() => {openMenuHandler(); showRT()}}>Rarity Tool</button>
+            <button onClick={() => {onMPClick(false);openMenuHandler(); info.current.scrollIntoView({ behavior: 'smooth'})}}>Home</button>
+            <button onClick={() => {onMPClick(false);openMenuHandler(); lore.current.scrollIntoView({ behavior: 'smooth' })}}>Lore</button>
+            <button onClick={() => {onMPClick(false);openMenuHandler(); roadmap.current.scrollIntoView({ behavior: 'smooth'})}}>Roadmap</button>
+            <button onClick={() => {onMPClick(false);openMenuHandler(); showRT()}}>Rarity Tool</button>
+            <button onClick={() => {openMenuHandler(); onMPClick(true)}}>Marketplace</button>
             <a className='rarityTool' alt='litepaper' href={litepaper} target="_blank" rel="noreferrer">Litepaper</a>
-            <button onClick={() => {openMenuHandler(); faq.current.scrollIntoView({ behavior: 'smooth'})}}>FAQ</button>
+            <button onClick={() => {onMPClick(false);openMenuHandler(); faq.current.scrollIntoView({ behavior: 'smooth'})}}>FAQ</button>
         </div>
         <div className='musicControl'>
             <div className='musicBut' onClick={() => changeVolume(0.05)}>Music {Math.floor(volume / 0.2 * 100)}%</div>

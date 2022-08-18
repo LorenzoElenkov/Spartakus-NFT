@@ -18,6 +18,7 @@ import Loading from './components/Loading/Loading';
 import bgMusic2 from './images/bgMusic2.mp3';
 import HeaderMobile from './components/MobileNav/HeaderMobile';
 import RarityTool from './components/RarityTool/RarityTool';
+import Marketplace from './components/Marketplace/Marketplace';
 
 const StyledApp = styled.div`
   position: relative;
@@ -74,6 +75,7 @@ const App = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [isInSite, setIsInSite] = useState(false);
   const [showRT, setShowRT] = useState(false);
+  const [showMP, setShowMP] = useState(false);
 
 
 
@@ -157,11 +159,12 @@ const App = () => {
   return (
     <StyledApp>
       {!isInSite && <Loading clicked={handleLoadingClick}/>}
-      {window.outerWidth < 429 && <HeaderMobile music={handleVolume} volume={bgVolume} info={infoRef} lore={loreRef} roadmap={roadmapRef} faq={faqRef} map={mapRef} preview={previewRef} token={tokenRef} team={teamRef} footer={footerRef} showRT={() => setShowRT(true)}/>}
-      <Navigation currentPage={currentPage} onLinkClick={handleLinkClick} onRTClick={(state) => setShowRT(state)} info={infoRef} lore={loreRef} roadmap={roadmapRef} faq={faqRef} map={mapRef} preview={previewRef} token={tokenRef} team={teamRef} footer={footerRef} />
+      {window.outerWidth < 429 && <HeaderMobile music={handleVolume} volume={bgVolume} onMPClick={(state) => setShowMP(state)} info={infoRef} lore={loreRef} roadmap={roadmapRef} faq={faqRef} map={mapRef} preview={previewRef} token={tokenRef} team={teamRef} footer={footerRef} showRT={() => setShowRT(true)}/>}
+      <Navigation currentPage={currentPage} onLinkClick={handleLinkClick} onRTClick={(state) => setShowRT(state)} onMPClick={(state) => setShowMP(state)} info={infoRef} lore={loreRef} roadmap={roadmapRef} faq={faqRef} map={mapRef} preview={previewRef} token={tokenRef} team={teamRef} footer={footerRef} />
       {window.outerWidth > 428 && <div className='navigationBackground'/>}
       {showRT && <RarityTool onRTClose={() => setShowRT(false)}/>}
-      <Information forwardedRef={infoRef} currentPage={currentPage} onLinkClick={handleLinkClick} music={handleVolume} volume={bgVolume}/>
+      {showMP && <Marketplace />}
+      {!showMP && <><Information forwardedRef={infoRef} currentPage={currentPage} onLinkClick={handleLinkClick} music={handleVolume} volume={bgVolume}/>
       <Countdown currentPage={currentPage}/>
       <OurStory forwardedRef={loreRef} currentPage={currentPage}/>
       <Map currentPage={currentPage} forwardedRef={mapRef}/>
@@ -171,6 +174,7 @@ const App = () => {
       <Faq forwardedRef={faqRef} currentPage={currentPage}/>
       <Team currentPage={currentPage} forwardedRef={teamRef} />
       <Footer currentPage={currentPage} onLinkClick={handleLinkClick} forwardedRef={footerRef} info={infoRef} lore={loreRef} roadmap={roadmapRef} faq={faqRef}/>
+      </>}
     </StyledApp>
   )
 }

@@ -155,7 +155,7 @@ const NavigationBar = styled.nav`
     `;
 
 
-const Navigation = ({ currentPage, onLinkClick, onRTClick, info, lore, roadmap, faq, map, preview, token, team, footer }) => {
+const Navigation = ({ currentPage, onLinkClick, onRTClick, onMPClick, info, lore, roadmap, faq, map, preview, token, team, footer }) => {
 
     const snd = new Audio('./clicksound.wav');
 
@@ -163,17 +163,21 @@ const Navigation = ({ currentPage, onLinkClick, onRTClick, info, lore, roadmap, 
         onRTClick(state);
     }
 
+    const onMP = (state) => {
+        onMPClick(state);
+    }
+
   return (
       <>{window.outerWidth > 428 && <NavigationBar page={currentPage}>
         {/* <button className={currentPage === 1 ? 'homeBut active' : 'homeBut'} onClick={() => {onLinkClick(1); snd.play()}}>Home</button> */}
-        <button className={currentPage === 1 ? 'homeBut active' : 'homeBut'} onClick={() => {info.current.scrollIntoView({ behavior: 'smooth'}); snd.play()}}>Home</button>
+        <button className={currentPage === 1 ? 'homeBut active' : 'homeBut'} onClick={() => {onMP(false);info.current.scrollIntoView({ behavior: 'smooth'}); snd.play();}}>Home</button>
         <button className={currentPage >= 2 && currentPage <= 3 ? 'loreBut active' : 'loreBut'}>
             Lore
             <div className='invisibleSpace'/>
             <div className='innerMenuLore' page={currentPage}>
                 <span className='innerLorePointer'>\/</span>
-                <button page={currentPage} onClick={() => {lore.current.scrollIntoView({ behavior: 'smooth'}); snd.play()}}>Story</button>
-                <button page={currentPage} onClick={() => {map.current.scrollIntoView({ behavior: 'smooth'}); snd.play()}}>Ancient Map</button>
+                <button page={currentPage} onClick={() => {onMP(false);lore.current.scrollIntoView({ behavior: 'smooth'}); snd.play()}}>Story</button>
+                <button page={currentPage} onClick={() => {onMP(false);map.current.scrollIntoView({ behavior: 'smooth'}); snd.play()}}>Ancient Map</button>
             </div>
         </button>
         <button className={currentPage > 3 && currentPage <= 6 ? 'roadmapBut active' : 'roadmapBut'}>
@@ -181,22 +185,22 @@ const Navigation = ({ currentPage, onLinkClick, onRTClick, info, lore, roadmap, 
             <div className='invisibleSpace'/>
             <div className='innerMenuRoadmap' page={currentPage}>
                 <span className='innerLorePointer'>\/</span>
-                <button page={currentPage} onClick={() => {roadmap.current.scrollIntoView({ behavior: 'smooth'}); snd.play()}}>Roadmap</button>
-                <button page={currentPage} onClick={() => {preview.current.scrollIntoView({ behavior: 'smooth'}); snd.play()}}>The Collection</button>
-                <button page={currentPage} onClick={() => {token.current.scrollIntoView({ behavior: 'smooth'}); snd.play()}}>Token</button>
+                <button page={currentPage} onClick={() => {onMP(false);roadmap.current.scrollIntoView({ behavior: 'smooth'}); snd.play()}}>Roadmap</button>
+                <button page={currentPage} onClick={() => {onMP(false);preview.current.scrollIntoView({ behavior: 'smooth'}); snd.play()}}>The Collection</button>
+                <button page={currentPage} onClick={() => {onMP(false);token.current.scrollIntoView({ behavior: 'smooth'}); snd.play()}}>Token</button>
             </div>
         </button>
-        <button className='rarityTool' onClick={() => onRT(true)}>Rarity</button>
-        <a className='marketPlace' alt='litepaper' href={'https://google.com'} target="_blank" rel="noreferrer">Market<br/>place</a>
+        <button className='rarityTool' onClick={() => {onRT(true);onMP(false)}}>Rarity</button>
+        <button className='rarityTool' onClick={() => onMP(true)}>Market<br/>place</button>
         <a className='rarityTool' alt='litepaper' href={litepaper} target="_blank" rel="noreferrer">Lite<br/>paper</a>
         <button className={currentPage > 6 ? 'faqBut active' : 'faqBut'}>
             FAQ
             <div className='invisibleSpace'/>
             <div className='innerMenuFaq' page={currentPage}>
                 <span className='innerLorePointer'>\/</span>
-                <button page={currentPage} onClick={() => {faq.current.scrollIntoView({ behavior: 'smooth'}); snd.play()}}>FAQ</button>
-                <button page={currentPage} onClick={() => {team.current.scrollIntoView({ behavior: 'smooth'}); snd.play()}}>Our Team</button>
-                <button page={currentPage} onClick={() => {footer.current.scrollIntoView({ behavior: 'smooth'}); snd.play()}}>Contact</button>
+                <button page={currentPage} onClick={() => {onMP(false);faq.current.scrollIntoView({ behavior: 'smooth'}); snd.play();}}>FAQ</button>
+                <button page={currentPage} onClick={() => {onMP(false);team.current.scrollIntoView({ behavior: 'smooth'}); snd.play();}}>Our Team</button>
+                <button page={currentPage} onClick={() => {onMP(false);footer.current.scrollIntoView({ behavior: 'smooth'}); snd.play();}}>Contact</button>
             </div>
         </button>
         </NavigationBar>}

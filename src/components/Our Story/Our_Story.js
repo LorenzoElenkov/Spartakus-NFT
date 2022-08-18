@@ -266,7 +266,7 @@ const Lore = ({ forwardedRef, currentPage, images }) => {
         page={currentPage}
         onLoad={addImageLoaded}
       />
-      {window.outerWidth < 428 && <img src={arka} alt="motiv" className="motiv" />}
+      {window.outerWidth < 430 && <img src={arka} alt="motiv" className="motiv" />}
       <StyledWhiteBG page={currentPage}>
         <StyledWhiteLines src={lines} onLoad={addImageLoaded} />
         <StyledWhiteSecondaryText>

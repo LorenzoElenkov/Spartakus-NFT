@@ -5,17 +5,22 @@ import styled from "styled-components";
 import logo from "../../images/footerLogo1.png";
 import { Timeline } from "react-twitter-widgets";
 
+import calendar from "../../images/IMG_0481.png";
+import calendar2 from "../../images/nft_calendar.svg";
+
 const StyledLightBlue = styled.div`
   /* position: absolute; */
   /* top: 0; */
   /* left: ${(props) => (props.page === 9 ? "0" : "-110vw")}; */
-  width: 50%;
+  /* width: 50%; */
+  grid-column: 1/2;
   height: 100%;
   background: #161b54;
   transition: left 0.5s ease-in-out;
   display: grid;
   grid-template-columns: 1fr 1fr;
   row-gap: 1vh;
+
   img:nth-child(1) {
     justify-self: center;
     align-self: center;
@@ -54,6 +59,7 @@ const StyledLightBlue = styled.div`
     top: 0;
     left: 0;
     width: 100%;
+    grid-column: 1/3;
     height: max-content;
     background: #161b54;
     transition: left 0.5s ease-in-out;
@@ -79,6 +85,7 @@ const StyledLightBlue = styled.div`
     transition: left 0.5s ease-in-out;
     display: flex;
     flex-direction: column;
+    grid-column: 1/3;
     img:nth-child(1) {
       margin: 50px 0;
       align-self: center;
@@ -99,6 +106,7 @@ const StyledLightBlue = styled.div`
     transition: left 0.5s ease-in-out;
     display: flex;
     flex-direction: column;
+    grid-column: 1/3;
     img:nth-child(1) {
       margin: 50px 0;
       align-self: center;
@@ -113,19 +121,21 @@ const StyledLightBlue = styled.div`
 `;
 
 const StyledDarkBlue = styled.div`
-  width: 50%;
-  height: 100%;
+  height: 100vh;
   background: #111336;
   transition: left 0.5s ease-in-out;
   display: grid;
   grid-template-rows: 1fr 2fr 1fr 1fr;
   transition: top 0.5s ease-in-out;
-
+  grid-column: 2/5;
   .twitterEmbed {
     grid-column: 1/1;
-    grid-row: 1/5;
-    align-self: center;
-    padding: 0 20%;
+    grid-row: 2/5;
+    /* align-self: center; */
+    width: max-content;
+    justify-self: center;
+    max-height: 50vh;
+    overflow-y: scroll;
   }
 
   .twitterTitle {
@@ -133,7 +143,8 @@ const StyledDarkBlue = styled.div`
       color: white;
       font-family: 'Medium';
       justify-self: center;
-      grid-row: 2/2;
+      align-self: center;
+      grid-row: 1/1;
       grid-column: 1/1;
   }
   
@@ -145,6 +156,7 @@ const StyledDarkBlue = styled.div`
     height: max-content;
     display: flex;
     flex-direction: column;
+    grid-column: 1/3;
     .twitterEmbed {
     grid-column: 1/1;
     grid-row: 1/3;
@@ -168,6 +180,7 @@ const StyledDarkBlue = styled.div`
     height: max-content;
     display: flex;
     flex-direction: column;
+    grid-column: 1/3;
     .twitterEmbed {
     grid-column: 1/1;
     grid-row: 1/3;
@@ -191,10 +204,12 @@ const StyledDarkBlue = styled.div`
     height: max-content;
     display: flex;
     flex-direction: column;
+    grid-column: 1/3;
     .twitterEmbed {
     grid-column: 1/1;
     grid-row: 1/3;
     width: 80%;
+    overflow-y: scroll;
     align-self: center;
     margin-bottom: 30px;
     padding: 0;
@@ -214,12 +229,33 @@ const Footer = ({ currentPage, onLinkClick, images, forwardedRef, info, lore, ro
   };
   const StyledContactContainer = styled.div`
   width: 100vw;
-  height: 100vh;
-  display: flex;
-
+  height: max-content;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: max-content max-content;
+  .linkFooter {
+      grid-column: 1/3;
+      height: max-content;
+      padding: 1rem;
+      display: flex;
+      place-items: center;
+      gap: 10rem;
+      margin: 0 auto;
+  }
+  .linkFooter > a > img {
+      height: 10vh;
+    }
   @media screen and (max-width: 428px) {
     flex-direction: column;
     height: max-content;
+
+    .linkFooter {
+      grid-column: 1/3;
+    }
+    .linkFooter > a > img {
+      aspect-ratio: 1/1;
+      width: 25vw;
+    }
   }
 `;
   return (
@@ -237,9 +273,17 @@ const Footer = ({ currentPage, onLinkClick, images, forwardedRef, info, lore, ro
       <StyledDarkBlue page={currentPage}>
         <span className='twitterTitle'>Our Twitter Updates</span>
         <div className="twitterEmbed">
-            <Timeline dataSource={{ sourceType: "profile", screenName:'Heroes_Olympus_'}} options={{chrome: 'noheader, nofooter', height: 300, width: 500}}></Timeline>
+            <Timeline dataSource={{ sourceType: "profile", screenName:"Heroes_Olympus_"}} options={{chrome: "noheader, nofooter", width: "500", height: "300"}}></Timeline>
         </div>
       </StyledDarkBlue>
+      <div class='linkFooter'>
+        <a href={"https://nftsolana.io"} target={"_blank"} rel="noreferrer">
+          <img src={calendar} alt='' />
+        </a>
+        <a href={"https://nftcalendar.io"} target={"_blank"} rel="noreferrer">
+          <img src={calendar2} alt=''/>
+        </a>
+      </div>
     </StyledContactContainer>
   );
 };
