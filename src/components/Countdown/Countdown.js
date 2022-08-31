@@ -129,8 +129,8 @@ const StyledCountdownContainer = styled.div`
 `;
 
 const Countdown = ({ currentPage }) => {
-  // 02 September 2022 20:00:00 CET
-  const releaseDate = 1662141600000;
+  // 01 September 2022 20:00:00 LOCAL TIME
+  const releaseDate = 1662051600000;
   let diff2 = releaseDate - Date.now();
   const [diff, setDiff] = useState(releaseDate - Date.now());
 

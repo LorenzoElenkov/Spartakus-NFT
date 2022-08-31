@@ -306,7 +306,7 @@ const Faq = ({forwardedRef, currentPage }) => {
                         }}}>
                     Q: What is the mint price?
                     <span className={question === 5 ? 'accordionAnswer1 active' : 'accordionAnswer1'}>
-                    A: 1.99 SOL.
+                    A: 0.99 SOL.
                 </span>
                 </span>
             </div>
@@ -319,7 +319,7 @@ const Faq = ({forwardedRef, currentPage }) => {
                         }}}>
                     Q: When is the mint date?
                     <span className={question === 6 ? 'accordionAnswer6 active' : 'accordionAnswer6'}>
-                    A: The mint will be 29 August, 20:00 Central European Time (CET).
+                    A: The mint will be 01 September, 17:00 GMT.
                 </span>
                 </span>
             </div>
