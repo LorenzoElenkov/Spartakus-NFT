@@ -500,7 +500,6 @@ const Information = ({
             target="_blank"
             rel="noreferrer"
             ref={discordRef}
-            disabled
           >
             <span className="discordText">MINT NOW</span>
           </a>
