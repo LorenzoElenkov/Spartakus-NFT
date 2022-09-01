@@ -24,7 +24,9 @@ const StyledCountdownContainer = styled.div`
 
   }
   .spanCount {
-    font-size: 1.3vw;
+    grid-column: 1/5;
+    font-size: 1.5vw;
+    padding: 0.5vw;
     font-family: "Magh";
     font-weight: 600;
     letter-spacing: 2px;
@@ -83,11 +85,12 @@ const StyledCountdownContainer = styled.div`
     z-index: 5555;
     top: 0;
     left: 0;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: 1fr;
 
     
     .spanCount {
-      font-size: 8vw;
+      grid-column: 1/5;
+      font-size: 12vw;
       font-family: "Magh";
       font-weight: 600;
       letter-spacing: 2px;
@@ -100,7 +103,7 @@ const StyledCountdownContainer = styled.div`
     }
 
     .spanTitle {
-      font-size: 6vw;
+      font-size: 25vw;
       margin-top: 1vh;
       justify-self: center;
       color: ${(props) =>
@@ -151,14 +154,7 @@ const Countdown = ({ currentPage }) => {
   return (
     <StyledCountdownContainer page={currentPage}>
       <span className="spanHeader">WHITELIST SALE IN</span>
-      <span className="spanTitle">DAYS</span>
-      <span className="spanTitle">HOURS</span>
-      <span className="spanTitle">MINUTES</span>
-      <span className="spanTitle">SECONDS</span>
-      <span className="spanCount">{days}</span>
-      <span className="spanCount">{hours > 9 ? hours : `0${hours}`}</span>
-      <span className="spanCount">{minutes > 9 ? minutes : `0${minutes}`}</span>
-      <span className="spanCount">{seconds > 9 ? seconds : `0${seconds}`}</span>
+      <span className="spanCount">MINT IS LIVE!</span>
     </StyledCountdownContainer>
   );
 };
