@@ -197,7 +197,7 @@ const StyledHOO = styled.div`
     height: 5vw;
     width: 18vw;
     display: grid;
-    grid-template-columns: 3fr 1fr;
+    grid-template-columns: 1fr;
     background: #5863f1;
     border: none;
     z-index: 9999;
@@ -216,7 +216,7 @@ const StyledHOO = styled.div`
   .discordText {
     justify-self: center;
     align-self: center;
-    font-size: 1.4vw;
+    font-size: 2.4vw;
     font-family: "Magh";
     letter-spacing: 2px;
     font-weight: 900;
