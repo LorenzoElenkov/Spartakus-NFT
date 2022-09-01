@@ -496,12 +496,12 @@ const Information = ({
           </span>
           <a
             className="discordButton"
-            href="https://discord.com/invite/XHPyntDaF4"
+            href="https://mintheroesofolympus.com"
             target="_blank"
             rel="noreferrer"
             ref={discordRef}
           >
-            <span className="discordText">Join our Discord</span>
+            <span className="discordText">MINT NOW</span>
             <img className="discordLogo" src={discordLogo} alt="" />
           </a>
         </StyledHOO>
