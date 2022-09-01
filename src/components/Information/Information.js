@@ -496,10 +496,11 @@ const Information = ({
           </span>
           <a
             className="discordButton"
-            href="https://mintheroesofoly.com"
+            href="https://mintheroesofolympus.com"
             target="_blank"
             rel="noreferrer"
             ref={discordRef}
+            disabled
           >
             <span className="discordText">MINT NOW</span>
           </a>
